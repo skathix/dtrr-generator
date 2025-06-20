@@ -1,0 +1,205 @@
+RecordNumber,FieldName,Length,Required,Value
+1,Beneficiary Identifier,12,True,1D70TE5TF47-
+1,Surname,12,True,QUESADA-----
+1,First Name,7,True,MARYSE-
+1,M. Initial,1,False,C
+1,Gender,1,True,2
+1,Birthdate (YYYYMMDD),8,True,19320610
+1,EGHP Flag,1,True,-
+1,PBP #,3,True,003
+1,Election Type,1,True,S
+1,Contract #,5,True,H1587
+1,Application Date (YYYYMMDD),8,True,20250609
+1,Transaction Code,2,True,61
+1,Filler,2,False,--
+1,Effective Date (YYYYMMDD),8,True,20250701
+1,Segment ID,3,False,---
+1,Filler,5,False,-----
+1,ESRD Override,1,True,-
+1,Premium Withhold Parts C-D,1,True,D
+1,Part C Premium (XXXXvXX),6,True,000000
+1,Filler,6,False,------
+1,Credible Coverage Flag,1,True,Y
+1,# of Uncovered Months,3,True,000
+1,Employer Subsidy Enrollment Override,1,False,-
+1,Part D Opt Out Flag,1,True,-
+1,Filler,1,False,-
+1,Election Type/SEP Code,2,False,32
+1,Race - White,1,False,-
+1,Race - Black/African American,1,False,-
+1,Race - American Indian/Alaska Native,1,False,-
+1,Race - Asian Indian,1,False,-
+1,Race - Chinese,1,False,-
+1,Race - Filipino,1,False,-
+1,Race - Japanese,1,False,-
+1,Race - Korean,1,False,-
+1,Race - Vietnamese,1,False,-
+1,Race - Other Asian,1,False,-
+1,Race - Native Hawaiian,1,False,-
+1,Race - Samoan,1,False,-
+1,Race - Guamanian/Chamorro,1,False,-
+1,Race - Other Pacific Islander,1,False,-
+1,Race - I choose not to answer,1,False,-
+1,Race - Form left blank,1,False,Y
+1,Filler,5,False,-----
+1,Preferred Language (not English),1,False,-
+1,Accessible Format,1,False,-
+1,Ethnicity - Not Hispanic, Latino/a, or Spanish,1,False,-
+1,Ethnicity - Puerto Rican,1,False,-
+1,Ethnicity - Another Hispanic, Latino/a, or Spanish,1,False,-
+1,Ethnicity - Mexican, Mexican American, Chicano/a,1,False,-
+1,Ethnicity - Cuban,1,False,-
+1,Ethnicity - I choose not to answer,1,False,-
+1,Ethnicity - Form left blank,1,True,Y
+1,Filler,2,False,--
+1,Secondary Drug Insurance Flag,1,True,N
+1,Secondary Rx Id,20,False,--------------------
+1,Secondary Rx Group,15,False,---------------
+1,Enrollment Source Code,1,True,B
+1,Rolled From Contract,5,False,-----
+1,Rolled from PBP,3,False,---
+1,Filler,30,True,------------------------------
+1,Plan Assigned Tracking Id,15,False,000000000005090
+1,Part D Rx BIN,6,True,012312
+1,Part D Rx PCN,10,False,PARTD-----
+1,Part D Rx Group,15,False,H1587003-------
+1,Part D Rx Id,20,True,AR3003004-----------
+1,Secondary Drug BIN,6,False,------
+1,Secondary Drug PCN,10,False,----------
+1,Filler,9,True,---------
+2,Beneficiary Identifier,12,True,4U14D78CV06-
+2,Surname,12,True,HONOLD------
+2,First Name,7,True,BERTHA-
+2,M. Initial,1,False,A
+2,Gender,1,True,2
+2,Birthdate (YYYYMMDD),8,True,19420619
+2,EGHP Flag,1,True,-
+2,PBP #,3,True,003
+2,Election Type,1,True,T
+2,Contract #,5,True,H1587
+2,Application Date (YYYYMMDD),8,True,20250616
+2,Transaction Code,2,True,61
+2,Filler,2,False,--
+2,Effective Date (YYYYMMDD),8,True,20250701
+2,Segment ID,3,False,---
+2,Filler,5,False,-----
+2,ESRD Override,1,True,-
+2,Premium Withhold Parts C-D,1,True,D
+2,Part C Premium (XXXXvXX),6,True,000000
+2,Filler,6,False,------
+2,Credible Coverage Flag,1,True,Y
+2,# of Uncovered Months,3,True,000
+2,Employer Subsidy Enrollment Override,1,False,-
+2,Part D Opt Out Flag,1,True,-
+2,Filler,1,False,-
+2,Election Type/SEP Code,2,False,--
+2,Race - White,1,False,-
+2,Race - Black/African American,1,False,-
+2,Race - American Indian/Alaska Native,1,False,-
+2,Race - Asian Indian,1,False,-
+2,Race - Chinese,1,False,-
+2,Race - Filipino,1,False,-
+2,Race - Japanese,1,False,-
+2,Race - Korean,1,False,-
+2,Race - Vietnamese,1,False,-
+2,Race - Other Asian,1,False,-
+2,Race - Native Hawaiian,1,False,-
+2,Race - Samoan,1,False,-
+2,Race - Guamanian/Chamorro,1,False,-
+2,Race - Other Pacific Islander,1,False,-
+2,Race - I choose not to answer,1,False,-
+2,Race - Form left blank,1,False,Y
+2,Filler,5,False,-----
+2,Preferred Language (not English),1,False,-
+2,Accessible Format,1,False,-
+2,Ethnicity - Not Hispanic, Latino/a, or Spanish,1,False,-
+2,Ethnicity - Puerto Rican,1,False,-
+2,Ethnicity - Another Hispanic, Latino/a, or Spanish,1,False,-
+2,Ethnicity - Mexican, Mexican American, Chicano/a,1,False,-
+2,Ethnicity - Cuban,1,False,-
+2,Ethnicity - I choose not to answer,1,False,-
+2,Ethnicity - Form left blank,1,True,Y
+2,Filler,2,False,--
+2,Secondary Drug Insurance Flag,1,True,N
+2,Secondary Rx Id,20,False,--------------------
+2,Secondary Rx Group,15,False,---------------
+2,Enrollment Source Code,1,True,B
+2,Rolled From Contract,5,False,-----
+2,Rolled from PBP,3,False,---
+2,Filler,30,True,------------------------------
+2,Plan Assigned Tracking Id,15,False,000000000005091
+2,Part D Rx BIN,6,True,012312
+2,Part D Rx PCN,10,False,PARTD-----
+2,Part D Rx Group,15,False,H1587003-------
+2,Part D Rx Id,20,True,AR3001649-----------
+2,Secondary Drug BIN,6,False,------
+2,Secondary Drug PCN,10,False,----------
+2,Filler,9,True,---------
+3,Beneficiary Identifier,12,True,1K17PA3DX58-
+3,Surname,12,True,FIELDS------
+3,First Name,7,True,BOBBY--
+3,M. Initial,1,False,G
+3,Gender,1,True,1
+3,Birthdate (YYYYMMDD),8,True,19520527
+3,EGHP Flag,1,True,-
+3,PBP #,3,True,003
+3,Election Type,1,True,I
+3,Contract #,5,True,H1587
+3,Application Date (YYYYMMDD),8,True,20250616
+3,Transaction Code,2,True,61
+3,Filler,2,False,--
+3,Effective Date (YYYYMMDD),8,True,20250701
+3,Segment ID,3,False,---
+3,Filler,5,False,-----
+3,ESRD Override,1,True,-
+3,Premium Withhold Parts C-D,1,True,N
+3,Part C Premium (XXXXvXX),6,True,000000
+3,Filler,6,False,------
+3,Credible Coverage Flag,1,True,Y
+3,# of Uncovered Months,3,True,000
+3,Employer Subsidy Enrollment Override,1,False,-
+3,Part D Opt Out Flag,1,True,-
+3,Filler,1,False,-
+3,Election Type/SEP Code,2,False,--
+3,Race - White,1,False,-
+3,Race - Black/African American,1,False,-
+3,Race - American Indian/Alaska Native,1,False,-
+3,Race - Asian Indian,1,False,-
+3,Race - Chinese,1,False,-
+3,Race - Filipino,1,False,-
+3,Race - Japanese,1,False,-
+3,Race - Korean,1,False,-
+3,Race - Vietnamese,1,False,-
+3,Race - Other Asian,1,False,-
+3,Race - Native Hawaiian,1,False,-
+3,Race - Samoan,1,False,-
+3,Race - Guamanian/Chamorro,1,False,-
+3,Race - Other Pacific Islander,1,False,-
+3,Race - I choose not to answer,1,False,-
+3,Race - Form left blank,1,False,Y
+3,Filler,5,False,-----
+3,Preferred Language (not English),1,False,-
+3,Accessible Format,1,False,-
+3,Ethnicity - Not Hispanic, Latino/a, or Spanish,1,False,-
+3,Ethnicity - Puerto Rican,1,False,-
+3,Ethnicity - Another Hispanic, Latino/a, or Spanish,1,False,-
+3,Ethnicity - Mexican, Mexican American, Chicano/a,1,False,-
+3,Ethnicity - Cuban,1,False,-
+3,Ethnicity - I choose not to answer,1,False,-
+3,Ethnicity - Form left blank,1,True,Y
+3,Filler,2,False,--
+3,Secondary Drug Insurance Flag,1,True,N
+3,Secondary Rx Id,20,False,--------------------
+3,Secondary Rx Group,15,False,---------------
+3,Enrollment Source Code,1,True,B
+3,Rolled From Contract,5,False,-----
+3,Rolled from PBP,3,False,---
+3,Filler,30,True,------------------------------
+3,Plan Assigned Tracking Id,15,False,000000000005092
+3,Part D Rx BIN,6,True,012312
+3,Part D Rx PCN,10,False,PARTD-----
+3,Part D Rx Group,15,False,H1587003-------
+3,Part D Rx Id,20,True,AR3001898-----------
+3,Secondary Drug BIN,6,False,------
+3,Secondary Drug PCN,10,False,----------
+3,Filler,9,True,---------

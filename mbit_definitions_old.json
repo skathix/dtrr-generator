@@ -1,0 +1,595 @@
+﻿{
+  "versions": {
+    "18.2": {
+      "record_length": 300,
+      "record_types": {
+        "51": {
+          "description": "Disenrollment record",
+          "fields": [
+            {
+              "name": "beneficiary_id",
+              "display_name": "Beneficiary Identifier",
+              "length": 12,
+              "required": true
+            },
+            {
+              "name": "surname",
+              "display_name": "Surname",
+              "length": 12,
+              "required": true
+            },
+            {
+              "name": "first_name",
+              "display_name": "First Name",
+              "length": 7,
+              "required": true
+            },
+            {
+              "name": "middle_initial",
+              "display_name": "M. Initial",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "gender",
+              "display_name": "Gender",
+              "length": 1,
+              "required": true
+            },
+            {
+              "name": "birthdate",
+              "display_name": "Birthdate (YYYYMMDD)",
+              "length": 8,
+              "required": true
+            },
+            {
+              "name": "filler1",
+              "display_name": "Filler",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "pbp_number",
+              "display_name": "PBP #",
+              "length": 3,
+              "required": true
+            },
+            {
+              "name": "election_type",
+              "display_name": "Election Type",
+              "length": 1,
+              "required": true,
+              "aliases": [
+                "election_type_code"
+              ]
+            },
+            {
+              "name": "contract_number",
+              "display_name": "Contract #",
+              "length": 5,
+              "required": true
+            },
+            {
+              "name": "filler2",
+              "display_name": "Filler",
+              "length": 8,
+              "required": false
+            },
+            {
+              "name": "transaction_code",
+              "display_name": "Transaction Code",
+              "length": 2,
+              "required": true
+            },
+            {
+              "name": "disenrollment_reason",
+              "display_name": "Disenrollment Reason Code",
+              "length": 2,
+              "required": false
+            },
+            {
+              "name": "effective_date",
+              "display_name": "Effective Date (YYYYMMDD)",
+              "length": 8,
+              "required": true
+            },
+            {
+              "name": "segment_id",
+              "display_name": "Segment Id",
+              "length": 3,
+              "required": false
+            },
+            {
+              "name": "filler3",
+              "display_name": "Filler",
+              "length": 24,
+              "required": false
+            },
+            {
+              "name": "part_d_opt_out",
+              "display_name": "Part D Opt Out Flag",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "mmp_opt_out",
+              "display_name": "MMP Opt Out Flag",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "election_type_extended",
+              "display_name": "Election Type (2)",
+              "length": 2,
+              "required": false
+            },
+            {
+              "name": "filler4",
+              "display_name": "Filler",
+              "length": 107,
+              "required": false
+            },
+            {
+              "name": "tracking_id",
+              "display_name": "Plan Transaction Tracking Id",
+              "length": 15,
+              "required": true
+            },
+            {
+              "name": "filler5",
+              "display_name": "Filler",
+              "length": 76,
+              "required": false
+            }
+          ]
+        },
+        "61": {
+          "description": "Enrollment record type 61",
+          "fields": [
+            {
+              "name": "beneficiary_id",
+              "display_name": "Beneficiary Identifier",
+              "length": 12,
+              "required": true
+            },
+            {
+              "name": "surname",
+              "display_name": "Surname",
+              "length": 12,
+              "required": true
+            },
+            {
+              "name": "first_name",
+              "display_name": "First Name",
+              "length": 7,
+              "required": true
+            },
+            {
+              "name": "middle_initial",
+              "display_name": "M. Initial",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "gender",
+              "display_name": "Gender",
+              "length": 1,
+              "required": true
+            },
+            {
+              "name": "birthdate",
+              "display_name": "Birthdate (YYYYMMDD)",
+              "length": 8,
+              "required": true
+            },
+            {
+              "name": "eghp_flag",
+              "display_name": "EGHP Flag",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "pbp_number",
+              "display_name": "PBP #",
+              "length": 3,
+              "required": true
+            },
+            {
+              "name": "election_type",
+              "display_name": "Election Type",
+              "length": 1,
+              "required": true
+            },
+            {
+              "name": "contract_number",
+              "display_name": "Contract #",
+              "length": 5,
+              "required": true
+            },
+            {
+              "name": "application_date",
+              "display_name": "Application Date",
+              "length": 8,
+              "required": true
+            },
+            {
+              "name": "transaction_code",
+              "display_name": "Transaction Code",
+              "length": 2,
+              "required": true
+            },
+            {
+              "name": "filler1",
+              "display_name": "Filler",
+              "length": 2,
+              "required": false
+            },
+            {
+              "name": "effective_date",
+              "display_name": "Effective Date",
+              "length": 8,
+              "required": true
+            },
+            {
+              "name": "segment_id",
+              "display_name": "Segment ID",
+              "length": 3,
+              "required": true
+            },
+            {
+              "name": "filler2",
+              "display_name": "Filler",
+              "length": 5,
+              "required": false
+            },
+            {
+              "name": "esrd_override",
+              "display_name": "ESRD Override",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "premium_withhold",
+              "display_name": "Premium Withhold Parts C-D",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "part_c_premium",
+              "display_name": "Part C Premium",
+              "length": 6,
+              "required": false
+            },
+            {
+              "name": "filler3",
+              "display_name": "Filler",
+              "length": 6,
+              "required": false
+            },
+            {
+              "name": "credible_coverage_flag",
+              "display_name": "Credible Coverage Flag",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "uncovered_months",
+              "display_name": "# of Uncovered Months",
+              "length": 3,
+              "required": false
+            },
+            {
+              "name": "employer_override",
+              "display_name": "Employer Subsidy Enrollment Override",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "part_d_opt_out",
+              "display_name": "Part D Opt Out Flag",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "filler4",
+              "display_name": "Filler",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "election_type_code",
+              "display_name": "Election Type/SEP Code",
+              "length": 2,
+              "required": false
+            },
+            {
+              "name": "race_white",
+              "display_name": "Race - White",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_black",
+              "display_name": "Race - Black/African American",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_ai_an",
+              "display_name": "Race - American Indian/Alaska Native",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_asian_indian",
+              "display_name": "Race - Asian Indian",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_chinese",
+              "display_name": "Race - Chinese",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_filipino",
+              "display_name": "Race - Filipino",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_japanese",
+              "display_name": "Race - Japanese",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_korean",
+              "display_name": "Race - Korean",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_vietnamese",
+              "display_name": "Race - Vietnamese",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_other_asian",
+              "display_name": "Race - Other Asian",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_hawaiian",
+              "display_name": "Race - Native Hawaiian",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_samoan",
+              "display_name": "Race - Samoan",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_guamanian",
+              "display_name": "Race - Guamanian/Chamorro",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_other_pi",
+              "display_name": "Race - Other Pacific Islander",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_declined",
+              "display_name": "Race - I choose not to answer",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "race_blank",
+              "display_name": "Race - Form left blank",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "filler5",
+              "display_name": "Filler",
+              "length": 5,
+              "required": false
+            },
+            {
+              "name": "preferred_language",
+              "display_name": "Preferred Language (not English)",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "accessible_format",
+              "display_name": "Accessible Format",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_non_hispanic",
+              "display_name": "Ethnicity - Not Hispanic, Latino/a, or Spanish",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_puerto_rican",
+              "display_name": "Ethnicity - Puerto Rican",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_other",
+              "display_name": "Ethnicity - Another Hispanic, Latino/a, or Spanish",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_mexican",
+              "display_name": "Ethnicity - Mexican, Mexican American, Chicano/a",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_cuban",
+              "display_name": "Ethnicity - Cuban",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_declined",
+              "display_name": "Ethnicity - I choose not to answer",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "ethnicity_blank",
+              "display_name": "Ethnicity - Form left blank",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "filler6",
+              "display_name": "Filler",
+              "length": 2,
+              "required": false
+            },
+            {
+              "name": "secondary_insurance",
+              "display_name": "Secondary Drug Insurance",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "secondary_rx_id",
+              "display_name": "Secondary Rx Id",
+              "length": 20,
+              "required": false
+            },
+            {
+              "name": "secondary_rx_group",
+              "display_name": "Secondary Rx Group",
+              "length": 15,
+              "required": false
+            },
+            {
+              "name": "enrollment_source",
+              "display_name": "Enrollment Source Code",
+              "length": 1,
+              "required": false
+            },
+            {
+              "name": "rolled_contract",
+              "display_name": "Rolled From Contract",
+              "length": 5,
+              "required": false
+            },
+            {
+              "name": "rolled_pbp",
+              "display_name": "Rolled from PBP",
+              "length": 3,
+              "required": false
+            },
+            {
+              "name": "filler7",
+              "display_name": "Filler",
+              "length": 30,
+              "required": false
+            },
+            {
+              "name": "tracking_id",
+              "display_name": "Plan Assigned Tracking Id",
+              "length": 15,
+              "required": true
+            },
+            {
+              "name": "part_d_bin",
+              "display_name": "Part D Rx BIN",
+              "length": 6,
+              "required": false
+            },
+            {
+              "name": "part_d_pcn",
+              "display_name": "Part D Rx PCN",
+              "length": 10,
+              "required": false
+            },
+            {
+              "name": "part_d_group",
+              "display_name": "Part D Rx Group",
+              "length": 15,
+              "required": false
+            },
+            {
+              "name": "part_d_id",
+              "display_name": "Part D Rx Id",
+              "length": 20,
+              "required": false
+            },
+            {
+              "name": "secondary_bin",
+              "display_name": "Secondary Drug BIN",
+              "length": 6,
+              "required": false
+            },
+            {
+              "name": "secondary_pcn",
+              "display_name": "Secondary Drug PCN",
+              "length": 10,
+              "required": false
+            },
+            {
+              "name": "filler8",
+              "display_name": "Filler",
+              "length": 9,
+              "required": false
+            }
+          ]
+        },
+        "18.2.2": {
+          "record_length": 300,
+          "record_types": {
+            "51": {
+              "fields": [
+                {
+                  "name": "beneficiary_id",
+                  "display_name": "Beneficiary Identifier",
+                  "length": 12
+                },
+                {
+                  "name": "surname",
+                  "display_name": "Surname",
+                  "length": 12
+                },
+                {
+                  "name": "election_type",
+                  "display_name": "Election Type/SEP Code",
+                  "length": 2
+                }
+              ]
+            },
+            "61": {
+              "fields": [
+                {
+                  "name": "gender",
+                  "display_name": "Gender",
+                  "length": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

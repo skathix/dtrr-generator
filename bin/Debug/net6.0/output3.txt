@@ -1,0 +1,210 @@
+Record 1 — Type: 61
+Beneficiary Identifier (12)*: 1D70TE5TF47-
+Surname (12)*: QUESADA-----
+First Name (7)*: MARYSE-
+M. Initial (1): C
+Gender (1)*: 2
+Birthdate (8)*: 19320610
+EGHP Flag (1): -
+PBP # (3)*: 003
+Election Type (1)*: S
+Contract # (5)*: H1587
+Application Date (8)*: 20250609
+Transaction Code (2)*: 61
+Filler (2): --
+Effective Date (8)*: 20250701
+Segment ID (3): ---
+Filler (5): -----
+ESRD Override (1)*: -
+Premium Withhold Parts C-D (1)*: D
+Part C Premium (6)*: 000000
+Filler (6): ------
+Credible Coverage Flag (1): Y
+# of Uncovered Months (3): 000
+Employer Subsidy Enrollment Override (1): -
+Part D Opt Out Flag (1): -
+Filler (1): -
+Election Type/SEP Code (2): 32
+Race - White (1): -
+Race - Black/African American (1): -
+Race - American Indian/Alaska Native (1): -
+Race - Asian Indian (1): -
+Race - Chinese (1): -
+Race - Filipino (1): -
+Race - Japanese (1): -
+Race - Korean (1): -
+Race - Vietnamese (1): -
+Race - Other Asian (1): -
+Race - Native Hawaiian (1): -
+Race - Samoan (1): -
+Race - Guamanian/Chamorro (1): -
+Race - Other Pacific Islander (1): -
+Race - I choose not to answer (1): -
+Race - Form left blank (1)*: Y
+Filler (5): -----
+Preferred Language (not English) (1): -
+Accessible Format (1): -
+Ethnicity - Not Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Puerto Rican (1): -
+Ethnicity - Another Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Mexican, Mexican American, Chicano/a (1): -
+Ethnicity - Cuban (1): -
+Ethnicity - I choose not to answer (1): -
+Ethnicity - Form left blank (1)*: Y
+Filler (2): --
+Secondary Drug Insurance (1): N
+Secondary Rx Id (20): --------------------
+Secondary Rx Group (15): ---------------
+Enrollment Source Code (1): B
+Rolled From Contract (5): -----
+Rolled from PBP (3): ---
+Filler (30)*: ------------------------------
+Plan Assigned Tracking Id (15): 000000000005090
+Part D Rx BIN (6)*: 012312
+Part D Rx PCN (10): PARTD-----
+Part D Rx Group (15): H1587003-------
+Part D Rx Id (20): AR3003004-----------
+Secondary Drug BIN (6): ------
+Secondary Drug PCN (10): ----------
+Filler (9)*: ---------
+
+Record 2 — Type: 61
+Beneficiary Identifier (12)*: 4U14D78CV06-
+Surname (12)*: HONOLD------
+First Name (7)*: BERTHA-
+M. Initial (1): A
+Gender (1)*: 2
+Birthdate (8)*: 19420619
+EGHP Flag (1): -
+PBP # (3)*: 003
+Election Type (1)*: T
+Contract # (5)*: H1587
+Application Date (8)*: 20250616
+Transaction Code (2)*: 61
+Filler (2): --
+Effective Date (8)*: 20250701
+Segment ID (3): ---
+Filler (5): -----
+ESRD Override (1)*: -
+Premium Withhold Parts C-D (1)*: D
+Part C Premium (6)*: 000000
+Filler (6): ------
+Credible Coverage Flag (1): Y
+# of Uncovered Months (3): 000
+Employer Subsidy Enrollment Override (1): -
+Part D Opt Out Flag (1): -
+Filler (1): -
+Election Type/SEP Code (2): --
+Race - White (1): -
+Race - Black/African American (1): -
+Race - American Indian/Alaska Native (1): -
+Race - Asian Indian (1): -
+Race - Chinese (1): -
+Race - Filipino (1): -
+Race - Japanese (1): -
+Race - Korean (1): -
+Race - Vietnamese (1): -
+Race - Other Asian (1): -
+Race - Native Hawaiian (1): -
+Race - Samoan (1): -
+Race - Guamanian/Chamorro (1): -
+Race - Other Pacific Islander (1): -
+Race - I choose not to answer (1): -
+Race - Form left blank (1)*: Y
+Filler (5): -----
+Preferred Language (not English) (1): -
+Accessible Format (1): -
+Ethnicity - Not Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Puerto Rican (1): -
+Ethnicity - Another Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Mexican, Mexican American, Chicano/a (1): -
+Ethnicity - Cuban (1): -
+Ethnicity - I choose not to answer (1): -
+Ethnicity - Form left blank (1)*: Y
+Filler (2): --
+Secondary Drug Insurance (1): N
+Secondary Rx Id (20): --------------------
+Secondary Rx Group (15): ---------------
+Enrollment Source Code (1): B
+Rolled From Contract (5): -----
+Rolled from PBP (3): ---
+Filler (30)*: ------------------------------
+Plan Assigned Tracking Id (15): 000000000005091
+Part D Rx BIN (6)*: 012312
+Part D Rx PCN (10): PARTD-----
+Part D Rx Group (15): H1587003-------
+Part D Rx Id (20): AR3001649-----------
+Secondary Drug BIN (6): ------
+Secondary Drug PCN (10): ----------
+Filler (9)*: ---------
+
+Record 3 — Type: 61
+Beneficiary Identifier (12)*: 1K17PA3DX58-
+Surname (12)*: FIELDS------
+First Name (7)*: BOBBY--
+M. Initial (1): G
+Gender (1)*: 1
+Birthdate (8)*: 19520527
+EGHP Flag (1): -
+PBP # (3)*: 003
+Election Type (1)*: I
+Contract # (5)*: H1587
+Application Date (8)*: 20250616
+Transaction Code (2)*: 61
+Filler (2): --
+Effective Date (8)*: 20250701
+Segment ID (3): ---
+Filler (5): -----
+ESRD Override (1)*: -
+Premium Withhold Parts C-D (1)*: N
+Part C Premium (6)*: 000000
+Filler (6): ------
+Credible Coverage Flag (1): Y
+# of Uncovered Months (3): 000
+Employer Subsidy Enrollment Override (1): -
+Part D Opt Out Flag (1): -
+Filler (1): -
+Election Type/SEP Code (2): --
+Race - White (1): -
+Race - Black/African American (1): -
+Race - American Indian/Alaska Native (1): -
+Race - Asian Indian (1): -
+Race - Chinese (1): -
+Race - Filipino (1): -
+Race - Japanese (1): -
+Race - Korean (1): -
+Race - Vietnamese (1): -
+Race - Other Asian (1): -
+Race - Native Hawaiian (1): -
+Race - Samoan (1): -
+Race - Guamanian/Chamorro (1): -
+Race - Other Pacific Islander (1): -
+Race - I choose not to answer (1): -
+Race - Form left blank (1)*: Y
+Filler (5): -----
+Preferred Language (not English) (1): -
+Accessible Format (1): -
+Ethnicity - Not Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Puerto Rican (1): -
+Ethnicity - Another Hispanic, Latino/a, or Spanish (1): -
+Ethnicity - Mexican, Mexican American, Chicano/a (1): -
+Ethnicity - Cuban (1): -
+Ethnicity - I choose not to answer (1): -
+Ethnicity - Form left blank (1)*: Y
+Filler (2): --
+Secondary Drug Insurance (1): N
+Secondary Rx Id (20): --------------------
+Secondary Rx Group (15): ---------------
+Enrollment Source Code (1): B
+Rolled From Contract (5): -----
+Rolled from PBP (3): ---
+Filler (30)*: ------------------------------
+Plan Assigned Tracking Id (15): 000000000005092
+Part D Rx BIN (6)*: 012312
+Part D Rx PCN (10): PARTD-----
+Part D Rx Group (15): H1587003-------
+Part D Rx Id (20): AR3001898-----------
+Secondary Drug BIN (6): ------
+Secondary Drug PCN (10): ----------
+Filler (9)*: ---------
+
