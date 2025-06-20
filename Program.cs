@@ -44,7 +44,7 @@ class MbitTool
             else
             {
                 Console.WriteLine("Paste a single full MBIT here:");
-                string inputString = Console.ReadLine()!;
+                string inputString = Console.ReadLine();
                 var trimString = inputString.TrimStart().Replace(" ", "-");
 
                 var expectedLength = allDefinitions.Versions[selectedVersion!].Record_Length;
@@ -116,7 +116,7 @@ class MbitTool
             string label = field.DisplayName ?? field.Name;
             string rawValue = sections[i];
             string requiredMark = field.IsRequired ? "REQUIRED" : "";
-            Console.WriteLine($"{label}({field.Length}){requiredMark}: {rawValue}");
+            Console.WriteLine($"{label}({field.Length}) {requiredMark}: {rawValue}");
         }
     }
 
@@ -137,7 +137,7 @@ class MbitTool
             string value = sections[i];
             string requiredMark = field.IsRequired ? "REQUIRED" : "";
 
-            string lineTxt = $"{label} ({field.Length}){requiredMark}: {value}";
+            string lineTxt = $"{label} ({field.Length}) {requiredMark}: {value}";
             txtOutput.AppendLine(lineTxt);
             csvOutput.AppendLine($"1,{label},{field.Length},{field.IsRequired},{value}");
         }
@@ -213,7 +213,7 @@ class MbitTool
                 string label = field.DisplayName ?? field.Name;
                 string value = sections[i];
                 string requiredMark = field.IsRequired ? "REQUIRED" : "";
-                string lineTxt = $"{label} ({field.Length}){requiredMark}: {value}";
+                string lineTxt = $"{label} ({field.Length}) {requiredMark}: {value}";
                 Console.WriteLine(lineTxt);
                 // Don't need to do both here, instead collect all the information then in the switch
                 // on outputFormat
