@@ -16,3 +16,4 @@ C:\Users\AAndrews\RiderProjects\Tools\Tools\obj\Debug\net6.0\Tools.genruntimecon
 C:\Users\AAndrews\RiderProjects\Tools\Tools\obj\Debug\net6.0\ref\Tools.dll
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.1.json
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.0.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\2026.json
