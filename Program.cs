@@ -55,13 +55,24 @@ class MbitTool
                 }
 
                 var recordType = trimString.Substring(59, 2);
-               
 
-                if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
-                {
-                    Console.WriteLine($"No definition found for record type {recordType} in version {selectedVersion}.");
-                    continue;
-                }
+                if (!allDefinitions.Versions.TryGetValue(selectedVersion
+                        , out var versionDef))
+                    //TODO: Better Handling
+                    versionDef = new VersionDefinition();
+
+                if (!versionDef.Record_Types.TryGetValue(recordType
+                        , out var recordDef))
+                    //TODO: Better Handling
+                    recordDef = new RecordDefinition();
+                var fields = recordDef.Fields;
+                
+                //
+                // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
+                // {
+                //     Console.WriteLine($"No definition found for record type {recordType} in version {selectedVersion}.");
+                //     continue;
+                // }
 
                 ProcessRecord(trimString, fields);
 
@@ -69,7 +80,7 @@ class MbitTool
                 string outputFormat = Console.ReadLine()?.Trim().ToLower();
                 if (outputFormat is "txt" or "csv")
                 {
-                    SaveSingleRecordOutput(trimString, recordType, fields, outputFormat);
+                    SaveSingleRecordOutput(trimString, recordType, fields, recordDef, outputFormat);
                 }
             }
 
@@ -88,14 +99,7 @@ class MbitTool
         out List<FieldDefinition> fields)
     {
         fields = new List<FieldDefinition>();
-
-        if (!allDefinitions.Versions.TryGetValue(version, out var versionDef))
-            return false;
-
-        if (!versionDef.Record_Types.TryGetValue(recordType, out var recordDef))
-            return false;
-
-        fields = recordDef.Fields;
+        //TODO: Check into this function, may be deletable or at least refactortable, unused at the moment
         return true;
     }
 
@@ -116,13 +120,14 @@ class MbitTool
         }
     }
 
-    private static void SaveSingleRecordOutput(string input, string recordType, List<FieldDefinition> fields, string outputFormat)
+    private static void SaveSingleRecordOutput(string input, string recordType, List<FieldDefinition> fields, RecordDefinition record, string outputFormat)
     {
         var sectionLengths = fields.Select(f => f.Length).ToList();
         var sections = StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
 
         var txtOutput = new StringBuilder();
         var csvOutput = new StringBuilder();
+        csvOutput.AppendLine(record.Description);
         csvOutput.AppendLine("RecordNumber,FieldName,Length,Required,Value");
 
         for (int i = 0; i < fields.Count; i++)
@@ -181,17 +186,27 @@ class MbitTool
             var recordType = trimmed.Substring(59, 2);
            
             Console.WriteLine($"\nRecord {++recordCounter} — Type: {recordType}");
+            if (!allDefinitions.Versions.TryGetValue(selectedVersion
+                    , out var versionDef))
+                //TODO: Better Handling
+                versionDef = new VersionDefinition();
 
-            if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
-            {
-                Console.WriteLine($"No definition found for record type {recordType}.");
-                continue;
-            }
+            if (!versionDef.Record_Types.TryGetValue(recordType
+                    , out var recordDef))
+                //TODO: Better Handling
+                recordDef = new RecordDefinition();
+            var fields = recordDef.Fields;
+            
+            // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
+            // {
+            //     Console.WriteLine($"No definition found for record type {recordType}.");
+            //     continue;
+            // }
 
             var sectionLengths = fields.Select(f => f.Length).ToList();
             var sections = StringDivider.DivideStringIntoVariableSections(trimmed, sectionLengths);
             
-            txtOutput.AppendLine($"Record {recordCounter} — {fields.Where(f => f.Name == "")}");
+            txtOutput.AppendLine($"Record {recordCounter} — {recordDef.Description}");
             for (int i = 0; i < fields.Count; i++)
             {
                 var field = fields[i];
