@@ -640,7 +640,7 @@
         },
         {
           "name": "ethnicity_non_hispanic",
-          "display_name": "Ethnicity - Not Hispanic, Latino/a, or Spanish",
+          "display_name": "Ethnicity - Not Hispanic/Latino/a or Spanish",
           "length": 1,
           "valid": "Blank",
           "required": false
@@ -654,14 +654,14 @@
         },
         {
           "name": "ethnicity_other",
-          "display_name": "Ethnicity - Another Hispanic, Latino/a, or Spanish",
+          "display_name": "Ethnicity - Another Hispanic Latino/a or Spanish",
           "length": 1,
           "valid": "Blank",
           "required": false
         },
         {
           "name": "ethnicity_mexican",
-          "display_name": "Ethnicity - Mexican, Mexican American, Chicano/a",
+          "display_name": "Ethnicity - Mexican/Mexican American/Chicano/a",
           "length": 1,
           "valid": "Blank",
           "required": false
@@ -2396,7 +2396,7 @@
         },
                {
           "name": "ethnicity_non_hispanic",
-          "display_name": "Ethnicity - Not Hispanic, Latino/a, or Spanish",
+          "display_name": "Ethnicity - Not Hispanic-Latino/a or Spanish",
           "length": 1,
           "valid": "Y or Blank - previous values are retained",
           "required": false
@@ -2410,14 +2410,14 @@
         },
         {
           "name": "ethnicity_other",
-          "display_name": "Ethnicity - Another Hispanic, Latino/a, or Spanish",
+          "display_name": "Ethnicity - Another Hispanic- Latino/a or Spanish",
           "length": 1,
           "valid": "Y or Blank - previous values are retained",
           "required": false
         },
         {
           "name": "ethnicity_mexican",
-          "display_name": "Ethnicity - Mexican, Mexican American, Chicano/a",
+          "display_name": "Ethnicity - Mexican- Mexican American- Chicano/a",
           "length": 1,
           "valid": "Y or Blank - previous values are retained",
           "required": false
