@@ -9,7 +9,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -37,14 +37,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -58,14 +58,14 @@
           "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
-          "valid": "Not required, but must be valid for the contract when entered",
+          "valid": "Not required but must be valid for the contract when entered",
           "required": false
         },
         {
           "name": "election_type",
           "display_name": "Election Type",
           "length": 1,
-          "valid": "A, D, I, L, M, N, O, S, T, U, V, W, X.",
+          "valid": "A D I L M N O S T U V W X",
           "required": true
         },
         {
@@ -121,14 +121,14 @@
           "name": "part_d_opt_out",
           "display_name": "Part D Opt Out Flag",
           "length": 1,
-          "valid": "Optional for Part D plans, or blank",
+          "valid": "Optional for Part D plans; or blank",
           "required": false
         },
         {
           "name": "mmp_opt_out",
           "display_name": "MMP Opt Out Flag",
           "length": 1,
-          "valid": "Must be Y, N, or blank",
+          "valid": "Must be Y N or blank",
           "required": false
         },
         {
@@ -168,7 +168,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -196,14 +196,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -224,7 +224,7 @@
           "name": "election_type",
           "display_name": "Election Type",
           "length": 1,
-          "valid": "A, D, I, L, M, N, O, S, T, U, V, W,  or X",
+          "valid": "A D I L M N O S T U V W or X",
           "required": true
         },
         {
@@ -280,14 +280,14 @@
           "name": "part_d_opt_out",
           "display_name": "Part D Opt Out Flag",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": false
         },
         {
           "name": "mmp_opt_out",
           "display_name": "MMP Opt Out Flag",
           "length": 1,
-          "valid": "Must be Y, N, or blank",
+          "valid": "Must be Y N or blank",
           "required": false
         },
         {
@@ -327,7 +327,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -355,14 +355,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -383,7 +383,7 @@
           "name": "election_type",
           "display_name": "Election Type",
           "length": 1,
-          "valid":"A, C, D, E, F, I, J, L, M, N, O, P, Q, R, S, T, U, V, W, X, Z or blank",
+          "valid":"A C D E F I J L M N O P Q R S T U V W X Z or blank",
           "required": true
         },
         {
@@ -397,7 +397,7 @@
           "name": "application_date",
           "display_name": "Application Date (YYYYMMDD)",
           "length": 8,
-          "valid" : " > 1966, < current year plus 1, < Effective date",
+          "valid" : " > 1966; < current year plus 1; < Effective date",
           "required": true
         },
         {
@@ -439,14 +439,14 @@
           "name": "esrd_override",
           "display_name": "ESRD Override",
           "length": 1,
-          "valid": "1-9, A-F or blank",
+          "valid": "1-9 A-F or blank",
           "required": true
         },
         {
           "name": "premium_withhold",
           "display_name": "Premium Withhold Parts C-D",
           "length": 1,
-          "valid": "D, S, R, O, or N.",
+          "valid": "D S R O or N.",
           "required": true
         },
         {
@@ -467,14 +467,14 @@
           "name": "credible_coverage_flag",
           "display_name": "Credible Coverage Flag",
           "length": 1,
-          "valid": "Y, N or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "uncovered_months",
           "display_name": "# of Uncovered Months",
           "length": 3,
-          "valid": "Number of months, or blank",
+          "valid": "Number of months or blank",
           "required": true
         },
         {
@@ -488,7 +488,7 @@
           "name": "part_d_opt_out",
           "display_name": "Part D Opt Out Flag",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
@@ -508,7 +508,7 @@
         {
           "name": "race_white",
           "display_name": "Race - White",
-          "valid": "Dash",
+          "valid": "Blank",
           "length": 1,
           "required": false
         },
@@ -628,14 +628,14 @@
           "name": "preferred_language",
           "display_name": "Preferred Language (not English)",
           "length": 1,
-          "valid": "S, O, or blank",
+          "valid": "S O or blank",
           "required": false
         },
         {
           "name": "accessible_format",
           "display_name": "Accessible Format",
           "length": 1,
-          "valid": "B, L, A, or blank",
+          "valid": "B L A or blank",
           "required": false
         },
         {
@@ -698,14 +698,14 @@
           "name": "secondary_insurance",
           "display_name": "Secondary Drug Insurance Flag",
           "length": 1,
-          "valid": "Y,N, or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "secondary_rx_id",
           "display_name": "Secondary Rx Id",
           "length": 20,
-          "valid": "if the field above is Y, then required, otherwise blank",
+          "valid": "required if the field above is Y; otherwise blank",
           "required": false
         },
         {
@@ -719,7 +719,7 @@
           "name": "enrollment_source",
           "display_name": "Enrollment Source Code",
           "length": 1,
-          "valid": "B, E, F, G, H, J, K, L, or blank",
+          "valid": "B E F G H J K L or blank",
           "required": true
         },
         {
@@ -761,21 +761,21 @@
           "name": "part_d_pcn",
           "display_name": "Part D Rx PCN",
           "length": 10,
-          "valid": "Left justified alphanumeric - no internal spaces, or blank",
+          "valid": "Left justified alphanumeric - no internal spaces; or blank",
           "required": false
         },
         {
           "name": "part_d_group",
           "display_name": "Part D Rx Group",
           "length": 15,
-          "valid":"Left justified alphanumeric - no internal spaces, or blank",
+          "valid":"Left justified alphanumeric - no internal spaces; or blank",
           "required": false
         },
         {
           "name": "part_d_id",
           "display_name": "Part D Rx Id",
           "length": 20,
-          "valid":"Left justified alphanumeric - no internal spaces, or blank",
+          "valid":"Left justified alphanumeric - no internal spaces; or blank",
           "required": true
         },
         {
@@ -808,7 +808,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -836,14 +836,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -885,7 +885,7 @@
           "name": "transaction_code",
           "display_name": "Transaction Code",
           "length": 2,
-          "valid":"72",
+          "valid":"Must be 72",
           "required": true
         },
         {
@@ -899,7 +899,7 @@
           "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid":"> 1966, < current year +1, and first of the month",
+          "valid":"> 1966; < current year +1; first of the month",
           "required": true
         },
         {
@@ -913,7 +913,7 @@
           "name": "secondary_insurance",
           "display_name": "Secondary Drug Insurance",
           "length": 1,
-          "valid":"Y, N, or blank",
+          "valid":"Y N or blank",
           "required": false
         },
         {
@@ -1002,7 +1002,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1030,14 +1030,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -1093,7 +1093,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966, < current year + 1, 1st of the month",
+          "valid": "> 1966; < current year + 1; 1st of the month",
           "required": true
         },
         {
@@ -1105,7 +1105,7 @@
         },
         {
           "name": "tracking",
-          "display_name": "Plan Transaction Tracking ID 15",
+          "display_name": "Plan Transaction Tracking ID",
           "length": 15,
           "valid":"Not validated",
           "required": false
@@ -1126,7 +1126,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1154,14 +1154,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1217,7 +1217,7 @@
           "name": "address1",
           "display_name": "Residence Address Line 1",
           "length": 65,
-          "valid":"Must have valid, recognizable US address",
+          "valid":"Must have valid recognizable US address",
           "required": true
         },
         {
@@ -1292,7 +1292,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1320,14 +1320,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1383,7 +1383,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966, < current year +1; first of the month",
+          "valid": "> 1966 < current year +1; first of the month",
           "required": true
         },
         {
@@ -1430,7 +1430,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1458,14 +1458,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1554,7 +1554,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1582,14 +1582,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1645,7 +1645,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966, < current year + 1, first of the month",
+          "valid": "> 1966 < current year + 1; first of the month",
           "required": true
         },
         {
@@ -1685,7 +1685,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1713,14 +1713,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1790,7 +1790,7 @@
           "name": "mmp_flag",
           "display_name": "MMP Opt-Out Flag",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": false
         },
         {
@@ -1823,7 +1823,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1851,14 +1851,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -1914,7 +1914,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966, < current year + 1, first of the prospective month (processing month + 3 months)",
+          "valid": "> 1966 < current year + 1; first of the prospective month (processing month + 3 months)",
           "required": true
         },
         {
@@ -1961,7 +1961,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -1989,14 +1989,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected; but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870; <= current year",
           "required": true
         },
         {
@@ -2038,7 +2038,7 @@
           "name": "update_flag",
           "display_name": "Add/Update/Delete Flag",
           "length": 1,
-          "valid": "A, U, D",
+          "valid": "A U D",
           "required": true
         },
         {
@@ -2066,49 +2066,49 @@
           "name": "notice_end",
           "display_name": "Notification End Date (YYYYMMDD)",
           "length": 8,
-          "valid": "Must be within 60 days of start date AND one day prior to Implementation start date: OR the notification start, notification end and implementation start dates must be the same",
+          "valid": "Must be within 60 days of start date AND one day prior to Implementation start date: OR the notification start/notification end/implementation start dates must be the same",
           "required": false
         },
         {
           "name": "pos_status",
           "display_name": "POS Edit Status",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": false
         },
         {
           "name": "pos_code",
           "display_name": "POS Edit Code",
           "length": 3,
-          "valid": "Optional unless POS Edit Status is Y, must be valid value if entered",
+          "valid": "Optional unless POS Edit Status is Y must be valid value if entered",
           "required": false
         },
         {
           "name": "prescribe_limit",
           "display_name": "Prescriber Limitation Status",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": false
         },
         {
           "name": "pharm_limit",
           "display_name": "Pharmacy Limitation Status",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": false
         },
         {
           "name": "implimentation_start",
           "display_name": "Implementation Start Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> notification start date, =< notification end date + 1, < CCM +1",
+          "valid": "> notification start date; =< notification end date + 1; < CCM +1",
           "required": false
         },
         {
           "name": "implementation_end",
           "display_name": "Implementation End Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> notification start date + 1 year, > 13 months after start date",
+          "valid": "> notification start date + 1 year; > 13 months after start date",
           "required": false
         },
         {
@@ -2141,7 +2141,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2169,14 +2169,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -2232,7 +2232,7 @@
           "name": "ic_start",
           "display_name": "IC Model Start Date (YYYYMMDD)",
           "length": 8,
-          "valid": "Must be within the ICM period, and in the Member's Enrollment period",
+          "valid": "Must be within the ICM period; and in the Member's Enrollment period",
           "required": true
         },
         {
@@ -2267,14 +2267,14 @@
           "name": "ic_end",
           "display_name": "IC Model End Date (YYYYMMDD)",
           "length": 8,
-          "valid": "must be after the IC Model Start Date, and in the Member's Enrollment period",
+          "valid": "must be after the IC Model Start Date;, and in the Member's Enrollment period",
           "required": false
         },
         {
           "name": "ic_end_reason",
           "display_name": "IC End Date Reason Code (required if End date is entered)",
           "length": 2,
-          "valid": "must be 01, 02, or 03",
+          "valid": "must be 01 02 or 03",
           "required": false
         },
         {
@@ -2307,7 +2307,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2335,14 +2335,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -2453,14 +2453,14 @@
           "name": "preferred_language",
           "display_name": "Preferred Language (not English)",
           "length": 1,
-          "valid": "S, O, X, or Blank",
+          "valid": "S O X or Blank",
           "required": false
         },
         {
           "name": "accessible_format",
           "display_name": "Accessible Format",
           "length": 1,
-          "valid": "B, L, A, X or Blank",
+          "valid": "B L A X or Blank",
           "required": false
         },
         {
@@ -2604,7 +2604,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2632,14 +2632,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -2695,7 +2695,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966 and < current year +1, first of month",
+          "valid": "> 1966 and < current year +1; first of month",
           "required": true
         },
         {
@@ -2749,7 +2749,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2777,14 +2777,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -2840,7 +2840,7 @@
           "name": "effective",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1966 and < current year +1, first of month",
+          "valid": "> 1966 and < current year +1; first of month",
           "required": true
         },
         {
@@ -2894,7 +2894,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2922,14 +2922,14 @@
           "name": "gender",
           "display_name": "Gender",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected, but set to 0",
+          "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870, <= current year",
+          "valid": "> 1870 <= current year",
           "required": true
         },
         {
@@ -3013,7 +3013,7 @@
           "name": "term_code",
           "display_name": "Termination Reason Code",
           "length": 2,
-          "valid": "01, 02, 03, or 04",
+          "valid": "01 02 03 or 04",
           "required": true
         },
         {

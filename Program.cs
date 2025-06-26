@@ -2,6 +2,8 @@
 using System.Text;
 using Tools.Tools;
 
+//UPDATES:
+//06-26: Validation information now will print
 namespace Tools;
 //MBI was used after 1-1-2020 for new applications
 class MbitTool
@@ -15,19 +17,22 @@ class MbitTool
         while (continueChecking)
         {
             Console.WriteLine("Available versions:");
-            foreach (var kvp in allDefinitions.Versions.OrderBy(v => v.Value.Start_Date))
+            foreach (var kvp in allDefinitions.Versions.OrderBy(v =>
+                         v.Value.Start_Date))
             {
                 string version = kvp.Key;
                 DateTime startDate = kvp.Value.Start_Date;
-                Console.WriteLine($" - {version} (starts: {startDate:yyyy-MM-dd})");
+                Console.WriteLine(
+                    $" - {version} (starts: {startDate:yyyy-MM-dd})");
             }
 
             Console.Write("Enter the version number (e.g., 18.2): ");
             string selectedVersion = Console.ReadLine()?.Trim();
-
-            Console.Write("Are you pasting a single record or a full file? (type 'file' or 'single'): ");
+//TODO: Add validation
+            Console.Write(
+                "Are you pasting a single record or a full file? (type 'file' or 'single'): ");
             string mode = Console.ReadLine()?.Trim().ToLower();
-
+//TODO: Finish Validation
             if (mode == "file")
             {
                 Console.Write("Enter path to file: ");
@@ -39,18 +44,25 @@ class MbitTool
                     return;
                 }
 
-                ProcessFileWithOutputOption(filePath, selectedVersion!, allDefinitions);
+                ProcessFileWithOutputOption(filePath, selectedVersion!
+                    , allDefinitions);
             }
             else
             {
                 Console.WriteLine("Paste a single full MBIT here:");
                 string inputString = Console.ReadLine();
-                var trimString = inputString.TrimStart().Replace(" ", "-");
+                var trimmedString = inputString.TrimStart();
+                //TODO: Check for end-of-record characters, remove those
+                //trimmedString will allow for an easier division without the
+                //need to remove dashes
+                var trimString = trimmedString.Replace(" ", "-");
 
-                var expectedLength = allDefinitions.Versions[selectedVersion!].Record_Length;
+                var expectedLength = allDefinitions.Versions[selectedVersion!]
+                    .Record_Length;
                 if (trimString.Length != expectedLength)
                 {
-                    Console.WriteLine($"Invalid length: {trimString.Length} (expected {expectedLength})");
+                    Console.WriteLine(
+                        $"Invalid length: {trimString.Length} (expected {expectedLength})");
                     continue;
                 }
 
@@ -66,7 +78,7 @@ class MbitTool
                     //TODO: Better Handling
                     recordDef = new RecordDefinition();
                 var fields = recordDef.Fields;
-                
+
                 //
                 // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
                 // {
@@ -76,17 +88,21 @@ class MbitTool
 
                 ProcessRecord(trimString, fields);
 
-                Console.Write("Would you like to save the results? (none/txt/csv): ");
+                Console.Write(
+                    "Would you like to save the results? (none/txt/csv): ");
                 string outputFormat = Console.ReadLine()?.Trim().ToLower();
+                //TODO: Finish validation here
                 if (outputFormat is "txt" or "csv")
                 {
-                    SaveSingleRecordOutput(trimString, recordType, fields, recordDef, outputFormat);
+                    SaveSingleRecordOutput(trimString, recordType, fields
+                        , recordDef, outputFormat);
                 }
             }
 
             Console.Write("Do you want to check another item? (yes/no): ");
             string response = Console.ReadLine()!.ToLower();
             continueChecking = response == "yes" || response == "y";
+            //TODO: Add validation/retry here
         }
 
         Console.WriteLine("Goodbye!");
@@ -103,10 +119,13 @@ class MbitTool
         return true;
     }
 
-    private static void ProcessRecord(string input, List<FieldDefinition> fields)
+    private static void ProcessRecord(string input
+        , List<FieldDefinition> fields)
     {
         var sectionLengths = fields.Select(f => f.Length).ToList();
-        var sections = StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+        var sections =
+            StringDivider.DivideStringIntoVariableSections(input
+                , sectionLengths);
 
         Console.WriteLine("\nProcessed MBIT Data:");
 
@@ -116,19 +135,26 @@ class MbitTool
             string label = field.DisplayName ?? field.Name;
             string rawValue = sections[i];
             string requiredMark = field.IsRequired ? "REQUIRED" : "";
-            Console.WriteLine($"{label}({field.Length}) {requiredMark}: {rawValue}");
+            string validValue = string.IsNullOrWhiteSpace(field.Valid) ? "" : $" ({field.Valid})";
+            Console.WriteLine(
+                $"{label}({field.Length}) {requiredMark}: {rawValue} {validValue}");
         }
     }
 
-    private static void SaveSingleRecordOutput(string input, string recordType, List<FieldDefinition> fields, RecordDefinition record, string outputFormat)
+    private static void SaveSingleRecordOutput(string input, string recordType
+        , List<FieldDefinition> fields, RecordDefinition record
+        , string outputFormat)
     {
         var sectionLengths = fields.Select(f => f.Length).ToList();
-        var sections = StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+        var sections =
+            StringDivider.DivideStringIntoVariableSections(input
+                , sectionLengths);
 
         var txtOutput = new StringBuilder();
         var csvOutput = new StringBuilder();
         csvOutput.AppendLine(record.Description);
-        csvOutput.AppendLine("RecordNumber,FieldName,Length,Required,Value");
+        csvOutput.AppendLine(
+            "RecordNumber,FieldName,Length,Required,Value,Valid");
 
         for (int i = 0; i < fields.Count; i++)
         {
@@ -136,10 +162,13 @@ class MbitTool
             string label = field.DisplayName ?? field.Name;
             string value = sections[i];
             string requiredMark = field.IsRequired ? "REQUIRED" : "";
+            string validValue = string.IsNullOrWhiteSpace(field.Valid) ? "" : $" ({field.Valid})";
 
-            string lineTxt = $"{label} ({field.Length}) {requiredMark}: {value}";
+            string lineTxt =
+                $"{label} ({field.Length}) {requiredMark}: {value} {validValue}";
             txtOutput.AppendLine(lineTxt);
-            csvOutput.AppendLine($"1,{label},{field.Length},{field.IsRequired},{value}");
+            csvOutput.AppendLine(
+                $"1,{label},{field.Length},{field.IsRequired},{value},{validValue}");
         }
 
         if (outputFormat == "txt")
@@ -154,16 +183,19 @@ class MbitTool
         }
     }
 
-    private static void ProcessFileWithOutputOption(string filePath, string selectedVersion, MbitDefinitions allDefinitions)
+    private static void ProcessFileWithOutputOption(string filePath
+        , string selectedVersion, MbitDefinitions allDefinitions)
     {
         Console.Write("Would you like to save the results? (none/txt/csv): ");
         string outputFormat = Console.ReadLine()?.Trim().ToLower();
+        //TODO: Again, validate entry
 
         var txtOutput = new StringBuilder();
         var csvOutput = new StringBuilder();
         csvOutput.AppendLine("RecordNumber,FieldName,Length,Required,Value");
 
-        var expectedLength = allDefinitions.Versions[selectedVersion].Record_Length;
+        var expectedLength =
+            allDefinitions.Versions[selectedVersion].Record_Length;
         var lines = File.ReadAllLines(filePath);
         int recordCounter = 0;
 
@@ -179,16 +211,19 @@ class MbitTool
 
             if (trimmed.Length != expectedLength)
             {
-                Console.WriteLine($"Line has invalid length: {trimmed.Length} (expected {expectedLength})");
+                Console.WriteLine(
+                    $"Line has invalid length: {trimmed.Length} (expected {expectedLength})");
                 continue;
             }
 
             var recordType = trimmed.Substring(59, 2);
-           
-            Console.WriteLine($"\nRecord {++recordCounter} — Type: {recordType}");
+
+            Console.WriteLine(
+                $"\nRecord {++recordCounter} — Type: {recordType}");
             if (!allDefinitions.Versions.TryGetValue(selectedVersion
                     , out var versionDef))
                 //TODO: Better Handling
+                //TODO: Add in saved record/field:Value string creation
                 versionDef = new VersionDefinition();
 
             if (!versionDef.Record_Types.TryGetValue(recordType
@@ -196,7 +231,7 @@ class MbitTool
                 //TODO: Better Handling
                 recordDef = new RecordDefinition();
             var fields = recordDef.Fields;
-            
+
             // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
             // {
             //     Console.WriteLine($"No definition found for record type {recordType}.");
@@ -204,27 +239,33 @@ class MbitTool
             // }
 
             var sectionLengths = fields.Select(f => f.Length).ToList();
-            var sections = StringDivider.DivideStringIntoVariableSections(trimmed, sectionLengths);
-            
-            txtOutput.AppendLine($"Record {recordCounter} — {recordDef.Description}");
+            var sections =
+                StringDivider.DivideStringIntoVariableSections(trimmed
+                    , sectionLengths);
+
+            txtOutput.AppendLine(
+                $"Record {recordCounter} — {recordDef.Description}");
             for (int i = 0; i < fields.Count; i++)
             {
                 var field = fields[i];
                 string label = field.DisplayName ?? field.Name;
                 string value = sections[i];
                 string requiredMark = field.IsRequired ? "REQUIRED" : "";
-                string lineTxt = $"{label} ({field.Length}) {requiredMark}: {value}";
+                string lineTxt =
+                    $"{label} ({field.Length}) {requiredMark}: {value}";
                 Console.WriteLine(lineTxt);
                 // Don't need to do both here, instead collect all the information then in the switch
                 // on outputFormat
                 txtOutput.AppendLine(lineTxt);
 
-                csvOutput.AppendLine($"{recordCounter},{label},{field.Length},{field.IsRequired},{value}");
+                csvOutput.AppendLine(
+                    $"{recordCounter},{label},{field.Length},{field.IsRequired},{value}");
             }
+
             /*
              * if (output == db)
              * {
-             *  
+             *
              * }
              */
             txtOutput.AppendLine(); // spacing between records
@@ -242,8 +283,9 @@ class MbitTool
         }
         else if (outputFormat == "db")
         {
-            
+
         }
+        
     }
 
     public static class MbitDefinitionLoader
@@ -261,7 +303,9 @@ class MbitTool
             {
                 var version = Path.GetFileNameWithoutExtension(file);
                 var json = File.ReadAllText(file);
-                var versionDef = JsonSerializer.Deserialize<VersionDefinition>(json, jsonOptions);
+                var versionDef =
+                    JsonSerializer.Deserialize<VersionDefinition>(json
+                        , jsonOptions);
 
                 if (versionDef != null)
                     definitions.Versions[version] = versionDef;
@@ -271,3 +315,4 @@ class MbitTool
         }
     }
 }
+

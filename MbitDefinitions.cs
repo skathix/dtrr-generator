@@ -39,6 +39,5 @@ public class FieldDefinition
     [JsonPropertyName("required")]
     public bool IsRequired { get; set; }
 
-    [JsonPropertyName("valid")]
-    public string Valid { get; set; }
+    [JsonPropertyName("valid")] public string Valid { get; set; } = "";
 }

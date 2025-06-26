@@ -8,7 +8,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits - 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -64,7 +64,7 @@
           "name": "election_type",
           "display_name": "Election Type",
           "length": 1,
-          "valid":"A, C, D, E, F, I, J, L, M, N, O, P, Q, R, S, T, U, V, W, X, Z or blank",
+          "valid":"A C D E F I J L M N O P Q R S T U V W X Z or blank",
           "required": true
         },
         {
@@ -78,7 +78,7 @@
           "name": "application_date",
           "display_name": "Application Date (YYYYMMDD)",
           "length": 8,
-          "valid" : " > 1966, < current year plus 1, < Effective date",
+          "valid" : " > 1966 < current year plus 1 < Effective date",
           "required": true
         },
         {
@@ -99,7 +99,7 @@
           "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid" : "> 1966; < current year plus 1; first of the month",
+          "valid" : "> 1966 < current year plus 1 first of the month",
           "required": true
         },
         {
@@ -120,14 +120,14 @@
           "name": "esrd_override",
           "display_name": "ESRD Override",
           "length": 1,
-          "valid": "1-9, A-F or blank",
+          "valid": "1-9 A-F or blank",
           "required": true
         },
         {
           "name": "premium_withhold",
           "display_name": "Premium Withhold Parts C-D",
           "length": 1,
-          "valid": "D, S, R, O, or N.",
+          "valid": "D S R O or N.",
           "required": true
         },
         {
@@ -148,14 +148,14 @@
           "name": "credible_coverage_flag",
           "display_name": "Credible Coverage Flag",
           "length": 1,
-          "valid": "Y, N or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "uncovered_months",
           "display_name": "# of Uncovered Months",
           "length": 3,
-          "valid": "Number of months, or blank",
+          "valid": "Number of months or blank",
           "required": true
         },
         {
@@ -169,7 +169,7 @@
           "name": "part_d_opt_out",
           "display_name": "Part D Opt Out Flag",
           "length": 1,
-          "valid": "Y, N, or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
@@ -189,7 +189,7 @@
         {
           "name": "filler5",
           "display_name": "Filler",
-          "valid": "Dash",
+          "valid": "Blanks",
           "length": 21,
           "required": false
         },
@@ -197,14 +197,14 @@
           "name": "preferred_language",
           "display_name": "Preferred Language (not English)",
           "length": 1,
-          "valid": "S, O, or blank",
+          "valid": "S O or blank",
           "required": false
         },
         {
           "name": "accessible_format",
           "display_name": "Accessible Format",
           "length": 1,
-          "valid": "B, L, A, D, or blank",
+          "valid": "B L A D, or blank",
           "required": false
         },
         {
@@ -218,7 +218,7 @@
           "name": "secondary_insurance",
           "display_name": "Secondary Drug Insurance Flag",
           "length": 1,
-          "valid": "Y,N, or blank",
+          "valid": "Y N or blank",
           "required": true
         },
         {
@@ -239,7 +239,7 @@
           "name": "enrollment_source",
           "display_name": "Enrollment Source Code",
           "length": 1,
-          "valid": "B, E, F, G, H, J, K, L, or blank",
+          "valid": "B E F G H J K L or blank",
           "required": true
         },
         {
@@ -281,21 +281,21 @@
           "name": "part_d_pcn",
           "display_name": "Part D Rx PCN",
           "length": 10,
-          "valid": "Left justified alphanumeric - no internal spaces, or blank",
+          "valid": "Left justified alphanumeric - no internal spaces or blank",
           "required": false
         },
         {
           "name": "part_d_group",
           "display_name": "Part D Rx Group",
           "length": 15,
-          "valid":"Left justified alphanumeric - no internal spaces, or blank",
+          "valid":"Left justified alphanumeric - no internal spaces or blank",
           "required": false
         },
         {
           "name": "part_d_id",
           "display_name": "Part D Rx Id",
           "length": 20,
-          "valid":"Left justified alphanumeric - no internal spaces, or blank",
+          "valid":"Left justified alphanumeric - no internal spaces or blank",
           "required": true
         },
         {
@@ -365,14 +365,14 @@
           "name": "npn",
           "display_name": "National Producer Number",
           "length": 10,
-          "valid": "Numeric, not starting with 0",
+          "valid": "Numeric not starting with 0",
           "required": true
         },
         {
           "name": "oec_flag",
           "display_name": "OEC Flag",
           "length": 1,
-          "valid": "y or N reject with TRC 421 if other",
+          "valid": "Y or N reject with TRC 421 if other",
           "required": true
         },
         {
@@ -386,21 +386,21 @@
           "name": "oec_number",
           "display_name": "OEC Application #",
           "length": 12,
-          "valid": "12 bytes or blank reject with TRC 421.Values (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F)",
+          "valid": "12 bytes or blank reject with TRC 421.Values (0 1 2 3 4 5 6 7 8 9 A B C D E F)",
           "required": false
         },
         {
           "name": "phone_number",
           "display_name": "Beneficiary Phone #",
           "length": 10,
-          "valid": "Digits, not beginning with 0, fail TRC 419",
+          "valid": "Digits not beginning with 0 fail TRC 419",
           "required": false
         },
         {
           "name": "email_address",
           "display_name": "Beneficiary Email address",
           "length": 74,
-          "valid": "At least one @ and .; no underscore after the @; Can be alpha, -,.,', or _; fail is TRC 420",
+          "valid": "At least one @ and .; no underscore after the @; Can be alphanumeric - . ' or _ fail is TRC 420",
           "required": true
         },
         {
@@ -420,7 +420,7 @@
         "name": "beneficiary_id",
         "display_name": "Beneficiary Identifier",
         "length": 12,
-        "valid": "MBI: 11 digits, 2, 5, 8 and 9 alpha; one space after",
+        "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
         "required": true
       },
       {
@@ -455,7 +455,7 @@
         "name": "birthdate",
         "display_name": "Birthdate (YYYYMMDD)",
         "length": 8,
-        "valid": "> 1870, <= current year",
+        "valid": "> 1870 <= current year",
         "required": true
       },
       {
@@ -511,14 +511,14 @@
         "name": "preferred_language",
         "display_name": "Preferred Language (not English)",
         "length": 1,
-        "valid": "S, O, X, or Blank",
+        "valid": "S O X or Blank",
         "required": false
       },
       {
         "name": "accessible_format",
         "display_name": "Accessible Format",
         "length": 1,
-        "valid": "B, L, A, D, X or Blank",
+        "valid": "B L A D X or Blank",
         "required": false
       },
       {
@@ -532,7 +532,7 @@
         "name": "npn",
         "display_name": "National Producer Number",
         "length": 10,
-        "valid": "Numerci, cant begin with 0",
+        "valid": "Numeric cant begin with 0",
         "required": false
       },{
         "name": "relation_agent",
@@ -601,35 +601,35 @@
         "name": "oec_flag",
         "display_name": "OEC Flag",
         "length": 1,
-        "valid": "y or N reject with TRC 421 if other",
+        "valid": "Y or N reject with TRC 421 if other",
         "required": true
       },
       {
         "name": "oec_app_date",
         "display_name": "OEC Application Date (YYYYMMDD)",
         "length": 8,
-        "valid": ">= 20260101, two fails",
+        "valid": ">= 20260101 two fails",
         "required": true
       },
       {
         "name": "oec_number",
         "display_name": "OEC Application #",
         "length": 12,
-        "valid": "12 bytes or blank reject with TRC 421.Values (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F)",
+        "valid": "12 bytes or blank reject with TRC 421.Values (0 1 2 3 4 5 6 7 8 9 A B C D E F)",
         "required": false
       },
       {
         "name": "phone_number",
         "display_name": "Beneficiary Phone #",
         "length": 10,
-        "valid": "Digits, not beginning with 0, fail TRC 419",
+        "valid": "Digits not beginning with 0 fail TRC 419",
         "required": false
       },
       {
         "name": "email_address",
         "display_name": "Beneficiary Email address",
         "length": 74,
-        "valid": "At least one @ and .; no underscore after the @; Can be alpha, -,.,', or _; fail is TRC 420",
+        "valid": "At least one @ and .; no underscore after the @; Can be alphanumeric - . ' or _; fail is TRC 420",
         "required": true
       },
       {
