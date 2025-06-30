@@ -1,0 +1,49 @@
+﻿{
+  "dtrr_P_field_names": [
+    {
+      "ClaimNumber": "beneficiary_id"
+    },
+    {
+      "LastName": "surname"
+    },
+    {
+      "FirstName": "first_name"
+    },
+    {
+      "MI": "M. Initial"
+    },
+    {
+      "GenderCode": "Gender"
+    },
+    {
+      "DateOfBirth": "Birthdate (YYYYMMDD)"
+    },
+    {
+      "RecordType": "P"
+    },
+    {
+      "ContractNumber": "Contract#"
+    },
+    {
+      "Plan Transaction Text": ""
+    },
+    {
+      "Transaction Status Flag": "",
+      "Comment": "Should be A or R"
+    },
+    {
+      "SystemAssignedTransactionTrackingId": "",
+      "comment": "Created by user"
+    },
+    {
+      "PlanAssignedTransactionTrackingId": "Plan Assigned Tracking Id"
+    },
+    {
+      "LoadDate": "",
+      "Comment": "Last DTRR+1 calculation"
+    },
+    {
+      "Status": "Unprocessed"
+    }
+  ]
+}
