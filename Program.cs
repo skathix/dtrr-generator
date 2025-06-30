@@ -51,6 +51,7 @@ class MbitTool
             {
                 Console.WriteLine("Paste a single full MBIT here:");
                 string inputString = Console.ReadLine();
+                //TODO - Do we evn need this, once we remove the possibility of end-of-record characters?
                 var trimmedString = inputString.TrimStart();
                 //TODO: Check for end-of-record characters, remove those
                 //trimmedString will allow for an easier division without the
@@ -251,8 +252,10 @@ class MbitTool
                 string label = field.DisplayName ?? field.Name;
                 string value = sections[i];
                 string requiredMark = field.IsRequired ? "REQUIRED" : "";
+                string validValue = string.IsNullOrWhiteSpace(field.Valid) ? "" : $" ({field.Valid})";
+
                 string lineTxt =
-                    $"{label} ({field.Length}) {requiredMark}: {value}";
+                    $"{label} ({field.Length}) {requiredMark}: {value} {validValue}";
                 Console.WriteLine(lineTxt);
                 // Don't need to do both here, instead collect all the information then in the switch
                 // on outputFormat
