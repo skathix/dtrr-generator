@@ -179,6 +179,8 @@ class MbitTool
         }
         else if (outputFormat == "csv")
         {
+           //Figure out why the validation information isn't going into the csv
+           
             File.WriteAllText("output_single.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_single.csv");
         }
