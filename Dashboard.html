@@ -4,59 +4,117 @@
     <meta charset="UTF-8">
     <title>Tools Dashboard</title>
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
+        .container {
+            display: flex;
+            flex-flow: row wrap;
             gap: 10px;
             padding: 10px;
         }
-        .grid-container > div {
-            background-color: #f1f1f1;
+
+        .container > div {
+            background-color: transparent;
             color: #000;
-            padding: 10px;
-            font-size: 30px;
-            text-align: center;
+            
+        }
+
+        .phase {
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .line-break {
+            background-color: transparent;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 <h1>MBIT File Parser Dashboard</h1>
 
-Update 06-04-2025
+Newest update 07-04-2025
 <h2>Project Overview</h2>
 
 This project involves breaking down and validating the different MBIT record versions,
 their transaction formats, and field rules.
 <h2>Phase Outline</h2>
-<div class="grid-container">
-<div> Phase 1 - about 90% manual entry</div>
+<div class="container">
+    <div class="phase"> Phase 1</div>
+    <div> about 90% manual entry</div>
     <div>
-Converting version definitions into structured JSON, including required field flags, 
-    length checks, and format requirements.</div>
-<div>
-    <div class="grid-container">
-        <div>Progress</div>
-<div>Section	Status	Completed	Total	% Done
-JSON Split	✅ Complete	26	26	100%
-Required Fields Review	🟡 In Progress	8	26	31%
-Format Length Verification	🟡 In Progress	6	26	23%
-    Output Formatting (print/csv)	🔜 Not Started	0	2	0%</div>
-
-        <div class="grid-container">
-            <div>Overall Completion: ~51%
-📌 Tracking per version file to reduce maintenance load.
-📅 Timeline & Estimates
-Task	Est. Time	Start Date	Status
-Split JSON to per-record files	1.5 days	✅ Done	Complete
-Add validation rules	3 days	🟡 Ongoing	~1 day in
-Add output formatter	2 days	🔜 Planned	Not started
-Historical version parsing	1.5 days	🔜 Planned	Not started
-
-            </div>
-        </div>
+        Converting version definitions into structured JSON.
+    </div>
+    <div class="line-break"></div>
+    <div class="phase"> Phase 2</div>
+    <div> about 90% manual entry</div>
+    <div>
+        Validate each entry for correct format and content
+    </div>
+    <div class="line-break"></div>
+    <div class="phase"> Phase 3</div>
+    <div> about 80% manual entry</div>
+    <div>
+        Present information in DTRR order for easier entry
     </div>
 </div>
+
+<h2>Progress</h2>
+<div class="container">
+    <div class="phase">
+        JSON Split per version
+    </div>
+    <div>Complete</div>
+    <div>100%</div>
+
+
+    <div class="line-break"></div>
+    <div class="phase">
+        Required Fields
+    </div>
+    <div>Review In Progress</div>
+    <div>31%</div>
+
+    <div class="line-break"></div>
+    <div class="phase">Format Length Verification</div>
+    <div> In Progress</div>
+    <div>23%</div>
+
+    <div class="line-break"></div>
+
+    <div class="phase">Output Formatting (print/csv)</div>
+    <div> In Progress</div>
+    <div>40%</div>
 </div>
+</div>
+<h2>Overall Completion: ~51%</h2>
+<div class="container">
+    <div class="phase">
+        Timeline & Estimates
+    </div>
+    <div class="line-break"></div>
+    <div>Split JSON to per-record files
+    </div>
+    <div>1.5 days</div>
+    <div>Complete</div>
+    <div class="line-break"></div>
+    <div>Add validation rules
+    </div>
+    <div>3 days</div>
+    <div>1 day in</div>
+    <div class="line-break"></div>
+    <div>
+        Add output formatter
+    </div>
+    <div>2 days</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <div>Historical version parsing
+    </div>
+    <div>1.5 days</div>
+    <div>Not started
+    </div>
+    
+</div>
+
 
 </body>
 </html>
