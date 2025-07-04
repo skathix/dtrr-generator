@@ -14,17 +14,20 @@
         .container > div {
             background-color: transparent;
             color: #000;
-            
-        }
 
-        .phase {
-            align-items: flex-start;
-            justify-content: space-between;
         }
 
         .line-break {
             background-color: transparent;
             width: 100%;
+        }
+
+        .item1 {
+            flex-basis: 20em;
+        }
+
+        .item2 {
+            flex-basis: 10em;
         }
     </style>
 </head>
@@ -32,87 +35,144 @@
 <h1>MBIT File Parser Dashboard</h1>
 
 Newest update 07-04-2025
-<h2>Project Overview</h2>
+<h2>Overall Completion: ~21%</h2>
+<h3>Project Overview</h3>
+
 
 This project involves breaking down and validating the different MBIT record versions,
 their transaction formats, and field rules.
-<h2>Phase Outline</h2>
+<h3>Phase Outline</h3>
 <div class="container">
-    <div class="phase"> Phase 1</div>
-    <div> about 90% manual entry</div>
-    <div>
-        Converting version definitions into structured JSON.
+    <div class="item1"> Phase 1 Enter current file formats, and known future versions</div>
+    <div class="item2"> 100% manual entry</div>
+    <div><b>Version 18.0 </b>
+        <br>16/16 complete
+        <br>
+        <b>Version 18.1</b>
+        <br>17/17 complete
+        <br>
+        <b>Version 18.2</b>
+        <br>17/17 complete
+        <br>
+        <b>Version 18.3</b>
+        <br>17/17 complete
+        <br>
+        <b>Unknown Version 2026</b>
+        <br>2/? complete
     </div>
     <div class="line-break"></div>
-    <div class="phase"> Phase 2</div>
-    <div> about 90% manual entry</div>
-    <div>
-        Validate each entry for correct format and content
-    </div>
+    <div class="item1">Phase 2: Validate each entry for correct format, content, and position</div>
+    <div class="item2">100% manual entry</div>
+    <div>In Process</div>
+
     <div class="line-break"></div>
-    <div class="phase"> Phase 3</div>
-    <div> about 80% manual entry</div>
-    <div>
-        Present information in DTRR order for easier entry
-    </div>
+    <div class="item1">Phase 3: INSERT or form to enter basic DTRR/DTRR Type P information</div>
+    <div class="item2">80% manual entry</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <div class="item1">Phase 4: INSERT or form to enter informational DTRR information</div>
+    <div class="item2">10% manual entry</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <div class="item1">Phase 5: Interface to improve UX</div>
+    <div class="item2">8% manual entry</div>
+    <div>Not started</div>
+
 </div>
 
-<h2>Progress</h2>
+<h3>Progress</h3>
 <div class="container">
-    <div class="phase">
-        JSON Split per version
+    <div class="item1">
+        JSON Split per included version
     </div>
-    <div>Complete</div>
+    <div class="item2">Complete</div>
     <div>100%</div>
 
+    <div class="line-break"></div>
+    <div class="item1">Format Length Verification</div>
+    <div class="item2">Complete</div>
+    <div>100%</div>
 
     <div class="line-break"></div>
-    <div class="phase">
-        Required Fields
-    </div>
-    <div>Review In Progress</div>
+    <div class="item1">Required Fields</div>
+    <div class="item2">In Process</div>
     <div>31%</div>
 
     <div class="line-break"></div>
-    <div class="phase">Format Length Verification</div>
-    <div> In Progress</div>
-    <div>23%</div>
+    <div class="item1">Format Content Verification</div>
+    <div class="item2">In Progress</div>
+    <div>5%</div>
 
     <div class="line-break"></div>
 
-    <div class="phase">Output Formatting (print/csv)</div>
-    <div> In Progress</div>
+    <div class="item1">Output Formatting (print/csv)</div>
+    <div class="item2"> In Progress</div>
     <div>40%</div>
 </div>
-</div>
-<h2>Overall Completion: ~51%</h2>
+
+
+<p></p>
+<h3>Timeline & Estimates</h3>
 <div class="container">
-    <div class="phase">
-        Timeline & Estimates
-    </div>
+    <h3>Phase 1</h3>
     <div class="line-break"></div>
-    <div>Split JSON to per-record files
+    <div class="item1">Split JSON to per-record files
     </div>
-    <div>1.5 days</div>
+    <div class="item2">16 hours</div>
     <div>Complete</div>
     <div class="line-break"></div>
-    <div>Add validation rules
+    <div class="item1">Historical version parsing
     </div>
-    <div>3 days</div>
-    <div>1 day in</div>
+    <div class="item2">16 hours</div>
+    <div>Complete</div>
     <div class="line-break"></div>
-    <div>
-        Add output formatter
+    <div class="item1">
+    Add output formatter (txt/csv)
     </div>
-    <div>2 days</div>
+    <div class="item2">2 days</div>
+    <div>Complete</div>
+    <div class="line-break"></div>
+    <h3>Phase 2</h3>
+    <div class="line-break"></div>
+    <div class="item1">Add formatting rules
+    </div>
+    <div class="item2">64 hours</div>
+    <div>8 hours completed</div>
+    <div class="line-break"></div>
+    <div class="item1">Add validation rules
+    </div>
+    <div class="item2">64 hours</div>
+    <div>8 hours completed</div>
+    <div class="line-break"></div>
+    <h3>Phase 3</h3>
+    <div class="line-break"></div>
+    <div class="item1">TRC Responses and short names
+    </div>
+    <div class="item2">150 hours</div>
     <div>Not started</div>
     <div class="line-break"></div>
-    <div>Historical version parsing
+    <div class="item1">MBIT to DTRR entry (SQL or UI form)
     </div>
-    <div>1.5 days</div>
-    <div>Not started
+    <div class="item2">150 hours</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <div class="item1">MBIT to DTRR Type P entry (SQL or UI form)
     </div>
-    
+    <div class="item2">150 hours</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <h3> Phase 4</h3>
+    <div class="line-break"></div>
+    <div class="item1">Additional TRC responses for Informational entries
+    </div>
+    <div class="item2">150 hours</div>
+    <div>Not started</div>
+    <div class="line-break"></div>
+    <div class="item1">Informational DTRR entry (SQL or UI form)
+    </div>
+    <div class="item2">150 hours</div>
+    <div>Not started</div>
+
 </div>
 
 
