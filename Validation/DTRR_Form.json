@@ -2,7 +2,7 @@
   "dtrr_field_names": [
     {
       "ClaimNumber": "beneficiary_id",
-      "validation" : "^\d[A-Za-z]\d\d[A-Za-z]\d\d[A-Za-z]{2}\d$"
+      "validation" : ""
     },
     {
       "LastName": "surname"
