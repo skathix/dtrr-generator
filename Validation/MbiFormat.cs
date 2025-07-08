@@ -4,22 +4,18 @@ namespace Tools.Validation;
 
 public class MbiFormat
 {
-    private bool MbiCheck(string beneficiary_id)
+    private void MbiCheck(string beneficiary_id)
     {
-        try
-        {
-            beneficiary_id.Length = 12;
+       
             var regex = @"^\d[A-Za-z]\d\d[A-Za-z]\d\d[A-Za-z]{2}\d$";
-            var match = Regex.Match(beneficiary_id, regex, RegexOptions.IgnoreCase);
-
+            var match = Regex.Match(beneficiary_id, regex
+                , RegexOptions.IgnoreCase);
             if (!match.Success)
             {
-                return false;
+                Console.WriteLine("MBI format: you would get a TCR 007 - Reject for this");
             }
-        }
-        catch
-        {
-            return false;
-        }
+
+            Console.WriteLine(
+                "POTENTIAL MBI not found: you would get a TCR 008 - Reject for this");
     }
 }
