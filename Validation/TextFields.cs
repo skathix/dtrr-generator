@@ -18,6 +18,6 @@ public class SexCodeCheck
     private void SexCheck(string sexCode)
     {
         //ternary?
-        //var checkSex= (sexCode = 'M' ||sexCode ='F')? Console.WriteLine("this Value is correct"):Console.WriteLine(This value will be set to '0' - no fail or reject");
+        //var checkSex= (sexCode = 'M' ||sexCode ='F')? Console.WriteLine("this Value is correct"):Console.WriteLine(This value will be set to '0' - no fail or reject"));
     }
 }
