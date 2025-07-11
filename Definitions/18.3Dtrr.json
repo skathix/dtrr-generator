@@ -1,0 +1,620 @@
+﻿{
+  "start_date": "2025-06-30",
+  "record_length": 500,
+  "record_types": {
+    "61": {
+      "description": "Enrollment Transaction DTRR (61)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex Code",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "1 2 or 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "record type",
+          "display_name": "Record Type",
+          "length": 1,
+          "valid": "T",
+          "required": true
+        },
+        {
+          "name": "contract Number",
+          "display_name": "Contract Number",
+          "length": 5,
+          "valid": "Plan Contract number",
+          "required": true
+        },
+        {
+          "name": "State Code",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "State Code",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "CountyCode",,
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "DisabilityIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "HospiceIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "InstitutionalNHCHCBSIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ESRDIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "TransactionReplyCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "TransactionTypeCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EntitlementTypeCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EffectiveDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "WorkingAgeIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true,
+          "Comment": "sent as a 1"
+        },
+        {
+          "name": "PlanBenefitPackageId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "TransactionDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "UIInitiatedChangeFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "VariableData",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "DistrictOfficeCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PrevPartDContractAndPBP",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SourceId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PriorPlanBenefitPackageId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ApplicationDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "UIUserOrganizationDesignation",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "OutOfAreaFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SegmentNumber",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartCBeneficiaryPremium",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDBeneficiaryPremium",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ElectionTypeCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EnrollmentSourceCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDOptOutFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PtsCAndDPremiumWithholdOpt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "CumulativeNoOfUncoverdMonths",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "CreditableCoverageFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EmployerSubsidyOverrideFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ProcessingTimestamp",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EndDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SubmittedNoOfUncoveredMonths",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SecondaryDrugInsuranceFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SecondaryRxId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SecondaryRxGroup",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EGHP",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDLowIncomePremSubsidyLvl",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LowIncomeCopayCategory",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LowIncomePeriodEffDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PtDLateEnrlPenaltyAmt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PtDLateEnrlPenaltyWaivedAmt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PtDLateEnrlPenaltySubsidyAmt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LowIncomePtDPremiumSubsidyAmt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDRxBIN",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDRxPCN",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDRxGroup",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "PartDRxId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SecondaryRxBIN",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SecondaryRxPCN",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "DeMinimisDifferentialAmt",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "MSPStatusFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LowIncomePeriodEndDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LowIncomeSubsidySrceCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "EnrolleeTypeFlagPBPLevel",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ApplicationDateIndicator",:,
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "TRCShortName",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "DisenrollmentReasonCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "MMPOptOutFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "CleanupId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "POSDrugEditUpdateDeleteFlag",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "POSDrugEditStatus",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "POSDrugEditClass",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "POSDrugEditCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "NotificationDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ImplementationDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "TerminationDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "HospiceProviderNumber",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ICModelTypeIndicator",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ICModelEndDateReasonCode",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "ICModelBenefitStatus",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "UpdtMedicaidStatForCoummunityRAFBenef",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "SystemAssignedTransactionTrackingId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true,
+          "comment": "Created by user"
+        },
+        {
+          "name": "PlanAssignedTransactionTrackingId",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true
+        },
+        {
+          "name": "LoadDate",
+          "display_name": "State Code",
+          "length": 2,
+          "valid": "State Code number",
+          "required": true,
+          "Comment": "Last DTRR+1 calculation"
+        },
+        {
+          "name": "Status",
+          "valid": "Unprocessed"
+        }
+      ]
+    }
+  }
+}
