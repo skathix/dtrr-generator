@@ -69,431 +69,458 @@
           "required": true
         },
         {
-          "name": "State Code",
-          "display_name": "State Code",
+          "name": "CountyCode",
+          "display_name": "County Code",
           "length": 2,
-          "valid": "State Code number",
-          "required": true
-        },
-        {
-          "name": "CountyCode",,
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "valid": "County Code number",
           "required": true
         },
         {
           "name": "DisabilityIndicator",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Disability Indicator",
+          "length": 1,
+          "valid": "0 1 2 3 or blank",
           "required": true
         },
         {
           "name": "HospiceIndicator",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Hospice Indicator",
+          "length": 1,
+          "valid": "0 1 or blank",
           "required": true
         },
         {
           "name": "InstitutionalNHCHCBSIndicator",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Institutional/NHC/HCBS Indicator",
+          "length": 1,
+          "valid": "0 1 2 3 or blank",
           "required": true
         },
         {
           "name": "ESRDIndicator",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "ESRD Indicator",
+          "length": 1,
+          "valid": "0 1 or blank",
           "required": true
         },
         {
           "name": "TransactionReplyCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "TRC",
+          "length": 3,
+          "valid": "Any TRC",
           "required": true
         },
         {
           "name": "TransactionTypeCode",
-          "display_name": "State Code",
+          "display_name": "Transaction code",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "TC",
           "required": true
         },
         {
           "name": "EntitlementTypeCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Entitlement Type Code",
+          "length": 1,
+          "valid": "Y Z or space",
           "required": true
         },
         {
           "name": "EffectiveDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Effective Date",
+          "length": 8,
+          "valid": "Effective Date Depending on the TRC",
           "required": true
         },
         {
           "name": "WorkingAgeIndicator",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
-          "required": true,
-          "Comment": "sent as a 1"
+          "display_name": "Working age indicator",
+          "length": 1,
+          "valid": "Set as 1 here",
+          "required": true
         },
         {
           "name": "PlanBenefitPackageId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "PBP",
+          "length": 3,
+          "valid": "PBP number",
           "required": true
         },
         {
           "name": "TransactionDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Transaction date/Report generation date",
+          "length": 8,
+          "valid": "Valid date",
           "required": true
         },
         {
           "name": "UIInitiatedChangeFlag",
-          "display_name": "State Code",
+          "display_name": "UI Initiated Change",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "0 1 or blank",
           "required": true
         },
         {
           "name": "VariableData",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "TRC Data",
+          "length": 12,
+          "valid": "TRC dependent- longest length here",
           "required": true
         },
         {
           "name": "DistrictOfficeCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "District Office Code",
+          "length": 3,
+          "valid": "Only for TC 53 (obsolete?), otherwise blank",
           "required": true
         },
         {
           "name": "PrevPartDContractAndPBP",
-          "display_name": "State Code",
+          "display_name": "Previous Contract and PBP",
+          "length": 8,
+          "valid": "Previous Contract and PBP or blank",
+          "required": true
+        },
+        {
+          "name": "SEPReasonCode",
+          "display_name": "EP Reason Code",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "Code from SEP table - not in our DTRR?",
+          "required": true
+        },
+        {
+          "name": "Filler1",
+          "display_name": "Filler",
+          "length": 6,
+          "valid": "Blanks",
           "required": true
         },
         {
           "name": "SourceId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Source ID",
+          "length": 5,
+          "valid": "Transaction Source",
           "required": true
         },
         {
           "name": "PriorPlanBenefitPackageId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Prior PBP",
+          "length": 3,
+          "valid": "Valid PBP",
           "required": true
         },
         {
           "name": "ApplicationDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Application Date",
+          "length": 8,
+          "valid": "Valid date",
           "required": true
         },
         {
           "name": "UIUserOrganizationDesignation",
-          "display_name": "State Code",
+          "display_name": "UI USer ORg. Designation",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "01 02 03 or blank",
           "required": true
         },
         {
           "name": "OutOfAreaFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Out of Area Flag",
+          "length": 1,
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "SegmentNumber",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Segment Number",
+          "length": 3,
+          "valid": "Segment (000) or blanks",
           "required": true
         },
         {
           "name": "PartCBeneficiaryPremium",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part C Premium",
+          "length": 8,
+          "valid": "Valid part C Premium or spaces",
           "required": true
         },
         {
           "name": "PartDBeneficiaryPremium",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Permium",
+          "length": 8,
+          "valid": "Valid Part D Premium or spaces",
           "required": true
         },
         {
           "name": "ElectionTypeCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Election Type Code",
+          "length": 1,
+          "valid": "A C D F I J L M N O R S T U V W X Y or Z",
           "required": true
         },
         {
           "name": "EnrollmentSourceCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Enrollment Source Code",
+          "length": 1,
+          "valid": "A-L N or blank",
           "required": true
         },
         {
           "name": "PartDOptOutFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D opt Out",
+          "length": 1,
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "PtsCAndDPremiumWithholdOpt",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Premium Withholding",
+          "length": 1,
+          "valid": "D N R S or blank",
           "required": true
         },
         {
-          "name": "CumulativeNoOfUncoverdMonths",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "name": "CumulativeNoOfUncoveredMonths",
+          "display_name": "# of uncovered months- cumulative",
+          "length": 3,
+          "valid": "Entered as 000",
           "required": true
         },
         {
           "name": "CreditableCoverageFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Credible Coverage",
+          "length": 1,
+          "valid": "Y N A L R T U or blank",
           "required": true
         },
         {
           "name": "EmployerSubsidyOverrideFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Employer Subsidy Override",
+          "length": 1,
+          "valid": "Y or blank",
           "required": true
         },
         {
           "name": "ProcessingTimestamp",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Processing Timestamp",
+          "length": 15,
+          "valid": "HH.MM.SS.SSSSS Need to figure out how to get this from MBIT",
           "required": true
         },
         {
           "name": "EndDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "End Date",
+          "length": 8,
+          "valid": "End Date for certain TRCs",
           "required": true
         },
         {
           "name": "SubmittedNoOfUncoveredMonths",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Submitted # of uncovered months",
+          "length": 3,
+          "valid": "Numerals or blank",
+          "required": true
+        },
+        {
+          "name": "Ethnicity",
+          "display_name": "Ethnicity",
+          "length": 7,
+          "valid": "Standard rules for this option",
+          "required": true
+        },
+        {
+          "name": "PreferredLanguage",
+          "display_name": "Preferred language",
+          "length": 1,
+          "valid": "Standard rules and options",
+          "required": true
+        },
+        {
+          "name": "AccessibleFormat",
+          "display_name": "Accessible Format",
+          "length": 1,
+          "valid": "Standard rules and options",
           "required": true
         },
         {
           "name": "SecondaryDrugInsuranceFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Secondary Drug insurance",
+          "length": 1,
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "SecondaryRxId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Secondary Rx",
+          "length": 20,
+          "valid": "Taken from 61 72 or blank",
           "required": true
         },
         {
           "name": "SecondaryRxGroup",
           "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "length": 15,
+          "valid": "Taken from 61 72 or blank",
           "required": true
         },
         {
           "name": "EGHP",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "EGHP",
+          "length": 1,
+          "valid": "y or blank;  N for 74",
           "required": true
         },
         {
           "name": "PartDLowIncomePremSubsidyLvl",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "LIS level",
+          "length": 3,
+          "valid": "000 025 050 075 100 or blank",
           "required": true
         },
         {
           "name": "LowIncomeCopayCategory",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Low income co-pay",
+          "length": 1,
+          "valid": "0 1 2 3 4 5 or blank",
           "required": true
         },
         {
           "name": "LowIncomePeriodEffDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Low Income Effective Date",
+          "length": 8,
+          "valid": "Valid date - see PCUG",
           "required": true
         },
         {
           "name": "PtDLateEnrlPenaltyAmt",
           "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "length": 8,
+          "valid": "-9999.99 (!) or blank - see PCUG",
           "required": true
         },
         {
           "name": "PtDLateEnrlPenaltyWaivedAmt",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "PArt D LAte Enroll Waived amount",
+          "length": 8,
+          "valid": "-9999.99 (!) or blank - see PCUG",
           "required": true
         },
         {
           "name": "PtDLateEnrlPenaltySubsidyAmt",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Late Enroll Subsidy ",
+          "length": 8,
+          "valid": "-9999.99 (!) or blank - see PCUG",
           "required": true
         },
         {
           "name": "LowIncomePtDPremiumSubsidyAmt",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Low Income Part d Subsidy",
+          "length": 8,
+          "valid": "-9999.99 (!) or blank - see PCUG",
           "required": true
         },
         {
           "name": "PartDRxBIN",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Rx BIN",
+          "length": 6,
+          "valid": "Taken from 61 or 72; blank",
           "required": true
         },
         {
           "name": "PartDRxPCN",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Rx PCN",
+          "length": 10,
+          "valid": "From 61 or 72; blank",
           "required": true
         },
         {
           "name": "PartDRxGroup",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Rx Group",
+          "length": 15,
+          "valid": "Taken from 61 or 72; blank",
           "required": true
         },
         {
           "name": "PartDRxId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Part D Rx ID",
+          "length": 20,
+          "valid": "Member Number or blank",
           "required": true
         },
         {
           "name": "SecondaryRxBIN",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Secondary Rx BIN",
+          "length": 6,
+          "valid": "Taken from 61 or 72; blank",
           "required": true
         },
         {
           "name": "SecondaryRxPCN",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "State Codeecondary Rx PCN",
+          "length": 10,
+          "valid": "Taken from 61 or 72; blank",
           "required": true
         },
         {
           "name": "DeMinimisDifferentialAmt",
           "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "length": 8,
+          "valid": "-9999.99 (!) or blank - see PCUG",
           "required": true
         },
         {
           "name": "MSPStatusFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "MSP Status Flag",
+          "length": 1,
+          "valid": "P S N or blank",
           "required": true
         },
         {
           "name": "LowIncomePeriodEndDate",
           "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "length": 8,
+          "valid": "Valid date see PCUG",
           "required": true
         },
         {
           "name": "LowIncomeSubsidySrceCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Low Income Subsidy Source",
+          "length": 1,
+          "valid": "A D or blank",
           "required": true
         },
         {
           "name": "EnrolleeTypeFlagPBPLevel",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Enrollee PBP level",
+          "length": 1,
+          "valid": "C P Y or blank",
           "required": true
         },
         {
-          "name": "ApplicationDateIndicator",:,
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "name": "ApplicationDateIndicator",
+          "display_name": "Application Date Indicator",
+          "length": 1,
+          "valid": "Y or blank",
           "required": true
         },
         {
           "name": "TRCShortName",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "TRC Short Name",
+          "length": 15,
+          "valid": "TRC Short Name",
           "required": true
         },
         {
           "name": "DisenrollmentReasonCode",
-          "display_name": "State Code",
+          "display_name": "Disenrollment Reason",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "DRC",
           "required": true
         },
         {
           "name": "MMPOptOutFlag",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "MMP Passive Opt-out",
+          "length": 1,
+          "valid": "Y N or Blank",
           "required": true
         },
         {
