@@ -1,0 +1,95 @@
+﻿{
+  "start_date": "2025-06-30",
+  "record_length": 500,
+  "record_types": {
+    "TypeP": {
+      "description": "DTRR P",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex Code",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "1 2 or 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "record type",
+          "display_name": "Record Type",
+          "length": 1,
+          "valid": "P",
+          "required": true
+        },
+        {
+          "name": "contract Number",
+          "display_name": "Contract Number",
+          "length": 5,
+          "valid": "Plan Contract number",
+          "required": true
+        },
+        {
+          "name": "PlanTransactionText",
+          "display_name": "Sent Transaction",
+          "length": 300,
+          "valid": "MBIT",
+          "required": true
+        },
+        {
+          "name": "FillerEnd",
+          "display_name": "Filler",
+          "length": 126,
+          "valid": "Blanks",
+          "required": true
+        },
+        {
+          "name": "SystemAssignedTransactionTrackingId",
+          "display_name": "System Assigned Tracking #",
+          "length": 11,
+          "valid": "Created by user",
+          "required": true
+        },
+        {
+          "name": "PlanAssignedTransactionTrackingId",
+          "display_name": "Plan Assigned Tracking #",
+          "length": 15,
+          "valid": "Plan submitted batch input transaction tracking ID.",
+          "required": true
+        }
+      ]
+    }
+  }
+}

@@ -2,8 +2,8 @@
   "start_date": "2025-06-30",
   "record_length": 500,
   "record_types": {
-    "61": {
-      "description": "Enrollment Transaction DTRR (61)",
+    "DTRR": {
+      "description": "DTRR Transaction",
       "fields": [
         {
           "name": "beneficiary_id",
@@ -525,121 +525,233 @@
         },
         {
           "name": "CleanupId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Cleanup Id",
+          "length": 10,
+          "valid": "Cleanup Id from transaction or blanks",
           "required": true
         },
         {
           "name": "POSDrugEditUpdateDeleteFlag",
           "display_name": "State Code",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "A D U or blank - Now CARA (2019) may need a DB update if we have to do CARA",
           "required": true
         },
         {
           "name": "POSDrugEditStatus",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "POS Drug Edit Status",
+          "length": 1,
+          "valid": "Y N or blank",
           "required": true
         },
         {
           "name": "POSDrugEditClass",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Drug Class",
+          "length": 3,
+          "valid": "Drug class for 90 or spaces",
           "required": true
         },
         {
           "name": "POSDrugEditCode",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "POS Drug Edit Code",
+          "length": 3,
+          "valid": "3 digit drug code for 90 or blanks",
           "required": true
         },
         {
           "name": "NotificationDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "CARA Notification Date",
+          "length": 8,
+          "valid": "2019 change from POS Drug Edit Notification; Valid date format ",
           "required": true
         },
         {
           "name": "ImplementationDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "CARA Implementation Start",
+          "length": 8,
+          "valid": "2019 change from POS Drug Edit implementation; Valid date format ",
           "required": true
         },
         {
           "name": "TerminationDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "CARA Status Notification End",
+          "length": 8,
+          "valid": "2019 change from POS Drug Edit term date; Valid date format",
           "required": true
         },
         {
           "name": "HospiceProviderNumber",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Hospice Provider Number",
+          "length": 13,
+          "valid": "Hospice Provider #",
           "required": true
         },
         {
           "name": "ICModelTypeIndicator",
-          "display_name": "State Code",
+          "display_name": "Model Type Indicator",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "91; 01 02 or blanks",
           "required": true
         },
         {
           "name": "ICModelEndDateReasonCode",
-          "display_name": "State Code",
+          "display_name": "Model End Date Reason Code",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "91; 01 02 03 04 or blanks",
           "required": true
         },
         {
           "name": "ICModelBenefitStatus",
-          "display_name": "State Code",
+          "display_name": "Model Benefits Status",
           "length": 2,
-          "valid": "State Code number",
+          "valid": "91; 01 02 or blanks",
           "required": true
         },
         {
           "name": "UpdtMedicaidStatForCoummunityRAFBenef",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "Updated Medicaid Status for Community RAF beneficiary",
+          "length": 1,
+          "valid": "F P N",
+          "required": true
+        },
+        {
+          "name": "CaraStatusImpEndDate",
+          "display_name": "CARA Status Implementation End Date",
+          "length": 8,
+          "valid": "90; Valid date format",
+          "required": true,
+          "Commnet" : ""
+        },
+        {
+          "name": "PrescriberLimitation",
+          "display_name": "Prescriber Limitation",
+          "length": 1,
+          "valid": "90; Y N or blank",
+          "required": true
+        },
+        {
+          "name": "PharmacyLimitation",
+          "display_name": "Pharmacy Limitation",
+          "length": 1,
+          "valid": "90; Y N or blank",
+          "required": true
+        },
+        {
+          "name": "Race",
+          "display_name": "Race",
+          "length": 16,
+          "valid": "61 or 92; set as form left blank",
+          "required": true
+        },
+        {
+          "name": "FillerEnd",
+          "display_name": "Filler",
+          "length": 3,
+          "valid": "Blanks",
           "required": true
         },
         {
           "name": "SystemAssignedTransactionTrackingId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
-          "required": true,
-          "comment": "Created by user"
-        },
-        {
-          "name": "PlanAssignedTransactionTrackingId",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
+          "display_name": "System Assigned Tracking #",
+          "length": 11,
+          "valid": "Created by user",
           "required": true
         },
         {
-          "name": "LoadDate",
-          "display_name": "State Code",
-          "length": 2,
-          "valid": "State Code number",
-          "required": true,
-          "Comment": "Last DTRR+1 calculation"
+          "name": "PlanAssignedTransactionTrackingId",
+          "display_name": "Plan Assigned Tracking #",
+          "length": 15,
+          "valid": "Plan submitted batch input transaction tracking ID.",
+          "required": true
+        }        
+      ]
+    },
+    "TypeP": {
+      "description": "DTRR P",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
         },
         {
-          "name": "Status",
-          "valid": "Unprocessed"
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex Code",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "1 2 or 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "record type",
+          "display_name": "Record Type",
+          "length": 1,
+          "valid": "P",
+          "required": true
+        },
+        {
+          "name": "contract Number",
+          "display_name": "Contract Number",
+          "length": 5,
+          "valid": "Plan Contract number",
+          "required": true
+        },
+        {
+          "name": "PlanTransactionText",
+          "display_name": "Sent Transaction",
+          "length": 300,
+          "valid": "MBIT",
+          "required": true
+        },
+        {
+          "name": "FillerEnd",
+          "display_name": "Filler",
+          "length": 126,
+          "valid": "Blanks",
+          "required": true
+        },
+        {
+          "name": "SystemAssignedTransactionTrackingId",
+          "display_name": "System Assigned Tracking #",
+          "length": 11,
+          "valid": "Created by user",
+          "required": true
+        },
+        {
+          "name": "PlanAssignedTransactionTrackingId",
+          "display_name": "Plan Assigned Tracking #",
+          "length": 15,
+          "valid": "Plan submitted batch input transaction tracking ID.",
+          "required": true
         }
       ]
     }

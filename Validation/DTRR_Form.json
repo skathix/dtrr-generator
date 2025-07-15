@@ -255,11 +255,17 @@
       "PlanAssignedTransactionTrackingId": "Plan Assigned Tracking Id"
     },
     {
-      "LoadDate": "",
+      "comment": "these two are not received",
+      "name": "LoadDate",
+      "display_name": "State Code",
+      "length": 2,
+      "valid": "State Code number",
+      "required": true,
       "Comment": "Last DTRR+1 calculation"
     },
     {
-      "Status": "Unprocessed"
+      "name": "Status",
+      "valid": "Unprocessed"
     }
   ]
 }
