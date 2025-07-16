@@ -3,69 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Tools Dashboard</title>
-    <style>
-        .container {
-            display: flex;
-            flex-flow: row wrap;
-        }
-
-        .container > .complete {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: left;
-            background-color: lightseagreen;
-            width: 80%;
-        }
-
-        .container > .working {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: left;
-            background-color: palegoldenrod;
-            width: 80%;
-        }
-
-        .container > .notYet {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: left;
-            background-color: lightblue;
-            width: 80%;
-        }
-
-        .line-break {
-            background-color: transparent;
-            width: 100%;
-            height: 1em;
-        }
-
-        .item1 {
-            flex-basis: 35em;
-        }
-
-        .item2 {
-            flex-basis: 18em;
-        }
-
-        .item3 {
-            justify-content: left;
-        }
-
-        h3 {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="site.css">
 </head>
 <body>
 <h1>MBIT File Parser Dashboard</h1>
 
-Newest update 07-15-2025
+Newest update 07-16-2025
 <h2>Overall Completion: ~22%</h2>
 <h3>Project Overview</h3>
 
 
 This project involves breaking down and validating the different MBIT record versions,
-their transaction formats, and field rules.
+their transaction formats, and field rules. Also included are the DTRR records (both the transaction replies and the
+Type P records needed for local processing.
 <h3>Phase Outline</h3>
 <div class="container">
     <div class="complete">
@@ -105,7 +55,7 @@ their transaction formats, and field rules.
     <div class="line-break"></div>
 
     <div class="notYet">
-        <div class="item1">Phase 4: INSERT or form to enter informational DTRR information</div>
+        <div class="item1">Phase 4: INSERT or form to enter informational, maintenance, and failed DTRR information</div>
         <div class="item2">10% manual entry</div>
         <div class="item3">Not started</div>
     </div>
@@ -157,29 +107,23 @@ their transaction formats, and field rules.
     <h3>Phase 2</h3>
     <div class="line-break"></div>
     <div class="complete">
-        <div class="item1">Add formatting rules for DTRR files
+        <div class="item1">Add formatting rules for all file types
         </div>
-        <div class="item2">16 hours</div>
+        <div class="item2">64 hours</div>
         <div>Complete</div>
     </div>
     <div class="line-break"></div>
     <div class="working">
-        <div class="item1">Add formatting rules
+        <div class="item1">Add validation rules for all file types
         </div>
         <div class="item2">64 hours</div>
-        <div>8 hours completed</div>
+        <div>25 hours completed</div>
     </div>
-    <div class="line-break"></div>
-    <div class="working">
-        <div class="item1">Add validation rules
         </div>
-        <div class="item2">64 hours</div>
-        <div>10 hours completed</div>
-    </div>
     <div class="line-break"></div>
     <div class="notYet">
         <div class="item1">
-            Testing
+            Testing - verify each possible file type
         </div>
         <div class="item2">2 days</div>
         <div>Not Started</div>
@@ -237,44 +181,44 @@ their transaction formats, and field rules.
     </div>
     <div class="line-break"></div>
 
-        <h3> Phase 4</h3>
-        <div class="line-break"></div>
-        <div class="notYet">
-            <div class="item1">Additional TRC responses for Informational entries
-            </div>
-            <div class="item2">150 hours</div>
-            <div>Not started</div>
+    <h3> Phase 4</h3>
+    <div class="line-break"></div>
+    <div class="notYet">
+        <div class="item1">Additional TRC responses for Informational and Maintenance text entries
         </div>
-        <div class="line-break"></div>
-
-        <div class="notYet">
-            <div class="item1">
-                Testing
-            </div>
-            <div class="item2">5 days</div>
-            <div>Not Started</div>
-        </div>
-        <div class="line-break"></div>
-
-        <h3>Phase 5</h3>
-        <div class="line-break"></div>
-
-        <div class="notYet">
-            <div class="item1">Informational DTRR entry (SQL or UI form)
-            </div>
-            <div class="item2">150 hours</div>
-            <div>Not started</div>
-        </div>
-        <div class="line-break"></div>
-
-        <div class="notYet">
-            <div class="item1">
-                Testing
-            </div>
-            <div class="item2">5 days</div>
-            <div>Not Started</div>
-        </div>
+        <div class="item2">150 hours</div>
+        <div>Not started</div>
     </div>
+    <div class="line-break"></div>
+
+    <div class="notYet">
+        <div class="item1">
+            Testing
+        </div>
+        <div class="item2">5 days</div>
+        <div>Not Started</div>
+    </div>
+    <div class="line-break"></div>
+
+    <h3>Phase 5</h3>
+    <div class="line-break"></div>
+
+    <div class="notYet">
+        <div class="item1">Informational/Maintenance DTRR records created (SQL or UI form)
+        </div>
+        <div class="item2">150 hours</div>
+        <div>Not started</div>
+    </div>
+    <div class="line-break"></div>
+
+    <div class="notYet">
+        <div class="item1">
+            Testing
+        </div>
+        <div class="item2">5 days</div>
+        <div>Not Started</div>
+    </div>
+</div>
 
 
 </body>

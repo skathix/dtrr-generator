@@ -30,23 +30,39 @@ public class Fields
 
     private class SexCodeCheck
     {
-        private void SexCheck(string sexCode)
+        void SexCheck(string sexCode)
         {
-            //ternary?
-            //var checkSex= (sexCode = 'M' ||sexCode ='F')?
-            //Console.WriteLine("this Value is correct"):
-            //Console.WriteLine(This value will be set to '0' - no fail or reject"));
+          switch (sexCode)
+                {
+                    case "1":
+                        Console.WriteLine("Male");
+                        break;
+                    case "2":
+                        Console.WriteLine("Female");
+                        break;
+                   default:
+                        Console.WriteLine("This will be set to 0: not fail nor rejection");
+                        break;
+                }
+            }
         }
     }
 
-    private class BirthDateCheck
+    class BirthDateCheck
     {
-        private void ValidateBirthDate(string date, string validOne
+        private void ValidateBirthDate(int date, string validOne
             , string validTwo, string validThree, string dayOfMonth)
         {
 
-            var year = date.Substring(0, 4);
+            var year = date.(0, 4);
             var day = date.Substring(6, 2);
+            if (year != "01")
+            {
+                Console.WriteLine(
+                    "This is not a valid date - will be rejected");
+            }
+            
+            
             //pseudo examples
             //year > 1870
             //year < = current year
@@ -56,7 +72,7 @@ public class Fields
         }
     }
 
-    private class HardcodeRecordType
+    class HardcodeRecordType
     {
         void recordTypeHardcode(string recordType)
         {
@@ -64,7 +80,7 @@ public class Fields
         }
     }
 
-    private class ContractCheck
+    class ContractCheck
     {
         private void contract(string contractNumber)
         {
@@ -79,7 +95,7 @@ public class Fields
         }
     }
     
-    private class StateCodeLookup
+    class StateCodeLookup
     {
         private void NumericStateCode(string StateCode)
         {
@@ -93,7 +109,7 @@ public class Fields
         }
     }
 
-    private class CountyCodeLookup
+    class CountyCodeLookup
     {
         private void NumericCountyCode(string CountyCode)
         {
@@ -106,10 +122,28 @@ public class Fields
             }
         }
     }
-
-
-
-
-
-
-}
+    
+    class DisabilityCheck
+    {
+        private void DisabilityCode(int DisabilityIndicator)
+        {
+            switch (DisabilityIndicator)
+            {
+                case 0:
+                    Console.WriteLine("No Disability");
+                    break;
+                case 1:
+                    Console.WriteLine("Disabled without ERSD");
+                    break;
+                case 2:
+                    Console.WriteLine("ESRD Only");
+                    break;
+                case 3:
+                    Console.WriteLine("Disabled with ESRD");
+                    break;
+                default:
+                    Console.WriteLine("NA");
+                    break;
+            }
+        }
+    }
