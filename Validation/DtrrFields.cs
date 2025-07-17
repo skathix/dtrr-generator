@@ -1,8 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Tools.Validation;
 
-public class Fields
+public class DtrrFields
 {
     private void MbiCheck(string beneficiary_id)
     {
@@ -50,16 +51,23 @@ public class Fields
 
     class BirthDateCheck
     {
-        private void ValidateBirthDate(int date, string validOne
-            , string validTwo, string validThree, string dayOfMonth)
+        private void ValidateBirthDate(string date)
         {
 
-            var year = date.(0, 4);
+            var yearText = date.Substring(0, 4);
+            Debug.Assert(yearText != null, nameof(yearText) + " != null");
+            var year = int.Parse(yearText);
             var day = date.Substring(6, 2);
-            if (year != "01")
+            if (year < 1870)
             {
                 Console.WriteLine(
-                    "This is not a valid date - will be rejected");
+                    "This is a date before 1870 - will be rejected");
+            }
+            
+            if (year >= (DateTime.Now.Year)+1)
+            {
+                Console.WriteLine(
+                    "This is a date too far in the future - will be rejected");
             }
             
             
