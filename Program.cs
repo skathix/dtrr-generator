@@ -2,8 +2,8 @@
 using System.Text;
 using Tools.Tools;
 
-//UPDATES:
-//06-26: Validation information now will print
+//UPDATES on dashboard
+
 namespace Tools;
 //MBI was used after 1-1-2020 for new applications
 class MbitTool
@@ -50,7 +50,7 @@ class MbitTool
             }
             else
             {
-                Console.WriteLine("Paste a single full MBIT here:");
+                Console.WriteLine("Paste a single full record here:");
                 string inputString = Console.ReadLine();
                 //TODO - Do we evn need this, once we remove the possibility of end-of-record characters?
                 var trimmedString = inputString.TrimStart();
@@ -129,7 +129,7 @@ class MbitTool
             StringDivider.DivideStringIntoVariableSections(input
                 , sectionLengths);
 
-        Console.WriteLine("\nProcessed MBIT Data:");
+        Console.WriteLine("\nProcessed record Data:");
 
         for (int i = 0; i < Math.Min(sections.Count, fields.Count); i++)
         {

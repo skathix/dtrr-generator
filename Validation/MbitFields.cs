@@ -8,9 +8,9 @@ public class MbitFields
     private void MbiCheck(string beneficiary_id)
     {
         var regex = @"^\d[A-Za-z]\d\d[A-Za-z]\d\d[A-Za-z]{2}\d$";
-        var match = Regex.Match(beneficiary_id, regex
+        var mbiMatch = Regex.Match(beneficiary_id, regex
             , RegexOptions.IgnoreCase);
-        if (!match.Success)
+        if (!mbiMatch.Success)
         {
             Console.WriteLine(
                 "MBI format: you would get a TCR 007 - Reject for this");
@@ -22,42 +22,59 @@ public class MbitFields
 
     private void NamesCheck(string LastName, string FirstName, string MI)
     {
-        
-        var surnameRegex = @"^[A-Za-z]{11}/s$";
-        var firstNameRegex = @"^[A-Za-z]{7}$";
+
+        var surnameRegex = @"^[A-Za-z][a-zA-z\\s]{11}$";
+        var firstNameRegex = @"^[A-Za-z][A-Za-z]{6}$";
         var miRegex = @"^[a-zA-z\\s]+$";
-        //pseudo
-        //Get length of LastName and FirstName
-        //Console.WriteLine("Names are blank: you would get a TCR 004 - Reject for this");
-        //Regex for all alphas for all three - string MI may be blank
+
+        var surnamematch = Regex.Match(LastName, surnameRegex
+            , RegexOptions.IgnoreCase);
+        if (!surnamematch.Success)
+        {
+            Console.WriteLine(
+                "Required item - you will get a reject for this record if 3 of 4 don't match");
+        }
+
+
+        var firstmatch = Regex.Match(FirstName, firstNameRegex
+            , RegexOptions.IgnoreCase);
+        if (!firstmatch.Success)
+        {
+            Console.WriteLine(
+                "Required item - you will get a reject for this record if 3 of 4 don't match");
+        }
+
+        var mimatch = Regex.Match(MI, miRegex
+            , RegexOptions.IgnoreCase);
+        if (!mimatch.Success)
+        {
+            Console.WriteLine(
+                "Required item - you will get a reject for this record if 3 of 4 don't match");
+        }
     }
-
-
     private class SexCodeCheck
     {
         void SexCheck(string sexCode)
         {
-          switch (sexCode)
-                {
-                    case "1":
-                        Console.WriteLine("Male");
-                        break;
-                    case "2":
-                        Console.WriteLine("Female");
-                        break;
-                   default:
-                        Console.WriteLine("This will be set to 0: not fail nor rejection");
-                        break;
-                }
+            switch (sexCode)
+            {
+                case "1":
+                    Console.WriteLine("Male");
+                    break;
+                case "2":
+                    Console.WriteLine("Female");
+                    break;
+                default:
+                    Console.WriteLine(
+                        "This will be set to 0: not fail nor rejection");
+                    break;
             }
         }
     }
-
     class BirthDateCheck
     {
         private void ValidateBirthDate(string date)
         {
-
             var yearText = date.Substring(0, 4);
             Debug.Assert(yearText != null, nameof(yearText) + " != null");
             var year = int.Parse(yearText);
@@ -67,26 +84,17 @@ public class MbitFields
                 Console.WriteLine(
                     "This is a date before 1870 - will be rejected");
             }
-            
-            if (year >= (DateTime.Now.Year)+1)
+            if (year >= (DateTime.Now.Year) + 1)
             {
                 Console.WriteLine(
                     "This is a date too far in the future - will be rejected");
             }
-            
-            
-            //pseudo examples
-            //year > 1870
-            //year < = current year
-            //date < EffectiveDate
-            //day = 01
-
         }
     }
 
-    class HardcodeRecordType
+    class RecordType
     {
-        void recordTypeHardcode(string recordType)
+        void recordTypeHc(string recordType)
         {
             var HcRecordType = ("T");
         }
@@ -97,16 +105,16 @@ public class MbitFields
         private void contract(string contractNumber)
         {
             var regex = @"^[A-Za-z]\d\d\d\d$";
-            var match = Regex.Match(contractNumber, regex
+            var contractMatch = Regex.Match(contractNumber, regex
                 , RegexOptions.IgnoreCase);
-            if (!match.Success)
+            if (!contractMatch.Success)
             {
                 Console.WriteLine(
                     "Contract Number format: you would get a TCR 007 - Reject for this");
             }
         }
     }
-    
+
     class StateCodeLookup
     {
         private void NumericStateCode(string StateCode)
@@ -134,7 +142,7 @@ public class MbitFields
             }
         }
     }
-    
+
     class DisabilityCheck
     {
         private void DisabilityCode(int DisabilityIndicator)
@@ -158,3 +166,12 @@ public class MbitFields
                     break;
             }
         }
+
+
+
+
+
+
+
+    }
+}
