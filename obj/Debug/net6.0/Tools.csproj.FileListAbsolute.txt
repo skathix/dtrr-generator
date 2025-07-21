@@ -17,3 +17,6 @@ C:\Users\AAndrews\RiderProjects\Tools\Tools\obj\Debug\net6.0\ref\Tools.dll
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.1.json
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.0.json
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\2026.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3Dtrr.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3PDtrr.json
