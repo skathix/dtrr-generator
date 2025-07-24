@@ -69,8 +69,15 @@ public class FieldValidations
         }
     private void ValidateBirthDate(string date)
     {
+        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
+        var match = Regex.Match(date, dateRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Effective Date");
+        }
+        
         var yearText = date.Substring(0, 4);
-        Debug.Assert(yearText != null, nameof(yearText) + " != null");
         var year = int.Parse(yearText);
         var day = date.Substring(6, 2);
         if (year < 1870)
@@ -278,4 +285,151 @@ public class FieldValidations
                 "Invalid Transaction Code");
         }
     }
+    
+    void EffectiveDateCheck(string effectiveDateCheck, string transactionReply)
+    {
+        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
+        var match = Regex.Match(effectiveDateCheck, dateRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Effective Date");
+        }
+        switch (transactionReply)
+        {
+            case "071":
+                Console.WriteLine("Effective date of the hospice period");
+                break;
+            case "072":
+                goto case "071";
+            case "090":
+                Console.WriteLine("Current Calendar Month");
+                break;
+            case "091":
+                Console.WriteLine("Previously Reported incorrect death date");
+                break;
+            case "121":
+                Console.WriteLine("PBP Effective Enrollment");
+                break;
+            case "194":
+                goto case "121";
+            case "223":
+                goto case "121";
+            case "245":
+                Console.WriteLine("Payments impacted by MSP date");
+                break;
+            case "280":
+                goto case "245";
+            //this needs additional verification
+            case "293":
+                Console.WriteLine("Enrollment End Date - last day of the month ");
+                break;
+            case "305":
+                Console.WriteLine("New ZIP Code Start Date");
+                break;
+            case "345":
+                Console.WriteLine("Effective date of attempted enrollment");
+                break;
+            case "346":
+                Console.WriteLine("End date of the enrollment period");
+                break;
+            case "347":
+                Console.WriteLine("Start date of the reenrollment period");
+                break;
+            case "366":
+                Console.WriteLine("Effective date for change of Medicaid status");
+                break;
+            case "368":
+                Console.WriteLine("Plans payments impacted date - based on MSP date");
+                break;
+            case "409":
+                Console.WriteLine("Effective date for M3P");
+                break;
+            case "410":
+                goto case "409";
+            case "411":
+                goto case "409";
+            case "412":
+                goto case "409";
+            case "413":
+                goto case "409";
+            case "414":
+                goto case "409";
+            case "415":
+                goto case "409";
+            case "416":
+                goto case "409";
+            case "417":
+                goto case "409";
+            case "701":
+                Console.WriteLine("New Enrollment period start date");
+                break;
+            case "702":
+                Console.WriteLine("Fill-in enrollment period start date");
+                break;
+            case "703":
+                Console.WriteLine("Start date of cancelled enrollment period");
+                break;
+            case "704":
+                Console.WriteLine("Start date of enrollment cancelled for PBP correction");
+                break;
+            case "705":
+                Console.WriteLine("Start date of enrollment for PBP correction");
+                break;
+            case "706":
+                Console.WriteLine("Start date of enrollment cancelled for segment correction");
+                break;
+            case "707":
+                Console.WriteLine("Start date of enrollment for segment correction");
+                break;
+            case "708":
+                Console.WriteLine("Enrollment period end date assigned to opened ended enrollment");
+                break;
+            case "709":
+                Console.WriteLine("New start date resulting from update");
+                break;
+            case "710":
+                goto case "709";
+            case "711":
+                Console.WriteLine("New end date resulting from update");
+                break;
+            case "712":
+                goto case "711";
+            case "713":
+                Console.WriteLine("End date removed");
+                break;
+            default:
+                Console.WriteLine("Not applicable");
+                break;
+        }
+    }
+    
+    void WaHardcode(string WorkingAgeIndicator)
+    {
+        var workingAgeCheck = ("1");
+    }
+    
+    void PbpIdCode(string PlanBenefitPackageId)
+    {
+        var regex = @"^\d\d\d$";
+        var match = Regex.Match(PlanBenefitPackageId, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid PBP Number");
+        }
+        
+    }
+    void filler1(string Filler1)
+    {
+        var regex = @"^\s$";
+        var match = Regex.Match(Filler1, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid filler");
+        }
+        
+    }
+    
 }
