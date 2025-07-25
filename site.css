@@ -427,7 +427,7 @@ legend {
     .print-container {
         margin: 0;
         padding-top: 0;
-        overflow-wrap: break-spaces;
+        /*overflow-wrap: break-spaces;*/
     }
 
     /* The navbar isn't visible when printing, so no padding is needed */
@@ -555,7 +555,7 @@ h6.compact-label {
     line-height: 1.25em;
 }
 
-.assessment-header {
+./*assessment-header {
     overflow-wrap: break-spaces;
     font-size:xx-large;
     font-weight:bold;
@@ -592,7 +592,7 @@ h6.compact-label {
 
 .assessment-selection {
     font-weight: bold;
-}
+}*/
 
 .full-width {
     width: 100%;

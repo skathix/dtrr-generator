@@ -51,22 +51,24 @@ public class FieldValidations
                 "Required item - you will get a reject for this record if 3 of 4 don't match");
         }
     }
+
     void SexCheck(string sexCode)
+    {
+        switch (sexCode)
         {
-            switch (sexCode)
-            {
-                case "1":
-                    Console.WriteLine("Male");
-                    break;
-                case "2":
-                    Console.WriteLine("Female");
-                    break;
-                default:
-                    Console.WriteLine(
-                        "This will be set to 0: not fail nor rejection");
-                    break;
-            }
+            case "1":
+                Console.WriteLine("Male");
+                break;
+            case "2":
+                Console.WriteLine("Female");
+                break;
+            default:
+                Console.WriteLine(
+                    "This will be set to 0: not fail nor rejection");
+                break;
         }
+    }
+
     private void ValidateBirthDate(string date)
     {
         var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
@@ -76,7 +78,7 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid Effective Date");
         }
-        
+
         var yearText = date.Substring(0, 4);
         var year = int.Parse(yearText);
         var day = date.Substring(6, 2);
@@ -92,10 +94,12 @@ public class FieldValidations
                 "This is a date too far in the future - will be rejected");
         }
     }
+
     void recordTypeHardcode(string recordType)
     {
         var HcRecordType = ("T");
     }
+
     private void contract(string contractNumber)
     {
         var regex = @"^[A-Za-z]\d\d\d\d$";
@@ -107,6 +111,7 @@ public class FieldValidations
                 "Contract Number format: you would get a TCR 007 - Reject for this");
         }
     }
+
     private void NumericStateCode(string StateCode)
     {
         var regex = @"^\d\d$";
@@ -117,6 +122,7 @@ public class FieldValidations
                 "State Code: Sent by CMS");
         }
     }
+
     private void NumericCountyCode(string CountyCode)
     {
         var regex = @"^\d\d\d$";
@@ -127,6 +133,7 @@ public class FieldValidations
                 "County Code: Sent by CMS");
         }
     }
+
     private void DisabilityCode(int DisabilityIndicator)
     {
         switch (DisabilityIndicator)
@@ -148,6 +155,7 @@ public class FieldValidations
                 break;
         }
     }
+
     void hospiceCheck(string hospice)
     {
         switch (hospice)
@@ -163,6 +171,7 @@ public class FieldValidations
                 break;
         }
     }
+
     private void InstitutionalCode(int institutionalIndicator)
     {
         switch (institutionalIndicator)
@@ -184,6 +193,7 @@ public class FieldValidations
                 break;
         }
     }
+
     void esrdCheck(string esrd)
     {
         switch (esrd)
@@ -199,6 +209,7 @@ public class FieldValidations
                 break;
         }
     }
+
     void TransactionReply(string transactionReply)
     {
         var regex = @"^\d\d\d$";
@@ -209,6 +220,7 @@ public class FieldValidations
                 "Non-numeric TRC");
         }
     }
+
     void SentTransactionCode(string transactionCode)
     {
         var regex = @"^\d\d$";
@@ -275,6 +287,7 @@ public class FieldValidations
                 break;
         }
     }
+
     void EntitlementCheck(string entitlementCheck)
     {
         var regex = @"^\[YZ/s]$";
@@ -285,7 +298,7 @@ public class FieldValidations
                 "Invalid Transaction Code");
         }
     }
-    
+
     void EffectiveDateCheck(string effectiveDateCheck, string transactionReply)
     {
         var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
@@ -295,6 +308,7 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid Effective Date");
         }
+
         switch (transactionReply)
         {
             case "071":
@@ -322,7 +336,8 @@ public class FieldValidations
                 goto case "245";
             //this needs additional verification
             case "293":
-                Console.WriteLine("Enrollment End Date - last day of the month ");
+                Console.WriteLine(
+                    "Enrollment End Date - last day of the month ");
                 break;
             case "305":
                 Console.WriteLine("New ZIP Code Start Date");
@@ -337,10 +352,12 @@ public class FieldValidations
                 Console.WriteLine("Start date of the reenrollment period");
                 break;
             case "366":
-                Console.WriteLine("Effective date for change of Medicaid status");
+                Console.WriteLine(
+                    "Effective date for change of Medicaid status");
                 break;
             case "368":
-                Console.WriteLine("Plans payments impacted date - based on MSP date");
+                Console.WriteLine(
+                    "Plans payments impacted date - based on MSP date");
                 break;
             case "409":
                 Console.WriteLine("Effective date for M3P");
@@ -371,19 +388,24 @@ public class FieldValidations
                 Console.WriteLine("Start date of cancelled enrollment period");
                 break;
             case "704":
-                Console.WriteLine("Start date of enrollment cancelled for PBP correction");
+                Console.WriteLine(
+                    "Start date of enrollment cancelled for PBP correction");
                 break;
             case "705":
-                Console.WriteLine("Start date of enrollment for PBP correction");
+                Console.WriteLine(
+                    "Start date of enrollment for PBP correction");
                 break;
             case "706":
-                Console.WriteLine("Start date of enrollment cancelled for segment correction");
+                Console.WriteLine(
+                    "Start date of enrollment cancelled for segment correction");
                 break;
             case "707":
-                Console.WriteLine("Start date of enrollment for segment correction");
+                Console.WriteLine(
+                    "Start date of enrollment for segment correction");
                 break;
             case "708":
-                Console.WriteLine("Enrollment period end date assigned to opened ended enrollment");
+                Console.WriteLine(
+                    "Enrollment period end date assigned to opened ended enrollment");
                 break;
             case "709":
                 Console.WriteLine("New start date resulting from update");
@@ -403,12 +425,12 @@ public class FieldValidations
                 break;
         }
     }
-    
+
     void WaHardcode(string WorkingAgeIndicator)
     {
         var workingAgeCheck = ("1");
     }
-    
+
     void PbpIdCode(string PlanBenefitPackageId)
     {
         var regex = @"^\d\d\d$";
@@ -418,8 +440,9 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid PBP Number");
         }
-        
+
     }
+
     void filler1(string Filler1)
     {
         var regex = @"^\s$";
@@ -429,7 +452,128 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid filler");
         }
-        
+
+    }
+
+    void TransactionDate(string transactionDate, string transactionReply)
+    {
+        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
+        var match = Regex.Match(transactionDate, dateRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Effective Date");
+        }
+
+        switch (transactionReply)
+        {
+            case "121":
+                goto case "223";
+            case "072":
+                goto case "223";
+            case "223":
+                Console.WriteLine("Date report was generated");
+                break;
+            default:
+                Console.WriteLine("Date of Transaction");
+                break;
+        }
+    }
+
+    void UiInitiatedChangeCode(string UIInitiatedChangeFlag)
+    {
+        var regex = @"^\d$";
+        var match = Regex.Match(UIInitiatedChangeFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid PBP Number");
+        }
+
+        switch (UIInitiatedChangeFlag)
+        {
+            case "0":
+                Console.WriteLine("Transaction not created in user interface");
+                break;
+            case "1":
+                Console.WriteLine("Transaction created in user interface");
+                break;
+            default:
+                Console.WriteLine("Not applicable");
+                break;
+        }
     }
     
+    void todoVariableData(string VariableData)
+    {
+        var regex = @"^\d$";
+        var match = Regex.Match(VariableData, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "WTF?!");
+        }
+
+        switch (VariableData)
+        {
+            
+            default:
+                Console.WriteLine("Not applicable");
+                break;
+        }
+    }
+    
+    void districtOfficeCode(string DistrictOfficeCode)
+    {
+        var regex = @"^\s\s\s$";
+        var match = Regex.Match(DistrictOfficeCode, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid unless the transaction is a 53");
+        }
+
+    }
+    private void prevPartDContractAndPBP(string PrevPartDContractAndPBP)
+    {
+        var empty = @"^[/s{8}$";
+        var regex = @"^[A-Za-z]\d\d\d\d\d\d\d$";
+        var emptyMatch = Regex.Match(PrevPartDContractAndPBP, empty
+            , RegexOptions.IgnoreCase);
+        if (!emptyMatch.Success)
+        {
+            var match = Regex.Match(PrevPartDContractAndPBP, regex
+                , RegexOptions.IgnoreCase);
+            if (!match.Success)
+            {
+                Console.WriteLine(
+                    "Contract Number/PBP format error");
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
