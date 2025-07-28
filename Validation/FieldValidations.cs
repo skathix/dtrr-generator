@@ -443,10 +443,10 @@ public class FieldValidations
 
     }
 
-    void filler1(string Filler1)
+    void dtrrfiller1(string dtrrFiller1)
     {
         var regex = @"^\s$";
-        var match = Regex.Match(Filler1, regex);
+        var match = Regex.Match(dtrrFiller1, regex);
         if (!match.Success)
         {
             Console.WriteLine(
@@ -550,6 +550,94 @@ public class FieldValidations
                     "Contract Number/PBP format error");
             }
         }
+    }
+    
+    void SepReasonCode(string sepReasonCode, string electionType, string transactionReply)
+    {
+       var type1 = "S";
+       var type2 = "Y";
+       if (electionType != type1)
+       {
+           if (electionType != type2)
+           {
+               Console.WriteLine("This string should be blank.");
+           }
+       }
+        var sepRegex = @"^[a-zA-Z0-9]{2}$";
+        var match = Regex.Match(sepReasonCode, sepRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid SEP entry");
+        }
+
+        switch (transactionReply)
+        {
+            case "011":
+                goto case "725";
+            case "013":
+                goto case "725";
+            case "015":
+                goto case "725";
+            case "018":
+                goto case "725";
+            case "022":
+                goto case "725";
+            case "023":
+                goto case "725";
+            case "025":
+                goto case "725";
+            case "026":
+                goto case "725";
+            case "100":
+                goto case "725";
+            case "397":
+                goto case "725";
+            case "401":
+                goto case "725";
+            case "402":
+                goto case "725";
+            case "701":
+                goto case "725";
+            case "702":
+                goto case "725";
+            case "704":
+                goto case "725";
+            case "705":
+                goto case "725";
+            case "708":
+                goto case "725";
+            case "709":
+                goto case "725";
+            case "710":
+                goto case "725";
+            case "711":
+                goto case "725";
+            case "712":
+                goto case "725";
+            case "713":
+                goto case "725";
+            case "717":
+                goto case "725";
+          
+            case "725":
+                Console.WriteLine("Should not be blank");
+                break;
+            default:
+                Console.WriteLine("Should be blank");
+                break;
+        }
+    }
+    void DtrrFiller1(string dtrrFiller1)
+    {
+        var regex = @"^\s{6}$";
+        var match = Regex.Match(dtrrFiller1, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid filler");
+        }
+
     }
 
 
