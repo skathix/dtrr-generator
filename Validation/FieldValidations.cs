@@ -443,10 +443,10 @@ public class FieldValidations
 
     }
 
-    void dtrrfiller1(string dtrrFiller1)
+    void dtrrfiller(string dtrrFiller)
     {
         var regex = @"^\s$";
-        var match = Regex.Match(dtrrFiller1, regex);
+        var match = Regex.Match(dtrrFiller, regex);
         if (!match.Success)
         {
             Console.WriteLine(
@@ -639,6 +639,108 @@ public class FieldValidations
         }
 
     }
+    
+    private void SourceId(string sourceId)
+    {
+        var regex = @"^[A-Za-z]\d\d\d\d$";
+        var match = Regex.Match(sourceId, regex
+            , RegexOptions.IgnoreCase);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Source Id Error: should match contract number");
+        }
+    }
+    
+    void PriorPlanBenefitPackageId(string priorPlanBenefitPackageId)
+    {
+        var regex = @"^\d\d\d$";
+        var match = Regex.Match(priorPlanBenefitPackageId, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid PBP Number");
+        }
+
+    }
+
+    void ApplicationDate(string applicationDate)
+    {
+        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
+        var match = Regex.Match(applicationDate, dateRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Application Date");
+        }
+
+        Console.WriteLine(
+            "This should be the date the paper application was signed, or the date received for electronic");
+    }
+    
+    void UIUserOrganizationDesignation(string uiUserOrganizationDesignation)
+    {
+        var regex = @"^\s{2}$";
+        var match = Regex.Match(uiUserOrganizationDesignation, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid - should be blanks");
+        }
+
+    } 
+    
+    void OutOfAreaFlag(string outOfAreaFlag)
+    {
+        var regex = @"^\[NY/s]$";
+        var match = Regex.Match(outOfAreaFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Out of Area Flag");
+        }
+    }
+    
+    void SegmentNumber(string segmentNumber)
+    {
+        var regex = @"^\s{3}$";
+        var match = Regex.Match(segmentNumber, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid - should be blanks");
+        }
+
+    } 
+    
+    void PartCBeneficiaryPremium(string partCBeneficiaryPremium)
+    {
+        var regex = @"^\s{7}$";
+        var match = Regex.Match(partCBeneficiaryPremium, regex);
+        if (!match.Success)
+        {
+            var regex = @"^\s\s\d\d\/.\d\d$";
+            var match = Regex.Match(partCBeneficiaryPremium, regex);
+            if (!match.Success)
+            {
+                Console.WriteLine(
+                    "Invalid - should be blanks");
+            }
+        }
+
+    } 
+    void PartDBeneficiaryPremium(string partDBeneficiaryPremium)
+    {
+        var regex = @"^\s{7}$";
+        var match = Regex.Match(partDBeneficiaryPremium, regex);
+        if (!match.Success)
+        {
+           Console.WriteLine(
+                    "Invalid - should be blanks");
+            }
+        
+
+    } 
 
 
 
