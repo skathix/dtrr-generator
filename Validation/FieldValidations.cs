@@ -637,7 +637,6 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid filler");
         }
-
     }
     
     private void SourceId(string sourceId)
@@ -724,7 +723,7 @@ public class FieldValidations
             if (!match.Success)
             {
                 Console.WriteLine(
-                    "Invalid - should be blanks");
+                    "It doesn't work");
             }
         }
 
@@ -736,11 +735,142 @@ public class FieldValidations
         if (!partDmatch.Success)
         {
            Console.WriteLine(
-                    "Invalid - should be blanks");
-            }
-        
-
+                    "Invalid - should be blanks")
+           
+        }
     } 
+    void ElectionTypeCode(string electionTypeCode)
+    {
+        var regex = @"^\[ACDFIJLMNORSTUVWXYZ/s]$";
+        var match = Regex.Match(electionTypeCode, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Election type code");
+        }
+    }
+    
+    void EnrollmentSourceCode(string enrollmentSourceCode)
+    {
+        var regex = @"^\[ABCDEFGHIJKLN/s]$";
+        var match = Regex.Match(enrollmentSourceCode, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid enrollment Source Code");
+        }
+    }
+    
+    void PartDOptOutFlag(string partDOptOutFlag)
+    {
+        var regex = @"^\[YN/s]$";
+        var match = Regex.Match(partDOptOutFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Part D OptOut Flag");
+        }
+    }
+    
+    void PtsCAndDPremiumWithholdOpt(string ptsCAndDPremiumWithholdOpt)
+    {
+        var regex = @"^\[DNRS/s]$";
+        var match = Regex.Match(ptsCAndDPremiumWithholdOpt, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Pts C And D Premium Withhold Opt - 120, 185, and 186 report the PPO involved in the communication, all other report the PPO in effect");
+        }
+    }
+    
+    void CumulativeNoOfUncoverdMonths(string cumulativeNoOfUncoverdMonths)
+    {
+        cumulativeNoOfUncoverdMonths = "000";
+        
+    } 
+    void CreditableCoverageFlag(string creditableCoverageFlag)
+    {
+        var regex = @"^\[YNALRTU/s]$";
+        var match = Regex.Match(creditableCoverageFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Creditable Coverage Flag");
+        }
+    }
+    void EmployerSubsidyOverrideFlag(string employerSubsidyOverrideFlag)
+    {
+        var regex = @"^\[Y/s]$";
+        var match = Regex.Match(employerSubsidyOverrideFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Employer Subsidy Override Flag");
+        }
+    }
+    void ProcessingTimestamp(string processingTimestamp)
+    {
+        var regex = @"^\d\d/.\d\d/.\d\d/.\d\d\d\d\d$";
+        var match = Regex.Match(processingTimestamp, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid timestamp");
+        }
+    }
+
+    void EndDate(string endDate)
+    {
+        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
+        var match = Regex.Match(endDate, dateRegex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid End Date");
+        }
+    }
+    void SubmittedNoOfUncoveredMonths(string submittedNoOfUncoveredMonths)
+    {
+        var regex = @"^\d\d\d$";
+        var match = Regex.Match(submittedNoOfUncoveredMonths, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid SubmittedNoOfUncoveredMonths");
+        }
+    }
+
+    void SecondaryDrugInsuranceFlag(string secondaryDrugInsuranceFlag)
+    {
+        var regex = @"^\[YN/s]$";
+        var match = Regex.Match(secondaryDrugInsuranceFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Secondary Drug Insurance Flag");
+        }
+    }
+    void SecondaryRxId(string secondaryRxId)
+    {
+        var regex = @"^/s{20}$";
+        var match = Regex.Match(secondaryRxId, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Secondary Rx Id");
+        }
+    }
+    void SecondaryRxGroup(string secondaryRxGroup)
+    {
+        var regex = @"^/s{15}$";
+        var match = Regex.Match(secondaryRxGroup, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Secondary Rx Group");
+        }
+    }
+    
 
 
 

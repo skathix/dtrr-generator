@@ -110,7 +110,7 @@
       "PartDOptOutFlag": "Part D Opt-Out Flag"
     },
     {
-      "PtsCAndDPremiumWithholdOpt": "Premium Withhold Parts C-D"
+      "": "Premium Withhold Parts C-D"
     },
     {
       "CumulativeNoOfUncoverdMonths": "000"
@@ -137,7 +137,7 @@
       "SecondaryRxId": "Secondary Rx Id"
     },
     {
-      "SecondaryRxGroup": "Secondary Rx Group"
+      "": "Secondary Rx Group"
     },
     {
       "EGHP": "EGHP Flag"
