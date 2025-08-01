@@ -628,9 +628,9 @@ public class FieldValidations
                 break;
         }
     }
-    void DtrrFiller1(string dtrrFiller1)
+    void DtrrFiller1(string dtrrFiller1, int numWhiteSpace)
     {
-        var regex = @"^\s{6}$";
+        var regex = $@"^\s{numWhiteSpace}$";
         var match = Regex.Match(dtrrFiller1, regex);
         if (!match.Success)
         {
@@ -665,16 +665,17 @@ public class FieldValidations
 
     void ApplicationDate(string applicationDate)
     {
-        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
-        var match = Regex.Match(applicationDate, dateRegex);
-        if (!match.Success)
+
+        if (DateTime.TryParse(applicationDate, out var convertedDate))
         {
             Console.WriteLine(
-                "Invalid Application Date");
+                "This should be the date the  paper application was signed, or the date received for electronic");
+            return;
         }
+        
+        Console.WriteLine("Invalid Application Date");
 
-        Console.WriteLine(
-            "This should be the date the paper application was signed, or the date received for electronic");
+        
     }
     
     void UIUserOrganizationDesignation(string uiUserOrganizationDesignation)
@@ -714,29 +715,26 @@ public class FieldValidations
     
     void PartCBeneficiaryPremium(string partCBeneficiaryPremium)
     {
-        var partCregex = @"^\s{7}$";
+        var partCregex = @"(?:^\b(\d+\.\d{2})\b$)|(?:^\s{7}$)";
         var partCmatch = Regex.Match(partCBeneficiaryPremium, partCregex);
         if (!partCmatch.Success)
         {
-            var regex = @"^\s\s\d\d\/.\d\d$";
-            var match = Regex.Match(partCBeneficiaryPremium, regex);
-            if (!match.Success)
-            {
-                Console.WriteLine(
-                    "It doesn't work");
-            }
+            //\b\d+\.\d{2}\b|(?:^\s{7}$)
+            //\b\d{2}\.\d{2}\.\d{2}.\d{6}\b -- Timestamp
+           
+            Console.WriteLine(("Bad premium amount"));
         }
 
     } 
     void PartDBeneficiaryPremium(string partDBeneficiaryPremium)
     {
-        var partDregex = @"^\s{7}$";
+        var partDregex = @"(?:^\b(\d+\.\d{2})\b$)|(?:^\s{7}$)";
         var partDmatch = Regex.Match(partDBeneficiaryPremium, partDregex);
         if (!partDmatch.Success)
         {
-           Console.WriteLine(
-                    "Invalid - should be blanks")
-           
+            Console.WriteLine
+            ("Bad premium amount");
+
         }
     } 
     void ElectionTypeCode(string electionTypeCode)
@@ -810,7 +808,7 @@ public class FieldValidations
     }
     void ProcessingTimestamp(string processingTimestamp)
     {
-        var regex = @"^\d\d/.\d\d/.\d\d/.\d\d\d\d\d$";
+        var regex = @"\b\d{2}\.\d{2}\.\d{2}.\d{6}\b";
         var match = Regex.Match(processingTimestamp, regex);
         if (!match.Success)
         {
@@ -868,6 +866,50 @@ public class FieldValidations
         {
             Console.WriteLine(
                 "Invalid Secondary Rx Group");
+        }
+    }
+    void Egph(string egph, int transactionCode)
+    {
+        if (transactionCode == 61)
+        {
+            var regex61 = @"^\[Y/s]$";
+            var match61 = Regex.Match(egph, regex61);
+            if (!match61.Success)
+            {
+                Console.WriteLine(
+                    "Invalid Enrollment EGPH");
+            }
+        }
+        else if (transactionCode == 74)
+        {
+            var regex74 = @"^\[YN/s]$";
+            var match74 = Regex.Match(egph, regex74);
+            if (!match74.Success)
+            {
+                Console.WriteLine(
+                    "Invalid EGPH change value");
+            }
+        }
+        else
+        {
+            var regexAll = @"^/s$";
+            var matchAll = Regex.Match(egph, regexAll);
+            if (!matchAll.Success)
+            {
+                Console.WriteLine(
+                    "Invalid -should be blank");
+            }
+        }
+    }
+    
+    void PartDLowIncomePremSubsidyLvl(string partDLowIncomePremSubsidyLvl)
+    {
+        var regex = @"^\d\d\d$";
+        var match = Regex.Match(partDLowIncomePremSubsidyLvl, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Part D Low Income Prem Subsidy Lvl");
         }
     }
     
