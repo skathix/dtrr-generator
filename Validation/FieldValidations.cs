@@ -71,13 +71,7 @@ public class FieldValidations
 
     private void ValidateBirthDate(string date)
     {
-        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
-        var match = Regex.Match(date, dateRegex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid Effective Date");
-        }
+        DateValidation(date);
 
         var yearText = date.Substring(0, 4);
         var year = int.Parse(yearText);
@@ -234,56 +228,57 @@ public class FieldValidations
         switch (transactionCode)
         {
             case "51":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Disenrollment Transaction (51)");
                 break;
             case "54":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("Disenrollment Transaction (54)");
                 break;
             case "61":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Enrollment Transaction (61)");
                 break;
             case "72":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("4Rx Data Change (72)");
                 break;
             case "76":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Residence Address Change (76)");
                 break;
             case "79":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("Part D Opt-Out (79)");
                 break;
             case "80":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Cancellation of Enrollment (80)");
                 break;
             case "81":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("Cancellation of Disenrollment (81)");
                 break;
             case "82":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("MMP Enrollment Cancellation (82)");
                 break;
             case "83":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("MMP Opt-Out Update (83)");
                 break;
             case "90":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("CARA Status (90)");
                 break;
             case "91":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("IC Model Participation (91)");
                 break;
             case "92":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Personal Information Change (92)");
                 break;
             case "93":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine("Enrollment SEP Reason Code Correction (93)");
                 break;
             case "94":
-                Console.WriteLine("End Stage Renal Disease");
+                Console.WriteLine(
+                    "Disenrollment SEP Reason Code Correction (94)");
                 break;
             case "95":
-                Console.WriteLine("No End-Stage Renal Disease");
+                Console.WriteLine("Medicare Prescription Payment Plan (95)");
                 break;
 
             default:
-                Console.WriteLine("Not applicable");
+                Console.WriteLine("Invalid transaction code");
                 break;
         }
     }
@@ -301,13 +296,7 @@ public class FieldValidations
 
     void EffectiveDateCheck(string effectiveDateCheck, string transactionReply)
     {
-        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
-        var match = Regex.Match(effectiveDateCheck, dateRegex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid Effective Date");
-        }
+        DateValidation(effectiveDateCheck);
 
         switch (transactionReply)
         {
@@ -440,30 +429,16 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid PBP Number");
         }
-
     }
 
-    void dtrrfiller(string dtrrFiller)
+    void filler(string Filler, int numWhiteSpaces)
     {
-        var regex = @"^\s$";
-        var match = Regex.Match(dtrrFiller, regex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid filler");
-        }
-
+        FillerValidation(Filler, numWhiteSpaces);
     }
 
     void TransactionDate(string transactionDate, string transactionReply)
     {
-        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
-        var match = Regex.Match(transactionDate, dateRegex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid Effective Date");
-        }
+        DateValidation(transactionDate);
 
         switch (transactionReply)
         {
@@ -503,7 +478,7 @@ public class FieldValidations
                 break;
         }
     }
-    
+
     void todoVariableData(string VariableData)
     {
         var regex = @"^\d$";
@@ -516,13 +491,12 @@ public class FieldValidations
 
         switch (VariableData)
         {
-            
             default:
                 Console.WriteLine("Not applicable");
                 break;
         }
     }
-    
+
     void districtOfficeCode(string DistrictOfficeCode)
     {
         var regex = @"^\s\s\s$";
@@ -532,9 +506,9 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid unless the transaction is a 53");
         }
-
     }
-    private void prevPartDContractAndPBP(string PrevPartDContractAndPBP)
+
+    void prevPartDContractAndPBP(string PrevPartDContractAndPBP)
     {
         var empty = @"^[/s{8}$";
         var regex = @"^[A-Za-z]\d\d\d\d\d\d\d$";
@@ -551,18 +525,20 @@ public class FieldValidations
             }
         }
     }
-    
-    void SepReasonCode(string sepReasonCode, string electionType, string transactionReply)
+
+    void SepReasonCode(string sepReasonCode, string electionType
+        , string transactionReply)
     {
-       var type1 = "S";
-       var type2 = "Y";
-       if (electionType != type1)
-       {
-           if (electionType != type2)
-           {
-               Console.WriteLine("This string should be blank.");
-           }
-       }
+        var type1 = "S";
+        var type2 = "Y";
+        if (electionType != type1)
+        {
+            if (electionType != type2)
+            {
+                Console.WriteLine("This string should be blank.");
+            }
+        }
+
         var sepRegex = @"^[a-zA-Z0-9]{2}$";
         var match = Regex.Match(sepReasonCode, sepRegex);
         if (!match.Success)
@@ -619,7 +595,7 @@ public class FieldValidations
                 goto case "725";
             case "717":
                 goto case "725";
-          
+
             case "725":
                 Console.WriteLine("Should not be blank");
                 break;
@@ -628,17 +604,12 @@ public class FieldValidations
                 break;
         }
     }
+
     void DtrrFiller1(string dtrrFiller1, int numWhiteSpace)
     {
-        var regex = $@"^\s{numWhiteSpace}$";
-        var match = Regex.Match(dtrrFiller1, regex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid filler");
-        }
+        FillerValidation(dtrrFiller1, numWhiteSpace);
     }
-    
+
     private void SourceId(string sourceId)
     {
         var regex = @"^[A-Za-z]\d\d\d\d$";
@@ -650,7 +621,7 @@ public class FieldValidations
                 "Source Id Error: should match contract number");
         }
     }
-    
+
     void PriorPlanBenefitPackageId(string priorPlanBenefitPackageId)
     {
         var regex = @"^\d\d\d$";
@@ -660,24 +631,13 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid PBP Number");
         }
-
     }
 
     void ApplicationDate(string applicationDate)
     {
-
-        if (DateTime.TryParse(applicationDate, out var convertedDate))
-        {
-            Console.WriteLine(
-                "This should be the date the  paper application was signed, or the date received for electronic");
-            return;
-        }
-        
-        Console.WriteLine("Invalid Application Date");
-
-        
+        DateValidation(applicationDate);
     }
-    
+
     void UIUserOrganizationDesignation(string uiUserOrganizationDesignation)
     {
         var regex = @"^\s{2}$";
@@ -687,9 +647,8 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid - should be blanks");
         }
+    }
 
-    } 
-    
     void OutOfAreaFlag(string outOfAreaFlag)
     {
         var regex = @"^\[NY/s]$";
@@ -700,7 +659,7 @@ public class FieldValidations
                 "Invalid Out of Area Flag");
         }
     }
-    
+
     void SegmentNumber(string segmentNumber)
     {
         var regex = @"^\s{3}$";
@@ -710,33 +669,18 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid - should be blanks");
         }
+    }
 
-    } 
-    
     void PartCBeneficiaryPremium(string partCBeneficiaryPremium)
     {
-        var partCregex = @"(?:^\b(\d+\.\d{2})\b$)|(?:^\s{7}$)";
-        var partCmatch = Regex.Match(partCBeneficiaryPremium, partCregex);
-        if (!partCmatch.Success)
-        {
-            //\b\d+\.\d{2}\b|(?:^\s{7}$)
-            //\b\d{2}\.\d{2}\.\d{2}.\d{6}\b -- Timestamp
-           
-            Console.WriteLine(("Bad premium amount"));
-        }
+        CurrencyValidation(partCBeneficiaryPremium);
+    }
 
-    } 
     void PartDBeneficiaryPremium(string partDBeneficiaryPremium)
     {
-        var partDregex = @"(?:^\b(\d+\.\d{2})\b$)|(?:^\s{7}$)";
-        var partDmatch = Regex.Match(partDBeneficiaryPremium, partDregex);
-        if (!partDmatch.Success)
-        {
-            Console.WriteLine
-            ("Bad premium amount");
+        CurrencyValidation(partDBeneficiaryPremium);
+    }
 
-        }
-    } 
     void ElectionTypeCode(string electionTypeCode)
     {
         var regex = @"^\[ACDFIJLMNORSTUVWXYZ/s]$";
@@ -747,7 +691,7 @@ public class FieldValidations
                 "Invalid Election type code");
         }
     }
-    
+
     void EnrollmentSourceCode(string enrollmentSourceCode)
     {
         var regex = @"^\[ABCDEFGHIJKLN/s]$";
@@ -758,7 +702,7 @@ public class FieldValidations
                 "Invalid enrollment Source Code");
         }
     }
-    
+
     void PartDOptOutFlag(string partDOptOutFlag)
     {
         var regex = @"^\[YN/s]$";
@@ -769,7 +713,7 @@ public class FieldValidations
                 "Invalid Part D OptOut Flag");
         }
     }
-    
+
     void PtsCAndDPremiumWithholdOpt(string ptsCAndDPremiumWithholdOpt)
     {
         var regex = @"^\[DNRS/s]$";
@@ -780,12 +724,12 @@ public class FieldValidations
                 "Invalid Pts C And D Premium Withhold Opt - 120, 185, and 186 report the PPO involved in the communication, all other report the PPO in effect");
         }
     }
-    
+
     void CumulativeNoOfUncoverdMonths(string cumulativeNoOfUncoverdMonths)
     {
         cumulativeNoOfUncoverdMonths = "000";
-        
-    } 
+    }
+
     void CreditableCoverageFlag(string creditableCoverageFlag)
     {
         var regex = @"^\[YNALRTU/s]$";
@@ -796,6 +740,7 @@ public class FieldValidations
                 "Invalid Creditable Coverage Flag");
         }
     }
+
     void EmployerSubsidyOverrideFlag(string employerSubsidyOverrideFlag)
     {
         var regex = @"^\[Y/s]$";
@@ -806,6 +751,7 @@ public class FieldValidations
                 "Invalid Employer Subsidy Override Flag");
         }
     }
+
     void ProcessingTimestamp(string processingTimestamp)
     {
         var regex = @"\b\d{2}\.\d{2}\.\d{2}.\d{6}\b";
@@ -819,14 +765,9 @@ public class FieldValidations
 
     void EndDate(string endDate)
     {
-        var dateRegex = @"^\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$";
-        var match = Regex.Match(endDate, dateRegex);
-        if (!match.Success)
-        {
-            Console.WriteLine(
-                "Invalid End Date");
-        }
+        DateValidation(endDate);
     }
+
     void SubmittedNoOfUncoveredMonths(string submittedNoOfUncoveredMonths)
     {
         var regex = @"^\d\d\d$";
@@ -848,6 +789,7 @@ public class FieldValidations
                 "Invalid Secondary Drug Insurance Flag");
         }
     }
+
     void SecondaryRxId(string secondaryRxId)
     {
         var regex = @"^/s{20}$";
@@ -858,6 +800,7 @@ public class FieldValidations
                 "Invalid Secondary Rx Id");
         }
     }
+
     void SecondaryRxGroup(string secondaryRxGroup)
     {
         var regex = @"^/s{15}$";
@@ -868,6 +811,7 @@ public class FieldValidations
                 "Invalid Secondary Rx Group");
         }
     }
+
     void Egph(string egph, int transactionCode)
     {
         if (transactionCode == 61)
@@ -901,7 +845,7 @@ public class FieldValidations
             }
         }
     }
-    
+
     void PartDLowIncomePremSubsidyLvl(string partDLowIncomePremSubsidyLvl)
     {
         var regex = @"^\d\d\d$";
@@ -911,31 +855,127 @@ public class FieldValidations
             Console.WriteLine(
                 "Invalid Part D Low Income Prem Subsidy Lvl");
         }
+
+        switch (partDLowIncomePremSubsidyLvl)
+        {
+            case "000":
+                Console.WriteLine("No subsidy");
+                break;
+            case "025":
+                Console.WriteLine("25% subsidy");
+                break;
+            case "050":
+                Console.WriteLine("50% subsidy");
+                break;
+            case "075":
+                Console.WriteLine("75% subsidy");
+                break;
+            case "100":
+                Console.WriteLine("100% subsidy");
+                break;
+            default:
+                Console.WriteLine("NA");
+                break;
+        }
     }
-    
+
+    void LowIncomeCopayCategory(string lowIncomeCopayCategory)
+    {
+        var regex = @"^\d$";
+        var match = Regex.Match(lowIncomeCopayCategory, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Low Income Copay Category");
+        }
+
+        switch (lowIncomeCopayCategory)
+        {
+            case "0":
+                Console.WriteLine("Not low-income");
+                break;
+            case "1":
+                Console.WriteLine("High");
+                break;
+            case "2":
+                Console.WriteLine("Low");
+                break;
+            case "3":
+                Console.WriteLine("0");
+                break;
+            case "4":
+                Console.WriteLine("15%");
+                break;
+            case "5":
+                Console.WriteLine("Unknown");
+                break;
+            default:
+                Console.WriteLine("NA");
+                break;
+        }
+    }
+    void LowIncomePeriodEffDate(string lowIncomePeriodEffDate)
+    {
+        DateValidation(lowIncomePeriodEffDate);
+    }
+    void PtDLateEnrlPenaltyAmt(string ptDLateEnrlPenaltyAmt)
+    {
+        CurrencyValidation(ptDLateEnrlPenaltyAmt);
+    }
+    void PtDLateEnrlPenaltyWaivedAmt(string ptDLateEnrlPenaltyWaivedAmt)
+    {
+        CurrencyValidation(ptDLateEnrlPenaltyWaivedAmt);
+    }
+    void PtDLateEnrlPenaltySubsidyAmt(string ptDLateEnrlPenaltySubsidyAmt)
+    {
+        CurrencyValidation(ptDLateEnrlPenaltySubsidyAmt);
+    }
+    void LowIncomePtDPremiumSubsidyAmt(string lowIncomePtDPremiumSubsidyAmt)
+    {
+        CurrencyValidation(lowIncomePtDPremiumSubsidyAmt);
+    }
+
+    void PartDRxBIN(string partDRxBIN)
+    {
+        
+    }
 
 
 
 
+    static void DateValidation(string date)
+    {
+        if (DateTime.TryParse(date, out var convertedDate))
+        {
+            Console.WriteLine(
+                "This is a valid date");
+            return;
+        }
 
+        Console.WriteLine("Invalid date");
+    }
 
+    static void CurrencyValidation(string premium)
+    {
+        var regex = @"(?:^\b(\d+\.\d{2})\b$)|(?:^\s{7}$)";
+        var match = Regex.Match(premium, regex);
+        if (!match.Success)
+        {
+            //\b\d+\.\d{2}\b|(?:^\s{7}$)
+            //\b\d{2}\.\d{2}\.\d{2}.\d{6}\b -- Timestamp
 
+            Console.WriteLine(("Bad premium amount"));
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    static void FillerValidation(string Filler, int numWhiteSpace)
+    {
+        var regex = $@"^\s{numWhiteSpace}$";
+        var match = Regex.Match(Filler, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid filler");
+        }
+    }
 }

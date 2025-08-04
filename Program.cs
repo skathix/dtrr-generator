@@ -52,7 +52,7 @@ class MbitTool
             {
                 Console.WriteLine("Paste a single full record here:");
                 string inputString = Console.ReadLine();
-                //TODO - Do we evn need this, once we remove the possibility of end-of-record characters?
+                //TODO - Do we even need this, once we remove the possibility of end-of-record characters?
                 var trimmedString = inputString.TrimStart();
                 //TODO: Check for end-of-record characters, remove those
                 //trimmedString will allow for an easier division without the
