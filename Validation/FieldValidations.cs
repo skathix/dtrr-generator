@@ -7,7 +7,8 @@ public class FieldValidations
 {
     private void MbiCheck(string beneficiary_id)
     {
-        var regex = @"^\d[A-Za-z]\d\d[A-Za-z]\d\d[A-Za-z]{2}\d$";
+        //TODO Third and sixth characters may be numeric or one of the letters
+        var regex = @"^\d[ACDEFGHJKMNPQRTUVWXY]\d\d[ACDEFGHJKMNPQRTUVWXY]\d\d[ACDEFGHJKMNPQRTUVWXY]{2}\d$";
         var match = Regex.Match(beneficiary_id, regex
             , RegexOptions.IgnoreCase);
         if (!match.Success)
@@ -19,7 +20,6 @@ public class FieldValidations
         Console.WriteLine(
             "POTENTIAL MBI not found: you would get a TCR 008 - Reject for this");
     }
-
     private void NamesCheck(string LastName, string FirstName, string MI)
     {
         var surnameRegex = @"^[A-Za-z][a-zA-z\\s]{11}$";
@@ -51,7 +51,6 @@ public class FieldValidations
                 "Required item - you will get a reject for this record if 3 of 4 don't match");
         }
     }
-
     void SexCheck(string sexCode)
     {
         switch (sexCode)
@@ -68,7 +67,6 @@ public class FieldValidations
                 break;
         }
     }
-
     private void ValidateBirthDate(string date)
     {
         DateValidation(date);
@@ -88,12 +86,10 @@ public class FieldValidations
                 "This is a date too far in the future - will be rejected");
         }
     }
-
     void recordTypeHardcode(string recordType)
     {
         var HcRecordType = ("T");
     }
-
     private void contract(string contractNumber)
     {
         var regex = @"^[A-Za-z]\d\d\d\d$";
@@ -105,7 +101,6 @@ public class FieldValidations
                 "Contract Number format: you would get a TCR 007 - Reject for this");
         }
     }
-
     private void NumericStateCode(string StateCode)
     {
         var regex = @"^\d\d$";
@@ -116,7 +111,6 @@ public class FieldValidations
                 "State Code: Sent by CMS");
         }
     }
-
     private void NumericCountyCode(string CountyCode)
     {
         var regex = @"^\d\d\d$";
@@ -127,7 +121,6 @@ public class FieldValidations
                 "County Code: Sent by CMS");
         }
     }
-
     private void DisabilityCode(int DisabilityIndicator)
     {
         switch (DisabilityIndicator)
@@ -149,7 +142,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void hospiceCheck(string hospice)
     {
         switch (hospice)
@@ -165,7 +157,6 @@ public class FieldValidations
                 break;
         }
     }
-
     private void InstitutionalCode(int institutionalIndicator)
     {
         switch (institutionalIndicator)
@@ -187,7 +178,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void esrdCheck(string esrd)
     {
         switch (esrd)
@@ -203,7 +193,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void TransactionReply(string transactionReply)
     {
         var regex = @"^\d\d\d$";
@@ -214,7 +203,6 @@ public class FieldValidations
                 "Non-numeric TRC");
         }
     }
-
     void SentTransactionCode(string transactionCode)
     {
         var regex = @"^\d\d$";
@@ -282,7 +270,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void EntitlementCheck(string entitlementCheck)
     {
         var regex = @"^\[YZ/s]$";
@@ -293,7 +280,6 @@ public class FieldValidations
                 "Invalid Transaction Code");
         }
     }
-
     void EffectiveDateCheck(string effectiveDateCheck, string transactionReply)
     {
         DateValidation(effectiveDateCheck);
@@ -414,12 +400,10 @@ public class FieldValidations
                 break;
         }
     }
-
     void WaHardcode(string WorkingAgeIndicator)
     {
         var workingAgeCheck = ("1");
     }
-
     void PbpIdCode(string PlanBenefitPackageId)
     {
         var regex = @"^\d\d\d$";
@@ -430,12 +414,10 @@ public class FieldValidations
                 "Invalid PBP Number");
         }
     }
-
     void filler(string Filler, int numWhiteSpaces)
     {
         FillerValidation(Filler, numWhiteSpaces);
     }
-
     void TransactionDate(string transactionDate, string transactionReply)
     {
         DateValidation(transactionDate);
@@ -454,7 +436,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void UiInitiatedChangeCode(string UIInitiatedChangeFlag)
     {
         var regex = @"^\d$";
@@ -478,7 +459,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void todoVariableData(string VariableData)
     {
         var regex = @"^\d$";
@@ -496,7 +476,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void districtOfficeCode(string DistrictOfficeCode)
     {
         var regex = @"^\s\s\s$";
@@ -507,7 +486,6 @@ public class FieldValidations
                 "Invalid unless the transaction is a 53");
         }
     }
-
     void prevPartDContractAndPBP(string PrevPartDContractAndPBP)
     {
         var empty = @"^[/s{8}$";
@@ -525,7 +503,6 @@ public class FieldValidations
             }
         }
     }
-
     void SepReasonCode(string sepReasonCode, string electionType
         , string transactionReply)
     {
@@ -604,12 +581,10 @@ public class FieldValidations
                 break;
         }
     }
-
     void DtrrFiller1(string dtrrFiller1, int numWhiteSpace)
     {
         FillerValidation(dtrrFiller1, numWhiteSpace);
     }
-
     private void SourceId(string sourceId)
     {
         var regex = @"^[A-Za-z]\d\d\d\d$";
@@ -621,7 +596,6 @@ public class FieldValidations
                 "Source Id Error: should match contract number");
         }
     }
-
     void PriorPlanBenefitPackageId(string priorPlanBenefitPackageId)
     {
         var regex = @"^\d\d\d$";
@@ -632,12 +606,10 @@ public class FieldValidations
                 "Invalid PBP Number");
         }
     }
-
     void ApplicationDate(string applicationDate)
     {
         DateValidation(applicationDate);
     }
-
     void UIUserOrganizationDesignation(string uiUserOrganizationDesignation)
     {
         var regex = @"^\s{2}$";
@@ -648,7 +620,6 @@ public class FieldValidations
                 "Invalid - should be blanks");
         }
     }
-
     void OutOfAreaFlag(string outOfAreaFlag)
     {
         var regex = @"^\[NY/s]$";
@@ -659,7 +630,6 @@ public class FieldValidations
                 "Invalid Out of Area Flag");
         }
     }
-
     void SegmentNumber(string segmentNumber)
     {
         var regex = @"^\s{3}$";
@@ -670,17 +640,14 @@ public class FieldValidations
                 "Invalid - should be blanks");
         }
     }
-
     void PartCBeneficiaryPremium(string partCBeneficiaryPremium)
     {
         CurrencyValidation(partCBeneficiaryPremium);
     }
-
     void PartDBeneficiaryPremium(string partDBeneficiaryPremium)
     {
         CurrencyValidation(partDBeneficiaryPremium);
     }
-
     void ElectionTypeCode(string electionTypeCode)
     {
         var regex = @"^\[ACDFIJLMNORSTUVWXYZ/s]$";
@@ -691,7 +658,6 @@ public class FieldValidations
                 "Invalid Election type code");
         }
     }
-
     void EnrollmentSourceCode(string enrollmentSourceCode)
     {
         var regex = @"^\[ABCDEFGHIJKLN/s]$";
@@ -702,7 +668,6 @@ public class FieldValidations
                 "Invalid enrollment Source Code");
         }
     }
-
     void PartDOptOutFlag(string partDOptOutFlag)
     {
         var regex = @"^\[YN/s]$";
@@ -713,7 +678,6 @@ public class FieldValidations
                 "Invalid Part D OptOut Flag");
         }
     }
-
     void PtsCAndDPremiumWithholdOpt(string ptsCAndDPremiumWithholdOpt)
     {
         var regex = @"^\[DNRS/s]$";
@@ -724,12 +688,10 @@ public class FieldValidations
                 "Invalid Pts C And D Premium Withhold Opt - 120, 185, and 186 report the PPO involved in the communication, all other report the PPO in effect");
         }
     }
-
     void CumulativeNoOfUncoverdMonths(string cumulativeNoOfUncoverdMonths)
     {
         cumulativeNoOfUncoverdMonths = "000";
     }
-
     void CreditableCoverageFlag(string creditableCoverageFlag)
     {
         var regex = @"^\[YNALRTU/s]$";
@@ -740,7 +702,6 @@ public class FieldValidations
                 "Invalid Creditable Coverage Flag");
         }
     }
-
     void EmployerSubsidyOverrideFlag(string employerSubsidyOverrideFlag)
     {
         var regex = @"^\[Y/s]$";
@@ -751,7 +712,6 @@ public class FieldValidations
                 "Invalid Employer Subsidy Override Flag");
         }
     }
-
     void ProcessingTimestamp(string processingTimestamp)
     {
         var regex = @"\b\d{2}\.\d{2}\.\d{2}.\d{6}\b";
@@ -762,12 +722,10 @@ public class FieldValidations
                 "Invalid timestamp");
         }
     }
-
     void EndDate(string endDate)
     {
         DateValidation(endDate);
     }
-
     void SubmittedNoOfUncoveredMonths(string submittedNoOfUncoveredMonths)
     {
         var regex = @"^\d\d\d$";
@@ -778,7 +736,6 @@ public class FieldValidations
                 "Invalid SubmittedNoOfUncoveredMonths");
         }
     }
-
     void SecondaryDrugInsuranceFlag(string secondaryDrugInsuranceFlag)
     {
         var regex = @"^\[YN/s]$";
@@ -789,7 +746,6 @@ public class FieldValidations
                 "Invalid Secondary Drug Insurance Flag");
         }
     }
-
     void SecondaryRxId(string secondaryRxId)
     {
         var regex = @"^/s{20}$";
@@ -800,7 +756,6 @@ public class FieldValidations
                 "Invalid Secondary Rx Id");
         }
     }
-
     void SecondaryRxGroup(string secondaryRxGroup)
     {
         var regex = @"^/s{15}$";
@@ -811,7 +766,6 @@ public class FieldValidations
                 "Invalid Secondary Rx Group");
         }
     }
-
     void Egph(string egph, int transactionCode)
     {
         if (transactionCode == 61)
@@ -845,7 +799,6 @@ public class FieldValidations
             }
         }
     }
-
     void PartDLowIncomePremSubsidyLvl(string partDLowIncomePremSubsidyLvl)
     {
         var regex = @"^\d\d\d$";
@@ -878,7 +831,6 @@ public class FieldValidations
                 break;
         }
     }
-
     void LowIncomeCopayCategory(string lowIncomeCopayCategory)
     {
         var regex = @"^\d$";
@@ -934,12 +886,196 @@ public class FieldValidations
     {
         CurrencyValidation(lowIncomePtDPremiumSubsidyAmt);
     }
-
-    void PartDRxBIN(string partDRxBIN)
+    void PartDRxBIN(string partDRxBin, string transactionCode, int numWhiteSpace)
     {
-        
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            partDRxBin.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(partDRxBin, numWhiteSpace);
+        }
     }
-
+    void PartDRxPCN(string partDRxPcn, string transactionCode, int numWhiteSpace)
+    {
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            partDRxPcn.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(partDRxPcn, numWhiteSpace);
+        }
+    }
+    void PartDRxGroup(string partDRxGroup, string transactionCode, int numWhiteSpace)
+    {
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            partDRxGroup.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(partDRxGroup, numWhiteSpace);
+        }
+    }
+    void PartDRxId(string partDRxId, string transactionCode, int numWhiteSpace)
+    {
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            partDRxId.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(partDRxId, numWhiteSpace);
+        }
+    }
+    void SecondaryRxBIN(string secondaryRxBIN, string transactionCode, int numWhiteSpace)
+    {
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            secondaryRxBIN.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(secondaryRxBIN, numWhiteSpace);
+        }
+    }
+    void SecondaryRxPCN(string secondaryRxPCN, string transactionCode, int numWhiteSpace)
+    {
+        if (transactionCode = "61" || transactionCode = "72")
+        {
+            secondaryRxPCN.Length = numWhiteSpace;
+        }
+        else
+        {
+            FillerValidation(secondaryRxPCN, numWhiteSpace);
+        }
+    }
+    void DeMinimisDifferentialAmt(string deMinimisDifferentialAmt)
+    {
+        CurrencyValidation(deMinimisDifferentialAmt);
+    }
+    void MSPStatusFlag(string MmspStatusFlag)
+    {
+        var regex = @"^\[PSN/s]$";
+        var match = Regex.Match(MmspStatusFlag, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Medicare secondary payer status flag");
+        }
+    }
+    void LowIncomePeriodEndDate(string lowIncomePeriodEndDate)
+    {
+        DateValidation(lowIncomePeriodEndDate);
+    }
+    void LowIncomeSubsidySrceCode(string lowIncomeSubsidySrceCode)
+    {
+        var regex = @"^\[AD/s]$";
+        var match = Regex.Match(lowIncomeSubsidySrceCode, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Low Income Subsidy Source Code");
+        }
+    }
+    void EnrolleeTypeFlagPBPLevel(string enrolleeTypeFlagPBPLevel)
+    {
+        var regex = @"^\[CPY/s]$";
+        var match = Regex.Match(enrolleeTypeFlagPBPLevel, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Enrollee Type Flag, PBP Level");
+        }
+    }
+    void ApplicationDateIndicator(string applicationDateIndicator)
+    {
+        var regex = @"^\[Y/s]$";
+        var match = Regex.Match(applicationDateIndicator, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Application Date Indicator");
+        }
+    }
+    void TRCShortName(string trcShortName)
+    {
+        switch (trcShortName)
+        {
+            case "NEED MEMB NAME":
+                Console.WriteLine(
+                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                break;
+            case "BAD BIRTH DATE":
+                Console.WriteLine(
+                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                break;
+            case "BAD BENE ID FORMAT":
+                Console.WriteLine("Invalid MBI");
+                break;
+            case "BENE ID NOT FOUND":
+                Console.WriteLine(
+                    "Beneficiary with this identifier was not found..");
+                break;
+            case "NO BENE MATCH":
+                Console.WriteLine(
+                    "Unable to find the beneficiary based on the identifying information submitted in the transaction..");
+                break;
+            case "ENROLL ACCEPTED":
+                Console.WriteLine("The new enrollment has been successfully processed.");
+                break;
+            case "DISENROL ACCEPT":
+                Console.WriteLine(
+                    "A disenrollment transaction has been successfully processed");
+                break;
+            case "DISNROLNEW
+                MCO":
+                Console.WriteLine(
+                    "Disenrollment date due to a beneficiary's enrollment in another Plan.");
+                break;
+            case "BAD BENE ID FORMAT":
+                Console.WriteLine("Invalid MBI");
+                break;
+            case "NEED MEMB NAME":
+                Console.WriteLine(
+                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                break;
+            case "BAD BIRTH DATE":
+                Console.WriteLine(
+                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                break;
+            case "BAD BENE ID FORMAT":
+                Console.WriteLine("Invalid MBI");
+                break;
+            case "NEED MEMB NAME":
+                Console.WriteLine(
+                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                break;
+            case "BAD BIRTH DATE":
+                Console.WriteLine(
+                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                break;
+            case "BAD BENE ID FORMAT":
+                Console.WriteLine("Invalid MBI");
+                break;
+            case "NEED MEMB NAME":
+                Console.WriteLine(
+                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                break;
+            case "BAD BIRTH DATE":
+                Console.WriteLine(
+                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                break;
+            case "BAD BENE ID FORMAT":
+                Console.WriteLine("Invalid MBI");
+                break;
+            default:
+                Console.WriteLine("Date of Transaction");
+                break;
+        }
+    }
 
 
 
