@@ -1000,7 +1000,7 @@ public class FieldValidations
                 "Invalid Application Date Indicator");
         }
     }
-    void TRCShortName(string trcShortName)
+    void TRCShortName(string trcShortName, string transactionCode)
     {
         switch (trcShortName)
         {
@@ -1030,47 +1030,55 @@ public class FieldValidations
                 Console.WriteLine(
                     "A disenrollment transaction has been successfully processed");
                 break;
-            case "DISNROLNEW
-                MCO":
+            case "DISNROL-NEW MCO":
                 Console.WriteLine(
                     "Disenrollment date due to a beneficiary's enrollment in another Plan.");
                 break;
-            case "BAD BENE ID FORMAT":
-                Console.WriteLine("Invalid MBI");
+            case "ENROLL REMOVED":
+                Console.WriteLine("A removal may be the result of an action on the part of the beneficiary, CMS, or another Plan");
                 break;
-            case "NEED MEMB NAME":
+            case "ENROLL-OUT AREA":
                 Console.WriteLine(
-                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                    "Beneficiary outside of the Plan’s approved service area.");
                 break;
-            case "BAD BIRTH DATE":
+            case "ENROLL-BAD SCC":
                 Console.WriteLine(
-                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                    "unable to derive a valid state and county code for the beneficiary who has been successfully enrolled.");
                 break;
-            case "BAD BENE ID FORMAT":
-                Console.WriteLine("Invalid MBI");
+            case "AUTO DISENROLL":
+                Console.WriteLine("The beneficiary has been disenrolled from the Plan");
                 break;
-            case "NEED MEMB NAME":
+            case "NO ENROLL-NO AB":
                 Console.WriteLine(
-                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                    "The beneficiary does not have Medicare entitlement as of the effective date of the transaction.k.");
                 break;
-            case "BAD BIRTH DATE":
+            case "NO ENROLL-NOT55":
                 Console.WriteLine(
-                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                    "PACE Plan: was rejected because the beneficiary is not yet 55 years of age..");
                 break;
-            case "BAD BENE ID FORMAT":
-                Console.WriteLine("Invalid MBI");
+            case "NEW BENE ID":
+                Console.WriteLine("A transaction has been successfully processed. Additionally, the beneficiary identifier has changed.");
                 break;
-            case "NEED MEMB NAME":
+            case "NEW NAME":
                 Console.WriteLine(
-                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
+                    "Transaction Accepted, Name Change");
                 break;
-            case "BAD BIRTH DATE":
+            case "DISROL-NEW MBI":
                 Console.WriteLine(
-                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
+                    "Disenrollment Accepted, Beneficiary Identifier Change.");
                 break;
-            case "BAD BENE ID FORMAT":
-                Console.WriteLine("Invalid MBI");
+            case "DISROL-NEW NAME":
+                Console.WriteLine("Disenrollment Accepted, Name Change");
                 break;
+            case "MEMB HAS NO B":
+                Console.WriteLine("Transaction Rejected, Beneficiary Not Entitl Part B");
+                break;
+            
+            
+            
+            
+            
+            
             default:
                 Console.WriteLine("Date of Transaction");
                 break;
