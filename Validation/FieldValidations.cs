@@ -1000,10 +1000,25 @@ public class FieldValidations
                 "Invalid Application Date Indicator");
         }
     }
-    void TRCShortName(string trcShortName, string transactionCode)
+    void TRCShortName(string trcShortName, int transactionCode)
     {
         switch (trcShortName)
         {
+            //This, and a few other ones, are not returned on the DTRR: but are certainly problems
+            //Add yet another file type to parse? Something else?
+            case "BAD TRANS CODE":
+                int[] transCode =
+                {
+                    01, 51, 61, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83
+                    , 90, 91, 92, 95
+                };
+                if (transCode.Contains(transactionCode))
+                {
+                    break;
+                }
+                Console.WriteLine(
+                    "F 001 Invalid Transaction Code");
+                break;
             case "NEED MEMB NAME":
                 Console.WriteLine(
                     "Both of the beneficiary name fields (Surname and First Name) were blank.");
@@ -1072,6 +1087,46 @@ public class FieldValidations
                 break;
             case "MEMB HAS NO B":
                 Console.WriteLine("Transaction Rejected, Beneficiary Not Entitl Part B");
+                break;
+            case "MEMB HAS NO A":
+                Console.WriteLine("Transaction Rejected, Beneficiary Not Entitl Part A");
+                break;
+            case "MEMB NOT AGE 65":
+                Console.WriteLine("Enrollment Rejected,Beneficiary is Not Age 65");
+                break;
+            case "MEMB IN HOSPICE":
+                Console.WriteLine("Enrollment Rejected,Beneficiary is in Hospice");
+                break;
+            case "MEMB DECEASED":
+                Console.WriteLine("Transaction Rejected, Beneficiary is Deceased");
+                break;
+            case "BAD ENROLL DATE":
+                Console.WriteLine("Transaction Rejected, Incorrect Effective Date");
+                break;
+            case "DUPLICATE":
+                Console.WriteLine("Transaction Rejected, Duplicate Transaction");
+                break;
+            case "ALREADY ENROLL":
+                Console.WriteLine("Enrollment Rejected, Currently Enrolled in Same Plan");
+                break;
+            case "ENROLL BLOCKED":
+                    Console.WriteLine("Transaction Rejected, Blocked");
+                    break;
+            case "NO CONTRACT":
+                Console.WriteLine("Transaction Rejected, Outside Contracted Period");
+                break;
+            case "MEMB HAS ESRD":
+                Console.WriteLine("Enrollment Rejected, Beneficiary is in ESRD");
+                break;
+            //048 applies to effective dates prior to 1/1/2008
+            case "NOT ENROLLED":
+                Console.WriteLine("Disenrollment Rejected, Not Enrolled");
+                break;
+            case "BAD DISENR DATE":
+                Console.WriteLine("Disenrollment Rejected, Incorrect Effective Date");
+                break;
+            case "RETRO DISN\nDATE":
+                Console.WriteLine("Disenrollment Rejected, Retroactive Effective Date");
                 break;
             
             
