@@ -193,15 +193,234 @@ public class FieldValidations
                 break;
         }
     }
-    void TransactionReply(string transactionReply)
+    void TransactionReply(string transactionReply, string trcShortName)
     {
-        var regex = @"^\d\d\d$";
-        var match = Regex.Match(transactionReply, regex);
-        if (!match.Success)
+        switch (transactionReply)
         {
-            Console.WriteLine(
-                "Non-numeric TRC");
+            //This, and a few other ones, are not returned on the DTRR: but are certainly problems
+            //Add yet another file type to parse? Something else?
+            case "001":
+                if (trcShortName != "BAD TRANS CODE")
+                {
+                    Console.WriteLine("Error for 001");
+                }
+                break;
+                case "002":
+                    if (trcShortName != "BAD ACTION CODE")
+                {
+                    Console.WriteLine("Error for 002");
+                }
+                break;
+            case "003":
+                if (trcShortName != "BAD CONTRACT #")
+                {
+                    Console.WriteLine("Error for 003");
+                }
+                break;
+            case "004":
+                if (trcShortName != "NEED MEMB NAME")
+                {
+                    Console.WriteLine("Error for 004");
+                }
+                break;
+            case "006":
+                if (trcShortName != "BAD BIRTH DATE")
+                {
+                    Console.WriteLine("Error for 006");
+                }
+                break;
+            case "007":
+                if (trcShortName != "BAD BENE ID FORMAT")
+                {
+                    Console.WriteLine("Error for 007");
+                }
+                break;
+            case "008":
+                if (trcShortName != "BENE ID NOT FOUND")
+                {
+                    Console.WriteLine("Error for 008");
+                }
+                break;
+            case "009":
+                if (trcShortName != "NO BENE MATCH")
+                {
+                    Console.WriteLine("Error for 009");
+                }
+                break;
+            case "011":
+                if (trcShortName != "ENROLL ACCEPTED")
+                {
+                    Console.WriteLine("Error for 011");
+                }
+                break;
+            case "013":
+                if (trcShortName != "DISENROL ACCEPT")
+                {
+                    Console.WriteLine("Error for 013");
+                }
+                break;
+            case "014":
+                if (trcShortName != "DISNROL-NEW MCO")
+                {
+                    Console.WriteLine("Error for 014");
+                }
+                break;
+            case "015":
+                if (trcShortName != "ENROLL REMOVED")
+                {
+                    Console.WriteLine("Error for 015");
+                }
+                break;
+            case "016":
+                if (trcShortName != "ENROLL-OUT AREA")
+                {
+                    Console.WriteLine("Error for 016");
+                }
+                break;
+            case "017":
+                if (trcShortName != "ENROLL-BAD SCC")
+                {
+                    Console.WriteLine("Error for 017");
+                }
+                break;
+            case "018":
+                if (trcShortName != "AUTO DISENROLL")
+                {
+                    Console.WriteLine("Error for 018");
+                }
+                break;
+            case "019":
+                if (trcShortName != "NO ENROLL-NO AB")
+                {
+                    Console.WriteLine("Error for 019");
+                }
+                break;
+            case "020":
+                if (trcShortName != "NO ENROLL-NOT55")
+                {
+                    Console.WriteLine("Error for 020");
+                }
+                break;
+            case "022":
+                if (trcShortName != "NEW BENE ID")
+                {
+                    Console.WriteLine("Error for 022");
+                }
+                break;
+            case "023":
+                if (trcShortName != "NEW NAME")
+                {
+                    Console.WriteLine("Error for 023");
+                }
+                break;
+            case "025":
+                if (trcShortName != "DISROL-NEW MBI")
+                {
+                    Console.WriteLine("Error for 025");
+                }
+                break;
+            case "026":
+                if (trcShortName != "DISROL-NEW NAME")
+                {
+                    Console.WriteLine("Error for 026");
+                }
+                break;
+            case "032":
+                if (trcShortName != "MEMB HAS NO B")
+                {
+                    Console.WriteLine("Error for 032");
+                }
+                break;
+            case "033":
+                if (trcShortName != "MEMB HAS NO A")
+                {
+                    Console.WriteLine("Error for 033");
+                }
+                break;
+            case "034":
+                if (trcShortName != "MEMB NOT AGE 65")
+                {
+                    Console.WriteLine("Error for 034");
+                }
+                break;
+            case "035":
+                if (trcShortName != "MEMB IN HOSPICE")
+                {
+                    Console.WriteLine("Error for 035");
+                }
+                break;
+            case "036":
+                if (trcShortName != "MEMB DECEASED")
+                {
+                    Console.WriteLine("Error for 036");
+                }
+                break;
+            case "037":
+                if (trcShortName != "BAD ENROLL DATE")
+                {
+                    Console.WriteLine("Error for 037");
+                }
+                break;
+            case "038:
+                if (trcShortName != "DUPLICATE")
+                {
+                    Console.WriteLine("Error for 038");
+                }
+                break;
+            case "039":
+                if (trcShortName != "ALREADY ENROLL")
+                {
+                    Console.WriteLine("Error for 039");
+                }
+                break;
+            case "042":
+                if (trcShortName != "ENROLL BLOCKED")
+                {
+                    Console.WriteLine("Error for 042");
+                }
+                break;
+            case "044":
+                if (trcShortName != "NO CONTRACT")
+                {
+                    Console.WriteLine("Error for 044");
+                }
+                break;
+            case "045":
+                if (trcShortName != "MEMB HAS ESRD")
+                {
+                    Console.WriteLine("Error for 045");
+                }
+                break;
+            //048 applies to effective dates prior to 1/1/2008
+            case "050":
+                if (trcShortName != "NOT ENROLLED")
+                {
+                    Console.WriteLine("Error for 050");
+                }
+                break;
+            case "051":
+                if (trcShortName != "BAD DISENR DATE")
+                {
+                    Console.WriteLine("Error for 051");
+                }
+                break;
+            case "052":
+                if (trcShortName != "NEED MEMB NAME)
+                {
+                    Console.WriteLine("Error for 052");
+                }
+                break;
+            
+            
+            
+            
+            
+            
+            default:
+                Console.WriteLine("Bad Transaction Reply Code");
+                break;
         }
+    }
     }
     void SentTransactionCode(string transactionCode)
     {
@@ -1000,145 +1219,7 @@ public class FieldValidations
                 "Invalid Application Date Indicator");
         }
     }
-    void TRCShortName(string trcShortName, int transactionCode)
-    {
-        switch (trcShortName)
-        {
-            //This, and a few other ones, are not returned on the DTRR: but are certainly problems
-            //Add yet another file type to parse? Something else?
-            case "BAD TRANS CODE":
-                int[] transCode =
-                {
-                    01, 51, 61, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83
-                    , 90, 91, 92, 95
-                };
-                if (transCode.Contains(transactionCode))
-                {
-                    break;
-                }
-                Console.WriteLine(
-                    "F 001 Invalid Transaction Code");
-                break;
-            case "NEED MEMB NAME":
-                Console.WriteLine(
-                    "Both of the beneficiary name fields (Surname and First Name) were blank.");
-                break;
-            case "BAD BIRTH DATE":
-                Console.WriteLine(
-                    "Birth Date, while non-blank and formatted correctly as YYYYMMDD, is before 1870 or greater than the current year.");
-                break;
-            case "BAD BENE ID FORMAT":
-                Console.WriteLine("Invalid MBI");
-                break;
-            case "BENE ID NOT FOUND":
-                Console.WriteLine(
-                    "Beneficiary with this identifier was not found..");
-                break;
-            case "NO BENE MATCH":
-                Console.WriteLine(
-                    "Unable to find the beneficiary based on the identifying information submitted in the transaction..");
-                break;
-            case "ENROLL ACCEPTED":
-                Console.WriteLine("The new enrollment has been successfully processed.");
-                break;
-            case "DISENROL ACCEPT":
-                Console.WriteLine(
-                    "A disenrollment transaction has been successfully processed");
-                break;
-            case "DISNROL-NEW MCO":
-                Console.WriteLine(
-                    "Disenrollment date due to a beneficiary's enrollment in another Plan.");
-                break;
-            case "ENROLL REMOVED":
-                Console.WriteLine("A removal may be the result of an action on the part of the beneficiary, CMS, or another Plan");
-                break;
-            case "ENROLL-OUT AREA":
-                Console.WriteLine(
-                    "Beneficiary outside of the Plan’s approved service area.");
-                break;
-            case "ENROLL-BAD SCC":
-                Console.WriteLine(
-                    "unable to derive a valid state and county code for the beneficiary who has been successfully enrolled.");
-                break;
-            case "AUTO DISENROLL":
-                Console.WriteLine("The beneficiary has been disenrolled from the Plan");
-                break;
-            case "NO ENROLL-NO AB":
-                Console.WriteLine(
-                    "The beneficiary does not have Medicare entitlement as of the effective date of the transaction.k.");
-                break;
-            case "NO ENROLL-NOT55":
-                Console.WriteLine(
-                    "PACE Plan: was rejected because the beneficiary is not yet 55 years of age..");
-                break;
-            case "NEW BENE ID":
-                Console.WriteLine("A transaction has been successfully processed. Additionally, the beneficiary identifier has changed.");
-                break;
-            case "NEW NAME":
-                Console.WriteLine(
-                    "Transaction Accepted, Name Change");
-                break;
-            case "DISROL-NEW MBI":
-                Console.WriteLine(
-                    "Disenrollment Accepted, Beneficiary Identifier Change.");
-                break;
-            case "DISROL-NEW NAME":
-                Console.WriteLine("Disenrollment Accepted, Name Change");
-                break;
-            case "MEMB HAS NO B":
-                Console.WriteLine("Transaction Rejected, Beneficiary Not Entitl Part B");
-                break;
-            case "MEMB HAS NO A":
-                Console.WriteLine("Transaction Rejected, Beneficiary Not Entitl Part A");
-                break;
-            case "MEMB NOT AGE 65":
-                Console.WriteLine("Enrollment Rejected,Beneficiary is Not Age 65");
-                break;
-            case "MEMB IN HOSPICE":
-                Console.WriteLine("Enrollment Rejected,Beneficiary is in Hospice");
-                break;
-            case "MEMB DECEASED":
-                Console.WriteLine("Transaction Rejected, Beneficiary is Deceased");
-                break;
-            case "BAD ENROLL DATE":
-                Console.WriteLine("Transaction Rejected, Incorrect Effective Date");
-                break;
-            case "DUPLICATE":
-                Console.WriteLine("Transaction Rejected, Duplicate Transaction");
-                break;
-            case "ALREADY ENROLL":
-                Console.WriteLine("Enrollment Rejected, Currently Enrolled in Same Plan");
-                break;
-            case "ENROLL BLOCKED":
-                    Console.WriteLine("Transaction Rejected, Blocked");
-                    break;
-            case "NO CONTRACT":
-                Console.WriteLine("Transaction Rejected, Outside Contracted Period");
-                break;
-            case "MEMB HAS ESRD":
-                Console.WriteLine("Enrollment Rejected, Beneficiary is in ESRD");
-                break;
-            //048 applies to effective dates prior to 1/1/2008
-            case "NOT ENROLLED":
-                Console.WriteLine("Disenrollment Rejected, Not Enrolled");
-                break;
-            case "BAD DISENR DATE":
-                Console.WriteLine("Disenrollment Rejected, Incorrect Effective Date");
-                break;
-            case "RETRO DISN\nDATE":
-                Console.WriteLine("Disenrollment Rejected, Retroactive Effective Date");
-                break;
-            
-            
-            
-            
-            
-            
-            default:
-                Console.WriteLine("Date of Transaction");
-                break;
-        }
-    }
+    
 
 
 
