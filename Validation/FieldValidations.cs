@@ -361,7 +361,7 @@ public class FieldValidations
                     Console.WriteLine("Error for 037");
                 }
                 break;
-            case "038:
+            case "038":
                 if (trcShortName != "DUPLICATE")
                 {
                     Console.WriteLine("Error for 038");
@@ -405,12 +405,373 @@ public class FieldValidations
                 }
                 break;
             case "052":
-                if (trcShortName != "NEED MEMB NAME)
+                if (trcShortName != "DUPLICATE")
                 {
                     Console.WriteLine("Error for 052");
                 }
                 break;
-            
+            case "054":
+                if (trcShortName != "RETRO DISN DATE")
+                {
+                    Console.WriteLine("Error for 054");
+                }
+                break;
+            case "055":
+                if (trcShortName != "ESRD CANCELED")
+                {
+                    Console.WriteLine("Error for 055");
+                }
+                break;
+            case "056":
+                if (trcShortName != "FAILS DEMO REQ")
+                {
+                    Console.WriteLine("Error for 056");
+                }
+                break;
+            case "060":
+                if (trcShortName != "NOT ENROLLED")
+                {
+                    Console.WriteLine("Error for 060");
+                }
+                break;
+            //062 applies only to effective dates prior to 1/1/2008
+            case "071":
+                if (trcShortName != "HOSPICE ON")
+                {
+                    Console.WriteLine("Error for 071");
+                }
+                break;
+            case "072":
+                if (trcShortName != "HOSPICE OFF")
+                {
+                    Console.WriteLine("Error for 072");
+                }
+                break;
+            case "073":
+                if (trcShortName != "ESRD ON")
+                {
+                    Console.WriteLine("Error for 073");
+                }
+                break;
+            case "074":
+                if (trcShortName != "ESRD OFF")
+                {
+                    Console.WriteLine("Error for 074");
+                }
+                break;
+            //075 applies only to effective dates prior to 1/1/2008   
+            case "077":
+                if (trcShortName != "MEDICAID ON")
+                {
+                    Console.WriteLine("Error for 077");
+                }
+                break;
+            case "078":
+                if (trcShortName != "MEDICAID OFF")
+                {
+                    Console.WriteLine("Error for 074");
+                }
+                break;
+            case "079":
+                if (trcShortName != "MEDICARE A OFF")
+                {
+                    Console.WriteLine("Error for 079");
+                }
+                break;
+            case "080":
+                if (trcShortName != "MEDICARE A ON")
+                {
+                    Console.WriteLine("Error for 080");
+                }
+                break;
+            case "081":
+                if (trcShortName != "MEDICARE B OFF")
+                {
+                    Console.WriteLine("Error for 081");
+                }
+                break;
+            case "082":
+                if (trcShortName != "MEDICARE B ON")
+                {
+                    Console.WriteLine("Error for 082");
+                }
+                break;
+            case "085":
+                if (trcShortName != "NEW SCC")
+                {
+                    Console.WriteLine("Error for 085");
+                }
+                break;
+            case "086":
+                if (trcShortName != "NEW MBI")
+                {
+                    Console.WriteLine("Error for 086");
+                }
+                break;
+            case "087":
+                if (trcShortName != "NEW NAME")
+                {
+                    Console.WriteLine("Error for 087");
+                }
+                break;
+            case "088":
+                if (trcShortName != "NEW SEX CODE")
+                {
+                    Console.WriteLine("Error for 088");
+                }
+                break;
+            case "089":
+                if (trcShortName != "NEW BIRTH DATE")
+                {
+                    Console.WriteLine("Error for 089");
+                }
+                break;
+            case "090":
+                if (trcShortName != "MEMB DECEASED")
+                {
+                    Console.WriteLine("Error for 090");
+                }
+                break;
+            case "091":
+                if (trcShortName != "DEATH DATE OFF")
+                {
+                    Console.WriteLine("Error for 091");
+                }
+                break;
+            case "092":
+                if (trcShortName != "NEW DEATH DATE")
+                {
+                    Console.WriteLine("Error for 092");
+                }
+                break;
+            case "099":
+                if (trcShortName != "MCAID CHANGE")
+                {
+                    Console.WriteLine("Error for 099");
+                }
+                break;
+            case "100":
+                if (trcShortName != "PBP CHANGE OK")
+                {
+                    Console.WriteLine("Error for 100");
+                }
+                break;
+            case "102":
+                if (trcShortName != "BAD APP DATE")
+                {
+                    Console.WriteLine("Error for 102");
+                }
+                break;
+            case "103":
+                if (trcShortName != "NO A/B ENT")
+                {
+                    Console.WriteLine("Error for 103");
+                }
+                break;
+            case "104":
+                if (trcShortName != "BAD ELECT TYPE")
+                {
+                    Console.WriteLine("Error for 104");
+                }
+                break;
+            case "105":
+                if (trcShortName != "BAD ELECT DATE")
+                {
+                    Console.WriteLine("Error for 105");
+                }
+                break;
+            case "106":
+                if (trcShortName != "LATER APPLIC")
+                {
+                    Console.WriteLine("Error for 106");
+                }
+                break;
+            case "107":
+                if (trcShortName != "BAD PBP NUMBER")
+                {
+                    Console.WriteLine("Error for 107");
+                }
+                break;
+            case "108":
+                if (trcShortName != "NO MORE ELECTS")
+                {
+                    Console.WriteLine("Error for 108");
+                }
+                break;
+            case "109":
+                if (trcShortName != "ALREADY ENROLL")
+                {
+                    Console.WriteLine("Error for 109");
+                }
+                break;
+            case "110":
+                if (trcShortName != "NO PART A/EGHP")
+                {
+                    Console.WriteLine("Error for 110");
+                }
+                break;
+            case "114":
+                if (trcShortName != "RX NOT AEP/OEPI")
+                {
+                    Console.WriteLine("Error for 114");
+                }
+                break;
+            case "116":
+                if (trcShortName != "BAD SEGMENT NUM")
+                {
+                    Console.WriteLine("Error for 116");
+                }
+                break;
+            case "117":
+                if (trcShortName != "FBD AUTO ENROLL")
+                {
+                    Console.WriteLine("Error for 117");
+                }
+                break;
+            case "118":
+                if (trcShortName != "LIS FAC ENROLL")
+                {
+                    Console.WriteLine("Error for 118");
+                }
+                break;
+            case "121":
+                if (trcShortName != "LIS UPDATE")
+                {
+                    Console.WriteLine("Error for 121");
+                }
+                break;
+            case "127":
+                if (trcShortName != "EMP SUB REJ")
+                {
+                    Console.WriteLine("Error for 127");
+                }
+                break;
+            case "128":
+                if (trcShortName != "EMP SUB OVR REJ")
+                {
+                    Console.WriteLine("Error for 128");
+                }
+                break;
+            case "129":
+                if (trcShortName != "EMP SUB ACC")
+                {
+                    Console.WriteLine("Error for 129");
+                }
+                break;
+            case "130":
+                if (trcShortName != "BAD OPT OUT CD")
+                {
+                    Console.WriteLine("Error for 130");
+                }
+                break;
+            case "131":
+                if (trcShortName != "OPT OUT OK")
+                {
+                    Console.WriteLine("Error for 131");
+                }
+                break;
+            case "133":
+                if (trcShortName != "BAD 2 INS FLAG")
+                {
+                    Console.WriteLine("Error for 133");
+                }
+                break;
+            case "134":
+                if (trcShortName != "NO 2 INS INFO")
+                {
+                    Console.WriteLine("Error for 134");
+                }
+                break;
+            case "135":
+                if (trcShortName != "DIALYSIS START")
+                {
+                    Console.WriteLine("Error for 135");
+                }
+                break;
+            case "136":
+                if (trcShortName != "DIALYSIS END")
+                {
+                    Console.WriteLine("Error for 136");
+                }
+                break;
+            case "137":
+                if (trcShortName != "TRANSPLANT ADD")
+                {
+                    Console.WriteLine("Error for 137");
+                }
+                break;
+            case "138":
+                if (trcShortName != "ADDR NOT U.S.")
+                {
+                    Console.WriteLine("Error for 138");
+                }
+                break;
+            case "139":
+                if (trcShortName != "EGHP FLAG CHG")
+                {
+                    Console.WriteLine("Error for 139");
+                }
+                break;
+            case "143":
+                if (trcShortName != "4RX SCD INS CHG")
+                {
+                    Console.WriteLine("Error for 143");
+                }
+                break;
+            case "150":
+                if (trcShortName != "OVER CAP LIMIT")
+                {
+                    Console.WriteLine("Error for 150");
+                }
+                break;
+            case "152":
+                if (trcShortName != "NEW RACE CODE")
+                {
+                    Console.WriteLine("Error for 152");
+                }
+                break;
+            case "154":
+                if (trcShortName != "OUT OF AREA")
+                {
+                    Console.WriteLine("Error for 154");
+                }
+                break;
+            case "155":
+                if (trcShortName != "INCARCERATED")
+                {
+                    Console.WriteLine("Error for 155");
+                }
+                break;
+            case "156":
+                if (trcShortName != "BAD USR FOR PLAN")
+                {
+                    Console.WriteLine("Error for 156");
+                }
+                break;
+            case "157":
+                if (trcShortName != "UNAUT REQUEST")
+                {
+                    Console.WriteLine("Error for 157");
+                }
+                break;
+            case "158":
+                if (trcShortName != "INST CHANGE")
+                {
+                    Console.WriteLine("Error for 158");
+                }
+                break;
+            case "159":
+                if (trcShortName != "NHC CHANGE")
+                {
+                    Console.WriteLine("Error for 159");
+                }
+                break;
+            case "161":
+                if (trcShortName != "MBD ALERT")
+                {
+                    Console.WriteLine("Error for 161");
+                }
+                break;
             
             
             
