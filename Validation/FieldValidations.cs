@@ -772,6 +772,300 @@ public class FieldValidations
                     Console.WriteLine("Error for 161");
                 }
                 break;
+            case "162":
+                if (trcShortName != "BAD EGHP FLAG")
+                {
+                    Console.WriteLine("Error for 162");
+                }
+                break;
+            case "165":
+                if (trcShortName != "SYSTEM DELAY")
+                {
+                    Console.WriteLine("Error for 165");
+                }
+                break;
+            case "166":
+                if (trcShortName != "PARTD AUTO REJECT")
+                {
+                    Console.WriteLine("Error for 166");
+                }
+                break;
+            case "169":
+                if (trcShortName != "EMP SUBSIDY")
+                {
+                    Console.WriteLine("Error for 169");
+                }
+                break;
+            case "171":
+                if (trcShortName != "BAD CHG EFF DT")
+                {
+                    Console.WriteLine("Error for 171");
+                }
+                break;
+            case "172":
+                if (trcShortName != "CRED COV/RX NA")
+                {
+                    Console.WriteLine("Error for 172");
+                }
+                break;
+            case "176":
+                if (trcShortName != "TRANS REJ")
+                {
+                    Console.WriteLine("Error for 176");
+                }
+                break;
+            case "184":
+                if (trcShortName != "MBR IN MEDICAID")
+                {
+                    Console.WriteLine("Error for 184");
+                }
+                break;
+            case "189":
+                if (trcShortName != "DUP EGHP FLAG")
+                {
+                    Console.WriteLine("Error for 189");
+                }
+                break;
+            case "190":
+                if (trcShortName != "DUP SECNDARY RX")
+                {
+                    Console.WriteLine("Error for 190");
+                }
+                break;
+            case "196":
+                if (trcShortName != "NO PART D")
+                {
+                    Console.WriteLine("Error for 196");
+                }
+                break;
+            case "197":
+                if (trcShortName != "PART D OFF")
+                {
+                    Console.WriteLine("Error for 197");
+                }
+                break;
+            case "198":
+                if (trcShortName != "PART D ON")
+                {
+                    Console.WriteLine("Error for 198");
+                }
+                break;
+            case "200":
+                if (trcShortName != "BIN BLANK/INVLD")
+                {
+                    Console.WriteLine("Error for 200");
+                }
+                break;
+            case "201":
+                if (trcShortName != "ID BLANK/INVLID")
+                {
+                    Console.WriteLine("Error for 171");
+                }
+                break;
+            case "202":
+                if (trcShortName != "RX GRP INVALID")
+                {
+                    Console.WriteLine("Error for 202");
+                }
+                break;
+            case "203":
+                if (trcShortName != "RX PCN INVALID")
+                {
+                    Console.WriteLine("Error for 203");
+                }
+                break;
+            case "204":
+                if (trcShortName != "4RX CHNG ACPTED")
+                {
+                    Console.WriteLine("Error for 204");
+                }
+                break;
+            case "205":
+                if (trcShortName != "INV DISENRL RSV")
+                {
+                    Console.WriteLine("Error for 205");
+                }
+                break;
+            case "209":
+                if (trcShortName != "NO ENROLLMATCH")
+                {
+                    Console.WriteLine("Error for 209");
+                }
+                break;
+            case "210":
+                if (trcShortName != "POS ENROLLMENT")
+                {
+                    Console.WriteLine("Error for 210");
+                }
+                break;
+            case "211":
+                if (trcShortName != "RE-ASN ENRL REJ")
+                {
+                    Console.WriteLine("Error for 211");
+                }
+                break;
+            case "212":
+                if (trcShortName != "REASSIGN ACCEPT")
+                {
+                    Console.WriteLine("Error for 212");
+                }
+                break;
+            case "220":
+                if (trcShortName != "BAD POS SOURCE")
+                {
+                    Console.WriteLine("Error for 220");
+                }
+                break;
+            case "223":
+                if (trcShortName != "LIS REMOVED")
+                {
+                    Console.WriteLine("Error for 223");
+                }
+                break;
+            case "241":
+                if (trcShortName != "DUPE PTD OPT OUT")
+                {
+                    Console.WriteLine("Error for 241");
+                }
+                break;
+            case "242":
+                if (trcShortName != "DUP PRIMARY RX")
+                {
+                    Console.WriteLine("Error for 242");
+                }
+                break;
+            case "245":
+                if (trcShortName != "MEMBER IS MSP")
+                {
+                    Console.WriteLine("Error for 245");
+                }
+                break;
+            case "257":
+                if (trcShortName != "INVALID DOB")
+                {
+                    Console.WriteLine("Error for 257");
+                }
+                break;
+            case "258":
+                if (trcShortName != "INVALID EFF DT")
+                {
+                    Console.WriteLine("Error for 258");
+                }
+                break;
+            case "259":
+                if (trcShortName != "INVALID END DT")
+                {
+                    Console.WriteLine("Error for 259");
+                }
+                break;
+            case "260":
+                if (trcShortName != "BAD RES END DT")
+                {
+                    Console.WriteLine("Error for 260");
+                }
+                break;
+            case "261":
+                if (trcShortName != "BAD RES ADDR")
+                {
+                    Console.WriteLine("Error for 261");
+                }
+                break;
+            case "263":
+                if (trcShortName != "INVALID APP DT")
+                {
+                    Console.WriteLine("Error for 263");
+                }
+                break;
+            case "265":
+                if (trcShortName != "RES ADR SCC")
+                {
+                    Console.WriteLine("Error for 265");
+                }
+                break;
+            case "266":
+                if (trcShortName != "SCC UNRESOLVED")
+                {
+                    Console.WriteLine("Error for 266");
+                }
+                break;
+            case "268":
+                if (trcShortName != "DIALYSIS EXISTS")
+                {
+                    Console.WriteLine("Error for 268");
+                }
+                break;
+            case "269":
+                if (trcShortName != "TRNSPLNT EXISTS")
+                {
+                    Console.WriteLine("Error for 269");
+                }
+                break;
+            case "270":
+                if (trcShortName != "TRANSPLANT END")
+                {
+                    Console.WriteLine("Error for 270");
+                }
+                break;
+            case "280":
+                if (trcShortName != "MEMBER NOT MSP")
+                {
+                    Console.WriteLine("Error for 280");
+                }
+                break;
+            case "282":
+                if (trcShortName != "RES ADR DELTD")
+                {
+                    Console.WriteLine("Error for 282");
+                }
+                break;
+            case "283":
+                if (trcShortName != "RJCTD ADR DELT")
+                {
+                    Console.WriteLine("Error for 283");
+                }
+                break;
+            case "284":
+                if (trcShortName != "NO REINSTATE")
+                {
+                    Console.WriteLine("Error for 284");
+                }
+                break;
+            case "285":
+                if (trcShortName != "ACPT ENROLL CAN")
+                {
+                    Console.WriteLine("Error for 285");
+                }
+                break;
+            case "286":
+                if (trcShortName != "RJCT ENROLL CAN")
+                {
+                    Console.WriteLine("Error for 286");
+                }
+                break;
+            case "287":
+                if (trcShortName != "ENROLL REINSTAT")
+                {
+                    Console.WriteLine("Error for 287");
+                }
+                break;
+            case "261":
+                if (trcShortName != "BAD RES ADDR")
+                {
+                    Console.WriteLine("Error for 261");
+                }
+                break;
+            case "261":
+                if (trcShortName != "BAD RES ADDR")
+                {
+                    Console.WriteLine("Error for 261");
+                }
+                break;
+            case "261":
+                if (trcShortName != "BAD RES ADDR")
+                {
+                    Console.WriteLine("Error for 261");
+                }
+                break;
             
             
             
