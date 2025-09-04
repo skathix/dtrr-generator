@@ -200,7 +200,8 @@
       "ApplicationDateIndicator": "Application Date Flag"
     },
     {
-      "TRCShortName": ""
+      "TRCShortName": "",
+      "Comment": "Added to TRC Codes"
     },
     {
       "DisenrollmentReasonCode": "Disenrollment Reason Code"

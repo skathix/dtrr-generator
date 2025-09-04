@@ -1013,7 +1013,16 @@ void SentTransactionCode(string transactionCode)
                 "Invalid Application Date Indicator");
         }
     }
-    
+    void DisenrollmentReasonCode(string applicationDateIndicator)
+    {
+        var regex = @"^\d\d$";
+        var match = Regex.Match(applicationDateIndicator, regex);
+        if (!match.Success)
+        {
+            Console.WriteLine(
+                "Invalid Disenrollment reason code");
+        }
+    }
 
 
 
