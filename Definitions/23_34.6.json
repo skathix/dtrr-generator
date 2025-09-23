@@ -1,0 +1,518 @@
+﻿{
+  "start_date": "2020-08-13",
+  "record_length": 1029,
+  "description": "Type 23 - MedImpact",
+  "fields": [
+    {
+      "name": "RecordType",
+      "display_name": "Record Type",
+      "length": 2,
+      "valid": "23",
+      "required": true
+    },
+    {
+      "name": "GroupNumber",
+      "display_name": "Group Number",
+      "length": 10,
+      "valid": "?",
+      "required": true
+    },
+    {
+      "name": "Division",
+      "display_name": "Division",
+      "length": 10,
+      "valid": "?",
+      "required": false
+    },
+    {
+      "name": "InsuredId",
+      "display_name": "Insured Id",
+      "length": 15,
+      "valid": "Valid Member Number",
+      "required": true
+    },
+    {
+      "name": "MemberNumber",
+      "display_name": "Member Number",
+      "length": 13,
+      "valid": "Valid Member Number for person on card",
+      "required": true
+    },
+    {
+      "name": "PersonCode",
+      "display_name": "Person code",
+      "length": 2,
+      "valid": "23",
+      "required": true
+    },
+    {
+      "name": "Relationship",
+      "display_name": "Relationship",
+      "length": 1,
+      "valid": "I S D - Nonstandard is F H A O",
+      "required": true
+    },
+    {
+      "name": "LastName",
+      "display_name": "Last Name",
+      "length": 50,
+      "valid": "Member's Last Name",
+      "required": true
+    },
+    {
+      "name": "FirstName",
+      "display_name": "First Name",
+      "length": 50,
+      "valid": "Member's first name",
+      "required": true
+    },
+    {
+      "name": "MiddleInitial",
+      "display_name": "Middle Initial",
+      "length": 1,
+      "valid": "Middle Inital - optional",
+      "required": false
+    },
+    {
+      "name": "DOB",
+      "display_name": "Date Of Birth",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "Gender",
+      "display_name": "Gender",
+      "length": 1,
+      "valid": "M F T X U",
+      "required": true
+    },
+    {
+      "name": "Address1",
+      "display_name": "Address Line 1",
+      "length": 40,
+      "valid": "Primary address",
+      "required": true
+    },
+    {
+      "name": "AddressLine2",
+      "display_name": "Address line 2",
+      "length": 40,
+      "valid": "Address line 2",
+      "required": false
+    },
+    {
+      "name": "MemberNumberOverflow",
+      "display_name": "Member Number Overflow",
+      "length": 10,
+      "valid": "Extra Member Number characters",
+      "required": false
+    },
+    {
+      "name": "MiscCode8",
+      "display_name": "Misc Code 8 ",
+      "length": 10,
+      "valid": "?",
+      "required": false
+    },
+    {
+      "name": "Insured IdOverflow",
+      "display_name": "Insured Id Overflow",
+      "length": 8,
+      "valid": "?",
+      "required": false
+    },
+    {
+      "name": "Filler1",
+      "display_name": "Filler",
+      "length": 2,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "AltMemberNumber",
+      "display_name": "Alternate Member Number",
+      "length": 18,
+      "valid": "",
+      "required": false
+    },
+    {
+      "name": "PCPStart",
+      "display_name": "PCP Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD defaults to 1/1/1900 if needed and not supplied",
+      "required": false
+    },
+    {
+      "name": "PCPEnd",
+      "display_name": "PCP End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "MedGroupStart",
+      "display_name": "Medical Group Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "MedGroupEnd",
+      "display_name": "Medical Group End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "MedGroup",
+      "display_name": "Medical Care Facility or IPA Code",
+      "length": 10,
+      "valid": "",
+      "required": false
+    },
+    {
+      "name": "Reserved1",
+      "display_name": "Reserved - blank of not used",
+      "length": 10,
+      "valid": "Blanks or needed info",
+      "required": false
+    },
+    {
+      "name": "Reserved2",
+      "display_name": "Reserved- blank if not used",
+      "length": 10,
+      "valid": "Blanks or needed info",
+      "required": false
+    },
+    {
+      "name": "MiscCode1",
+      "display_name": "Misc Code 1",
+      "length": 10,
+      "valid": "Misc code reporting",
+      "required": false
+    },
+    {
+      "name": "MiscCode2",
+      "display_name": "Misc Code 2",
+      "length": 10,
+      "valid": "Used by Smart 340B for Type",
+      "required": false
+    },
+    {
+      "name": "MiscCode3",
+      "display_name": "Misc Code 3",
+      "length": 10,
+      "valid": "Misc code reporting",
+      "required": false
+    },
+    {
+      "name": "MiscCode4",
+      "display_name": "Misc Code 4",
+      "length": 20,
+      "valid": "Misc code reporting",
+      "required": false
+    },
+    {
+      "name": "City",
+      "display_name": "City",
+      "length": 50,
+      "valid": "Valid city name",
+      "required": true
+    },
+    {
+      "name": "State",
+      "display_name": "State",
+      "length": 2,
+      "valid": "State Abbreviation outside of US-FO",
+      "required": true
+    },
+    {
+      "name": "ZipCode",
+      "display_name": "ZIP Code (can be +4)",
+      "length": 10,
+      "valid": "US ZIP Code",
+      "required": true
+    },
+    {
+      "name": "SSNumber",
+      "display_name": "Social Security number",
+      "length": 9,
+      "valid": "Valid social security number",
+      "required": false
+    },
+    {
+      "name": "DependentCoverageCode",
+      "display_name": "DependentCoverageCode",
+      "length": 1,
+      "valid": "Numerals 1-7",
+      "required": false
+    },
+    {
+      "name": "COB",
+      "display_name": "COB Code",
+      "length": 1,
+      "valid": " Numerals 1-6 9 reserved",
+      "required": false
+    },
+    {
+      "name": "EffectiveDate",
+      "display_name": "Effective Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "TermDate",
+      "display_name": "Term Date",
+      "length": 8,
+      "valid": "YYYYMMDD for disenrollment",
+      "required": false
+    },
+    {
+      "name": "HqCode",
+      "display_name": "Hedquarters Code",
+      "length": 10,
+      "valid": "MedImpact assigned 3 char prefix+2 numbers",
+      "required": true
+    },
+    {
+      "name": "PcpId",
+      "display_name": "PCP Id Number",
+      "length": 9,
+      "valid": "Physician Id Number",
+      "required": false
+    },
+    {
+      "name": "MiscCode5",
+      "display_name": "Misc Code",
+      "length": 5,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "MiscCode6",
+      "display_name": "Misc Code",
+      "length": 5,
+      "valid": "Blanks or CA rebates report",
+      "required": false
+    },
+    {
+      "name": "MiscCode7",
+      "display_name": "Misc Code",
+      "length": 5,
+      "valid": "Blanks or CA rebates report",
+      "required": false
+    },
+    {
+      "name": "Filler2",
+      "display_name": "Filler",
+      "length": 2,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "HicNumber",
+      "display_name": "LEGACY- Use Medicare ID field",
+      "length": 11,
+      "valid": "BLANKS",
+      "required": false
+    },
+    {
+      "name": "IdCardDate",
+      "display_name": "ID card Print Date, if MedImpact does it",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "MedicareCode",
+      "display_name": "Medicare Code",
+      "length": 1,
+      "valid": "D If CMS Part D is not set B M Y",
+      "required": true
+    },
+    {
+      "name": "TermCode",
+      "display_name": "Term Code",
+      "length": 1,
+      "valid": "Blank or P",
+      "required": false
+    },
+    {
+      "name": "IcCardForce",
+      "display_name": "Force Print ID Card (Card Reprint)",
+      "length": 1,
+      "valid": "Blank or Y",
+      "required": false
+    },
+    {
+      "name": "CreditNumber",
+      "display_name": "DISCOURAGED -Credit Card Number",
+      "length": 20,
+      "valid": "Not suggested anymore",
+      "required": false
+    },
+    {
+      "name": "ExpDate",
+      "display_name": "DISCOURAGED - Expiration date",
+      "length": 6,
+      "valid": "Not suggested anymore",
+      "required": false
+    },
+    {
+      "name": "MiscCode9",
+      "display_name": "Misc Code",
+      "length": 10,
+      "valid": "Misc code",
+      "required": false
+    },
+    {
+      "name": "MiscCode10",
+      "display_name": "Misc Code",
+      "length": 10,
+      "valid": "Misc code",
+      "required": false
+    },
+    {
+      "name": "MiscCode11",
+      "display_name": "Misc Code",
+      "length": 10,
+      "valid": "Misc code",
+      "required": false
+    },
+    {
+      "name": "MiscCode12",
+      "display_name": "Misc Code",
+      "length": 10,
+      "valid": "Misc code",
+      "required": false
+    },
+    {
+      "name": "XRefnumber",
+      "display_name": "Cross reference member number",
+      "length": 30,
+      "valid": "Cross reference member number",
+      "required": false
+    },
+    {
+      "name": "XRefFamily",
+      "display_name": "Cross-reference Family position",
+      "length": 2,
+      "valid": "cross reference number",
+      "required": true
+    },
+    {
+      "name": "COBPrimeCode",
+      "display_name": "COB Primary Insurance",
+      "length": 5,
+      "valid": "Primary insurance code if COB code  = 2",
+      "required": false
+    },
+    {
+      "name": "MedicaidNumber",
+      "display_name": "Medicaid Number",
+      "length": 18,
+      "valid": "Medicaid number",
+      "required": false
+    },
+    {
+      "name": "Filler3",
+      "display_name": "Filler",
+      "length": 10,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "PcpIdOverflow",
+      "display_name": "PCP Id Overflow",
+      "length": 9,
+      "valid": "Blanks or additional PCP Id",
+      "required": false
+    },
+    {
+      "name": "VoidFlag",
+      "display_name": "VoidFlag",
+      "length": 1,
+      "valid": "Additional Setup- use when not capable of generating files with end date prior to start",
+      "required": false
+    },
+    {
+      "name": "ConfidentialCommunicationFlag",
+      "display_name": "Confidential Communication Flag",
+      "length": 1,
+      "valid": "P Special handling setup",
+      "required": false
+    },
+    {
+      "name": "PrimaryPhone",
+      "display_name": "Primary Phone",
+      "length": 10,
+      "valid": "Phone number REQ if MedImpact is providing communications",
+      "required": false
+    },
+    {
+      "name": "PrimPhoneExt",
+      "display_name": "Primary Phone Extension",
+      "length": 6,
+      "valid": "Phone extension if applicable",
+      "required": false
+    },
+    {
+      "name": "SecPhone",
+      "display_name": "Secondary phone Number",
+      "length": 10,
+      "valid": "Secondary phone number",
+      "required": false
+    },
+    {
+      "name": "SecPhoneExt",
+      "display_name": "Secondary Phone extension",
+      "length": 6,
+      "valid": "Phone extension",
+      "required": false
+    },
+    {
+      "name": "MedicareId",
+      "display_name": "Medicare ID",
+      "length": 20,
+      "valid": "Valid Medicare ID, use instead of HICN",
+      "required": true
+    },
+    {
+      "name": "Filler4",
+      "display_name": "Filler",
+      "length": 3,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "LangPref",
+      "display_name": "Foreign Language Preference",
+      "length": 3,
+      "valid": "ISO-639-1 2 or 3 digit code",
+      "required": false
+    },
+    {
+      "name": "Ethnicity",
+      "display_name": "Ethnicity",
+      "length": 2,
+      "valid": "Numerals 1-6",
+      "required": true
+    },
+    {
+      "name": "Filler5",
+      "display_name": "Filler",
+      "length": 268,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "Filler6",
+      "display_name": "Reserved Filler",
+      "length": 9,
+      "valid": "Blanks",
+      "required": false
+    }
+  ]
+}

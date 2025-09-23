@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3M0GfKUoRgL54XKV9lAMVuUif9YZCRPuiQ2hymrVo/4fGARZOFfnJzqAGmNdXUPuQ1rUIZ+D8O446mXBRS7mCQ==",
+  "dgSpecHash": "FJsO14IyZFxChLMXni8pjewPhJenkiG0YYu//oDF7P7gExIOz1ldA68VOY23fiR3fpCxoLTSJ89s8b0IQ3ZjEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\Tools\\Tools.csproj",
+  "projectFilePath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\FileIngestor\\FileIngestor.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

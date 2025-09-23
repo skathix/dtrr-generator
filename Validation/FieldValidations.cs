@@ -899,7 +899,7 @@ void SentTransactionCode(string transactionCode)
     {
         CurrencyValidation(lowIncomePtDPremiumSubsidyAmt);
     }
-    void PartDRxBIN(string partDRxBin, string transactionCode, int numWhiteSpace)
+    /*void PartDRxBIN(string partDRxBin, string transactionCode, int numWhiteSpace)
     {
         if (transactionCode = "61" || transactionCode = "72")
         {
@@ -964,7 +964,7 @@ void SentTransactionCode(string transactionCode)
         {
             FillerValidation(secondaryRxPCN, numWhiteSpace);
         }
-    }
+    }*/
     void DeMinimisDifferentialAmt(string deMinimisDifferentialAmt)
     {
         CurrencyValidation(deMinimisDifferentialAmt);

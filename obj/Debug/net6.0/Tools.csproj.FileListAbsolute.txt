@@ -20,3 +20,6 @@ C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\2026.js
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3.json
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3Dtrr.json
 C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.3PDtrr.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.4.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\18.5.json
+C:\Users\AAndrews\RiderProjects\Tools\Tools\bin\Debug\net6.0\Definitions\ReplyCodesNames.json

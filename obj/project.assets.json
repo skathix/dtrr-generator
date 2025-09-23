@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\Tools\\Tools.csproj",
-      "projectName": "Tools",
-      "projectPath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\Tools\\Tools.csproj",
+      "projectUniqueName": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\FileIngestor\\FileIngestor.csproj",
+      "projectName": "FileIngestor",
+      "projectPath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\FileIngestor\\FileIngestor.csproj",
       "packagesPath": "C:\\Users\\AAndrews\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\Tools\\obj\\",
+      "outputPath": "C:\\Users\\AAndrews\\RiderProjects\\Tools\\FileIngestor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AAndrews\\AppData\\Roaming\\NuGet\\NuGet.Config"
