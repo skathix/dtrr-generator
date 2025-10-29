@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileIngestor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d37d9dfa164a0528b938be6f9256c9c52c691915")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileIngestor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileIngestor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
