@@ -6,7 +6,7 @@ using Tools.Tools;
 
 namespace Tools;
 //MBI was used after 1-1-2020 for new applications
-class MbitTool
+class FileIngestor
 
 {
     private static void Main(string[] args)
@@ -17,7 +17,7 @@ class MbitTool
 
         while (continueChecking)
         {
-            Console.WriteLine("Available versions:");
+            Console.WriteLine("Available options:");
             foreach (var kvp in allDefinitions.Versions.OrderBy(v =>
                          v.Value.Start_Date))
             {
@@ -27,9 +27,15 @@ class MbitTool
                     $" - {version} (starts: {startDate:yyyy-MM-dd})");
             }
 
-            Console.Write("Enter the version number (e.g., 18.2): ");
+            Console.Write("Enter the option (e.g., 18.2, ReplayCodeNames): ");
             string selectedVersion = Console.ReadLine()?.Trim();
 //TODO: Add validation
+            /*if (selectedVersion != null) //need to figure this is correct
+            {
+               Console.Write("Enty error ");
+               continue;
+                
+            }*/
             Console.Write(
                 "Are you pasting a single record or a full file? (type 'file' or 'single'): ");
             string mode = Console.ReadLine()?.Trim().ToLower();
@@ -48,7 +54,7 @@ class MbitTool
                 ProcessFileWithOutputOption(filePath, selectedVersion!
                     , allDefinitions);
             }
-            else
+            else 
             {
                 Console.WriteLine("Paste a single full record here:");
                 string inputString = Console.ReadLine();
@@ -67,6 +73,7 @@ class MbitTool
                         $"Invalid length: {trimString.Length} (expected {expectedLength})");
                     continue;
                 }
+                
 
                 var recordType = trimString.Substring(59, 2);
 
@@ -81,14 +88,7 @@ class MbitTool
                     recordDef = new RecordDefinition();
                 var fields = recordDef.Fields;
 
-                //
-                // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
-                // {
-                //     Console.WriteLine($"No definition found for record type {recordType} in version {selectedVersion}.");
-                //     continue;
-                // }
-
-                ProcessRecord(trimString, fields);
+               ProcessRecord(trimString, fields);
 
                 Console.Write(
                     "Would you like to save the results? (none/txt/csv): ");
@@ -99,12 +99,29 @@ class MbitTool
                     SaveSingleRecordOutput(trimString, recordType, fields
                         , recordDef, outputFormat);
                 }
+                /*else
+                {
+                    Console.Write("Enty error ");
+                    continue;//correct response?
+                }*/
+                
             }
+            /*else
+            {
+                Console.Write("Enty error ");
+                continue;//correct response?
+            }*/
 
             Console.Write("Do you want to check another item? (yes/no): ");
             string response = Console.ReadLine()!.ToLower();
             continueChecking = response == "yes" || response == "y";
             //TODO: Add validation/retry here
+            /*if (response != "yes" || response != "y" || response != "no" ||
+                response != "n")
+            {
+                Console.Write("Enty error");
+                continue;//correct response?
+            }*/
         }
 
         Console.WriteLine("Goodbye!");
@@ -235,12 +252,6 @@ class MbitTool
                 //TODO: Better Handling
                 recordDef = new RecordDefinition();
             var fields = recordDef.Fields;
-
-            // if (!TryGetFieldDefinitions(allDefinitions, selectedVersion, recordType, out var fields))
-            // {
-            //     Console.WriteLine($"No definition found for record type {recordType}.");
-            //     continue;
-            // }
 
             var sectionLengths = fields.Select(f => f.Length).ToList();
             var sections =
