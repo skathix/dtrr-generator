@@ -1,4 +1,3 @@
-C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\18.5.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\2026.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\ReplyCodesNames.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\23_34.6.json
@@ -24,3 +23,6 @@ C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\b
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\OldDefinitions\18.3Dtrr.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\OldDefinitions\18.3PDtrr.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\OldDefinitions\18.4.json
+C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\18.6.json
+C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\OldDefinitions\18.5.json
+C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\_18.7.json

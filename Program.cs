@@ -11,6 +11,23 @@ class FileIngestor
 {
     private static void Main(string[] args)
     {
+        
+        // This is the starting point
+        // Create a file called "FileIngestor.cs" In the Models folder in SuperiorSelect
+        // public class FileIngestor
+        // {
+        //      public FileIngestor() 
+        //      {
+        //      }
+        //
+        //      This is the Main(string[] args) function
+        //      public Execute()
+        //      {
+        //          var allDefinitions...
+        //          ...
+        //          Console.WriteLine("Goodbye!");
+        //      }
+        
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         bool continueChecking = true;
