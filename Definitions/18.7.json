@@ -1,5 +1,5 @@
 ﻿{
-  "start_date": "2025-09-30",
+  "start_date": "2025-11-28",
   "record_length": 300,
   "record_types": {
     "51": {
@@ -321,6 +321,7 @@
       ]
     },
     "61": {
+      "record_length": 600,
       "description": "Enrollment Transaction (61)",
       "fields": [
         {
@@ -2232,6 +2233,7 @@
     },
     "92": {
       "description": "Personal Information Change (92)",
+      "record_length": 600,
       "fields": [
         {
           "name": "beneficiary_id",

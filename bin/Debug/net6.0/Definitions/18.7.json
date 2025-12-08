@@ -327,7 +327,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits - 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -352,17 +352,17 @@
           "required": false
         },
         {
-          "name": "sex",
+          "name": "Sex",
           "display_name": "Sex",
           "length": 1,
-          "valid": "Must show one or two - will be rejected if set to 0",
+          "valid": "Must show 1 or 2 TRC 423 if other",
           "required": true
         },
         {
           "name": "birthdate",
           "display_name": "Birthdate (YYYYMMDD)",
           "length": 8,
-          "valid": "> 1870; <= current year",
+          "valid": "> 1870, <= current year",
           "required": true
         },
         {
@@ -376,35 +376,35 @@
           "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
-          "valid" : "Valid PBP #",
+          "valid": "Valid PBP #",
           "required": true
         },
         {
           "name": "election_type",
           "display_name": "Election Type",
           "length": 1,
-          "valid":"A C D E F I J L M N O P Q R S T U V W X Z or blank",
+          "valid": "A C D E F I J L M N O P Q R S T U V W X Z or blank",
           "required": true
         },
         {
           "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
-          "valid" : "Valid Contract number",
+          "valid": "Valid Contract number",
           "required": true
         },
         {
           "name": "application_date",
           "display_name": "Application Date (YYYYMMDD)",
           "length": 8,
-          "valid" : " > 1966; < current year plus 1; < Effective date",
+          "valid": " > 1966 < current year plus 1 < Effective date",
           "required": true
         },
         {
           "name": "transaction_code",
           "display_name": "Transaction Code",
           "length": 2,
-          "valid" : "Must be 61",
+          "valid": "Must be 61",
           "required": true
         },
         {
@@ -418,7 +418,7 @@
           "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
-          "valid" : "> 1966; < current year plus 1; first of the month",
+          "valid": "> 1966 < current year plus 1 first of the month",
           "required": true
         },
         {
@@ -453,7 +453,7 @@
           "name": "part_c_premium",
           "display_name": "Part C Premium (XXXXvXX)",
           "length": 6,
-          "valid":"(XXXXvXX) or blank",
+          "valid": "(XXXXvXX) or blank",
           "required": true
         },
         {
@@ -506,122 +506,10 @@
           "required": false
         },
         {
-          "name": "race_white",
-          "display_name": "Race - White",
-          "valid": "Blank",
-          "length": 1,
-          "required": false
-        },
-        {
-          "name": "race_black",
-          "display_name": "Race - Black/African American",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_ai_an",
-          "display_name": "Race - American Indian/Alaska Native",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_asian_indian",
-          "display_name": "Race - Asian Indian",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_chinese",
-          "display_name": "Race - Chinese",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_filipino",
-          "display_name": "Race - Filipino",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_japanese",
-          "display_name": "Race - Japanese",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_korean",
-          "display_name": "Race - Korean",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_vietnamese",
-          "display_name": "Race - Vietnamese",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_other_asian",
-          "display_name": "Race - Other Asian",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_hawaiian",
-          "display_name": "Race - Native Hawaiian",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_samoan",
-          "display_name": "Race - Samoan",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_guamanian",
-          "display_name": "Race - Guamanian/Chamorro",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_other_pi",
-          "display_name": "Race - Other Pacific Islander",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_declined",
-          "display_name": "Race - I choose not to answer",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "race_blank",
-          "display_name": "Race - Form left blank",
-          "length": 1,
-          "valid": "Story 10204 Decision to make this value Y",
-          "required": false
-        },
-        {
           "name": "filler5",
           "display_name": "Filler",
-          "length": 5,
           "valid": "Blanks",
+          "length": 21,
           "required": false
         },
         {
@@ -635,62 +523,13 @@
           "name": "accessible_format",
           "display_name": "Accessible Format",
           "length": 1,
-          "valid": "B L A or blank",
+          "valid": "B L A D, or blank",
           "required": false
-        },
-        {
-          "name": "ethnicity_non_hispanic",
-          "display_name": "Ethnicity - Not Hispanic/Latino/a or Spanish",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_puerto_rican",
-          "display_name": "Ethnicity - Puerto Rican",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_other",
-          "display_name": "Ethnicity - Another Hispanic Latino/a or Spanish",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_mexican",
-          "display_name": "Ethnicity - Mexican/Mexican American/Chicano/a",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_cuban",
-          "display_name": "Ethnicity - Cuban",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_declined",
-          "display_name": "Ethnicity - I choose not to answer",
-          "length": 1,
-          "valid": "Blank",
-          "required": false
-        },
-        {
-          "name": "ethnicity_blank",
-          "display_name": "Ethnicity - Form left blank",
-          "length": 1,
-          "valid": "Y - story 10204",
-          "required": true
         },
         {
           "name": "filler6",
           "display_name": "Filler",
-          "length": 2,
+          "length": 9,
           "valid": "Blanks",
           "required": false
         },
@@ -705,7 +544,7 @@
           "name": "secondary_rx_id",
           "display_name": "Secondary Rx Id",
           "length": 20,
-          "valid": "required if the field above is Y; otherwise blank",
+          "valid": "if the field above is Y, then required, otherwise blank",
           "required": false
         },
         {
@@ -747,7 +586,7 @@
           "name": "tracking_id",
           "display_name": "Plan Assigned Tracking Id",
           "length": 15,
-          "valid":"Not validated",
+          "valid": "Not validated",
           "required": false
         },
         {
@@ -761,21 +600,21 @@
           "name": "part_d_pcn",
           "display_name": "Part D Rx PCN",
           "length": 10,
-          "valid": "Left justified alphanumeric - no internal spaces; or blank",
+          "valid": "Left justified alphanumeric - no internal spaces or blank",
           "required": false
         },
         {
           "name": "part_d_group",
           "display_name": "Part D Rx Group",
           "length": 15,
-          "valid":"Left justified alphanumeric - no internal spaces; or blank",
+          "valid": "Left justified alphanumeric - no internal spaces or blank",
           "required": false
         },
         {
           "name": "part_d_id",
           "display_name": "Part D Rx Id",
           "length": 20,
-          "valid":"Left justified alphanumeric - no internal spaces; or blank",
+          "valid": "Left justified alphanumeric - no internal spaces or blank",
           "required": true
         },
         {
@@ -793,9 +632,100 @@
           "required": false
         },
         {
+          "name": "relation_agent",
+          "display_name": "Relationship to enrollee: Agent",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_broker",
+          "display_name": "Relationship to enrollee: Broker",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_SHIP",
+          "display_name": "Relationship to enrollee: SHIP Counselors",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_auth_rep",
+          "display_name": "Relationship to enrollee: Authorized Person",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_third",
+          "display_name": "Relationship to enrollee: Other -Third Parties",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_self",
+          "display_name": "Relationship to enrollee: Self",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_blank",
+          "display_name": "Relationship to enrollee: Form left blank",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "npn",
+          "display_name": "National Producer Number",
+          "length": 10,
+          "valid": "Numeric not starting with 0",
+          "required": true
+        },
+        {
+          "name": "oec_flag",
+          "display_name": "OEC Flag",
+          "length": 1,
+          "valid": "Y or N reject with TRC 421 if other",
+          "required": true
+        },
+        {
+          "name": "oec_app_date",
+          "display_name": "OEC Application Date (YYYYMMDD)",
+          "length": 8,
+          "valid": ">= 20260101, two fails",
+          "required": true
+        },
+        {
+          "name": "oec_number",
+          "display_name": "OEC Application #",
+          "length": 12,
+          "valid": "12 bytes or blank reject with TRC 421.Values (0 1 2 3 4 5 6 7 8 9 A B C D E F)",
+          "required": false
+        },
+        {
+          "name": "phone_number",
+          "display_name": "Beneficiary Phone #",
+          "length": 10,
+          "valid": "Digits not beginning with 0 fail TRC 419",
+          "required": false
+        },
+        {
+          "name": "email_address",
+          "display_name": "Beneficiary Email address",
+          "length": 74,
+          "valid": "At least one @ and .; no underscore after the @; Can be alphanumeric - . ' or _ fail is TRC 420",
+          "required": true
+        },
+        {
           "name": "filler8",
           "display_name": "Filler",
-          "length": 9,
+          "length": 187,
           "valid": "Blanks",
           "required": true
         }
@@ -2307,7 +2237,7 @@
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
           "length": 12,
-          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
           "required": true
         },
         {
@@ -2332,10 +2262,10 @@
           "required": false
         },
         {
-          "name": "sex",
+          "name": "gender",
           "display_name": "Sex",
           "length": 1,
-          "valid": "Must show one or two - will not be rejected but set to 0",
+          "valid": "Must show 1 or 2",
           "required": true
         },
         {
@@ -2390,63 +2320,8 @@
         {
           "name": "filler4",
           "display_name": "Filler",
-          "length": 40,
+          "length": 62,
           "valid": "Blanks",
-          "required": false
-        },
-        {
-          "name": "ethnicity_non_hispanic",
-          "display_name": "Ethnicity - Not Hispanic-Latino/a or Spanish",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_puerto_rican",
-          "display_name": "Ethnicity - Puerto Rican",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_other",
-          "display_name": "Ethnicity - Another Hispanic- Latino/a or Spanish",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_mexican",
-          "display_name": "Ethnicity - Mexican- Mexican American- Chicano/a",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_cuban",
-          "display_name": "Ethnicity - Cuban",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_declined",
-          "display_name": "Ethnicity - I choose not to answer",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "ethnicity_blank",
-          "display_name": "Ethnicity - Form left blank",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained: 10204 says this will be the sent option",
-          "required": false
-        },
-        {
-          "name": "filler4",
-          "display_name": "Filler",
-          "length": 15,
           "required": false
         },
         {
@@ -2460,125 +2335,77 @@
           "name": "accessible_format",
           "display_name": "Accessible Format",
           "length": 1,
-          "valid": "B L A X or Blank",
-          "required": false
-        },
-        {
-          "name": "race_white",
-          "display_name": "Race - White",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_black",
-          "display_name": "Race - Black/African American",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_ai_an",
-          "display_name": "Race - American Indian/Alaska Native",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_asian_indian",
-          "display_name": "Race - Asian Indian",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_chinese",
-          "display_name": "Race - Chinese",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_filipino",
-          "display_name": "Race - Filipino",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_japanese",
-          "display_name": "Race - Japanese",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_korean",
-          "display_name": "Race - Korean",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_vietnamese",
-          "display_name": "Race - Vietnamese",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_other_asian",
-          "display_name": "Race - Other Asian",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_hawaiian",
-          "display_name": "Race - Native Hawaiian",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_samoan",
-          "display_name": "Race - Samoan",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_guamanian",
-          "display_name": "Race - Guamanian/Chamorro",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_other_pi",
-          "display_name": "Race - Other Pacific Islander",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_declined",
-          "display_name": "Race - I choose not to answer",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained",
-          "required": false
-        },
-        {
-          "name": "race_blank",
-          "display_name": "Race - Form left blank",
-          "length": 1,
-          "valid": "Y or Blank - previous values are retained: 10204 says this is what will be sent",
+          "valid": "B L A D X or Blank",
           "required": false
         },
         {
           "name": "filler5",
           "display_name": "Filler",
-          "length": 68,
+          "length": 16,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "npn",
+          "display_name": "National Producer Number",
+          "length": 10,
+          "valid": "Numeric cant begin with 0",
+          "required": false
+        },
+        {
+          "name": "relation_agent",
+          "display_name": "Relationship to enrollee: Agent",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_broker",
+          "display_name": "Relationship to enrollee: Broker",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_SHIP",
+          "display_name": "Relationship to enrollee: SHIP Counselors",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_auth_rep",
+          "display_name": "Relationship to enrollee: Authorized Person",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_third",
+          "display_name": "Relationship to enrollee: Other -Third Parties",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_self",
+          "display_name": "Relationship to enrollee: Self",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "relation_blank",
+          "display_name": "Relationship to enrollee: Form left blank",
+          "length": 1,
+          "valid": "One or more must be chosen",
+          "required": true
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 51,
+          "valid": "Blanks",
           "required": false
         },
         {
@@ -2589,11 +2416,46 @@
           "required": false
         },
         {
+          "name": "oec_flag",
+          "display_name": "OEC Flag",
+          "length": 1,
+          "valid": "Y or N reject with TRC 421 if other",
+          "required": true
+        },
+        {
+          "name": "oec_app_date",
+          "display_name": "OEC Application Date (YYYYMMDD)",
+          "length": 8,
+          "valid": ">= 20260101 two fails",
+          "required": true
+        },
+        {
+          "name": "oec_number",
+          "display_name": "OEC Application #",
+          "length": 12,
+          "valid": "12 bytes or blank reject with TRC 421.Values (0 1 2 3 4 5 6 7 8 9 A B C D E F)",
+          "required": false
+        },
+        {
+          "name": "phone_number",
+          "display_name": "Beneficiary Phone #",
+          "length": 10,
+          "valid": "Digits not beginning with 0 fail TRC 419",
+          "required": false
+        },
+        {
+          "name": "email_address",
+          "display_name": "Beneficiary Email address",
+          "length": 74,
+          "valid": "At least one @ and .; no underscore after the @; Can be alphanumeric - . ' or _; fail is TRC 420",
+          "required": true
+        },
+        {
           "name": "filler8",
           "display_name": "Filler",
-          "length": 76,
+          "length": 271,
           "valid": "Blanks",
-          "required": false
+          "required": true
         }
       ]
     },
@@ -2755,7 +2617,7 @@
         {
           "name": "beneficiary_id",
           "display_name": "Beneficiary Identifier",
-          "length": 12,
+          "length": 11,
           "valid": "MBI: 11 digits; 2 5 8 and 9 alpha",
           "required": true
         },
