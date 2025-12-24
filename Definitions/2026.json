@@ -539,49 +539,49 @@
           "name": "relation_agent",
           "display_name": "Relationship to enrollee: Agent",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_broker",
           "display_name": "Relationship to enrollee: Broker",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_SHIP",
           "display_name": "Relationship to enrollee: SHIP Counselors",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_auth_rep",
           "display_name": "Relationship to enrollee: Authorized Person",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_third",
           "display_name": "Relationship to enrollee: Other -Third Parties",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_self",
           "display_name": "Relationship to enrollee: Self",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
           "name": "relation_blank",
           "display_name": "Relationship to enrollee: Form left blank",
           "length": 1,
-          "valid": "One or more must be chosen",
+          "valid": "One must be chosen",
           "required": true
         },
         {
@@ -631,7 +631,7 @@
           "display_name": "Beneficiary Email address",
           "length": 74,
           "valid": "At least one @ and .; no underscore after the @; Can be alphanumeric - . ' or _; fail is TRC 420",
-          "required": true
+          "required": false
         },
         {
           "name": "filler8",
