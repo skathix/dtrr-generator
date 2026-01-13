@@ -1,7 +1,7 @@
 ﻿{
   "start_date": "2026-01-01",
   "record_length": 800,
-  "description": "DTRR Detail Record 2026",
+  "description": "DTRR Detail Record PCUG 18.7",
   "fields": [
     {
       "name": "beneficiary_id",
@@ -67,11 +67,18 @@
       "required": true
     },
     {
+      "name": "countyCode",
+      "display_name": "County Code",
+      "length": 3,
+      "valid": "TC 01 Mailing address TC76 residence address",
+      "required": false
+    },
+    {
       "name": "disabilityIndicator",
       "display_name": "Disability Indicator",
       "length": 1,
-      "valid": "0-3 or blank",
-      "required": false
+      "valid": "0 1 2 3 or blank",
+      "required": true
     },
     {
       "name": "hospiceIndicator",
@@ -90,20 +97,6 @@
     {
       "name": "esrdIndicator",
       "display_name": "ESRD Indicator",
-      "length": 1,
-      "valid": "0 1 or blank",
-      "required": true
-    },
-    {
-      "name": "hospiceIndicator",
-      "display_name": "Hospice Indicator",
-      "length": 1,
-      "valid": "0 1 or blank",
-      "required": true
-    },
-    {
-      "name": "hospiceIndicator",
-      "display_name": "Hospice Indicator",
       "length": 1,
       "valid": "0 1 or blank",
       "required": true
