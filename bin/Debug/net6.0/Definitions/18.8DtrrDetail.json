@@ -190,7 +190,6 @@
       "display_name": "SEP Reason Code Code",
       "length": 2,
       "valid": "Election type S or Y or blank",
-      "comment": "011, 013, 015, 018, 022, 023, 025, 026, 100, 397, 401, 402, 701, 702, 704, 705, 708, 709, 710, 711, 712, 713, 717, 725",
       "required": true
     },
     {
@@ -549,7 +548,8 @@
       "length": 2,
       "valid": "Disenrollment Reason Code",
       "required": true
-    },{
+    },
+    {
       "name": "mmpOptOutFlag",
       "display_name": "MMP Out-Out Flag",
       "length": 1,
@@ -568,7 +568,6 @@
       "display_name": "CARA Status Add/Update/Delete Flag",
       "length": 1,
       "valid": "A D U or blank",
-      "comment": "Pre 2019, was POS Drug Edit Flag",
       "required": true
     },
     {
@@ -576,7 +575,6 @@
       "display_name": "POS Drug Edit Status",
       "length": 1,
       "valid": "Y N or blank",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
@@ -584,7 +582,6 @@
       "display_name": "Drug Class",
       "length": 3,
       "valid": "Three digits or blank",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
@@ -592,7 +589,6 @@
       "display_name": "POS Drug Edit Code",
       "length": 3,
       "valid": "Three digit code or blanks",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
@@ -600,7 +596,6 @@
       "display_name": "CARA Status Notification Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid date or blanks",
-      "comment": "Only for TC 90 Pre 2019, was POS Drug Edit Notification",
       "required": true
     },
     {
@@ -608,7 +603,6 @@
       "display_name": "CARA Status Implementation Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid date or blank",
-      "comment": "Only for TC 90 Pre 2019, was POS Drug Edit Implementation",
       "required": true
     },
     {
@@ -616,7 +610,6 @@
       "display_name": "CARA Status Implementation Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid date or blank",
-      "comment": "Only for TC 90 Pre 2019, was POS Drug Edit Implementation",
       "required": true
     },
     {
@@ -624,7 +617,6 @@
       "display_name": "CARA Status Notification End Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid date or blank",
-      "comment": "Only for TC 90 Pre 2019, was POS Drug Edit Termination",
       "required": true
     },
     {
@@ -639,7 +631,6 @@
       "display_name": "IC Model Type Indicator",
       "length": 2,
       "valid": "01 02 or blanks",
-      "comment" : "Only when TC 91",
       "required": true
     },
     {
@@ -647,7 +638,6 @@
       "display_name": "IC Model End Date Reason Code",
       "length": 2,
       "valid": "01 02 03 04 or blanks",      
-      "comment" : "Only when TC 91 and end date provided",
       "required": true
     },
     {
@@ -655,7 +645,6 @@
       "display_name": "IC Model Benefit Status",
       "length": 2,
       "valid": "01 02 or blanks",
-      "comment" : "Only when TC 91",
       "required": true
     },
     {
@@ -670,7 +659,6 @@
       "display_name": "CARA Implementation End Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid date or blanks",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
@@ -678,7 +666,6 @@
       "display_name": "Prescriber Limitation",
       "length": 1,
       "valid": "Y N or blank",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
@@ -686,7 +673,6 @@
       "display_name": "Pharmacy Limitation",
       "length": 1,
       "valid": "Y N or blank",
-      "comment" : "Only when TC 90",
       "required": true
     },
     {
