@@ -28,6 +28,21 @@ class FileIngestor
         //          Console.WriteLine("Goodbye!");
         //      }
         
+        // 1-14-26
+        // Add here a general type of file:
+        // MBIT, DTRR, DTRR Type P, Type 23(can add future file types)
+        // Then the string divider can be updated
+        
+        // Console.WriteLine("Available file types:");
+        // foreach (var kvp in FileTypes)
+        // {
+        //     string version = kvp.Key;
+        //     Console.WriteLine(
+        //         $" - {type}");
+        // }
+        
+        
+        
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         bool continueChecking = true;
