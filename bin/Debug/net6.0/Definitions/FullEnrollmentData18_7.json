@@ -1,0 +1,393 @@
+﻿{
+  "start_date": "2025-11-28",
+  "record_length": 278,
+  "description": "DTRR Full Enrollment File Data Record",
+  "fields": [
+    {
+      "name": "beneficiary_id",
+      "display_name": "Beneficiary Identifier",
+      "length": 12,
+      "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+      "required": true
+    },
+    {
+      "name": "surname",
+      "display_name": "Surname",
+      "length": 12,
+      "valid": "Must have both Surname and First Name",
+      "required": true
+    },
+    {
+      "name": "first_name",
+      "display_name": "First Name",
+      "length": 7,
+      "valid": "Must have both Surname and First Name",
+      "required": true
+    },
+    {
+      "name": "middle_initial",
+      "display_name": "M. Initial",
+      "length": 1,
+      "valid": "Space or alpha",
+      "required": false
+    },
+    {
+      "name": "sex",
+      "display_name": "Sex",
+      "length": 1,
+      "valid": "Must show one or two - will be rejected if set to 0",
+      "required": true
+    },
+    {
+      "name": "birthdate",
+      "display_name": "Birthdate (YYYYMMDD)",
+      "length": 8,
+      "valid": "> 1870; <= current year",
+      "required": true
+    },
+    {
+      "name": "medicaidIndicator",
+      "display_name": "Medicaid Indicator",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "contract_number",
+      "display_name": "Contract #",
+      "length": 5,
+      "valid": "Valid Contract number",
+      "required": true
+    },
+    {
+      "name": "stateCode",
+      "display_name": "State Code",
+      "length": 2,
+      "valid": "TC 01 = mailing address, TC 76 = residence",
+      "required": true
+    },
+    {
+      "name": "countyCode",
+      "display_name": "County Code",
+      "length": 3,
+      "valid": "TC 01 Mailing address TC76 residence address",
+      "required": false
+    },
+    {
+      "name": "disabilityIndicator",
+      "display_name": "Disability Indicator",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "hospiceIndicator",
+      "display_name": "Hospice Indicator",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "institutionalIndicator",
+      "display_name": "Hospice Indicator",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "esrdIndicator",
+      "display_name": "ESRD Indicator",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "transactionReplyCode",
+      "display_name": "TransactionReply Code",
+      "length": 3,
+      "valid": "Valid TRC",
+      "required": true
+    },
+    {
+      "name": "transactionCode",
+      "display_name": "TransactionCode",
+      "length": 2,
+      "valid": "Valid Transaction Code",
+      "required": true
+    },
+    {
+      "name": "entitlementCode",
+      "display_name": "Entitlement Type Code",
+      "length": 1,
+      "valid": "Blank",
+      "required": true
+    },
+    {
+      "name": "effective_date",
+      "display_name": "Effective Date (YYYYMMDD)",
+      "length": 8,
+      "valid": "> 1966; < current year plus 1; first of the month",
+      "required": true
+    },
+    {
+      "name": "waIndicator",
+      "display_name": "Working Age Indicator",
+      "length": 1,
+      "valid": "0 1 or blank",
+      "required": true
+    },
+    {
+      "name": "pbp_number",
+      "display_name": "PBP #",
+      "length": 3,
+      "valid" : "Valid PBP #",
+      "required": true
+    },
+    {
+      "name": "raceCode",
+      "display_name": "RaceCoder",
+      "length": 1,
+      "valid": "0 1 2 3 4 5 6 or blank",
+      "required": false
+    },
+    {
+      "name": "transactionDate",
+      "display_name": "Transaction Date (YYYYMMDD)",
+      "length": 8,
+      "valid": "Set to current date",
+      "required": true
+    },
+    {
+      "name": "filler1",
+      "display_name": "Filler",
+      "length": 1,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "subsidyEndDate",
+      "display_name": "Subsidy End Date (YYYYMMDD)",
+      "length": 12,
+      "valid": "End date of LIS Period",
+      "required": true
+    },
+    {
+      "name": "districtOfficeCode",
+      "display_name": "District Office Code",
+      "length": 3,
+      "valid": "District Office Code or blanks",
+      "required": true
+    },
+    {
+      "name": "filler2",
+      "display_name": "Filler",
+      "length": 8,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "filler3",
+      "display_name": "Filler",
+      "length": 8,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "sourceId",
+      "display_name": "Source ID",
+      "length": 5,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "priorPlanBenefitId",
+      "display_name": "Prior Plan Benefit Package ID",
+      "length": 3,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "applicationDate",
+      "display_name": "Application Date (YYYYMMDD)",
+      "length": 12,
+      "valid": "Valid date",
+      "required": true
+    },
+    {
+      "name": "filler4",
+      "display_name": "Filler",
+      "length": 2,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "outOfAreaFlag",
+      "display_name": "Out Of Area Flag",
+      "length": 1,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "segmentNumber",
+      "display_name": "Segment Number",
+      "length": 3,
+      "valid": "Valid Segment Number",
+      "required": false
+    },
+    {
+      "name": "partcPremium",
+      "display_name": "Part C Premium",
+      "length": 8,
+      "valid": "Cost of premium or blanks",
+      "required": true
+    },
+    {
+      "name": "partdPremium",
+      "display_name": "Part D premium",
+      "length": 8,
+      "valid": "Cost of Part D or blanks",
+      "required": true
+    },
+    {
+      "name": "electionTypeCode",
+      "display_name": "Election Type Code",
+      "length": 1,
+      "valid": "A CD F I J L M N O R S T U V W X Y Z or blank",
+      "required": true
+    },
+    {
+      "name": "enrollmentSourceCode",
+      "display_name": "Enrollment Source Code",
+      "length": 1,
+      "valid": "A B C D E F G H I J K L N",
+      "required": true
+    },
+    {
+      "name": "partdOptOutFlag",
+      "display_name": "Part D Opt-Out Flag",
+      "length": 1,
+      "valid": "Y N or blank",
+      "required": true
+    },
+    {
+      "name": "filler5",
+      "display_name": "Filler",
+      "length": 1,
+      "valid": "Blank",
+      "required": false
+    },
+    
+    {
+      "name": "numberOfUncoveredMonths",
+      "display_name": "Number of Unconvered Monthw",
+      "length": 3,
+      "valid": "3 digits",
+      "required": false
+    },
+    {
+      "name": "credibleCoverageFlag",
+      "display_name": "Credible Coverage Flag",
+      "length": 1,
+      "valid": "Y N A L R T U or blank",
+      "required": true
+    },
+    {
+      "name": "employerSubsidyFlag",
+      "display_name": "Employer Subsidy Override Flag",
+      "length": 1,
+      "valid": "Y or blank",
+      "required": true
+    },
+    {
+      "name": "rxId",
+      "display_name": "Rx ID",
+      "length": 20,
+      "valid": "Input from transaction or blank",
+      "required": true
+    },
+    {
+      "name": "rxGroup",
+      "display_name": "Rx Group",
+      "length": 15,
+      "valid": "Input from transaction or blank",
+      "required": true
+    },
+    {
+      "name": "secondaryDrugInsuranceFlag",
+      "display_name": "Secondary Drug Insurance Flag",
+      "length": 1,
+      "valid": "Y N or blank",
+      "required": true
+    },
+    {
+      "name": "secondaryRxId",
+      "display_name": "Secondary Rx ID",
+      "length": 20,
+      "valid": "Input from transaction or blank",
+      "required": true
+    },
+    {
+      "name": "secondaryRxGroup",
+      "display_name": "Secondary Rx Group",
+      "length": 15,
+      "valid": "Input from transaction or blank",
+      "required": true
+    },
+    {
+      "name": "eghp",
+      "display_name": "EGHP",
+      "length": 1,
+      "valid": "TC 61 Y or blank TC 74 Y N or blank blank for others",
+      "required": true
+    },
+    {
+      "name": "partdLIS",
+      "display_name": "Part D LIS Level",
+      "length": 3,
+      "valid": "000 025 050 075 100 or blank",
+      "required": true
+    },
+    {
+      "name": "lowIncomeCoPay",
+      "display_name": "Low Income Co-Pay Category",
+      "length": 1,
+      "valid": "0 1 2 3 4 5 or blank",
+      "required": true
+    },
+    {
+      "name": "lisEffectiveDate",
+      "display_name": "LIS Effective Date (YYYYMMDD)",
+      "length": 8,
+      "valid": "Valid Date",
+      "required": true
+    },
+    {
+      "name": "partdLateEnrollmentPenalty",
+      "display_name": "Part D Late Enrollment Penalty Amount (XXXXvXX)",
+      "length": 8,
+      "valid": "Amount or blank",
+      "required": true
+    },
+    {
+      "name": "partdLateWaivedPenalty",
+      "display_name": "Part D Late Enrollment Penalty Waived Amount (XXXXvXX)",
+      "length": 8,
+      "valid": "Amount or blank",
+      "required": true
+    },
+    {
+      "name": "partdLateSubsidyAmount",
+      "display_name": "Part D Late Enrollment Penalty Subsidy Amount (XXXXvXX)",
+      "length": 8,
+      "valid": "Amount or blank",
+      "required": true
+    },
+    {
+      "name": "lisPartDLateSubsidyAmount",
+      "display_name": "Low Income Part D Late Enrollment Penalty Subsidy Amount (XXXXvXX)",
+      "length": 8,
+      "valid": "Amount or blank",
+      "required": true
+    }
+  ]
+}
