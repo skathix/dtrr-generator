@@ -252,7 +252,7 @@
       "name": "electionTypeCode",
       "display_name": "Election Type Code",
       "length": 1,
-      "valid": "A CD F I J L M N O R S T U V W X Y Z or blank",
+      "valid": "A C D F I J L M N O R S T U V W X Y Z or blank",
       "required": true
     },
     {
@@ -341,8 +341,8 @@
       "required": true
     },
     {
-      "name": "partdLIS",
-      "display_name": "Part D LIS Level",
+      "name": "partdLips",
+      "display_name": "Part D LIPS Level",
       "length": 3,
       "valid": "000 025 050 075 100 or blank",
       "required": true
@@ -355,8 +355,8 @@
       "required": true
     },
     {
-      "name": "lisEffectiveDate",
-      "display_name": "LIS Effective Date (YYYYMMDD)",
+      "name": "liCopayEffectiveDate",
+      "display_name": "Lincome Cop-pay Effective Date (YYYYMMDD)",
       "length": 8,
       "valid": "Valid Date",
       "required": true

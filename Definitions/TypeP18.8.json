@@ -1,0 +1,91 @@
+﻿{
+  "start_date": "2025-12-31",
+  "record_length": 683,
+  "description": "Verbatim File (type P) 18.8 PCUG",
+  "fields": [
+    {
+      "name": "beneficiary_id",
+      "display_name": "Beneficiary Identifier",
+      "length": 12,
+      "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+      "required": true
+    },
+    {
+      "name": "surname",
+      "display_name": "Surname",
+      "length": 12,
+      "valid": "Must have both Surname and First Name",
+      "required": true
+    },
+    {
+      "name": "first_name",
+      "display_name": "First Name",
+      "length": 7,
+      "valid": "Must have both Surname and First Name",
+      "required": true
+    },
+    {
+      "name": "middle_initial",
+      "display_name": "M. Initial",
+      "length": 1,
+      "valid": "Space or alpha",
+      "required": false
+    },
+    {
+      "name": "sex",
+      "display_name": "Sex",
+      "length": 1,
+      "valid": "Must show one or two - will be rejected if set to 0",
+      "required": true
+    },
+    {
+      "name": "birthdate",
+      "display_name": "Birthdate (YYYYMMDD)",
+      "length": 8,
+      "valid": "> 1870; <= current year",
+      "required": true
+    },
+    {
+      "name": "recordType",
+      "display_name": "Record Type",
+      "length": 1,
+      "valid": "Must be P",
+      "required": true
+    },
+    {
+      "name": "contractNumber",
+      "display_name": "Contract Number",
+      "length": 5,
+      "valid": "Valid contract number",
+      "required": true
+    },
+    {
+      "name": "planTransactionText",
+      "display_name": "Plan Transaction Text",
+      "length": 600,
+      "valid": "Copy of Plan transaction",
+      "required": true
+    },
+    {
+      "name": "transmissionStatusFlag",
+      "display_name": "Transmission Status Flag",
+      "length": 1,
+      "valid": "A or R",
+      "required": true
+    },
+    {
+      "name": "systemAssignedTrackingId",
+      "display_name": "System Assigned Transaction Tracking ID",
+      "length": 20,
+      "valid": "System Assigned Tracking Number",
+      "required": true
+    },
+    {
+      "name": "planAssignedTrackingId",
+      "display_name": "Plan Assigned Transaction Tracking ID",
+      "length": 15,
+      "valid": "Plan Assigned Tracking Number",
+      "required": true
+    }
+  ]
+}
