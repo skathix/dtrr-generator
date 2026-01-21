@@ -12,7 +12,7 @@ class FileIngestor
     private static void Main(string[] args)
     {
         
-        // This is the starting point
+        /*// This is the starting point
         // Create a file called "FileIngestor.cs" In the Models folder in SuperiorSelect
         // public class FileIngestor
         // {
@@ -40,6 +40,53 @@ class FileIngestor
         //     Console.WriteLine(
         //         $" - {type}");
         // }
+        // 1) get get the input
+        var userFileTypeSelection = Console.ReadLine();
+        // 2) parse the input
+        // simple first
+        switch (userFileTypeSelection)
+        {
+            case "M":
+                //parse mbit
+                // looks like allDefinitions is your variable to change, the complex version of this
+                // includes creating interfaces, which I recommend we do
+                // allDefinitions becomes the type "List<IDefinition>" or something
+                // and the following code gets refactored out to the MBIT path
+                // Example:
+                // public interface IDefinition {
+                //
+                //    // interface class needs basic definitions of what you need for the program to function with all the various types (MBIT, DTRR, etc.)
+                //     public object LoadAll(string folderPath) // for instance
+                // }
+                // public class MbitDefinition : IDefinition {
+                //     // Inheriting an interface allows the code to treat this class as the interface when passed as a parameter, allowing for genericizing
+                //    // When a class inherits an interface, it has to implement the methods
+                //    public object LoadAll(string folderPath) {
+                //     This would be the code found in LoadAll from MbitDefinitionLoader.LoadAll("Definitions") <-- this
+                //     }
+                // }
+                // public class DtrrDefinition : IDefinition {
+                //     // This will have a separate implementation of LoadAll
+                //    public object LoadAll(string folderPath) {
+                //         This would be the code found in LoadAll from DtrrDefinitionLoader.LoadAll("Definitions"), which currently may not exist.
+                //     } 
+
+                // This build would allow us to make this switch obsolete and just do something like:
+                // var allDefinitions = DefinitionLoader(Console.ReadLine());
+                // then anywhere the MBIT specific code is found, you'd just replace it with the generic version
+
+                var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
+                break;
+            case "D":
+                //parse Dtrr
+                break;
+            //etc
+            default:
+                Console.WriteLine("Unknown file type");
+                break;
+        }*/
+        // More complex option:
+        // All Definitions would be changed (either way)
         
         
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
@@ -98,7 +145,7 @@ class FileIngestor
 
                 var expectedLength = allDefinitions.Versions[selectedVersion!]
                     .Record_Length;
-                if (trimString.Length != expectedLength)
+                if (trimString.Length >= expectedLength)
                 {
                     Console.WriteLine(
                         $"Invalid length: {trimString.Length} (expected {expectedLength})");
