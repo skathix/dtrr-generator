@@ -12,28 +12,14 @@ class FileIngestor
     private static void Main(string[] args)
     {
         
-        /*// This is the starting point
-        // Create a file called "FileIngestor.cs" In the Models folder in SuperiorSelect
-        // public class FileIngestor
-        // {
-        //      public FileIngestor() 
-        //      {
-        //      }
-        //
-        //      This is the Main(string[] args) function
-        //      public Execute()
-        //      {
-        //          var allDefinitions...
-        //          ...
-        //          Console.WriteLine("Goodbye!");
-        //      }
-        
-        // 1-14-26
+       // 1-14-26
         // Add here a general type of file:
         // MBIT, DTRR, DTRR Type P, Type 23(can add future file types)
         // Then the string divider can be updated
         
+        /*
         // Console.WriteLine("Available file types:");
+        
         // foreach (var kvp in FileTypes)
         // {
         //     string version = kvp.Key;
@@ -75,7 +61,7 @@ class FileIngestor
                 // var allDefinitions = DefinitionLoader(Console.ReadLine());
                 // then anywhere the MBIT specific code is found, you'd just replace it with the generic version
 
-                var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
+                /*var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
                 break;
             case "D":
                 //parse Dtrr
@@ -84,9 +70,9 @@ class FileIngestor
             default:
                 Console.WriteLine("Unknown file type");
                 break;
-        }*/
+        }
         // More complex option:
-        // All Definitions would be changed (either way)
+        // All Definitions would be changed (either way)*/
         
         
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
