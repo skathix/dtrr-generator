@@ -1,4 +1,4 @@
-﻿namespace Tools.Tools;
+﻿namespace FileIngestor.Tools;
 
 public class StringDivider //mostly ChatGPT
 {

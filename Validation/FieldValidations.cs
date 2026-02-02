@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace Tools.Validation;
+namespace FileIngestor.Validation;
 
 public class FieldValidations
 {
@@ -22,6 +23,7 @@ public class FieldValidations
         Console.WriteLine(
             "POTENTIAL MBI not found: you would get a TCR 008 - Reject for this");
     }
+
 
     private void NamesCheck(string LastName, string FirstName, string MI)
     {
@@ -97,7 +99,7 @@ public class FieldValidations
         var HcRecordType = ("T");
     }
 
-    private void contract(string contractNumber)
+    void contract(string contractNumber)
     {
         var regex = @"^[A-Za-z]\d\d\d\d$";
         var match = Regex.Match(contractNumber, regex

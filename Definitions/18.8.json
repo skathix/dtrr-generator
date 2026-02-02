@@ -62,8 +62,8 @@
           "required": false
         },
         {
-          "name": "election_type",
-          "display_name": "Election Type",
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
           "length": 1,
           "valid": "A D I L M N O S T U V W X Y Z",
           "required": true
@@ -221,8 +221,8 @@
           "required": false
         },
         {
-          "name": "election_type",
-          "display_name": "Election Type",
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
           "length": 1,
           "valid": "A D I L M N O S T U V W or X",
           "required": true
@@ -2431,7 +2431,7 @@
           "required": false
         },
         {
-          "name": "filler8",
+          "name": "filler9",
           "display_name": "Filler",
           "length": 271,
           "valid": "Blanks",

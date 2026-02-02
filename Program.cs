@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text;
 using System.Text.Json.Serialization;
-using Tools.Tools;
+using FileIngestor.Tools;
 
 //UPDATES on dashboard
 
@@ -10,78 +10,21 @@ namespace Tools;
 class FileIngestor
 
 {
-    private static void Main(string[] args)
+    /*private static void Main(string[] args)
     {
-        
-       // 1-14-26
-        // Add here a general type of file:
-        // MBIT, DTRR, DTRR Type P, Type 23 (can add future file types)
-        // Then the string divider can be updated
-        
-        
-        
-        Console.WriteLine("Available file types:");
+        FileTypes.Load("FileTypes.json");
+       Console.WriteLine("Available file types:");
 
         foreach (var kvp in FileTypes.fileTypes)
         {
             Console.WriteLine($" - {kvp.Value}");
         }
-
-         
-        // 1) get get the input
+        //Read input
         var userFileTypeSelection = Console.ReadLine();
-        // 2) parse the input
-        // // simple first
-        // switch (userFileTypeSelection)
-        // {
-        //     case "M":
-                //parse mbit
-                // looks like allDefinitions is your variable to change, the complex version of this
-                // includes creating interfaces, which I recommend we do
-                // allDefinitions becomes the type "List<IDefinition>" or something
-                // and the following code gets refactored out to the MBIT path
-                // Example:
-                // public interface IDefinition {
-                //
-                //    // interface class needs basic definitions of what you need for the program to function with all the various types (MBIT, DTRR, etc.)
-                //     public object LoadAll(string folderPath) // for instance
-                // }
-                // public class MbitDefinition : IDefinition {
-                //     // Inheriting an interface allows the code to treat this class as the interface when passed as a parameter, allowing for genericizing
-                //    // When a class inherits an interface, it has to implement the methods
-                //    public object LoadAll(string folderPath) {
-                //     This would be the code found in LoadAll from MbitDefinitionLoader.LoadAll("Definitions") <-- this
-                //     }
-                // }
-                // public class DtrrDefinition : IDefinition {
-                //     // This will have a separate implementation of LoadAll
-                //    public object LoadAll(string folderPath) {
-                //         This would be the code found in LoadAll from DtrrDefinitionLoader.LoadAll("Definitions"), which currently may not exist.
-                //     } 
-
-                // This build would allow us to make this switch obsolete and just do something like:
-                // var allDefinitions = DefinitionLoader(Console.ReadLine());
-                // then anywhere the MBIT specific code is found, you'd just replace it with the generic version
-
-                /*var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
-                break;
-            case "D":
-                //parse Dtrr
-                break;
-            //etc
-            default:
-                Console.WriteLine("Unknown file type");
-                break;
-        }
-        // More complex option:
-        // All Definitions would be changed (either way)*/
         
-        
-    var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
-
-    bool continueChecking = true;
-
-    while (continueChecking)
+        var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
+        bool continueChecking = true;
+        while (continueChecking)
         {
             Console.WriteLine("Available options:");
             foreach (var kvp in allDefinitions.Versions.OrderBy(v =>
@@ -93,19 +36,19 @@ class FileIngestor
                     $" - {version} (starts: {startDate:yyyy-MM-dd})");
             }
 
-        Console.Write("Enter the option (e.g., 18.2, ReplayCodeNames): ");
+        Console.Write("Enter the option (e.g., 18.2): ");
         string selectedVersion = Console.ReadLine()?.Trim();
 //TODO: Add validation
-        /*if (selectedVersion != null) //need to figure this is correct
-        {
-           Console.Write("Enty error ");
-           continue;
+            if (string.IsNullOrEmpty(selectedVersion))
+            {
+                Console.WriteLine("No input provided.");
+                continue;
             
-        }*/
+            }
         Console.Write(
             "Are you pasting a single record or a full file? (type 'file' or 'single'): ");
         string mode = Console.ReadLine()?.Trim().ToLower();
-        if (mode == "file")
+        if (mode == "file"||mode == "f")
         {
             Console.Write("Enter path to file: ");
             string filePath = Console.ReadLine()!;
@@ -153,7 +96,7 @@ class FileIngestor
                 recordDef = new RecordDefinition();
             var fields = recordDef.Fields;
 
-           ProcessRecord(trimString, fields);*/
+           ProcessRecord(trimString, fields);#1#
             Console.WriteLine("Paste a single full record here:");
             string? inputString = Console.ReadLine();
 
@@ -215,14 +158,14 @@ class FileIngestor
             {
                 Console.Write("Enty error ");
                 continue;//correct response?
-            }*/
+            }#1#
             
         }
         /*else
         {
             Console.Write("Enty error ");
             continue;//correct response?
-        }*/
+        }#1#
 
         Console.Write("Do you want to check another item? (yes/no): ");
         string response = Console.ReadLine()!.ToLower();
@@ -233,10 +176,298 @@ class FileIngestor
         {
             Console.Write("Enty error");
             continue;//correct response?
-        }*/
+        }#1#
     }
 
     Console.WriteLine("Goodbye!");
+}*/
+
+
+    private static void Main(string[] args)
+    {
+        // Load file types
+        FileTypes.Load("FileTypes.json");
+
+        while (true)
+        {
+            Console.WriteLine("Available file types:");
+            foreach (var kvp in FileTypes.Types)
+                Console.WriteLine($" - {kvp.Key}: {kvp.Value}");
+
+            Console.Write("Select file type (key, e.g. MBIT): ");
+            var selectedFileType = Console.ReadLine()?.Trim().ToUpperInvariant();
+
+            if (string.IsNullOrWhiteSpace(selectedFileType))
+            {
+                Console.WriteLine("No selection provided.\n");
+                continue;
+            }
+
+            if (selectedFileType != "MBIT")
+            {
+                Console.WriteLine($"\n[{selectedFileType}] Coming soon! MBIT is currently supported.\n");
+                continue; // loop back to file type selection
+            }
+
+            RunMbitFlow();
+
+            Console.Write("\nDo you want to ingest another item? (y/n): ");
+            var again = Console.ReadLine()?.Trim().ToLowerInvariant();
+            if (again is not ("y" or "yes")) break;
+        }
+
+        Console.WriteLine("Goodbye!");
+    }
+
+    private static void RunMbitFlow()
+    {
+        var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
+
+        Console.WriteLine("\nAvailable MBIT versions:");
+        
+        foreach (var kvp in allDefinitions.Versions.OrderBy(v => v.Value.StartDate))
+        {
+            string version = kvp.Key;
+            DateTime startDate = kvp.Value.StartDate;
+            Console.WriteLine($" - {version} (starts: {startDate:yyyy-MM-dd})");
+        }
+
+
+        Console.Write("Enter the version (e.g., 18.2): ");
+        var selectedVersion = Console.ReadLine()?.Trim();
+
+        if (string.IsNullOrWhiteSpace(selectedVersion) ||
+            !allDefinitions.Versions.TryGetValue(selectedVersion, out var versionDef))
+        {
+            Console.WriteLine($"Unknown or missing version '{selectedVersion}'.");
+            return;
+        }
+
+        Console.Write("Single record or full file? (file/single): ");
+        var mode = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        if (mode is "file" or "f")
+        {
+            Console.Write("Enter path to file: ");
+            var filePath = Console.ReadLine()!;
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File not found.");
+                return;
+            }
+
+            ProcessFileWithOutputOption(filePath, selectedVersion!, allDefinitions);
+        }
+        else
+        {
+            Console.WriteLine("Paste a single full record here:");
+            var inputString = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(inputString))
+            {
+                Console.WriteLine("No input provided.");
+                return;
+            }
+
+            var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
+
+            if (line.Length < 61)
+            {
+                Console.WriteLine($"Invalid length: {line.Length}. Minimum 61 required to read transaction code at position 59.");
+                return;
+            }
+
+            var recordType = line.Substring(59, 2).Trim();
+
+            
+            versionDef.RecordTypes.TryGetValue(recordType, out var recordDef);
+            var acceptedLengths = GetAcceptedLengths(versionDef, recordDef);
+
+// 1) pad for console paste mode
+            line = PadToExpectedLength(line, acceptedLengths);
+
+// 2) validate
+            if (!acceptedLengths.Contains(line.Length))
+            {
+                Console.WriteLine($"Invalid length: {line.Length}. Expected: {string.Join(", ", acceptedLengths)}");
+                return;
+            }
+
+// 3) parse using real line
+            var fields = recordDef?.Fields ?? new List<FieldDefinition>();
+            ProcessRecord(line, fields);
+
+
+            Console.Write("Would you like to save the results? (none/txt/csv): ");
+            var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+            if (outputFormat is "txt" or "csv")
+                SaveSingleRecordOutput(line, recordType, fields, recordDef, outputFormat);
+            else
+                ProcessRecord(line, fields);
+        }
+    }
+
+    private static IReadOnlyList<int> GetAcceptedLengths(VersionDefinition versionDef, RecordDefinition? recordDef)
+    {
+        if (recordDef?.AcceptedLengths is { Count: > 0 } list) return list;
+        if (recordDef?.RecordLength is int rl) return new[] { rl };
+        return new[] { versionDef.RecordLength };
+    }
+
+    private static void ProcessRecord(string input, List<FieldDefinition> fields)
+    {
+        var sectionLengths = fields.Select(f => f.Length).ToList();
+        var sections = StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+
+        Console.WriteLine("\nProcessed record Data:");
+        for (int i = 0; i < Math.Min(sections.Count, fields.Count); i++)
+        {
+            var field = fields[i];
+            var label = string.IsNullOrWhiteSpace(field.DisplayName) ? field.Name : field.DisplayName;
+            var rawValue = sections[i];
+            var requiredMark = field.IsRequired ? "REQUIRED" : "";
+            var validValue = string.IsNullOrWhiteSpace(field.Valid) ? "" : $" ({field.Valid})";
+
+            Console.WriteLine($"{label}({field.Length}) {requiredMark}: {rawValue}{validValue}");
+        }
+    }
+
+    private static string CsvEscape(string s)
+    {
+        if (s.Contains('"')) s = s.Replace("\"", "\"\"");
+        if (s.Contains(',') || s.Contains('\n') || s.Contains('\r') || s.Contains('"'))
+            return $"\"{s}\"";
+        return s;
+    }
+
+    private static void SaveSingleRecordOutput(string input, string recordType,
+        List<FieldDefinition> fields, RecordDefinition? record, string outputFormat)
+    {
+        var sectionLengths = fields.Select(f => f.Length).ToList();
+        var sections = StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+
+        var txtOutput = new StringBuilder();
+        var csvOutput = new StringBuilder();
+
+        txtOutput.AppendLine(record?.Description ?? $"Record Type {recordType}");
+        csvOutput.AppendLine("RecordNumber,FieldName,Length,Required,Value,Valid");
+
+        for (int i = 0; i < fields.Count; i++)
+        {
+            var field = fields[i];
+            var label = string.IsNullOrWhiteSpace(field.DisplayName) ? field.Name : field.DisplayName;
+            var value = i < sections.Count ? sections[i] : "";
+            var requiredMark = field.IsRequired ? "REQUIRED" : "";
+            var valid = field.Valid ?? "";
+
+            txtOutput.AppendLine($"{label} ({field.Length}) {requiredMark}: {value}{(string.IsNullOrWhiteSpace(valid) ? "" : $" ({valid})")}");
+
+            csvOutput.AppendLine(string.Join(",",
+                "1",
+                CsvEscape(label),
+                field.Length.ToString(),
+                field.IsRequired.ToString(),
+                CsvEscape(value),
+                CsvEscape(valid)
+            ));
+        }
+
+        if (outputFormat == "txt")
+        {
+            File.WriteAllText("output_single.txt", txtOutput.ToString());
+            Console.WriteLine("Results saved to output_single.txt");
+        }
+        else if (outputFormat == "csv")
+        {
+            File.WriteAllText("output_single.csv", csvOutput.ToString());
+            Console.WriteLine("Results saved to output_single.csv");
+        }
+    }
+
+    private static void ProcessFileWithOutputOption(string filePath, string selectedVersion, MbitDefinitions allDefinitions)
+    {
+        Console.Write("Would you like to save the results? (none/txt/csv): ");
+        var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        var txtOutput = new StringBuilder();
+        var csvOutput = new StringBuilder();
+        csvOutput.AppendLine("RecordNumber,FieldName,Length,Required,Value,Valid");
+
+        var versionDef = allDefinitions.Versions[selectedVersion];
+        var lines = File.ReadAllLines(filePath);
+        int recordCounter = 0;
+
+        foreach (var rawLine in lines)
+        {
+            var line = rawLine.TrimEnd('\r', '\n'); // don't mutate spaces
+
+            if (line.StartsWith("AAAAAAHEADER"))
+            {
+                Console.WriteLine("Skipping header record.");
+                continue;
+            }
+
+            if (line.Length < 61)
+            {
+                Console.WriteLine($"Line too short ({line.Length}) to determine record type.");
+                continue;
+            }
+
+            var recordType = line.Substring(59, 2).Trim();
+            versionDef.RecordTypes.TryGetValue(recordType, out var recordDef);
+
+            var acceptedLengths = GetAcceptedLengths(versionDef, recordDef);
+            if (!acceptedLengths.Contains(line.Length))
+            {
+                Console.WriteLine($"Line has invalid length: {line.Length}. Expected: {string.Join(", ", acceptedLengths)} for type {recordType}");
+                continue;
+            }
+
+            var fields = recordDef?.Fields ?? new List<FieldDefinition>();
+            var sectionLengths = fields.Select(f => f.Length).ToList();
+            var sections = StringDivider.DivideStringIntoVariableSections(line, sectionLengths);
+
+            Console.WriteLine($"\nRecord {++recordCounter} — Type: {recordType}");
+            txtOutput.AppendLine($"Record {recordCounter} — {recordDef?.Description ?? $"Type {recordType}"}");
+
+            for (int i = 0; i < fields.Count; i++)
+            {
+                var field = fields[i];
+                var label = string.IsNullOrWhiteSpace(field.DisplayName) ? field.Name : field.DisplayName;
+                var value = i < sections.Count ? sections[i] : "";
+                var valid = field.Valid ?? "";
+                var requiredMark = field.IsRequired ? "REQUIRED" : "";
+
+                var lineTxt = $"{label} ({field.Length}) {requiredMark}: {value}{(string.IsNullOrWhiteSpace(valid) ? "" : $" ({valid})")}";
+                Console.WriteLine(lineTxt);
+
+                txtOutput.AppendLine(lineTxt);
+                csvOutput.AppendLine(string.Join(",",
+                    recordCounter.ToString(),
+                    CsvEscape(label),
+                    field.Length.ToString(),
+                    field.IsRequired.ToString(),
+                    CsvEscape(value),
+                    CsvEscape(valid)
+                ));
+            }
+
+            txtOutput.AppendLine();
+        }
+
+        if (outputFormat == "txt")
+        {
+            File.WriteAllText("output.txt", txtOutput.ToString());
+            Console.WriteLine("Results saved to output.txt");
+        }
+        else if (outputFormat == "csv")
+        {
+            File.WriteAllText("output.csv", csvOutput.ToString());
+            Console.WriteLine("Results saved to output.csv");
+        }
+    }
 }
 
     /*private static bool TryGetFieldDefinitions(
@@ -416,6 +647,7 @@ class FileIngestor
         
     }
 
+    /*
     public static class MbitDefinitionLoader
     {
         public static MbitDefinitions LoadAll(string folderPath)
@@ -441,9 +673,9 @@ class FileIngestor
 
             return definitions;
         }
-    }
+    }*/
     
-    public static class FileTypes
+    /*public static class FileTypes
     {
         // Holds your in-memory file types after loading JSON
         public static Dictionary<string, string> fileTypes = new();
@@ -479,19 +711,16 @@ class FileIngestor
         public List<int>? Accepted_Lengths { get; set; } // optional multi-lengths
 
         public List<FieldDefinition> Fields { get; set; } = new();
-        public string Description { get; set; } = "";
+        public string Description { get; set; } = "";*/
 
     }
-    private static IReadOnlyList<int> GetAcceptedLengths(
-        VersionDefinition versionDef,
-        RecordDefinition? recordDef
-    )
+    
+    
+    private static IReadOnlyList<int> GetAcceptedLengths(VersionDefinition versionDef, RecordDefinition? recordDef)
     {
-        if (recordDef?.Accepted_Lengths is { Count: > 0 } list) return list;
-        if (recordDef?.Record_Length is int rl) return new[] { rl };
-        return new[] { versionDef.Record_Length }; // fall back to version default
+        if (recordDef?.AcceptedLengths is { Count: > 0 } list) return list;
+        if (recordDef?.RecordLength is int rl) return new[] { rl };
+        return new[] { versionDef.DefaultRecordLength };
     }
 
-
-}
 

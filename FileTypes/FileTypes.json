@@ -1,7 +1,7 @@
 ﻿{
-  "fileType": "MBIT",
-  "fileType": "DTRR",
-  "fileType": "DTRR Type P",
-  "fileType": "MedImpact/Envision",
-  "fileType": "Reply Code Names"
+  "MBIT": "MBIT",
+  "DTRR": "DTRR",
+  "DTRR_P": "DTRR Type P",
+  "MEDIMPACT": "MedImpact/Envision",
+  "REPLY_CODES": "Reply Code Names"
 }
