@@ -1,6 +1,6 @@
 ﻿{
   "start_date": "2025-12-31",
-  "record_length": 300,
+  "default_record_length": 300,
   "record_types": {
     "51": {
       "description": "Disenrollment Transaction (51)",
@@ -322,6 +322,7 @@
     },
     "61": {
       "description": "Enrollment Transaction (61)",
+      "record_length": 600,
       "fields": [
         {
           "name": "beneficiary_id",
@@ -2232,6 +2233,7 @@
     },
     "92": {
       "description": "Personal Information Change (92)",
+      "record_length": 600,
       "fields": [
         {
           "name": "beneficiary_id",

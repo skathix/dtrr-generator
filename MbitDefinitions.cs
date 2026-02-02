@@ -29,6 +29,10 @@ public class FieldDefinition
 {
     [JsonPropertyName("name")]
     public string Name { get; set; } = "";
+    
+    [JsonPropertyName("record_length")]
+    public int? Record_Length { get; set; }
+
 
     [JsonPropertyName("display_name")]
     public string DisplayName { get; set; } = "";
@@ -40,4 +44,8 @@ public class FieldDefinition
     public bool IsRequired { get; set; }
 
     [JsonPropertyName("valid")] public string Valid { get; set; } = "";
+    
+    public List<FieldDefinition> Fields { get; set; } = new();
+    public string Description { get; set; } = "";
+
 }

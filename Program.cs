@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text;
+using System.Text.Json.Serialization;
 using Tools.Tools;
 
 //UPDATES on dashboard
@@ -14,25 +15,26 @@ class FileIngestor
         
        // 1-14-26
         // Add here a general type of file:
-        // MBIT, DTRR, DTRR Type P, Type 23(can add future file types)
+        // MBIT, DTRR, DTRR Type P, Type 23 (can add future file types)
         // Then the string divider can be updated
         
-        /*
-        // Console.WriteLine("Available file types:");
         
-        // foreach (var kvp in FileTypes)
-        // {
-        //     string version = kvp.Key;
-        //     Console.WriteLine(
-        //         $" - {type}");
-        // }
+        
+        Console.WriteLine("Available file types:");
+
+        foreach (var kvp in FileTypes.fileTypes)
+        {
+            Console.WriteLine($" - {kvp.Value}");
+        }
+
+         
         // 1) get get the input
         var userFileTypeSelection = Console.ReadLine();
         // 2) parse the input
-        // simple first
-        switch (userFileTypeSelection)
-        {
-            case "M":
+        // // simple first
+        // switch (userFileTypeSelection)
+        // {
+        //     case "M":
                 //parse mbit
                 // looks like allDefinitions is your variable to change, the complex version of this
                 // includes creating interfaces, which I recommend we do
@@ -75,11 +77,11 @@ class FileIngestor
         // All Definitions would be changed (either way)*/
         
         
-        var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
+    var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
-        bool continueChecking = true;
+    bool continueChecking = true;
 
-        while (continueChecking)
+    while (continueChecking)
         {
             Console.WriteLine("Available options:");
             foreach (var kvp in allDefinitions.Versions.OrderBy(v =>
@@ -91,116 +93,161 @@ class FileIngestor
                     $" - {version} (starts: {startDate:yyyy-MM-dd})");
             }
 
-            Console.Write("Enter the option (e.g., 18.2, ReplayCodeNames): ");
-            string selectedVersion = Console.ReadLine()?.Trim();
+        Console.Write("Enter the option (e.g., 18.2, ReplayCodeNames): ");
+        string selectedVersion = Console.ReadLine()?.Trim();
 //TODO: Add validation
-            /*if (selectedVersion != null) //need to figure this is correct
-            {
-               Console.Write("Enty error ");
-               continue;
-                
-            }*/
-            Console.Write(
-                "Are you pasting a single record or a full file? (type 'file' or 'single'): ");
-            string mode = Console.ReadLine()?.Trim().ToLower();
-//TODO: Finish Validation
-            if (mode == "file")
-            {
-                Console.Write("Enter path to file: ");
-                string filePath = Console.ReadLine()!;
+        /*if (selectedVersion != null) //need to figure this is correct
+        {
+           Console.Write("Enty error ");
+           continue;
+            
+        }*/
+        Console.Write(
+            "Are you pasting a single record or a full file? (type 'file' or 'single'): ");
+        string mode = Console.ReadLine()?.Trim().ToLower();
+        if (mode == "file")
+        {
+            Console.Write("Enter path to file: ");
+            string filePath = Console.ReadLine()!;
 
-                if (!File.Exists(filePath))
-                {
-                    Console.WriteLine("File not found.");
-                    return;
-                }
-
-                ProcessFileWithOutputOption(filePath, selectedVersion!
-                    , allDefinitions);
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File not found.");
+                return;
             }
-            else 
+
+            ProcessFileWithOutputOption(filePath, selectedVersion!
+                , allDefinitions);
+        }
+        else 
+        {
+            /*Console.WriteLine("Paste a single full record here:");
+            string? inputString = Console.ReadLine();
+            //TODO - Do we even need this, once we remove the possibility of end-of-record characters?
+            var trimmedString = inputString.TrimStart();
+            //TODO: Check for end-of-record characters, remove those
+            //trimmedString will allow for an easier division without the
+            //need to remove dashes
+            var trimString = trimmedString.Replace(" ", "-");
+
+            var expectedLength = allDefinitions.Versions[selectedVersion!]
+                .Record_Length;
+            if (trimString.Length != expectedLength)
             {
-                Console.WriteLine("Paste a single full record here:");
-                string inputString = Console.ReadLine();
-                //TODO - Do we even need this, once we remove the possibility of end-of-record characters?
-                var trimmedString = inputString.TrimStart();
-                //TODO: Check for end-of-record characters, remove those
-                //trimmedString will allow for an easier division without the
-                //need to remove dashes
-                var trimString = trimmedString.Replace(" ", "-");
+                Console.WriteLine(
+                    $"Invalid length: {trimString.Length} (expected {expectedLength})");
+                continue;
+            }
+            
 
-                var expectedLength = allDefinitions.Versions[selectedVersion!]
-                    .Record_Length;
-                if (trimString.Length >= expectedLength)
-                {
-                    Console.WriteLine(
-                        $"Invalid length: {trimString.Length} (expected {expectedLength})");
-                    continue;
-                }
-                
+            var recordType = trimString.Substring(59, 2);
 
-                var recordType = trimString.Substring(59, 2);
+            if (!allDefinitions.Versions.TryGetValue(selectedVersion
+                    , out var versionDef))
+                //TODO: Better Handling
+                versionDef = new VersionDefinition();
 
-                if (!allDefinitions.Versions.TryGetValue(selectedVersion
-                        , out var versionDef))
-                    //TODO: Better Handling
-                    versionDef = new VersionDefinition();
+            if (!versionDef.Record_Types.TryGetValue(recordType
+                    , out var recordDef))
+                //TODO: Better Handling
+                recordDef = new RecordDefinition();
+            var fields = recordDef.Fields;
 
-                if (!versionDef.Record_Types.TryGetValue(recordType
-                        , out var recordDef))
-                    //TODO: Better Handling
-                    recordDef = new RecordDefinition();
-                var fields = recordDef.Fields;
+           ProcessRecord(trimString, fields);*/
+            Console.WriteLine("Paste a single full record here:");
+            string? inputString = Console.ReadLine();
 
-               ProcessRecord(trimString, fields);
+// Basic null/empty check
+            if (string.IsNullOrEmpty(inputString))
+            {
+                Console.WriteLine("No input provided.");
+                // continue; or return;
+            }
 
-                Console.Write(
-                    "Would you like to save the results? (none/txt/csv): ");
-                string outputFormat = Console.ReadLine()?.Trim().ToLower();
-                //TODO: Finish validation here
-                if (outputFormat is "txt" or "csv")
-                {
-                    SaveSingleRecordOutput(trimString, recordType, fields
-                        , recordDef, outputFormat);
-                }
-                /*else
-                {
-                    Console.Write("Enty error ");
-                    continue;//correct response?
-                }*/
-                
+// Normalize: remove line terminators only (don't mutate spaces)
+            var line = inputString
+                .TrimEnd('\r', '\n')
+                .TrimStart('\uFEFF'); // BOM, if any
+
+// Lookup the selected version
+            if (!allDefinitions.Versions.TryGetValue(selectedVersion!, out var versionDef))
+            {
+                Console.WriteLine($"Unknown version '{selectedVersion}'.");
+                // continue; or return;
+            }
+
+// Guard: ensure we can read the transaction_code at 59,2 safely
+            if (line.Length < 61) // need at least 61 chars to read start=59, len=2
+            {
+                Console.WriteLine($"Invalid length: {line.Length}. Minimum 61 required to read transaction code at position 59.");
+                // continue; or return;
+            }
+
+// Extract record type (MBIT transaction code is at offset 59, length 2 per your spec)
+            var recordType = line.Substring(59, 2).Trim();
+
+// Lookup record definition for this type (if missing, we still can validate against version length)
+            allDefinitions.Versions[selectedVersion!].Record_Types.TryGetValue(recordType, out var recordDef);
+
+// Determine accepted lengths
+            var acceptedLengths = GetAcceptedLengths(versionDef, recordDef);
+
+// Validate length against accepted lengths
+            if (!acceptedLengths.Contains(line.Length))
+            {
+                Console.WriteLine(
+                    $"Invalid length: {line.Length}. Expected one of: {string.Join(", ", acceptedLengths)} for record type {recordType} (version default: {versionDef.Record_Length}).");
+                // continue; or return;
+            }
+
+
+
+            Console.Write(
+                "Would you like to save the results? (none/txt/csv): ");
+            string outputFormat = Console.ReadLine()?.Trim().ToLower();
+            //TODO: Finish validation here
+            if (outputFormat is "txt" or "csv")
+            {
+                SaveSingleRecordOutput(line, recordType, fields
+                    , recordDef, outputFormat);
             }
             /*else
             {
                 Console.Write("Enty error ");
                 continue;//correct response?
             }*/
-
-            Console.Write("Do you want to check another item? (yes/no): ");
-            string response = Console.ReadLine()!.ToLower();
-            continueChecking = response == "yes" || response == "y";
-            //TODO: Add validation/retry here
-            /*if (response != "yes" || response != "y" || response != "no" ||
-                response != "n")
-            {
-                Console.Write("Enty error");
-                continue;//correct response?
-            }*/
+            
         }
+        /*else
+        {
+            Console.Write("Enty error ");
+            continue;//correct response?
+        }*/
 
-        Console.WriteLine("Goodbye!");
+        Console.Write("Do you want to check another item? (yes/no): ");
+        string response = Console.ReadLine()!.ToLower();
+        continueChecking = response == "yes" || response == "y";
+        //TODO: Add validation/retry here
+        /*if (response != "yes" || response != "y" || response != "no" ||
+            response != "n")
+        {
+            Console.Write("Enty error");
+            continue;//correct response?
+        }*/
     }
 
-    private static bool TryGetFieldDefinitions(
+    Console.WriteLine("Goodbye!");
+}
+
+    /*private static bool TryGetFieldDefinitions(
         MbitDefinitions allDefinitions,
         string version,
         string recordType,
         out List<FieldDefinition> fields)
     {
         fields = new List<FieldDefinition>();
-        //TODO: Check into this function, may be deletable or at least refactortable, unused at the moment
         return true;
-    }
+    }*/
 
     private static void ProcessRecord(string input
         , List<FieldDefinition> fields)
@@ -395,5 +442,56 @@ class FileIngestor
             return definitions;
         }
     }
+    
+    public static class FileTypes
+    {
+        // Holds your in-memory file types after loading JSON
+        public static Dictionary<string, string> fileTypes = new();
+
+        public static void Load(string jsonPath)
+        {
+            if (!File.Exists(jsonPath))
+                throw new FileNotFoundException("FileTypes.json not found.", jsonPath);
+
+            var json = File.ReadAllText(jsonPath);
+
+            var loaded = JsonSerializer.Deserialize<Dictionary<string, string>>(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            fileTypes = loaded ?? new Dictionary<string, string>();
+        }
+    }
+    public class RecordDefinition
+    {
+        [JsonPropertyName("record_length")]
+        public int? Record_Length { get; set; } // optional per-type override
+
+        [JsonPropertyName("accepted_lengths")]
+        public List<int>? Accepted_Lengths { get; set; } // optional multi-lengths
+
+        public List<FieldDefinition> Fields { get; set; } = new();
+        public string Description { get; set; } = "";
+        
+        [JsonPropertyName("record_length")]
+        public int? Record_Length { get; set; } // optional per-type override
+
+        [JsonPropertyName("accepted_lengths")]
+        public List<int>? Accepted_Lengths { get; set; } // optional multi-lengths
+
+        public List<FieldDefinition> Fields { get; set; } = new();
+        public string Description { get; set; } = "";
+
+    }
+    private static IReadOnlyList<int> GetAcceptedLengths(
+        VersionDefinition versionDef,
+        RecordDefinition? recordDef
+    )
+    {
+        if (recordDef?.Accepted_Lengths is { Count: > 0 } list) return list;
+        if (recordDef?.Record_Length is int rl) return new[] { rl };
+        return new[] { versionDef.Record_Length }; // fall back to version default
+    }
+
+
 }
 
