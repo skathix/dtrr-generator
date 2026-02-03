@@ -1,0 +1,1331 @@
+﻿{
+  "start_date": "2024-08-05",
+  "description": "Type 24 - Member Attribute Load File",
+  "record_types": {
+    "01": {
+      "record_length": 590,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 01- Other Health Insurance Information",
+          "length": 2,
+          "valid": "01",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "OHIBin",
+          "display_name": "Other Health Insurance BIN",
+          "length": 6,
+          "valid": "BIN for other Health Coverage Item 8 CMS COB Data File",
+          "required": true
+        },
+        {
+          "name": "OHIPcn",
+          "display_name": "Other Health Insurance PCN",
+          "length": 10,
+          "valid": "PCN for other Health Coverage Item 9 CMS COB Data File",
+          "required": true
+        },
+        {
+          "name": "OHIGroupId",
+          "display_name": "Other Health Insurance Group ID",
+          "length": 15,
+          "valid": "Group for other Health Coverage CMS COB Item 7",
+          "required": false
+        },
+        {
+          "name": "OHIMemberNumber",
+          "display_name": "Other Health Insurance Member Number",
+          "length": 10,
+          "valid": "ID Number for other Health Coverage CMS COB Item 6 - no special characters",
+          "required": false
+        },
+        {
+          "name": "OHIPersonCode",
+          "display_name": "Other Health Insurance Person Code",
+          "length": 3,
+          "valid": "Insured 001 Spouse 002 Dependents 003 - 100 CMS COB Item 28"
+        },
+        {
+          "name": "OHIPayerPhone",
+          "display_name": "Other Health Insurance Payer Phone #",
+          "length": 10,
+          "valid": "Contact number for the Provider CMS COB Item 10 - only digits",
+          "required": false
+        },
+        {
+          "name": "OHICoverageSequence",
+          "display_name": "Other Health Insurance Coverage Sequence",
+          "length": 1,
+          "valid": "BLANK- no longer used",
+          "required": false
+        },
+        {
+          "name": "OHIStartDate",
+          "display_name": "Other Health Insurance Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD CMS COB Item 113 or 31",
+          "required": true
+        },
+        {
+          "name": "OHIEndDate",
+          "display_name": "Other Health Insurance End Date",
+          "length": 8,
+          "valid": "YYYYMMDD CMS COB Item 25",
+          "required": true
+        },
+        {
+          "name": "OHIType",
+          "display_name": "Other Health Insurance Type",
+          "length": 1,
+          "valid": "L M N O P Q R S T 1 2 3 CMS COB Item 13",
+          "required": false
+        },
+        {
+          "name": "Filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "Reserved1",
+          "display_name": "Reserved - Member Match Logic",
+          "length": 2,
+          "valid": "?",
+          "required": false
+        },
+        {
+          "name": "OHISourceCode",
+          "display_name": "Other Health Insurance Source Code",
+          "length": 5,
+          "valid": "11100 through 11114 11118 11120 11125 through 11127 P0000 S0000 CMS COB Item 12",
+          "required": false
+        },
+        {
+          "name": "OHIName",
+          "display_name": "Other Health Insurance Insurer's Name",
+          "length": 32,
+          "valid": "CMS COB Item 15",
+          "required": false
+        },
+        {
+          "name": "Filler2",
+          "display_name": "Filler",
+          "length": 18,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "Void",
+          "display_name": "Void",
+          "length": 1,
+          "valid": "V (or Blank?)",
+          "required": false
+        },
+        {
+          "name": "OHICoverageSequenceCms",
+          "display_name": "Other Health Insurance Coverage Sequence CMS",
+          "length": 3,
+          "valid": "CMS Numbers for Payer order CMS COB Item 29",
+          "required": false
+        },
+        {
+          "name": "MspReason",
+          "display_name": "MSP Reason Entitlement Reason from COB",
+          "length": 1,
+          "valid": "A B C D E F G H I L W CMS COB Item 13",
+          "required": false
+        },
+        {
+          "name": "OHICoverageCode",
+          "display_name": "Other Health Insurance Coverage Code",
+          "length": 10,
+          "valid": "A U V W X Y Z CMS COB Item 14",
+          "required": false
+        },
+        {
+          "name": "PayerId",
+          "display_name": "Payer ID",
+          "length": 10,
+          "valid": "CMS COB Item 27",
+          "required": false
+        },
+        {
+          "name": "Filler3",
+          "display_name": "Filler",
+          "length": 10,
+          "valid": "Blanks - was CMD COB Item 43",
+          "required": false
+        },
+        {
+          "name": "Filler4",
+          "display_name": "Filler",
+          "length": 10,
+          "valid": "Blanks - was CMD COB Item 44",
+          "required": false
+        },
+        {
+          "name": "Filler5",
+          "display_name": "Filler",
+          "length": 10,
+          "valid": "Blanks - was CMD COB Item 45",
+          "required": false
+        },
+        {
+          "name": "Filler6",
+          "display_name": "Filler",
+          "length": 10,
+          "valid": "Blanks - was CMD COB Item 46",
+          "required": false
+        },
+        {
+          "name": "Filler7",
+          "display_name": "Filler",
+          "length": 10,
+          "valid": "Blanks - was CMD COB Item 47",
+          "required": false
+        },
+        {
+          "name": "WCSAAmount",
+          "display_name": "WCSA Amount",
+          "length": 12,
+          "valid": "XXXXXXXXX.XX Includes decimal point CMS COB Item 57",
+          "required": false
+        },
+        {
+          "name": "WCSAIndicator",
+          "display_name": "WCSA Indicator",
+          "length": 2,
+          "valid": "CMS COB Item 59",
+          "required": false
+        },
+        {
+          "name": "WCSASettlementDate",
+          "display_name": "WCSA Settlement Date",
+          "length": 8,
+          "valid": "YYYYMMDD CMS COB Item 59",
+          "required": true
+        },
+        {
+          "name": "TotalRxSettlementAmount",
+          "display_name": "Total Rx Settlement Amount",
+          "length": 12,
+          "valid": "XXXXXXXXX.XX Includes decimal point CMS COB Item 61",
+          "required": false
+        },
+        {
+          "name": "RxIncludedInWCSAAmount",
+          "display_name": "Rx Included in WCSA Settlement Amount",
+          "length": 2,
+          "valid": "Y N CMS COB Item 62",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator1",
+          "display_name": "Claim Diagnosis Code Indicator 1",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode1",
+          "display_name": "Claim Diagnosis Code 1",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator2",
+          "display_name": "Claim Diagnosis Code Indicator 2",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode2",
+          "display_name": "Claim Diagnosis Code 2",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator3",
+          "display_name": "Claim Diagnosis Code Indicator 3",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode3",
+          "display_name": "Claim Diagnosis Code 3",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator4",
+          "display_name": "Claim Diagnosis Code Indicator 4",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode4",
+          "display_name": "Claim Diagnosis Code 4",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator5",
+          "display_name": "Claim Diagnosis Code Indicator 5",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode5",
+          "display_name": "Claim Diagnosis Code 5",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator6",
+          "display_name": "Claim Diagnosis Code Indicator 6",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode6",
+          "display_name": "Claim Diagnosis Code 6",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator7",
+          "display_name": "Claim Diagnosis Code Indicator 7",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode7",
+          "display_name": "Claim Diagnosis Code 7",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator8",
+          "display_name": "Claim Diagnosis Code Indicator 8",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode8",
+          "display_name": "Claim Diagnosis Code 8",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator9",
+          "display_name": "Claim Diagnosis Code Indicator 9",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode9",
+          "display_name": "Claim Diagnosis Code 9",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator10",
+          "display_name": "Claim Diagnosis Code Indicator 10",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode10",
+          "display_name": "Claim Diagnosis Code 10",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator11",
+          "display_name": "Claim Diagnosis Code Indicator 11",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode11",
+          "display_name": "Claim Diagnosis Code 11",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator12",
+          "display_name": "Claim Diagnosis Code Indicator 12",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode12",
+          "display_name": "Claim Diagnosis Code 12",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator13",
+          "display_name": "Claim Diagnosis Code Indicator 13",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode13",
+          "display_name": "Claim Diagnosis Code 13",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator14",
+          "display_name": "Claim Diagnosis Code Indicator 14",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode14",
+          "display_name": "Claim Diagnosis Code 14",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator15",
+          "display_name": "Claim Diagnosis Code Indicator 15",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode15",
+          "display_name": "Claim Diagnosis Code 15",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator16",
+          "display_name": "Claim Diagnosis Code Indicator 16",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode16",
+          "display_name": "Claim Diagnosis Code 16",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator17",
+          "display_name": "Claim Diagnosis Code Indicator 17",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode17",
+          "display_name": "Claim Diagnosis Code 17",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator18",
+          "display_name": "Claim Diagnosis Code Indicator 18",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode18",
+          "display_name": "Claim Diagnosis Code 18",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator19",
+          "display_name": "Claim Diagnosis Code Indicator 19",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode19",
+          "display_name": "Claim Diagnosis Code 19",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator20",
+          "display_name": "Claim Diagnosis Code Indicator 20",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode20",
+          "display_name": "Claim Diagnosis Code 20",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator21",
+          "display_name": "Claim Diagnosis Code Indicator 21",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode21",
+          "display_name": "Claim Diagnosis Code 21",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator22",
+          "display_name": "Claim Diagnosis Code Indicator 22",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode22",
+          "display_name": "Claim Diagnosis Code 22",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator23",
+          "display_name": "Claim Diagnosis Code Indicator 23",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode23",
+          "display_name": "Claim Diagnosis Code 23",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator24",
+          "display_name": "Claim Diagnosis Code Indicator 24",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode24",
+          "display_name": "Claim Diagnosis Code 24",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCodeIndicator25",
+          "display_name": "Claim Diagnosis Code Indicator 25",
+          "length": 1,
+          "valid": "0 ICD-10",
+          "required": false
+        },
+        {
+          "name": "ClaimDiagnosisCode25",
+          "display_name": "Claim Diagnosis Code 25",
+          "length": 7,
+          "valid": "Valid Diagnosis Code",
+          "required": false
+        }
+      ]
+    },
+    "03": {
+      "record_length": 169,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 03 - MTM Information",
+          "length": 2,
+          "valid": "03",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MTMStartDate",
+          "display_name": "MTM Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MTMEndDate",
+          "display_name": "MTM End Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "Reserved1",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Reserved -Member Match logic",
+          "required": false
+        },
+        {
+          "name": "TermReasonCode",
+          "display_name": "Term Reason Code",
+          "length": 2,
+          "valid": "01 02 03 04",
+          "required": true
+        }
+      ]
+    }
+  },
+  "04": {
+    "record_length": 190,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 04 - Disease Information",
+        "length": 2,
+        "valid": "04",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "DiagnosisCodeQualifier",
+        "display_name": "Diagnosis Code Qualifier",
+        "length": 10,
+        "valid": "ICD10",
+        "required": true
+      },
+      {
+        "name": "DiagnosisCode",
+        "display_name": "Diagnosis Code",
+        "length": 15,
+        "valid": "Valid ICD-10 Code",
+        "required": true
+      },
+      {
+        "name": "StartDate",
+        "display_name": "Start Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "EndDate",
+        "display_name": "End Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      }
+    ]
+  },
+  "05": {
+    "record_length": 161,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 05 - Member Plan D Start Date",
+        "length": 2,
+        "valid": "05",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "MemberPlanPartDStartDate",
+        "display_name": "Member's Plan Part D Start Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "Reserved",
+        "display_name": "Reserved",
+        "length": 2,
+        "valid": "Member Match Logic",
+        "required": false
+      },
+      {
+        "name": "ObsoleteFlag",
+        "display_name": "Obsolete Flag",
+        "length": 1,
+        "valid": "Y or blank",
+        "required": false
+      },
+      {
+        "name": "Filler",
+        "display_name": "Filler",
+        "length": 1,
+        "valid": "Flag here no longer required",
+        "required": false
+      }
+    ]
+  },
+  "06": {
+    "record_length": 167,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 06 - Member Level Retiree Drug Subsidy",
+        "length": 2,
+        "valid": "06",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "MemberRetireeSubsidyStartDate",
+        "display_name": "Member-Retiree Subsidy Start Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "MemberRetireeSubsidyEndDate",
+        "display_name": "Member-Retiree Subsidy End Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": false
+      },
+      {
+        "name": "Reserved",
+        "display_name": "Reserved",
+        "length": 2,
+        "valid": "Member Match Logic",
+        "required": false
+      }
+    ]
+  },
+  "07": {
+    "record_length": 149,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 07 - Member Level LIS Information",
+        "length": 2,
+        "valid": "07",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "LowIncomeSubsidyLevel",
+        "display_name": "Low Income Subsidy Level",
+        "length": 1,
+        "valid": "0 1 2 3 4 5 same as CMS LIS Copay Categories",
+        "required": true
+      },
+      {
+        "name": "LowIncomeSubsidyStartDate",
+        "display_name": "Low Income Subsidy Start Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "LowIncomeSubsidyEndDate",
+        "display_name": "Low Income Subsidy End Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": false
+      },
+      {
+        "name": "Reserved",
+        "display_name": "Reserved",
+        "length": 2,
+        "valid": "Member Match Logic",
+        "required": false
+      }
+    ]
+  },
+  "08": {
+    "record_length": 217,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 08 - Member Level Attribute Information",
+        "length": 2,
+        "valid": "08",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "AttributeType",
+        "display_name": "Attribute Type",
+        "length": 20,
+        "valid": "See Table inb PDF",
+        "required": true
+      },
+      {
+        "name": "AttributeValue",
+        "display_name": "Attribute Value",
+        "length": 30,
+        "valid": "?",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "AttributeStartDate",
+        "display_name": "Attribute Start Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "AttributeEndDate",
+        "display_name": "Attribute End Date",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": false
+      },
+      {
+        "name": "Reserved",
+        "display_name": "Reserved",
+        "length": 2,
+        "valid": "Member Match Logic",
+        "required": false
+      }
+    ]
+  },
+  "09": {
+    "record_length": 179,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 09 - LTC Member Restriction",
+        "length": 2,
+        "valid": "09",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "MemberRestriction",
+        "display_name": "Member Restriction",
+        "length": 30,
+        "valid": "PARTD_LTC_DENY",
+        "required": true
+      },
+      {
+        "name": "AuthorizationOverride",
+        "display_name": "Authorization Override",
+        "length": 1,
+        "valid": "Y or N",
+        "required": true
+      },
+      {
+        "name": "StartDate",
+        "display_name": "Effective Date of Member Restriction",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "EndDate",
+        "display_name": "End Date for Member Restriction",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": false
+      },
+      {
+        "name": "Reserved",
+        "display_name": "Reserved",
+        "length": 2,
+        "valid": "Member Match Logic",
+        "required": false
+      }
+    ]
+  },
+  "10": {
+    "record_length": 390,
+    "fields": [
+      {
+        "name": "RecordType",
+        "display_name": "Record Type",
+        "length": 2,
+        "valid": "24",
+        "required": true
+      },
+      {
+        "name": "SegmentCode",
+        "display_name": "Segment Code 10 - PHI - Member Comment",
+        "length": 2,
+        "valid": "10",
+        "required": true
+      },
+      {
+        "name": "HeadquartersCode",
+        "display_name": "Headquarters Code",
+        "length": 5,
+        "valid": "Assigned by MedImpact",
+        "required": true
+      },
+      {
+        "name": "MemberNumber",
+        "display_name": "Member Number",
+        "length": 30,
+        "valid": "ID on card - no special characters",
+        "required": true
+      },
+      {
+        "name": "PersonCode",
+        "display_name": "Insured Id",
+        "length": 2,
+        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+        "required": true
+      },
+      {
+        "name": "LastName",
+        "display_name": "Last Name",
+        "length": 50,
+        "valid": "Member's Last Name",
+        "required": true
+      },
+      {
+        "name": "FirstName",
+        "display_name": "First Name",
+        "length": 50,
+        "valid": "Member's first name",
+        "required": true
+      },
+      {
+        "name": "DOB",
+        "display_name": "Date Of Birth",
+        "length": 8,
+        "valid": "YYYYMMDD",
+        "required": true
+      },
+      {
+        "name": "ActionCode",
+        "display_name": "Action Code",
+        "length": 1,
+        "valid": "A C Maybe others?",
+        "required": true
+      },
+      {
+        "name": "MemberCommentPHI",
+        "display_name": "PHI - Member Comment  - PHI",
+        "length": 240,
+        "valid": "Freeform comment Leading and trailing spaces trimmed To remove send this field with spaces",
+        "required": false
+      }
+    ]
+  }
+}

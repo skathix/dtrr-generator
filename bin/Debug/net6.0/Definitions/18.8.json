@@ -1,6 +1,6 @@
 ﻿{
   "start_date": "2025-12-31",
-  "record_length": 300,
+  "default_record_length": 300,
   "record_types": {
     "51": {
       "description": "Disenrollment Transaction (51)",
@@ -62,8 +62,8 @@
           "required": false
         },
         {
-          "name": "election_type",
-          "display_name": "Election Type",
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
           "length": 1,
           "valid": "A D I L M N O S T U V W X Y Z",
           "required": true
@@ -221,8 +221,8 @@
           "required": false
         },
         {
-          "name": "election_type",
-          "display_name": "Election Type",
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
           "length": 1,
           "valid": "A D I L M N O S T U V W or X",
           "required": true
@@ -322,6 +322,7 @@
     },
     "61": {
       "description": "Enrollment Transaction (61)",
+      "record_length": 600,
       "fields": [
         {
           "name": "beneficiary_id",
@@ -2232,6 +2233,7 @@
     },
     "92": {
       "description": "Personal Information Change (92)",
+      "record_length": 600,
       "fields": [
         {
           "name": "beneficiary_id",
@@ -2429,7 +2431,7 @@
           "required": false
         },
         {
-          "name": "filler8",
+          "name": "filler9",
           "display_name": "Filler",
           "length": 271,
           "valid": "Blanks",

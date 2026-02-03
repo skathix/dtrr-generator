@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Tools.Tools;
 
-public class StringDivider //mostly ChatGPT
+public class StringDivider //mostly LLM assisted
 {
     public static List<string> DivideStringIntoVariableSections(string input
         , List<int> sectionLengths)

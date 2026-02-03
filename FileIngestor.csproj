@@ -45,6 +45,16 @@
       <Folder Include="Schemas\" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Update="FileTypes\FileTypes.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+
+        <None Update="Definitions\**\*.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
 
 
 </Project>
