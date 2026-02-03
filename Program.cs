@@ -113,7 +113,12 @@ class FileIngestor
                 return;
             }
 
+            
+            Console.WriteLine($"\nRecord Type {recordType}: {recordDef?.Description ?? $"Unknown record type ({recordType})"}");
+
             var fields = recordDef?.Fields ?? new List<FieldDefinition>();
+            ProcessRecord(line, fields);
+
 
             Console.Write(
                 "Would you like to save the results? (none/txt/csv): ");
@@ -245,11 +250,11 @@ class FileIngestor
 
         var txtOutput = new StringBuilder();
         var csvOutput = new StringBuilder();
+        var description = record?.Description ?? $"Unknown record type ({recordType})";
 
         txtOutput.AppendLine(record?.Description ??
                              $"Record Type {recordType}");
-        csvOutput.AppendLine(
-            "RecordNumber,FieldName,Length,Required,Value,Valid");
+        csvOutput.AppendLine("RecordNumber,RecordType,RecordDescription,FieldName,Length,Required,Value,Valid");
 
         for (int i = 0; i < fields.Count; i++)
         {
@@ -265,12 +270,15 @@ class FileIngestor
 
             csvOutput.AppendLine(string.Join(",",
                 "1",
+                CsvEscape(recordType),
+                CsvEscape(description),
                 CsvEscape(label),
                 field.Length.ToString(),
                 field.IsRequired.ToString(),
                 CsvEscape(value),
                 CsvEscape(valid)
             ));
+
         }
 
         if (outputFormat == "txt")
@@ -293,8 +301,7 @@ class FileIngestor
 
         var txtOutput = new StringBuilder();
         var csvOutput = new StringBuilder();
-        csvOutput.AppendLine(
-            "RecordNumber,FieldName,Length,Required,Value,Valid");
+        csvOutput.AppendLine("RecordNumber,RecordType,RecordDescription,FieldName,Length,Required,Value,Valid");
 
         var versionDef = allDefinitions.Versions[selectedVersion];
         var lines = File.ReadAllLines(filePath);
@@ -319,7 +326,8 @@ class FileIngestor
 
             var recordType = line.Substring(59, 2).Trim();
             versionDef.RecordTypes.TryGetValue(recordType, out var recordDef);
-
+            var description = recordDef?.Description ?? $"Unknown record type ({recordType})";
+            
             var acceptedLengths = GetAcceptedLengths(versionDef, recordDef);
             if (!acceptedLengths.Contains(line.Length))
             {
@@ -334,10 +342,9 @@ class FileIngestor
                 StringDivider.DivideStringIntoVariableSections(line
                     , sectionLengths);
 
-            Console.WriteLine(
-                $"\nRecord {++recordCounter} — Type: {recordType}");
-            txtOutput.AppendLine(
-                $"Record {recordCounter} — {recordDef?.Description ?? $"Type {recordType}"}");
+            Console.WriteLine($"\nRecord {++recordCounter} — Type: {recordType} — {description}");
+            txtOutput.AppendLine($"Record {recordCounter} — Type: {recordType} — {description}");
+
 
             for (int i = 0; i < fields.Count; i++)
             {
@@ -356,14 +363,20 @@ class FileIngestor
                 Console.WriteLine(lineTxt);
 
                 txtOutput.AppendLine(lineTxt);
+                
+                
                 csvOutput.AppendLine(string.Join(",",
                     recordCounter.ToString(),
+                    CsvEscape(recordType),
+                    CsvEscape(description),
                     CsvEscape(label),
                     field.Length.ToString(),
                     field.IsRequired.ToString(),
                     CsvEscape(value),
                     CsvEscape(valid)
                 ));
+
+
             }
 
             txtOutput.AppendLine();
