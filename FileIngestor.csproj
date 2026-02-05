@@ -12,37 +12,57 @@
         <None Update="Definitions\**\*.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.0.json">
+        <None Update="Definitions\18.7.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.3.json">
+        <None Update="Definitions\18.6.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.1.json">
+        <None Update="Definitions\18.3.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.2.json">
+        <None Update="Definitions\18.4.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.4.json">
+        <None Update="Definitions\18.5.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.5.json">
+        <None Update="Definitions\18.0.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.6.json">
+        <None Update="Definitions\18.1.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\18.7.json">
+        <None Update="Definitions\18.2.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Update="OldDefinitions\TypeP18_7.json">
+        <None Update="Definitions\MedImpact\type23.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Schemas\" />
+        <None Update="Definitions\MedImpact\Type24.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\DTRR\FullEnrollmentData18_8.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\ReplyCodes\ReplyCodesNames.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\TypeP\TypeP18.8.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\TypeP\TypeP18_7.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\DTRR\2026MemoDetail.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\DTRR\18.8DtrrDetail.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Definitions\2026.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

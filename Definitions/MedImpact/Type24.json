@@ -35,7 +35,7 @@
         },
         {
           "name": "PersonCode",
-          "display_name": "Insured Id",
+          "display_name": "Insured Id (Person Code 01-99)",
           "length": 2,
           "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
           "required": true
@@ -93,7 +93,8 @@
           "name": "OHIPersonCode",
           "display_name": "Other Health Insurance Person Code",
           "length": 3,
-          "valid": "Insured 001 Spouse 002 Dependents 003 - 100 CMS COB Item 28"
+          "valid": "Insured 001 Spouse 002 Dependents 003 - 100 CMS COB Item 28",
+          "required": false
         },
         {
           "name": "OHIPayerPhone",
@@ -710,622 +711,622 @@
           "required": true
         }
       ]
+    },
+    "04": {
+      "record_length": 190,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 04 - Disease Information",
+          "length": 2,
+          "valid": "04",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "DiagnosisCodeQualifier",
+          "display_name": "Diagnosis Code Qualifier",
+          "length": 10,
+          "valid": "ICD10",
+          "required": true
+        },
+        {
+          "name": "DiagnosisCode",
+          "display_name": "Diagnosis Code",
+          "length": 15,
+          "valid": "Valid ICD-10 Code",
+          "required": true
+        },
+        {
+          "name": "StartDate",
+          "display_name": "Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "EndDate",
+          "display_name": "End Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        }
+      ]
+    },
+    "05": {
+      "record_length": 161,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 05 - Member Plan D Start Date",
+          "length": 2,
+          "valid": "05",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MemberPlanPartDStartDate",
+          "display_name": "Member's Plan Part D Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "Reserved",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Member Match Logic",
+          "required": false
+        },
+        {
+          "name": "ObsoleteFlag",
+          "display_name": "Obsolete Flag",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": false
+        },
+        {
+          "name": "Filler",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Flag here no longer required",
+          "required": false
+        }
+      ]
+    },
+    "06": {
+      "record_length": 167,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 06 - Member Level Retiree Drug Subsidy",
+          "length": 2,
+          "valid": "06",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MemberRetireeSubsidyStartDate",
+          "display_name": "Member-Retiree Subsidy Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MemberRetireeSubsidyEndDate",
+          "display_name": "Member-Retiree Subsidy End Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": false
+        },
+        {
+          "name": "Reserved",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Member Match Logic",
+          "required": false
+        }
+      ]
+    },
+    "07": {
+      "record_length": 149,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 07 - Member Level LIS Information",
+          "length": 2,
+          "valid": "07",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "LowIncomeSubsidyLevel",
+          "display_name": "Low Income Subsidy Level",
+          "length": 1,
+          "valid": "0 1 2 3 4 5 same as CMS LIS Copay Categories",
+          "required": true
+        },
+        {
+          "name": "LowIncomeSubsidyStartDate",
+          "display_name": "Low Income Subsidy Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "LowIncomeSubsidyEndDate",
+          "display_name": "Low Income Subsidy End Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": false
+        },
+        {
+          "name": "Reserved",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Member Match Logic",
+          "required": false
+        }
+      ]
+    },
+    "08": {
+      "record_length": 217,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 08 - Member Level Attribute Information",
+          "length": 2,
+          "valid": "08",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "AttributeType",
+          "display_name": "Attribute Type",
+          "length": 20,
+          "valid": "See Table inb PDF",
+          "required": true
+        },
+        {
+          "name": "AttributeValue",
+          "display_name": "Attribute Value",
+          "length": 30,
+          "valid": "?",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "AttributeStartDate",
+          "display_name": "Attribute Start Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "AttributeEndDate",
+          "display_name": "Attribute End Date",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": false
+        },
+        {
+          "name": "Reserved",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Member Match Logic",
+          "required": false
+        }
+      ]
+    },
+    "09": {
+      "record_length": 179,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 09 - LTC Member Restriction",
+          "length": 2,
+          "valid": "09",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "MemberRestriction",
+          "display_name": "Member Restriction",
+          "length": 30,
+          "valid": "PARTD_LTC_DENY",
+          "required": true
+        },
+        {
+          "name": "AuthorizationOverride",
+          "display_name": "Authorization Override",
+          "length": 1,
+          "valid": "Y or N",
+          "required": true
+        },
+        {
+          "name": "StartDate",
+          "display_name": "Effective Date of Member Restriction",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "EndDate",
+          "display_name": "End Date for Member Restriction",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": false
+        },
+        {
+          "name": "Reserved",
+          "display_name": "Reserved",
+          "length": 2,
+          "valid": "Member Match Logic",
+          "required": false
+        }
+      ]
+    },
+    "10": {
+      "record_length": 390,
+      "fields": [
+        {
+          "name": "RecordType",
+          "display_name": "Record Type",
+          "length": 2,
+          "valid": "24",
+          "required": true
+        },
+        {
+          "name": "SegmentCode",
+          "display_name": "Segment Code 10 - PHI - Member Comment",
+          "length": 2,
+          "valid": "10",
+          "required": true
+        },
+        {
+          "name": "HeadquartersCode",
+          "display_name": "Headquarters Code",
+          "length": 5,
+          "valid": "Assigned by MedImpact",
+          "required": true
+        },
+        {
+          "name": "MemberNumber",
+          "display_name": "Member Number",
+          "length": 30,
+          "valid": "ID on card - no special characters",
+          "required": true
+        },
+        {
+          "name": "PersonCode",
+          "display_name": "Insured Id",
+          "length": 2,
+          "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
+          "required": true
+        },
+        {
+          "name": "LastName",
+          "display_name": "Last Name",
+          "length": 50,
+          "valid": "Member's Last Name",
+          "required": true
+        },
+        {
+          "name": "FirstName",
+          "display_name": "First Name",
+          "length": 50,
+          "valid": "Member's first name",
+          "required": true
+        },
+        {
+          "name": "DOB",
+          "display_name": "Date Of Birth",
+          "length": 8,
+          "valid": "YYYYMMDD",
+          "required": true
+        },
+        {
+          "name": "ActionCode",
+          "display_name": "Action Code",
+          "length": 1,
+          "valid": "A C Maybe others?",
+          "required": true
+        },
+        {
+          "name": "MemberCommentPHI",
+          "display_name": "PHI - Member Comment  - PHI",
+          "length": 240,
+          "valid": "Freeform comment Leading and trailing spaces trimmed To remove send this field with spaces",
+          "required": false
+        }
+      ]
     }
-  },
-  "04": {
-    "record_length": 190,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 04 - Disease Information",
-        "length": 2,
-        "valid": "04",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "DiagnosisCodeQualifier",
-        "display_name": "Diagnosis Code Qualifier",
-        "length": 10,
-        "valid": "ICD10",
-        "required": true
-      },
-      {
-        "name": "DiagnosisCode",
-        "display_name": "Diagnosis Code",
-        "length": 15,
-        "valid": "Valid ICD-10 Code",
-        "required": true
-      },
-      {
-        "name": "StartDate",
-        "display_name": "Start Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "EndDate",
-        "display_name": "End Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      }
-    ]
-  },
-  "05": {
-    "record_length": 161,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 05 - Member Plan D Start Date",
-        "length": 2,
-        "valid": "05",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "MemberPlanPartDStartDate",
-        "display_name": "Member's Plan Part D Start Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "Reserved",
-        "display_name": "Reserved",
-        "length": 2,
-        "valid": "Member Match Logic",
-        "required": false
-      },
-      {
-        "name": "ObsoleteFlag",
-        "display_name": "Obsolete Flag",
-        "length": 1,
-        "valid": "Y or blank",
-        "required": false
-      },
-      {
-        "name": "Filler",
-        "display_name": "Filler",
-        "length": 1,
-        "valid": "Flag here no longer required",
-        "required": false
-      }
-    ]
-  },
-  "06": {
-    "record_length": 167,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 06 - Member Level Retiree Drug Subsidy",
-        "length": 2,
-        "valid": "06",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "MemberRetireeSubsidyStartDate",
-        "display_name": "Member-Retiree Subsidy Start Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "MemberRetireeSubsidyEndDate",
-        "display_name": "Member-Retiree Subsidy End Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": false
-      },
-      {
-        "name": "Reserved",
-        "display_name": "Reserved",
-        "length": 2,
-        "valid": "Member Match Logic",
-        "required": false
-      }
-    ]
-  },
-  "07": {
-    "record_length": 149,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 07 - Member Level LIS Information",
-        "length": 2,
-        "valid": "07",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "LowIncomeSubsidyLevel",
-        "display_name": "Low Income Subsidy Level",
-        "length": 1,
-        "valid": "0 1 2 3 4 5 same as CMS LIS Copay Categories",
-        "required": true
-      },
-      {
-        "name": "LowIncomeSubsidyStartDate",
-        "display_name": "Low Income Subsidy Start Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "LowIncomeSubsidyEndDate",
-        "display_name": "Low Income Subsidy End Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": false
-      },
-      {
-        "name": "Reserved",
-        "display_name": "Reserved",
-        "length": 2,
-        "valid": "Member Match Logic",
-        "required": false
-      }
-    ]
-  },
-  "08": {
-    "record_length": 217,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 08 - Member Level Attribute Information",
-        "length": 2,
-        "valid": "08",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "AttributeType",
-        "display_name": "Attribute Type",
-        "length": 20,
-        "valid": "See Table inb PDF",
-        "required": true
-      },
-      {
-        "name": "AttributeValue",
-        "display_name": "Attribute Value",
-        "length": 30,
-        "valid": "?",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "AttributeStartDate",
-        "display_name": "Attribute Start Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "AttributeEndDate",
-        "display_name": "Attribute End Date",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": false
-      },
-      {
-        "name": "Reserved",
-        "display_name": "Reserved",
-        "length": 2,
-        "valid": "Member Match Logic",
-        "required": false
-      }
-    ]
-  },
-  "09": {
-    "record_length": 179,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 09 - LTC Member Restriction",
-        "length": 2,
-        "valid": "09",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "MemberRestriction",
-        "display_name": "Member Restriction",
-        "length": 30,
-        "valid": "PARTD_LTC_DENY",
-        "required": true
-      },
-      {
-        "name": "AuthorizationOverride",
-        "display_name": "Authorization Override",
-        "length": 1,
-        "valid": "Y or N",
-        "required": true
-      },
-      {
-        "name": "StartDate",
-        "display_name": "Effective Date of Member Restriction",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "EndDate",
-        "display_name": "End Date for Member Restriction",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": false
-      },
-      {
-        "name": "Reserved",
-        "display_name": "Reserved",
-        "length": 2,
-        "valid": "Member Match Logic",
-        "required": false
-      }
-    ]
-  },
-  "10": {
-    "record_length": 390,
-    "fields": [
-      {
-        "name": "RecordType",
-        "display_name": "Record Type",
-        "length": 2,
-        "valid": "24",
-        "required": true
-      },
-      {
-        "name": "SegmentCode",
-        "display_name": "Segment Code 10 - PHI - Member Comment",
-        "length": 2,
-        "valid": "10",
-        "required": true
-      },
-      {
-        "name": "HeadquartersCode",
-        "display_name": "Headquarters Code",
-        "length": 5,
-        "valid": "Assigned by MedImpact",
-        "required": true
-      },
-      {
-        "name": "MemberNumber",
-        "display_name": "Member Number",
-        "length": 30,
-        "valid": "ID on card - no special characters",
-        "required": true
-      },
-      {
-        "name": "PersonCode",
-        "display_name": "Insured Id",
-        "length": 2,
-        "valid": "Insured 01 Spouse 02 Dependents 03 to 99",
-        "required": true
-      },
-      {
-        "name": "LastName",
-        "display_name": "Last Name",
-        "length": 50,
-        "valid": "Member's Last Name",
-        "required": true
-      },
-      {
-        "name": "FirstName",
-        "display_name": "First Name",
-        "length": 50,
-        "valid": "Member's first name",
-        "required": true
-      },
-      {
-        "name": "DOB",
-        "display_name": "Date Of Birth",
-        "length": 8,
-        "valid": "YYYYMMDD",
-        "required": true
-      },
-      {
-        "name": "ActionCode",
-        "display_name": "Action Code",
-        "length": 1,
-        "valid": "A C Maybe others?",
-        "required": true
-      },
-      {
-        "name": "MemberCommentPHI",
-        "display_name": "PHI - Member Comment  - PHI",
-        "length": 240,
-        "valid": "Freeform comment Leading and trailing spaces trimmed To remove send this field with spaces",
-        "required": false
-      }
-    ]
   }
 }
