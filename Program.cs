@@ -26,7 +26,6 @@ class FileIngestor
 
         while (true)
         {
-            Console.Clear();
             Console.WriteLine("Available file types:");
             foreach (var kvp in FileTypes.Types)
             {
@@ -36,29 +35,40 @@ class FileIngestor
 
                 Console.WriteLine($" - {kvp.Key}: {kvp.Value}{supported}");
             }
-
+            
+            Console.WriteLine("\nOptions: [C] Clear screen");
             Console.Write("Select file type (key, e.g. MBIT): ");
-            var selectedFileType =
-                Console.ReadLine()?.Trim().ToUpperInvariant();
 
-            if (string.IsNullOrWhiteSpace(selectedFileType))
+            var input = Console.ReadLine()?.Trim();
+
+            if (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("No selection provided.\n");
                 continue;
             }
 
-            if (!handlers.TryGetValue(selectedFileType, out var run))
+// Manual clear (does not erase anything unless you choose it)
+            if (input.Equals("c", StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine($"\n[{selectedFileType}] Coming soon!\n");
+                try { Console.Clear(); } catch { /* ignore if not supported */ }
                 continue;
             }
 
+            var selectedFileType = input.ToUpperInvariant();
+
+// Check it's a known key from FileTypes.json FIRST (better message)
             if (!FileTypes.Types.ContainsKey(selectedFileType))
             {
                 Console.WriteLine($"Unknown file type '{selectedFileType}'.\n");
                 continue;
             }
 
+// Then check whether it is supported by your code
+            if (!handlers.TryGetValue(selectedFileType, out var run))
+            {
+                Console.WriteLine($"\n[{selectedFileType}] Coming soon!\n");
+                continue;
+            }
 
             run();
 
