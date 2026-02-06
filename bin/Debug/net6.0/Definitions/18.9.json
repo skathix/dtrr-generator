@@ -1,0 +1,2906 @@
+﻿{
+  "start_date": "2026-01-3",
+  "default_record_length": 300,
+  "record_types": {
+    "51": {
+      "description": "Disenrollment Transaction (51)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "1 or 2 - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Not required but must be valid for the contract when entered",
+          "required": false
+        },
+        {
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
+          "length": 1,
+          "valid": "A D I L M N O S T U V W X Y Z",
+          "required": true
+        },
+        {
+          "name": "contract_number",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid contract number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 51",
+          "required": true
+        },
+        {
+          "name": "disenrollment_reason",
+          "display_name": "Disenrollment Reason Code",
+          "length": 2,
+          "valid": "Must have valid code from Table 3-7",
+          "required": true
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "year > 1966  or < current year -1; on the 1st",
+          "required": true
+        },
+        {
+          "name": "segment_id",
+          "display_name": "Segment Id",
+          "length": 3,
+          "valid": "optional",
+          "required": false
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 24,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "part_d_opt_out",
+          "display_name": "Part D Opt Out Flag",
+          "length": 1,
+          "valid": "Optional for Part D plans; or blank",
+          "required": false
+        },
+        {
+          "name": "mmp_opt_out",
+          "display_name": "MMP Opt Out Flag",
+          "length": 1,
+          "valid": "Must be Y N or blank",
+          "required": false
+        },
+        {
+          "name": "election_type",
+          "display_name": "Election Type",
+          "length": 2,
+          "valid": "Must be filled in when Election Type is S",
+          "required": false
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 107,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Transaction Tracking Id",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "54": {
+      "description": "Disenrollment Transaction (54)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": false
+        },
+        {
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
+          "length": 1,
+          "valid": "A D I L M N O S T U V W or X",
+          "required": true
+        },
+        {
+          "name": "contract_number",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid contract number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 54",
+          "required": true
+        },
+        {
+          "name": "disenrollment_reason",
+          "display_name": "Disenrollment Reason Code",
+          "length": 2,
+          "valid": "Must have valid code from Table 3-7",
+          "required": true
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": " > 1966  or < current year -1; on the 1st",
+          "required": true
+        },
+        {
+          "name": "segment_id",
+          "display_name": "Segment Id",
+          "length": 3,
+          "valid": "optional",
+          "required": false
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 24,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "part_d_opt_out",
+          "display_name": "Part D Opt Out Flag",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": false
+        },
+        {
+          "name": "mmp_opt_out",
+          "display_name": "MMP Opt Out Flag",
+          "length": 1,
+          "valid": "Must be Y N or blank",
+          "required": false
+        },
+        {
+          "name": "election_type",
+          "display_name": "Election Type",
+          "length": 2,
+          "valid": "Must be filled in when Election Type is S",
+          "required": false
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 107,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Transaction Tracking Id",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "61": {
+      "description": "Enrollment Transaction (61)",
+      "record_length": 600,
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected with TRC 423",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "eghp_flag",
+          "display_name": "EGHP Flag",
+          "length": 1,
+          "valid": "Y or Blank",
+          "required": true
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid" : "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "election_type_code",
+          "display_name": "Election Type Code",
+          "length": 1,
+          "valid":"A C D E F I J L M N O P Q R S T U V W X Z or blank",
+          "required": true
+        },
+        {
+          "name": "contract_number",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid" : "Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "application_date",
+          "display_name": "Application Date (YYYYMMDD)",
+          "length": 8,
+          "valid" : " > 1966; < current year plus 1; < Effective date",
+          "required": true
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid" : "Must be 61",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid" : "> 1966; < current year plus 1; first of the month",
+          "required": true
+        },
+        {
+          "name": "segment_id",
+          "display_name": "Segment ID",
+          "length": 3,
+          "valid": "Segment or blank",
+          "required": false
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 5,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "esrd_override",
+          "display_name": "ESRD Override",
+          "length": 1,
+          "valid": "1-9 A-F or blank",
+          "required": true
+        },
+        {
+          "name": "premium_withhold",
+          "display_name": "Premium Withhold Parts C-D",
+          "length": 1,
+          "valid": "D S R O or N.",
+          "required": true
+        },
+        {
+          "name": "part_c_premium",
+          "display_name": "Part C Premium (XXXXvXX)",
+          "length": 6,
+          "valid":"(XXXXvXX) or blank",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 6,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "credible_coverage_flag",
+          "display_name": "Credible Coverage Flag",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": true
+        },
+        {
+          "name": "uncovered_months",
+          "display_name": "# of Uncovered Months",
+          "length": 3,
+          "valid": "Number of months or blank",
+          "required": true
+        },
+        {
+          "name": "employer_override",
+          "display_name": "Employer Subsidy Enrollment Override",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": false
+        },
+        {
+          "name": "part_d_opt_out",
+          "display_name": "Part D Opt Out Flag",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "election_type",
+          "display_name": "Election Type/SEP Code",
+          "length": 2,
+          "valid": "Required when the Election Type Code is 'S",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "valid": "Blank",
+          "length": 21,
+          "required": false
+        },
+        {
+          "name": "preferred_language",
+          "display_name": "Preferred Language (not English)",
+          "length": 1,
+          "valid": "S O or blank",
+          "required": false
+        },
+        {
+          "name": "accessible_format",
+          "display_name": "Accessible Format",
+          "length": 1,
+          "valid": "B L A D or blank",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 9,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "secondary_insurance",
+          "display_name": "Secondary Drug Insurance Flag",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": true
+        },
+        {
+          "name": "secondary_rx_id",
+          "display_name": "Secondary Rx Id",
+          "length": 20,
+          "valid": "required if the field above is Y; otherwise blank",
+          "required": false
+        },
+        {
+          "name": "secondary_rx_group",
+          "display_name": "Secondary Rx Group",
+          "length": 15,
+          "valid": "May be blanks",
+          "required": false
+        },
+        {
+          "name": "enrollment_source",
+          "display_name": "Enrollment Source Code",
+          "length": 1,
+          "valid": "B E F G H J K L or blank",
+          "required": true
+        },
+        {
+          "name": "rolled_contract",
+          "display_name": "Rolled From Contract",
+          "length": 5,
+          "valid": "Only for PBP changes",
+          "required": false
+        },
+        {
+          "name": "rolled_pbp",
+          "display_name": "Rolled from PBP",
+          "length": 3,
+          "valid": "Only for PBP changes",
+          "required": false
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 30,
+          "valid": "Blanks",
+          "required": true
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid":"Not validated",
+          "required": false
+        },
+        {
+          "name": "part_d_bin",
+          "display_name": "Part D Rx BIN",
+          "length": 6,
+          "valid": "Numeric or blank",
+          "required": true
+        },
+        {
+          "name": "part_d_pcn",
+          "display_name": "Part D Rx PCN",
+          "length": 10,
+          "valid": "Left justified alphanumeric - no internal spaces; or blank",
+          "required": false
+        },
+        {
+          "name": "part_d_group",
+          "display_name": "Part D Rx Group",
+          "length": 15,
+          "valid":"Left justified alphanumeric - no internal spaces; or blank",
+          "required": false
+        },
+        {
+          "name": "part_d_id",
+          "display_name": "Part D Rx Id",
+          "length": 20,
+          "valid":"Left justified alphanumeric - no internal spaces; or blank",
+          "required": true
+        },
+        {
+          "name": "secondary_bin",
+          "display_name": "Secondary Drug BIN",
+          "length": 6,
+          "valid": "Numeric or blank - required when the Secondary drug insurance is Y",
+          "required": false
+        },
+        {
+          "name": "secondary_pcn",
+          "display_name": "Secondary Drug PCN",
+          "length": 10,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "relationshipAgent",
+          "display_name": "Relationship to Enrollee - Agent",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipBroker",
+          "display_name": "Relationship to Enrollee - Broker",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipShip",
+          "display_name": "Relationship to Enrollee - SHIP",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipAr",
+          "display_name": "Relationship to Enrollee - Authorized Rep",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipOther",
+          "display_name": "Relationship to Enrollee - Other third party",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipSelf",
+          "display_name": "Relationship to Enrollee - Self",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipBlank",
+          "display_name": "Relationship to Enrollee - Form left blank",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "npnNumber",
+          "display_name": "NPN number",
+          "length": 10,
+          "valid": "Numeric does not start with 0",
+          "required": true
+        },
+        {
+          "name": "oecFlag",
+          "display_name": "OEC Flag",
+          "length": 1,
+          "valid": "Y or N",
+          "required": true
+        },
+        {
+          "name": "oecApplicationDate",
+          "display_name": "OEC Application Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Required if OEC Flag is Y Must be valid date",
+          "required": true
+        },
+        {
+          "name": "oecApplicationNumber",
+          "display_name": "OEC Application Number",
+          "length": 12,
+          "valid": "Required if OEC Flag is Y 0 1 2 3 4 5 6 7 8 9 A B C D E F",
+          "required": true
+        },
+        {
+          "name": "memberPhoneNumber",
+          "display_name": "Beneficiary Phone Number",
+          "length": 10,
+          "valid": "10 digits does not begin with 0 or 1 fourth digit may not be a 1",
+          "required": false
+        },
+        {
+          "name": "memberEmail",
+          "display_name": "Beneficiary Email Address",
+          "length": 74,
+          "valid": "One @ AND . No underscore after @ Alphnumeric plus - 0 ' and _",
+          "required": false
+        },
+        {
+          "name": "filler8",
+          "display_name": "Filler",
+          "length": 187,
+          "valid": "Blanks",
+          "required": true
+        }
+      ]
+    },
+    "72": {
+      "description": "4Rx Data Change (72)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "filler0",
+          "display_name": "Filler",
+          "valid": "Blank",
+          "length": 1,
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid":"Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid":"Blank",
+          "required": false
+        },
+        {
+          "name": "contract_number",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid":"Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid":"Must be 72",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 2,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid":"> 1966; < current year +1; first of the month",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 63,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "secondary_insurance",
+          "display_name": "Secondary Drug Insurance",
+          "length": 1,
+          "valid":"Y N or blank",
+          "required": false
+        },
+        {
+          "name": "secondary_rx_id",
+          "display_name": "Secondary Rx Id",
+          "length": 20,
+          "valid":"Required if Secondary Drug insurance is Y; or blank",
+          "required": false
+        },
+        {
+          "name": "secondary_rx_group",
+          "display_name": "Secondary Rx Group",
+          "length": 15,
+          "valid":"Required if Secondary Drug insurance is Y; or blank",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler (39)",
+          "length": 39,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid":"Not validated",
+          "required": false
+        },
+        {
+          "name": "part_d_bin",
+          "display_name": "Part D Rx BIN",
+          "length": 6,
+          "valid":"Optional or blank",
+          "required": true
+        },
+        {
+          "name": "part_d_pcn",
+          "display_name": "Part D Rx PCN",
+          "length": 10,
+          "valid":"Optional or blank",
+          "required": false
+        },
+        {
+          "name": "part_d_group",
+          "display_name": "Part D Rx Group",
+          "length": 15,
+          "valid":"Optional or blank",
+          "required": false
+        },
+        {
+          "name": "part_d_id",
+          "display_name": "Part D Rx Id",
+          "length": 20,
+          "valid":"Optional or blank",
+          "required": true
+        },
+        {
+          "name": "secondary_bin",
+          "display_name": "Secondary Drug BIN",
+          "length": 6,
+          "valid":"Required if Secondary Drug insurance is Y; or blank",
+          "required": true
+        },
+        {
+          "name": "secondary_pcn",
+          "display_name": "Secondary Drug PCN",
+          "length": 10,
+          "valid":"Required if Secondary Drug insurance is Y; or blank",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 9,
+          "valid":"Blanks",
+          "required": false
+        }
+      ]
+    },
+    "74": {
+      "description": "EGHP Change (74)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "eghp",
+          "display_name": "EGHP Flag",
+          "length": 1,
+          "valid":"Y or blank",
+          "required": true
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP",
+          "length": 3,
+          "valid":"Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid":"Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid":"Valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid":"Must be 74",
+          "required": false
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 2,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "effectiveDate",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966; < current year + 1; 1st of the month",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 138,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid":"Not validated",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 76,
+          "valid":"Blanks",
+          "required": false
+        }
+      ]
+    },
+    "76": {
+      "description": "Residence Address Change (76)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 5,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid":"Must be a valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid":"Must be 76",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 2,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": " > 1966; < current year +1; first of the month",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 3,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "address1",
+          "display_name": "Residence Address Line 1",
+          "length": 65,
+          "valid":"Must have valid recognizable US address",
+          "required": true
+        },
+        {
+          "name": "address2",
+          "display_name": "Residence Address Line 2",
+          "length": 65,
+          "valid":"Optional second line",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 4,
+          "valid":"Blanks",
+          "required": false
+        },
+        {
+          "name": "update_flag",
+          "display_name": "Address Update/Delete Flag",
+          "length": 1,
+          "valid":"U or D",
+          "required": true
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking Id",
+          "length": 15,
+          "valid":"Not validated",
+          "required": false
+        },
+        {
+          "name": "city",
+          "display_name": "Residence City",
+          "length": 57,
+          "valid":"Must not be empty",
+          "required": true
+        },
+        {
+          "name": "state",
+          "display_name": "Residence State",
+          "length": 2,
+          "valid":"USPS state code",
+          "required": true
+        },
+        {
+          "name": "zip",
+          "display_name": "Residence ZIP Code",
+          "length": 5,
+          "valid":"Must be numeric",
+          "required": true
+        },
+        {
+          "name": "plus_four",
+          "display_name": "Residence Zip Code+4",
+          "length": 4,
+          "valid":"Must be numeric",
+          "required": false
+        },
+        {
+          "name": "end_date",
+          "display_name": "End Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Blank or > effective date; within the contract period; and the last day of the month",
+          "required": false
+        }
+      ]
+    },
+    "79": {
+      "description": "Part D Opt-Out (79)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 79",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective_date",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966 < current year +1; first of the month",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 27,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "part_d_opt",
+          "display_name": "Part D Opt Out Flag",
+          "length": 1,
+          "valid": "Y (opt out) or N (opt in)",
+          "required": true
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 110,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "80": {
+      "description": "Cancellation of Enrollment (80)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Blank or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "valid": "Blank",
+          "length": 1,
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP",
+          "required": false
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract number",
+          "required": false
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 80",
+          "required": true
+        },
+        {
+          "name": "disenroll_reason",
+          "display_name": "Disenrollment Reason (Involuntary)",
+          "length": 2,
+          "valid": "Value from PCUG table 3-6 ",
+          "required": false
+        },
+        {
+          "name": "disenroll_effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Must equal the Enrollment Effective Date",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 138,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "81": {
+      "description": "Cancellation of Disenrollment (81)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 81",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966 < current year + 1; first of the month",
+          "required": true
+        },
+        {
+          "name": "segment",
+          "display_name": "Segment ID",
+          "length": 3,
+          "valid": "Optional",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 135,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "82": {
+      "description": "MMP Enrollment Cancellation (82)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will be rejected if set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 82",
+          "required": true
+        },
+        {
+          "name": "disenroll_reason",
+          "display_name": "Disenrollment Reason (Involuntary)",
+          "length": 2,
+          "valid": "From PCUG table 3-6",
+          "required": false
+        },
+        {
+          "name": "disenroll_effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Must equal the enrollment effective date",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 28,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "mmp_flag",
+          "display_name": "MMP Opt-Out Flag",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 109,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "83": {
+      "description": "MMP Opt-Out Update (83)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract #",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 83",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966 < current year + 1; first of the prospective month (processing month + 3 months)",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 28,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "mmp_flag",
+          "display_name": "MMP Opt-Out Flag",
+          "length": 1,
+          "valid": "Y or N",
+          "required": true
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 109,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "90": {
+      "description": "CARA Status (90)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected; but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870; <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 5,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid contract #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 90",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 13,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "update_flag",
+          "display_name": "Add/Update/Delete Flag",
+          "length": 1,
+          "valid": "A U D",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "drug_class",
+          "display_name": "Drug Class",
+          "length": 3,
+          "valid": "Valid Drug Class",
+          "required": true
+        },
+        {
+          "name": "notice_start",
+          "display_name": "Notification Start Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Must be CCM + 1",
+          "required": true
+        },
+        {
+          "name": "notice_end",
+          "display_name": "Notification End Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Must be within 60 days of start date AND one day prior to Implementation start date: OR the notification start/notification end/implementation start dates must be the same",
+          "required": false
+        },
+        {
+          "name": "pos_status",
+          "display_name": "POS Edit Status",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": false
+        },
+        {
+          "name": "pos_edit_code",
+          "display_name": "POS Edit Code",
+          "length": 3,
+          "valid": "Optional unless POS Edit Status is Y must be valid value if entered",
+          "required": false
+        },
+        {
+          "name": "prescribe_limit",
+          "display_name": "Prescriber Limitation Status",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": false
+        },
+        {
+          "name": "pharm_limit",
+          "display_name": "Pharmacy Limitation Status",
+          "length": 1,
+          "valid": "Y N or blank",
+          "required": false
+        },
+        {
+          "name": "implementation_start",
+          "display_name": "Implementation Start Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> notification start date; =< notification end date + 1; < CCM +1",
+          "required": false
+        },
+        {
+          "name": "implementation_end",
+          "display_name": "Implementation End Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> notification start date + 1 year; > 13 months after start date",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 92,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "valid": "Not validated",
+          "length": 15,
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "91": {
+      "description": "IC Model Participation (91)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 91",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "ic_start",
+          "display_name": "IC Model Start Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "Must be within the ICM period; and in the Member's Enrollment period",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 3,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "ic_flag",
+          "display_name": "IC Model Update/Delete Flag",
+          "length": 1,
+          "valid": "Must be U or D",
+          "required": true
+        },
+        {
+          "name": "ic_type",
+          "display_name": "IC Model Type Indicator",
+          "length": 2,
+          "valid": "must be 01 or 02",
+          "required": true
+        },
+        {
+          "name": "ic_benefit",
+          "display_name": "IC Model Benefit Status Code",
+          "length": 2,
+          "valid": "Required if Model Type indicator = 01; Valid values are 01 and 02; NA for Type Indicator 02",
+          "required": true
+        },
+        {
+          "name": "ic_end",
+          "display_name": "IC Model End Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "must be after the IC Model Start Date;, and in the Member's Enrollment period",
+          "required": false
+        },
+        {
+          "name": "ic_end_reason",
+          "display_name": "IC End Date Reason Code (required if End date is entered)",
+          "length": 2,
+          "valid": "must be 01 02 or 03",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 120,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking",
+          "display_name": "Plan Transaction Tracking ID",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "92": {
+      "description": "Personal Information Change (92)",
+      "record_length": 600,
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "1 or 2",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 92",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 62,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "preferred_language",
+          "display_name": "Preferred Language (not English)",
+          "length": 1,
+          "valid": "S O X or Blank",
+          "required": false
+        },
+        {
+          "name": "accessible_format",
+          "display_name": "Accessible Format",
+          "length": 1,
+          "valid": "B L A D X or Blank",
+          "required": false
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 26,
+          "required": false
+        },
+        {
+          "name": "relationshipAgent",
+          "display_name": "Relationship to Enrollee - Agent",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipBroker",
+          "display_name": "Relationship to Enrollee - Broker",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipShip",
+          "display_name": "Relationship to Enrollee - SHIP",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipAr",
+          "display_name": "Relationship to Enrollee - Authorized Rep",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipOther",
+          "display_name": "Relationship to Enrollee - Other third party",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipSelf",
+          "display_name": "Relationship to Enrollee - Self",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "relationshipBlank",
+          "display_name": "Relationship to Enrollee - Form left blank",
+          "length": 1,
+          "valid": "Y or blank",
+          "required": true
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 51,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid": "Not validated",
+          "required": false
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 21,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "memberPhoneNumber",
+          "display_name": "Beneficiary Phone Number",
+          "length": 10,
+          "valid": "Numeric does not begin with a 0 or1 fourth digit must not be 1",
+          "required": false
+        },
+        {
+          "name": "memberEmail",
+          "display_name": "Beneficiary Email",
+          "length": 74,
+          "valid": "Must have at least one @ and . No _ after the @ Alsphnumeric plus - . ' _",
+          "required": false
+        },
+        {
+          "name": "filler8",
+          "display_name": "Filler",
+          "length": 271,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "93": {
+      "description": "Enrollment SEP Reason Code Correction (93)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 11,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha",
+          "required": true
+        },
+        {
+          "name": "filler0",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "blank",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "election",
+          "display_name": "Election Type",
+          "length": 1,
+          "valid": "Must be S",
+          "required": true
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Must be a valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 93",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966 and < current year +1; first of month",
+          "required": true
+        },
+        {
+          "name": "segment",
+          "display_name": "Segment ID",
+          "length": 3,
+          "valid": "Segment Id or blank",
+          "required": false
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 26,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "sep",
+          "display_name": "SEP Reason Code",
+          "length": 2,
+          "valid": "From S – Special Election Period (SEP) Reason Code table.",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 107,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid": "Not Validated",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "94": {
+      "description": "Disenrollment SEP Reason Code Correction (94)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 11,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha",
+          "required": true
+        },
+        {
+          "name": "filler0",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "blank",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "election",
+          "display_name": "Election Type",
+          "length": 1,
+          "valid": "Must be S",
+          "required": true
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Must be a valid Contract Number",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 94",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "effective",
+          "display_name": "Effective Date (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1966 and < current year +1; first of month",
+          "required": true
+        },
+        {
+          "name": "segment",
+          "display_name": "Segment ID",
+          "length": 3,
+          "valid": "Segment Id or blank",
+          "required": false
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 26,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "sep",
+          "display_name": "SEP Reason Code",
+          "length": 2,
+          "valid": "From S – Special Election Period (SEP) Reason Code table.",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 107,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid": "Not Validated",
+          "required": false
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    },
+    "95": {
+      "description": "Medicare Prescription Payment Plan (95)",
+      "fields": [
+        {
+          "name": "beneficiary_id",
+          "display_name": "Beneficiary Identifier",
+          "length": 12,
+          "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "display_name": "Surname",
+          "length": 12,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "first_name",
+          "display_name": "First Name",
+          "length": 7,
+          "valid": "Must have both Surname and First Name",
+          "required": true
+        },
+        {
+          "name": "middle_initial",
+          "display_name": "M. Initial",
+          "length": 1,
+          "valid": "Space or alpha",
+          "required": false
+        },
+        {
+          "name": "sex",
+          "display_name": "Sex",
+          "length": 1,
+          "valid": "Must show one or two - will not be rejected but set to 0",
+          "required": true
+        },
+        {
+          "name": "birthdate",
+          "display_name": "Birthdate (YYYYMMDD)",
+          "length": 8,
+          "valid": "> 1870 <= current year",
+          "required": true
+        },
+        {
+          "name": "filler1",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": false
+        },
+        {
+          "name": "pbp_number",
+          "display_name": "PBP #",
+          "length": 3,
+          "valid": "Valid PBP #",
+          "required": true
+        },
+        {
+          "name": "filler2",
+          "display_name": "Filler",
+          "length": 1,
+          "valid": "Blank",
+          "required": true
+        },
+        {
+          "name": "contract",
+          "display_name": "Contract #",
+          "length": 5,
+          "valid": "Valid Contract number",
+          "required": true
+        },
+        {
+          "name": "filler3",
+          "display_name": "Filler",
+          "length": 8,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "transaction_code",
+          "display_name": "Transaction Code",
+          "length": 2,
+          "valid": "Must be 95",
+          "required": true
+        },
+        {
+          "name": "filler4",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "m3p_effective",
+          "display_name": "Effective Date of M3P (YYYYMMDD)",
+          "length": 8,
+          "valid": "Actual Start Date required",
+          "required": true
+        },
+        {
+          "name": "filler5",
+          "display_name": "Filler",
+          "length": 3,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "update_flag",
+          "display_name": "Update/Delete Flag",
+          "length": 1,
+          "valid": "U or D",
+          "required": true
+        },
+        {
+          "name": "filler6",
+          "display_name": "Filler",
+          "length": 2,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "term_code",
+          "display_name": "Termination Reason Code",
+          "length": 2,
+          "valid": "01 02 03 or 04",
+          "required": true
+        },
+        {
+          "name": "term_date",
+          "display_name": "Termination Date of M3P (YYYYMMDD)",
+          "length": 8,
+          "valid": "May not create an overlapping period",
+          "required": true
+        },
+        {
+          "name": "filler7",
+          "display_name": "Filler",
+          "length": 122,
+          "valid": "Blanks",
+          "required": false
+        },
+        {
+          "name": "tracking_id",
+          "display_name": "Plan Assigned Tracking Id",
+          "length": 15,
+          "valid": "Not Validated",
+          "required": false
+        },
+        {
+          "name": "filler8",
+          "display_name": "Filler",
+          "length": 76,
+          "valid": "Blanks",
+          "required": false
+        }
+      ]
+    }
+  }
+}

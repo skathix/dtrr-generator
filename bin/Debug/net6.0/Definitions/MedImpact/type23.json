@@ -42,7 +42,7 @@
       "name": "PersonCode",
       "display_name": "Person code",
       "length": 2,
-      "valid": "23",
+      "valid": "02 03 etc",
       "required": true
     },
     {
@@ -70,7 +70,7 @@
       "name": "MiddleInitial",
       "display_name": "Middle Initial",
       "length": 1,
-      "valid": "Middle Inital - optional",
+      "valid": "Middle Initial - optional",
       "required": false
     },
     {
@@ -110,13 +110,13 @@
     },
     {
       "name": "MiscCode8",
-      "display_name": "Misc Code 8 ",
+      "display_name": "Misc Code 8",
       "length": 10,
       "valid": "?",
       "required": false
     },
     {
-      "name": "Insured IdOverflow",
+      "name": "InsuredIdOverflow",
       "display_name": "Insured Id Overflow",
       "length": 8,
       "valid": "?",
@@ -173,7 +173,7 @@
     },
     {
       "name": "Reserved1",
-      "display_name": "Reserved - blank of not used",
+      "display_name": "Reserved - blank or not used",
       "length": 10,
       "valid": "Blanks or needed info",
       "required": false
@@ -271,7 +271,7 @@
     },
     {
       "name": "HqCode",
-      "display_name": "Hedquarters Code",
+      "display_name": "Headquarters Code",
       "length": 10,
       "valid": "MedImpact assigned 3 char prefix+2 numbers",
       "required": true
@@ -340,7 +340,7 @@
       "required": false
     },
     {
-      "name": "IcCardForce",
+      "name": "IdCardForce",
       "display_name": "Force Print ID Card (Card Reprint)",
       "length": 1,
       "valid": "Blank or Y",

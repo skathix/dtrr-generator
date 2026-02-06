@@ -26,6 +26,7 @@ class FileIngestor
 
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("Available file types:");
             foreach (var kvp in FileTypes.Types)
             {
@@ -81,8 +82,8 @@ class FileIngestor
             ChooseMbitVersion(allDefinitions, preferredDefault: "18.8");
         var versionDef = allDefinitions.Versions[selectedVersion];
 
-        Console.Write("Single record or full file? (file/single): ");
-        var mode = Console.ReadLine()?.Trim().ToLowerInvariant();
+        
+        var mode = ChooseMode();
 
         if (mode is "file" or "f")
         {
@@ -422,188 +423,49 @@ class FileIngestor
 
     private static void RunMedImpactFlow()
     {
-        Console.WriteLine("\nMedImpact record types available:");
-        Console.WriteLine(" - 23: Type 23 - MedImpact (supported)");
-        Console.WriteLine(" - 24: Type 24 - MedImpact (coming soon)");
+        // Register supported MedImpact record types here
+        var mediHandlers =
+            new Dictionary<string, Action>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["23"] = RunMedImpactType23,
+                ["24"] = RunMedImpactType24,
+                // Later: ["25"] = RunMedImpactType25,
+            };
 
-        Console.Write(
-            "\nSelect MedImpact record type (23/24, press Enter for 23): ");
+        // Optional: show "coming soon" for known but not implemented types
+        var knownTypes =
+            new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["23"] = "Type 23 - MedImpact (Eligibility)"
+                , ["24"] = "Type 24 - Member Attribute Load File",
+                // ["25"] = "Type 25 - ???",
+            };
+
+        Console.WriteLine("\nMedImpact record types available:");
+        foreach (var kvp in knownTypes)
+        {
+            var supported = mediHandlers.ContainsKey(kvp.Key)
+                ? " (supported)"
+                : " (coming soon)";
+            Console.WriteLine($" - {kvp.Key}: {kvp.Value}{supported}");
+        }
+
+        Console.Write("\nSelect MedImpact record type (e.g., 23): ");
         var selected = Console.ReadLine()?.Trim();
 
         if (string.IsNullOrWhiteSpace(selected))
-            selected = "23";
-
-        if (selected != "23" && selected != "24")
         {
-            Console.WriteLine(
-                $"Unknown MedImpact type '{selected}'. Returning to main menu.\n");
+            Console.WriteLine("No selection provided.\n");
             return;
         }
 
-        if (selected == "24")
-{
-    var type24Defs = MedImpactType24DefinitionLoader.Load(
-        Path.Combine("Definitions", "MedImpact", "Type24.json"));
-
-    Console.Write("Single record or full file? (file/single): ");
-    var mode = Console.ReadLine()?.Trim().ToLowerInvariant();
-
-    if (mode is "file" or "f")
-    {
-        Console.Write("Enter path to file: ");
-        var filePath = Console.ReadLine()!;
-
-        if (!File.Exists(filePath))
+        if (!mediHandlers.TryGetValue(selected, out var run))
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine($"\n[MedImpact Type {selected}] Coming soon!\n");
             return;
         }
 
-        ProcessMedImpactType24File(filePath, type24Defs);
-        return;
-    }
-
-    Console.WriteLine("Paste a single full record here:");
-    var inputString = Console.ReadLine();
-    if (string.IsNullOrEmpty(inputString))
-    {
-        Console.WriteLine("No input provided.");
-        return;
-    }
-
-    var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
-
-    if (line.Length < 4)
-    {
-        Console.WriteLine($"Invalid length: {line.Length}. Minimum 4 required (RecordType+SegmentCode).");
-        return;
-    }
-
-    var recordType = line.Substring(0, 2);
-    var segmentCode = line.Substring(2, 2);
-
-    if (recordType != "24")
-    {
-        Console.WriteLine($"Not a Type 24 record (found '{recordType}').");
-        return;
-    }
-
-    if (!type24Defs.Segments.TryGetValue(segmentCode, out var segDef))
-    {
-        Console.WriteLine($"Unknown Type 24 Segment '{segmentCode}'.");
-        return;
-    }
-
-    var expectedLength = segDef.RecordLength ?? 0;
-    if (expectedLength == 0)
-    {
-        Console.WriteLine("Segment definition missing RecordLength.");
-        return;
-    }
-
-    if (line.Length < expectedLength)
-        line = line.PadRight(expectedLength, ' ');
-
-    if (line.Length != expectedLength)
-    {
-        Console.WriteLine($"Invalid length: {line.Length}. Expected: {expectedLength} for segment {segmentCode}");
-        return;
-    }
-
-    var fields = segDef.Fields ?? new List<FieldDefinition>();
-    Console.WriteLine($"\nType 24 Segment {segmentCode}: {type24Defs.Description ?? "Type 24"}");
-    ProcessRecord(line, fields);
-
-    Console.Write("Would you like to save the results? (none/txt/csv): ");
-    var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
-
-    if (outputFormat is "txt" or "csv")
-        SaveSingleRecordOutput(line, $"24-{segmentCode}", fields, segDef, outputFormat);
-
-    return;
-}
-
-        var type23 = MedImpactDefinitionLoader.Load(
-            Path.Combine("Definitions", "MedImpact", "type23.json"));
-
-        Console.Write("Single record or full file? (file/single): ");
-        var mode = Console.ReadLine()?.Trim().ToLowerInvariant();
-
-        if (mode is "file" or "f")
-        {
-            Console.Write("Enter path to file: ");
-            var filePath = Console.ReadLine()!;
-
-            if (!File.Exists(filePath))
-            {
-                Console.WriteLine("File not found.");
-                return;
-            }
-
-            ProcessMedImpactFile(filePath, type23);
-        }
-        else
-        {
-            Console.WriteLine("Paste a single full record here:");
-            var inputString = Console.ReadLine();
-
-            if (string.IsNullOrEmpty(inputString))
-            {
-                Console.WriteLine("No input provided.");
-                return;
-            }
-
-            var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
-
-            var expectedLength = type23.RecordLength ?? 0;
-            if (expectedLength == 0)
-            {
-                Console.WriteLine(
-                    "Type 23 definition is missing RecordLength.");
-                return;
-            }
-
-
-            // RecordType for MedImpact is the FIRST 2 chars
-            if (line.Length < 2)
-            {
-                Console.WriteLine(
-                    $"Invalid length: {line.Length}. Minimum 2 required to read record type.");
-                return;
-            }
-
-            var recordType = line.Substring(0, 2).Trim();
-
-            if (recordType != "23")
-            {
-                Console.WriteLine(
-                    $"This MedImpact flow currently supports Type 23 only. Found '{recordType}'.");
-                return;
-            }
-
-            // Console paste may lose trailing spaces; pad to expected length
-            if (line.Length < expectedLength)
-                line = line.PadRight(expectedLength, ' ');
-
-            if (line.Length != expectedLength)
-            {
-                Console.WriteLine(
-                    $"Invalid length: {line.Length}. Expected: {expectedLength}");
-                return;
-            }
-
-            Console.WriteLine(
-                $"\nRecord Type {recordType}: {type23.Description}");
-            ProcessRecord(line, type23.Fields);
-
-            Console.Write(
-                "Would you like to save the results? (none/txt/csv): ");
-            var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
-
-            if (outputFormat is "txt" or "csv")
-                SaveSingleRecordOutput(line, recordType, type23.Fields, type23
-                    , outputFormat);
-        }
+        run();
     }
 
 
@@ -721,8 +583,169 @@ class FileIngestor
         }
     }
 
+    private static void RunMedImpactType23()
+    {
+        var type23 = MedImpactDefinitionLoader.Load(
+            Path.Combine("Definitions", "MedImpact", "type23.json"));
+
+        var expectedLength = type23.RecordLength ?? 0;
+        if (expectedLength == 0)
+        {
+            Console.WriteLine("Type 23 definition is missing RecordLength.");
+            return;
+        }
+
+       var mode = ChooseMode();
+
+        if (mode is "file" or "f")
+        {
+            Console.Write("Enter path to file: ");
+            var filePath = Console.ReadLine()!;
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File not found.");
+                return;
+            }
+
+            ProcessMedImpactFile(filePath, type23);
+            return;
+        }
+
+        Console.WriteLine("Paste a single full record here:");
+        var inputString = Console.ReadLine();
+        if (string.IsNullOrEmpty(inputString))
+        {
+            Console.WriteLine("No input provided.");
+            return;
+        }
+
+        var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
+
+        if (line.Length < 2)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Minimum 2 required to read record type.");
+            return;
+        }
+
+        var recordType = line.Substring(0, 2).Trim();
+        if (recordType != "23")
+        {
+            Console.WriteLine(
+                $"This flow supports Type 23 only. Found '{recordType}'.");
+            return;
+        }
+
+        if (line.Length < expectedLength)
+            line = line.PadRight(expectedLength, ' ');
+
+        if (line.Length != expectedLength)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Expected: {expectedLength}");
+            return;
+        }
+
+        var fields = type23.Fields ?? new List<FieldDefinition>();
+        Console.WriteLine(
+            $"\nRecord Type {recordType}: {type23.Description ?? "Type 23 - MedImpact"}");
+        ProcessRecord(line, fields);
+
+        Console.Write("Would you like to save the results? (none/txt/csv): ");
+        var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        if (outputFormat is "txt" or "csv")
+            SaveSingleRecordOutput(line, recordType, fields, type23
+                , outputFormat);
+    }
+
+    private static void RunMedImpactType24()
+    {
+        var type24Defs = MedImpactType24DefinitionLoader.Load(
+            Path.Combine("Definitions", "MedImpact", "Type24.json"));
+
+       var mode = ChooseMode();
+
+        if (mode is "file" or "f")
+        {
+            Console.Write("Enter path to file: ");
+            var filePath = Console.ReadLine()!;
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File not found.");
+                return;
+            }
+
+            ProcessMedImpactType24File(filePath, type24Defs);
+            return;
+        }
+
+        Console.WriteLine("Paste a single full record here:");
+        var inputString = Console.ReadLine();
+        if (string.IsNullOrEmpty(inputString))
+        {
+            Console.WriteLine("No input provided.");
+            return;
+        }
+
+        var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
+
+        if (line.Length < 4)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Minimum 4 required (RecordType+SegmentCode).");
+            return;
+        }
+
+        var recordType = line.Substring(0, 2);
+        var segmentCode = line.Substring(2, 2);
+
+        if (recordType != "24")
+        {
+            Console.WriteLine($"Not a Type 24 record (found '{recordType}').");
+            return;
+        }
+
+        if (!type24Defs.Segments.TryGetValue(segmentCode, out var segDef))
+        {
+            Console.WriteLine($"Unknown Type 24 Segment '{segmentCode}'.");
+            return;
+        }
+
+        var expectedLength = segDef.RecordLength ?? 0;
+        if (expectedLength == 0)
+        {
+            Console.WriteLine("Segment definition missing RecordLength.");
+            return;
+        }
+
+        if (line.Length < expectedLength)
+            line = line.PadRight(expectedLength, ' ');
+
+        if (line.Length != expectedLength)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Expected: {expectedLength} for segment {segmentCode}");
+            return;
+        }
+
+        var fields = segDef.Fields ?? new List<FieldDefinition>();
+        Console.WriteLine(
+            $"\nType 24 Segment {segmentCode}: {type24Defs.Description ?? "Type 24"}");
+        ProcessRecord(line, fields);
+
+        Console.Write("Would you like to save the results? (none/txt/csv): ");
+        var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        if (outputFormat is "txt" or "csv")
+            SaveSingleRecordOutput(line, $"24-{segmentCode}", fields, segDef
+                , outputFormat);
+    }
+
     private static void ProcessMedImpactType24File(string filePath
         , MedImpactType24Definitions defs)
+
+
     {
         Console.Write("Would you like to save the results? (none/txt/csv): ");
         var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
@@ -833,5 +856,11 @@ class FileIngestor
             File.WriteAllText("output_medi_type24.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_medi_type24.csv");
         }
+    }
+
+    private static string ChooseMode()
+    {
+        Console.Write("Single record or full file? (file/single): ");
+        return Console.ReadLine()?.Trim().ToLowerInvariant() ?? "";
     }
 }
