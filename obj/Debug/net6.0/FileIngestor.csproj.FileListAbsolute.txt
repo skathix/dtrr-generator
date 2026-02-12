@@ -28,9 +28,9 @@ C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\b
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\DTRR\18.8DtrrDetail.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\DTRR\2026MemoDetail.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\DTRR\FullEnrollmentData18_8.json
-C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\mbit_definitions_old.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\MedImpact\type23.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\MedImpact\Type24.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\ReplyCodes\ReplyCodesNames.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\TypeP\TypeP18.8.json
 C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Definitions\TypeP\TypeP18_7.json
+C:\Users\AAndrews\OneDrive - Access Health Services, LLC\Personal\FileIngestor\bin\Debug\net6.0\Tools\mbit_definitions_old.json
