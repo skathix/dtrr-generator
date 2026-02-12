@@ -7,7 +7,6 @@ using Tools.Tools;
 using Tools.Validation;
 
 namespace Tools;
-
 class FileIngestor
 {
     private static void Main(string[] args)
