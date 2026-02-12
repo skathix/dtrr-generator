@@ -1119,6 +1119,131 @@
         }
       ]
     },
+    "75:": {
+      "description": "PPO Change (75)",
+    "fields": [
+      {
+        "name": "beneficiary_id",
+        "display_name": "Beneficiary Identifier",
+        "length": 12,
+        "valid": "MBI: 11 digits; 2 5 8 and 9 alpha; one space after",
+        "required": true
+      },
+      {
+        "name": "surname",
+        "display_name": "Surname",
+        "length": 12,
+        "valid": "Must have both Surname and First Name",
+        "required": true
+      },
+      {
+        "name": "first_name",
+        "display_name": "First Name",
+        "length": 7,
+        "valid": "Must have both Surname and First Name",
+        "required": true
+      },
+      {
+        "name": "middle_initial",
+        "display_name": "M. Initial",
+        "length": 1,
+        "valid": "Space or alpha",
+        "required": false
+      },
+      {
+        "name": "gender",
+        "display_name": "Gender",
+        "length": 1,
+        "valid": "1 2 0",
+        "required": true
+      },
+      {
+        "name": "birthdate",
+        "display_name": "Birthdate (YYYYMMDD)",
+        "length": 8,
+        "valid": "> 1870 <= current year",
+        "required": true
+      },
+      {
+        "name": "pbp_number",
+        "display_name": "PBP #",
+        "length": 3,
+        "valid":"PBP 001-999",
+        "required": false
+      },
+      {
+        "name": "filler2",
+        "display_name": "Filler",
+        "length": 1,
+        "valid":"Blanks",
+        "required": false
+      },
+      {
+        "name": "contract",
+        "display_name": "Contract #",
+        "length": 5,
+        "valid":"Must be a valid Contract Number",
+        "required": true
+      },
+      {
+        "name": "transaction",
+        "display_name": "Transaction Code",
+        "length": 2,
+        "valid":"Must be 75",
+        "required": true
+      },
+      {
+        "name": "filler3",
+        "display_name": "Filler",
+        "length": 2,
+        "valid":"Blanks",
+        "required": false
+      },
+      {
+        "name": "effective_date",
+        "display_name": "Effective Date (YYYYMMDD)",
+        "length": 8,
+        "valid": " > 1966; < current year +1; first of the month",
+        "required": true
+      },
+      {
+        "name": "filler4",
+        "display_name": "Filler",
+        "length": 9,
+        "valid":"Blanks",
+        "required": false
+      },
+      {
+        "name": "ppo_partc_d",
+        "display_name": "PPO/Parts C-D",
+        "length": 1,
+        "valid":"D S R N",
+        "required": true
+      },
+      
+      {
+        "name": "filler5",
+        "display_name": "Filler",
+        "length": 128,
+        "valid":"Blanks",
+        "required": false
+      },
+      {
+        "name": "tracking",
+        "display_name": "Plan Transaction Tracking Id",
+        "length": 15,
+        "valid":"Not validated",
+        "required": false
+      },
+      {
+        "name": "filler6",
+        "display_name": "Filler",
+        "length": 76,
+        "valid": "Blanks",
+        "required": false
+      }
+    ]
+  },
     "76": {
       "description": "Residence Address Change (76)",
       "fields": [

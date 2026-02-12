@@ -88,7 +88,7 @@ class FileIngestor
 
         // Pick version (default to 18.8 if present, else latest by StartDate)
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "18.8");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "18.9");
         var versionDef = allDefinitions.Versions[selectedVersion];
 
         
