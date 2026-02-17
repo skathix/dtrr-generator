@@ -3,7 +3,7 @@
   "default_record_length": 300,
   "record_types": {
     "51": {
-      "description": "Disenrollment Transaction (51)",
+      "description": "Disenrollment (51)",
       "fields": [
         {
           "name": "beneficiary_id",
@@ -34,8 +34,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if other",
           "required": true
@@ -83,7 +83,7 @@
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 51",
@@ -162,7 +162,7 @@
       ]
     },
     "54": {
-      "description": "Disenrollment Transaction (54)",
+      "description": "Disenrollment (54)",
       "fields": [
         {
           "name": "beneficiary_id",
@@ -193,8 +193,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -242,7 +242,7 @@
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 54",
@@ -321,7 +321,7 @@
       ]
     },
     "61": {
-      "description": "Enrollment Transaction (61)",
+      "description": "Enrollment (61)",
       "record_length": 600,
       "fields": [
         {
@@ -353,8 +353,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -402,7 +402,7 @@
           "required": true
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid" : "Must be 61",
@@ -764,8 +764,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -778,7 +778,7 @@
           "required": true
         },
         {
-          "name": "filler0",
+          "name": "filler1",
           "display_name": "Filler",
           "valid": "Blank",
           "length": 1,
@@ -792,7 +792,7 @@
           "required": true
         },
         {
-          "name": "filler1",
+          "name": "filler2",
           "display_name": "Filler",
           "length": 1,
           "valid":"Blank",
@@ -806,7 +806,7 @@
           "required": true
         },
         {
-          "name": "filler2",
+          "name": "filler3",
           "display_name": "Filler",
           "length": 8,
           "valid":"Blanks",
@@ -820,7 +820,7 @@
           "required": true
         },
         {
-          "name": "filler3",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 2,
           "valid":"Blanks",
@@ -834,7 +834,7 @@
           "required": true
         },
         {
-          "name": "filler4",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 63,
           "valid":"Blanks",
@@ -862,7 +862,7 @@
           "required": false
         },
         {
-          "name": "filler5",
+          "name": "filler6",
           "display_name": "Filler (39)",
           "length": 39,
           "valid": "Blanks",
@@ -918,7 +918,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler7",
           "display_name": "Filler",
           "length": 9,
           "valid":"Blanks",
@@ -958,8 +958,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -979,7 +979,7 @@
           "required": true
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP",
           "length": 3,
           "valid":"Valid PBP #",
@@ -993,7 +993,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid":"Valid Contract Number",
@@ -1007,7 +1007,7 @@
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid":"Must be 74",
@@ -1021,7 +1021,7 @@
           "required": false
         },
         {
-          "name": "effectiveDate",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966; < current year + 1; 1st of the month",
@@ -1103,28 +1103,28 @@
           "required": false
         },
         {
-          "name": "filler2",
+          "name": "filler1",
           "display_name": "Filler",
           "length": 1,
           "valid":"Blanks",
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid":"Must be a valid Contract Number",
           "required": true
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid":"Must be 75",
           "required": true
         },
         {
-          "name": "filler3",
+          "name": "filler2",
           "display_name": "Filler",
           "length": 2,
           "valid":"Blanks",
@@ -1138,7 +1138,7 @@
           "required": true
         },
         {
-          "name": "filler4",
+          "name": "filler3",
           "display_name": "Filler",
           "length": 9,
           "valid":"Blanks",
@@ -1153,7 +1153,7 @@
         },
 
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 128,
           "valid":"Blanks",
@@ -1167,7 +1167,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -1207,8 +1207,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -1228,7 +1228,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid":"Must be a valid Contract Number",
@@ -1242,7 +1242,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid":"Must be 76",
@@ -1256,7 +1256,7 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": " > 1966; < current year +1; first of the month",
@@ -1373,8 +1373,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -1394,7 +1394,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1408,7 +1408,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1422,7 +1422,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 79",
@@ -1436,7 +1436,7 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966 < current year +1; first of the month",
@@ -1511,8 +1511,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -1532,7 +1532,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP",
@@ -1546,7 +1546,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1560,7 +1560,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 80",
@@ -1574,14 +1574,14 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "Must equal the Enrollment Effective Date",
           "required": true
         },
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 138,
           "valid": "Blanks",
@@ -1595,7 +1595,7 @@
           "required": false
         },
         {
-          "name": "filler7",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -1635,8 +1635,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -1656,7 +1656,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1670,7 +1670,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1684,7 +1684,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 81",
@@ -1698,7 +1698,7 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966 < current year + 1; first of the month",
@@ -1726,7 +1726,7 @@
           "required": false
         },
         {
-          "name": "filler7",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -1766,8 +1766,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will be rejected if set to 0",
           "required": true
@@ -1787,7 +1787,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1801,7 +1801,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1815,7 +1815,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 82",
@@ -1829,14 +1829,14 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "Must equal the enrollment effective date",
           "required": true
         },
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 28,
           "valid": "Blanks",
@@ -1850,7 +1850,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 109,
           "valid": "Blanks",
@@ -1864,7 +1864,7 @@
           "required": false
         },
         {
-          "name": "filler7",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -1904,8 +1904,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -1925,7 +1925,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1939,7 +1939,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract #",
@@ -1953,7 +1953,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 83",
@@ -1967,7 +1967,7 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966 < current year + 1; first of the prospective month (processing month + 3 months)",
@@ -2042,8 +2042,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected; but set to 0",
           "required": true
@@ -2063,28 +2063,28 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid contract #",
           "required": true
         },
         {
-          "name": "filler3",
+          "name": "filler2",
           "display_name": "Filler",
           "length": 8,
           "valid": "Blanks",
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 90",
           "required": true
         },
         {
-          "name": "filler4",
+          "name": "filler3",
           "display_name": "Filler",
           "length": 13,
           "valid": "Blanks",
@@ -2098,7 +2098,7 @@
           "required": true
         },
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 1,
           "valid": "Blank",
@@ -2168,7 +2168,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 92,
           "valid": "Blanks",
@@ -2182,7 +2182,7 @@
           "required": false
         },
         {
-          "name": "filler7",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -2222,8 +2222,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -2243,7 +2243,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -2257,7 +2257,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract Number",
@@ -2271,7 +2271,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 91",
@@ -2389,8 +2389,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -2424,7 +2424,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract Number",
@@ -2438,7 +2438,7 @@
           "required": false
         },
         {
-          "name": "transaction",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 92",
@@ -2521,7 +2521,7 @@
           "required": true
         },
         {
-          "name": "filler08",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 51,
           "valid": "Blanks",
@@ -2535,7 +2535,7 @@
           "required": false
         },
         {
-          "name": "filler8",
+          "name": "filler7",
           "display_name": "Filler",
           "length": 21,
           "valid": "Blanks",
@@ -2556,7 +2556,7 @@
           "required": false
         },
         {
-          "name": "filler9",
+          "name": "filler8",
           "display_name": "Filler",
           "length": 271,
           "valid": "Blanks",
@@ -2575,7 +2575,7 @@
           "required": true
         },
         {
-          "name": "filler0",
+          "name": "filler1",
           "display_name": "Filler",
           "length": 1,
           "valid": "blank",
@@ -2603,8 +2603,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -2617,7 +2617,7 @@
           "required": true
         },
         {
-          "name": "filler1",
+          "name": "filler2",
           "display_name": "Filler",
           "length": 1,
           "valid": "Blank",
@@ -2638,35 +2638,35 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Must be a valid Contract Number",
           "required": true
         },
         {
-          "name": "filler4",
+          "name": "filler3",
           "display_name": "Filler",
           "length": 8,
           "valid": "Blanks",
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 93",
           "required": true
         },
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 2,
           "valid": "Blanks",
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966 and < current year +1; first of month",
@@ -2680,7 +2680,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 26,
           "valid": "Blanks",
@@ -2694,7 +2694,7 @@
           "required": true
         },
         {
-          "name": "filler7",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 107,
           "valid": "Blanks",
@@ -2708,7 +2708,7 @@
           "required": false
         },
         {
-          "name": "filler8",
+          "name": "filler7",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -2727,7 +2727,7 @@
           "required": true
         },
         {
-          "name": "filler0",
+          "name": "filler1",
           "display_name": "Filler",
           "length": 1,
           "valid": "blank",
@@ -2755,8 +2755,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -2769,7 +2769,7 @@
           "required": true
         },
         {
-          "name": "filler1",
+          "name": "filler2",
           "display_name": "Filler",
           "length": 1,
           "valid": "Blank",
@@ -2790,35 +2790,35 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Must be a valid Contract Number",
           "required": true
         },
         {
-          "name": "filler4",
+          "name": "filler3",
           "display_name": "Filler",
           "length": 8,
           "valid": "Blanks",
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 94",
           "required": true
         },
         {
-          "name": "filler5",
+          "name": "filler4",
           "display_name": "Filler",
           "length": 2,
           "valid": "Blanks",
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date (YYYYMMDD)",
           "length": 8,
           "valid": "> 1966 and < current year +1; first of month",
@@ -2832,7 +2832,7 @@
           "required": false
         },
         {
-          "name": "filler6",
+          "name": "filler5",
           "display_name": "Filler",
           "length": 26,
           "valid": "Blanks",
@@ -2846,7 +2846,7 @@
           "required": true
         },
         {
-          "name": "filler7",
+          "name": "filler6",
           "display_name": "Filler",
           "length": 107,
           "valid": "Blanks",
@@ -2860,7 +2860,7 @@
           "required": false
         },
         {
-          "name": "filler8",
+          "name": "filler7",
           "display_name": "Filler",
           "length": 76,
           "valid": "Blanks",
@@ -2900,8 +2900,8 @@
           "required": false
         },
         {
-          "name": "sex",
-          "display_name": "Sex",
+          "name": "gender",
+          "display_name": "Gender",
           "length": 1,
           "valid": "Must show one or two - will not be rejected but set to 0",
           "required": true
@@ -2935,7 +2935,7 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -2949,7 +2949,7 @@
           "required": false
         },
         {
-          "name": "transaction_code",
+          "name": "transaction_type_code",
           "display_name": "Transaction Code",
           "length": 2,
           "valid": "Must be 95",
@@ -2963,7 +2963,7 @@
           "required": false
         },
         {
-          "name": "effective",
+          "name": "effective_date",
           "display_name": "Effective Date of M3P (YYYYMMDD)",
           "length": 8,
           "valid": "Actual Start Date required",

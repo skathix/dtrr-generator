@@ -1048,7 +1048,7 @@
           "required": true
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP # 3",
           "length": 3,
           "valid":"Valid PBP #",
@@ -1062,7 +1062,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract # 5",
           "length": 5,
           "valid":"Valid Contract Number",
@@ -1179,7 +1179,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid":"Must be a valid Contract Number",
@@ -1297,7 +1297,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid":"Must be a valid Contract Number",
@@ -1463,7 +1463,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1477,7 +1477,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1601,7 +1601,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP",
@@ -1615,7 +1615,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1725,7 +1725,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1739,7 +1739,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1856,7 +1856,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -1870,7 +1870,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
@@ -1994,7 +1994,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -2008,7 +2008,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract #",
@@ -2132,7 +2132,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid contract #",
@@ -2312,7 +2312,7 @@
           "required": false
         },
         {
-          "name": "pbp",
+          "name": "pbp_number",
           "display_name": "PBP #",
           "length": 3,
           "valid": "Valid PBP #",
@@ -2326,7 +2326,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract Number",
@@ -2492,7 +2492,7 @@
           "required": false
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract Number",
@@ -2789,7 +2789,7 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Must be a valid Contract Number",
@@ -2934,7 +2934,7 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Must be a valid Contract Number",
@@ -3079,7 +3079,7 @@
           "required": true
         },
         {
-          "name": "contract",
+          "name": "contract_number",
           "display_name": "Contract #",
           "length": 5,
           "valid": "Valid Contract number",
