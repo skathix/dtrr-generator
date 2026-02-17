@@ -1,7 +1,7 @@
 ﻿{
   "start_date": "2020-08-13",
   "record_length": 1029,
-  "description": "Type 23 - MedImpact",
+  "description": "Type 23 - Member Record Layout to MedImpact",
   "fields": [
     {
       "name": "RecordType",
@@ -42,7 +42,7 @@
       "name": "PersonCode",
       "display_name": "Person code",
       "length": 2,
-      "valid": "02 03 etc",
+      "valid": "00 01 02 03 etc",
       "required": true
     },
     {
@@ -243,7 +243,7 @@
     },
     {
       "name": "DependentCoverageCode",
-      "display_name": "DependentCoverageCode",
+      "display_name": "Dependent Coverage Code",
       "length": 1,
       "valid": "Numerals 1-7",
       "required": false
@@ -330,7 +330,7 @@
       "display_name": "Medicare Code",
       "length": 1,
       "valid": "D If CMS Part D is not set B M Y",
-      "required": true
+      "required": false
     },
     {
       "name": "TermCode",
@@ -400,7 +400,7 @@
       "display_name": "Cross-reference Family position",
       "length": 2,
       "valid": "cross reference number",
-      "required": true
+      "required": false
     },
     {
       "name": "COBPrimeCode",
@@ -477,7 +477,7 @@
       "display_name": "Medicare ID",
       "length": 20,
       "valid": "Valid Medicare ID, use instead of HICN",
-      "required": true
+      "required": false
     },
     {
       "name": "Filler4",
@@ -498,7 +498,7 @@
       "display_name": "Ethnicity",
       "length": 2,
       "valid": "Numerals 1-6",
-      "required": true
+      "required": false
     },
     {
       "name": "Filler5",
