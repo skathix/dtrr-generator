@@ -87,7 +87,7 @@ class FileIngestor
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "18.9");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "19.0");
         var versionDef = allDefinitions.Versions[selectedVersion];
 
         
@@ -477,10 +477,10 @@ class FileIngestor
     }
 
 
-    private static string VisualizeSpaces(string line, char blankChar = '-')
+    /*private static string VisualizeSpaces(string line, char blankChar = '-')
     {
         return line.Replace(' ', blankChar);
-    }
+    }*/
 
     private static void ProcessMedImpactFile(string filePath
         , RecordDefinition type23)
