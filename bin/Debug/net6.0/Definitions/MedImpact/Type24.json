@@ -1089,7 +1089,7 @@
           "name": "AttributeType",
           "display_name": "Attribute Type",
           "length": 20,
-          "valid": "See Table inb PDF",
+          "valid": "See Table in PDF",
           "required": true
         },
         {
