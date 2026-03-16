@@ -42,7 +42,7 @@
       "name": "PersonCode",
       "display_name": "Person code",
       "length": 2,
-      "valid": "00 01 02 03 etc",
+      "valid": "01 02 03 etc - 00 WILL ERROR",
       "required": true
     },
     {
