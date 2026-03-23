@@ -14,7 +14,7 @@
       "name": "GroupNumber",
       "display_name": "Group Number",
       "length": 10,
-      "valid": "?",
+      "valid": "<Contract Number><Plan Number>",
       "required": true
     },
     {
