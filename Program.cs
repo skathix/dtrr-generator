@@ -316,12 +316,12 @@ class FileIngestor
 
         if (outputFormat == "txt")
         {
-            File.WriteAllText("output_single.txt", txtOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_single.txt", txtOutput.ToString());
             Console.WriteLine("Results saved to output_single.txt");
         }
         else if (outputFormat == "csv")
         {
-            File.WriteAllText("output_single.csv", csvOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_single.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_single.csv");
         }
     }
@@ -419,12 +419,12 @@ class FileIngestor
 
         if (outputFormat == "txt")
         {
-            File.WriteAllText("output.txt", txtOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output.txt", txtOutput.ToString());
             Console.WriteLine("Results saved to output.txt");
         }
         else if (outputFormat == "csv")
         {
-            File.WriteAllText("output.csv", csvOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output.csv");
         }
     }
@@ -581,12 +581,12 @@ class FileIngestor
 
         if (outputFormat == "txt")
         {
-            File.WriteAllText("output_medi.txt", txtOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_medi.txt", txtOutput.ToString());
             Console.WriteLine("Results saved to output_medi.txt");
         }
         else if (outputFormat == "csv")
         {
-            File.WriteAllText("output_medi.csv", csvOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_medi.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_medi.csv");
         }
     }
@@ -856,12 +856,12 @@ class FileIngestor
 
         if (outputFormat == "txt")
         {
-            File.WriteAllText("output_medi_type24.txt", txtOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_medi_type24.txt", txtOutput.ToString());
             Console.WriteLine("Results saved to output_medi_type24.txt");
         }
         else if (outputFormat == "csv")
         {
-            File.WriteAllText("output_medi_type24.csv", csvOutput.ToString());
+            File.WriteAllText($"{DateTime.Now:MM_dd_yyyy hh:mm}_output_medi_type24.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_medi_type24.csv");
         }
     }
