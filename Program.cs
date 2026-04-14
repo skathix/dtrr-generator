@@ -504,7 +504,7 @@ class FileIngestor
         if (name.Contains("middle_initial")) return 4;
         if (name.Contains("gender")) return 5;
         if (name.Contains("birthdate")) return 6;
-
+        
         if (name.Contains("contract_number")) return 7;
         if (name.Contains("disability")) return 8;
 
@@ -528,7 +528,8 @@ class FileIngestor
         if (name.Contains("election_type_code")) return 19;
         if (name.Contains("enrollment_source")) return 20;
         if (name.Contains("part_d_opt_out")) return 21;
-        if (name.Contains("enrollment_type")) return 22;
+        if (name.Contains("premium_withhold")) return 22;
+        
         if (name.Contains("credible_coverage_flag")) return 23;
         if (name.Contains("employer_override")) return 24;
         
@@ -548,32 +549,33 @@ class FileIngestor
         if (name.Contains("secondary_bin")) return 34;
         if (name.Contains("secondary_pcn")) return 35;
         
-        if (name.Contains("tracking_id")) return 36;
+        if (name.Contains("disenrollment_reason")) return 36;
+        if (name.Contains("mmp_opt_out")) return 37;
         
-        if (name.Contains("relationshipAgent")) return 37;
-        if (name.Contains("relationshipBroker")) return 38;
-        if (name.Contains("relationshipShip")) return 39;
-        if (name.Contains("relationshipAr")) return 40;
-        if (name.Contains("relationshipOther")) return 41;
-        if (name.Contains("relationshipSelf")) return 42;
-        if (name.Contains("relationshipBlank")) return 43;
+        if (name.Contains("tracking_id")) return 38;
         
-        if (name.Contains("npnNumber")) return 44;
+        if (name.Contains("relationshipAgent")) return 39;
+        if (name.Contains("relationshipBroker")) return 40;
+        if (name.Contains("relationshipShip")) return 41;
+        if (name.Contains("relationshipAr")) return 42;
+        if (name.Contains("relationshipOther")) return 43;
+        if (name.Contains("relationshipSelf")) return 44;
+        if (name.Contains("relationshipBlank")) return 45;
         
-        if (name.Contains("oecFlag")) return 45;
-        if (name.Contains("oecApplicationDate")) return 46;
-        if (name.Contains("oecApplicationNumber")) return 47;
+        if (name.Contains("npnNumber")) return 46;
         
-        if (name.Contains("memberPhoneNumber")) return 48;
-        if (name.Contains("memberEmail")) return 49;
+        if (name.Contains("oecFlag")) return 47;
+        if (name.Contains("oecApplicationDate")) return 48;
+        if (name.Contains("oecApplicationNumber")) return 49;
         
-        if (name.Contains("election Type")) return 50;
-        if (name.Contains("preferred_language")) return 51;
-        if (name.Contains("accessible_format")) return 52;
+        if (name.Contains("memberPhoneNumber")) return 50;
+        if (name.Contains("memberEmail")) return 51;
         
-        if (name.StartsWith("filler")) return 99;
-
-        return 60;
+        if (name.Contains("election Type")) return 52;
+        if (name.Contains("preferred_language")) return 53;
+        if (name.Contains("accessible_format")) return 54;
+        
+       return 60;
     }
     
 
