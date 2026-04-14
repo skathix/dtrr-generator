@@ -9,8 +9,16 @@ using Tools.Validation;
 namespace Tools;
 class FileIngestor
 {
+    
+    private enum MbitViewMode
+    {
+        FileVerification = 1,
+        DataEntry = 2
+    }
+
     private static void Main(string[] args)
     {
+        
         // Load file types
         FileTypes.Load(Path.Combine("FileTypes", "FileTypes.json"));
 
@@ -68,7 +76,7 @@ class FileIngestor
                 Console.WriteLine($"\n[{selectedFileType}] Coming soon!\n");
                 continue;
             }
-
+            //var viewMode = ChooseMbitViewMode();
             run();
 
             Console.Write("\nDo you want to ingest another item? (y/n): ");
@@ -89,7 +97,7 @@ class FileIngestor
         var selectedVersion =
             ChooseMbitVersion(allDefinitions, preferredDefault: "19.0");
         var versionDef = allDefinitions.Versions[selectedVersion];
-
+        var viewMode = ChooseMbitViewMode();
         
         var mode = ChooseMode();
 
@@ -149,7 +157,7 @@ class FileIngestor
                 $"\nRecord Type {recordType}: {recordDef?.Description ?? $"Unknown record type ({recordType})"}");
 
             var fields = recordDef?.Fields ?? new List<FieldDefinition>();
-            ProcessRecord(line, fields);
+            
 
 
             Console.Write(
@@ -157,7 +165,7 @@ class FileIngestor
             var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
 
             // Always show field-by-field (your primary use case)
-            ProcessRecord(line, fields);
+            ProcessMbitRecord(line, fields,viewMode);
 
             if (outputFormat is "txt" or "csv")
                 SaveSingleRecordOutput(line, recordType, fields, recordDef
@@ -227,7 +235,6 @@ class FileIngestor
 
         return line.PadRight(target, ' ');
     }
-
     private static void ProcessRecord(string input
         , List<FieldDefinition> fields)
     {
@@ -258,6 +265,42 @@ class FileIngestor
                 $"{label}({field.Length}) {requiredMark}: {visibleValue}{validValue}");
         }
     }
+    private static void ProcessMbitRecord(string input, List<FieldDefinition> fields,
+        MbitViewMode viewMode)
+    {
+        var sectionLengths = fields.Select(f => f.Length).ToList();
+        var sections =
+            StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+
+        Console.WriteLine($"\nProcessed record Data ({viewMode}):");
+
+        var displayFields = viewMode == MbitViewMode.FileVerification
+            ? fields
+            : GetFieldsForDataEntry(fields);
+
+        foreach (var field in displayFields)
+        {
+            var index = fields.IndexOf(field);
+            if (index < 0 || index >= sections.Count)
+                continue;
+
+            var rawValue = sections[index];
+            var visibleValue = rawValue.Replace(' ', '-');
+
+            var label = string.IsNullOrWhiteSpace(field.DisplayName)
+                ? field.Name
+                : field.DisplayName;
+
+            var requiredMark = field.IsRequired ? "REQUIRED" : "";
+            var validValue = string.IsNullOrWhiteSpace(field.Valid)
+                ? ""
+                : $" ({field.Valid})";
+
+            Console.WriteLine(
+                $"{label} ({field.Length}) {requiredMark}: {visibleValue}{validValue}");
+        }
+    }
+
 
     private static string CsvEscape(string s)
     {
@@ -428,6 +471,112 @@ class FileIngestor
             Console.WriteLine("Results saved to output.csv");
         }
     }
+    
+    
+    private static List<FieldDefinition> GetFieldsForDataEntry(List<FieldDefinition> fields)
+    {
+        return fields
+            .OrderBy(f => GetEntryPriority(f))
+            .ThenBy(f => f.DisplayName)
+            .ToList();
+    }
+
+    private static MbitViewMode ChooseMbitViewMode()
+    {
+        Console.WriteLine("\nSelect output view:");
+        Console.WriteLine("  1. File verification (fixed-width order)");
+        Console.WriteLine("  2. Data entry order");
+
+        Console.Write("Choose 1 or 2 (Enter = 1): ");
+        var input = Console.ReadLine()?.Trim();
+
+        return input == "2"
+            ? MbitViewMode.DataEntry
+            : MbitViewMode.FileVerification;
+    }
+    private static int GetEntryPriority(FieldDefinition field)
+    {
+        var name = field.Name.ToLowerInvariant();
+
+        if (name.Contains("beneficiary_id")) return 1;
+        if (name.Contains("surname")) return 2;
+        if (name.Contains("first_name")) return 3;
+        if (name.Contains("middle_initial")) return 4;
+        if (name.Contains("gender")) return 5;
+        if (name.Contains("birthdate")) return 6;
+
+        if (name.Contains("contract_number")) return 7;
+        if (name.Contains("disability")) return 8;
+
+        if (name.Contains("esrd_override")) return 9;
+        
+        if (name.Contains("transaction_type_code")) return 10;
+        if (name.Contains("effective_date")) return 11;
+        
+        if (name.Contains("pbp_number")) return 12;
+        if (name.Contains("TransactionDate")) return 13;
+        
+        if (name.Contains("rolled_contract")) return 14;
+        if (name.Contains("rolled_pbp")) return 15;
+        
+        
+        if (name.Contains("application_date")) return 16;
+        
+        if (name.Contains("segment_id")) return 17;
+        if (name.Contains("part_c_premium")) return 18;
+        
+        if (name.Contains("election_type_code")) return 19;
+        if (name.Contains("enrollment_source")) return 20;
+        if (name.Contains("part_d_opt_out")) return 21;
+        if (name.Contains("enrollment_type")) return 22;
+        if (name.Contains("credible_coverage_flag")) return 23;
+        if (name.Contains("employer_override")) return 24;
+        
+        if (name.Contains("uncovered_months")) return 25;
+        
+        if (name.Contains("secondary_insurance")) return 26;
+        if (name.Contains("secondary_rx_id")) return 27;
+        if (name.Contains("secondary_rx_group")) return 28;
+        
+        if (name.Contains("eghp_flag")) return 29;
+        
+        if (name.Contains("part_d_bin")) return 30;
+        if (name.Contains("part_d_pcn")) return 31;
+        if (name.Contains("part_d_group")) return 32;
+        if (name.Contains("part_d_id")) return 33;
+        
+        if (name.Contains("secondary_bin")) return 34;
+        if (name.Contains("secondary_pcn")) return 35;
+        
+        if (name.Contains("tracking_id")) return 36;
+        
+        if (name.Contains("relationshipAgent")) return 37;
+        if (name.Contains("relationshipBroker")) return 38;
+        if (name.Contains("relationshipShip")) return 39;
+        if (name.Contains("relationshipAr")) return 40;
+        if (name.Contains("relationshipOther")) return 41;
+        if (name.Contains("relationshipSelf")) return 42;
+        if (name.Contains("relationshipBlank")) return 43;
+        
+        if (name.Contains("npnNumber")) return 44;
+        
+        if (name.Contains("oecFlag")) return 45;
+        if (name.Contains("oecApplicationDate")) return 46;
+        if (name.Contains("oecApplicationNumber")) return 47;
+        
+        if (name.Contains("memberPhoneNumber")) return 48;
+        if (name.Contains("memberEmail")) return 49;
+        
+        if (name.Contains("election Type")) return 50;
+        if (name.Contains("preferred_language")) return 51;
+        if (name.Contains("accessible_format")) return 52;
+        
+        if (name.StartsWith("filler")) return 99;
+
+        return 60;
+    }
+    
+
 
     private static void RunMedImpactFlow()
     {
