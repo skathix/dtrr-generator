@@ -275,7 +275,29 @@ class FileIngestor
         Console.WriteLine($"\nProcessed record Data ({viewMode}):");
         if (viewMode == MbitViewMode.DataEntry)
         {
+            Console.WriteLine("___Fixed Values___");
             Console.WriteLine("RecordType (DB-only): T");
+            Console.WriteLine("OutOfAreaFlag (DB-only): N");
+            Console.WriteLine("PartDOptOutFlag (DB-only): Blank Always");
+            Console.WriteLine("CumulativeNoOfUncoveredMonths (DB-only): 0 Always");
+            Console.WriteLine("SubmittedNoOfCoveredMonths (DB-only): 0 Always");
+            Console.WriteLine("___Referenced Information___");
+            Console.WriteLine("StateCode (DB-only): Reference StateCode");
+            Console.WriteLine("CountyCode (DB-only): Last 3 digits of CountyCode");
+            Console.WriteLine("SProcessingTimeStamp (DB-only): Non Midnight hh.mm.ss.ssssss");
+            Console.WriteLine("PartDLowIncomePremiumSubsidyLvl: reference LIS");
+            
+            Console.WriteLine("DisabilityIndicator (DB-only): reference ?");
+            Console.WriteLine("InstitutionalNHCHCBSIndicator(DB-only): reference ?");
+            Console.WriteLine("TransactionReplyCode (DB-only): reference ?");
+            Console.WriteLine("EntitlementTypeCode (DB-only): reference ?");
+            Console.WriteLine("WorkingAgeIndicator (DB-only): reference ?");
+            Console.WriteLine("UIInitiatedChangeFlag (DB-only): reference ?");
+            Console.WriteLine("VariableData (DB-only): reference ?");
+            Console.WriteLine("DistrictOfficeCode (DB-only): reference ?");
+            Console.WriteLine("UIUserOrganizationDesignation (DB-only): reference ?");
+            
+            
             Console.WriteLine("----------"); // visual separator
         }
 
