@@ -273,6 +273,11 @@ class FileIngestor
             StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
 
         Console.WriteLine($"\nProcessed record Data ({viewMode}):");
+        if (viewMode == MbitViewMode.DataEntry)
+        {
+            Console.WriteLine("RecordType (DB-only): T");
+            Console.WriteLine("----------"); // visual separator
+        }
 
         var displayFields = viewMode == MbitViewMode.FileVerification
             ? fields
@@ -298,6 +303,7 @@ class FileIngestor
 
             Console.WriteLine(
                 $"{label} ({field.Length}) {requiredMark}: {visibleValue}{validValue}");
+            
         }
     }
 
