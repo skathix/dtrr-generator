@@ -1,0 +1,28 @@
+﻿{
+  "start_date": "2024-12-31",
+  "record_length": 44,
+  "description": "Type 112 Trailer- Outbound Claims Detail Extract File",
+  "fields": [
+    {
+      "name": "trl01",
+      "display_name": "Total number of records",
+      "length": 10,
+      "valid": "Count, including header and trailer",
+      "required": true
+    },
+    {
+      "name": "trl02",
+      "display_name": "Control Number",
+      "length": 9,
+      "valid": "Assigned job ID - different length than header",
+      "required": true
+    },
+    {
+      "name": "trl03",
+      "display_name": "Total Sum of Paid Amount",
+      "length": 25,
+      "valid": "File check that totals the paid claim amount",
+      "required": true
+    }
+  ]
+}

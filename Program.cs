@@ -43,7 +43,7 @@ class FileIngestor
                 Console.WriteLine($" - {kvp.Key}: {kvp.Value}{supported}");
             }
             
-            Console.WriteLine("\nOptions: [C] Clear screen");
+            
             Console.Write("Select file type (key, e.g. MBIT): ");
 
             var input = Console.ReadLine()?.Trim();
@@ -54,12 +54,7 @@ class FileIngestor
                 continue;
             }
 
-// Manual clear (does not erase anything unless you choose it)
-            if (input.Equals("c", StringComparison.OrdinalIgnoreCase))
-            {
-                try { Console.Clear(); } catch { /* ignore if not supported */ }
-                continue;
-            }
+
 
             var selectedFileType = input.ToUpperInvariant();
 
@@ -95,7 +90,7 @@ class FileIngestor
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "19.0");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "19.1");
         var versionDef = allDefinitions.Versions[selectedVersion];
         var viewMode = ChooseMbitViewMode();
         
@@ -157,9 +152,7 @@ class FileIngestor
                 $"\nRecord Type {recordType}: {recordDef?.Description ?? $"Unknown record type ({recordType})"}");
 
             var fields = recordDef?.Fields ?? new List<FieldDefinition>();
-            
-
-
+          
             Console.Write(
                 "Would you like to save the results? (none/txt/csv): ");
             var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
@@ -278,7 +271,6 @@ class FileIngestor
             Console.WriteLine("___Fixed Values___");
             Console.WriteLine("RecordType (DB-only): T");
             Console.WriteLine("OutOfAreaFlag (DB-only): N");
-            Console.WriteLine("PartDOptOutFlag (DB-only): Blank Always");
             Console.WriteLine("CumulativeNoOfUncoveredMonths (DB-only): 0 Always");
             Console.WriteLine("SubmittedNoOfCoveredMonths (DB-only): 0 Always");
             Console.WriteLine("PtDLateEnrlPenaltyAmt: Always 0.00");
@@ -321,7 +313,6 @@ class FileIngestor
             Console.WriteLine("PreferredLanguageOtherThanEnglish: MEMBER_DEMOGRAPHIC table");
             Console.WriteLine("AccessibleFormat: MEMBER_DEMOGRAPHIC table");
             Console.WriteLine("___Reference Unknown___");
-            Console.WriteLine("DisabilityIndicator (DB-only): reference ?");
             Console.WriteLine("InstitutionalNHCHCBSIndicator(DB-only): reference ?");
             Console.WriteLine("TransactionReplyCode (DB-only): reference ?");
             Console.WriteLine("EntitlementTypeCode (DB-only): reference ?");
@@ -650,6 +641,7 @@ class FileIngestor
             {
                 ["23"] = RunMedImpactType23,
                 ["24"] = RunMedImpactType24,
+                ["112"] = RunMedImpactType112,
                 // Later: ["25"] = RunMedImpactType25,
             };
 
@@ -658,7 +650,8 @@ class FileIngestor
             new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 ["23"] = "Type 23 - MedImpact (Eligibility)"
-                , ["24"] = "Type 24 - Member Attribute Load File",
+                , ["24"] = "Type 24 - Member Attribute Load File"
+                , ["112"] = "Type 112 - Outbound Claims Detail Extract"
                 // ["25"] = "Type 25 - ???",
             };
 
@@ -690,12 +683,7 @@ class FileIngestor
     }
 
 
-    /*private static string VisualizeSpaces(string line, char blankChar = '-')
-    {
-        return line.Replace(' ', blankChar);
-    }*/
-
-    private static void ProcessMedImpactFile(string filePath
+   private static void ProcessMedImpactFile(string filePath
         , RecordDefinition type23)
     {
         Console.Write("Would you like to save the results? (none/txt/csv): ");
@@ -962,6 +950,81 @@ class FileIngestor
             SaveSingleRecordOutput(line, $"24-{segmentCode}", fields, segDef
                 , outputFormat);
     }
+    private static void RunMedImpactType112()
+    {
+        var type112 = MedImpactDefinitionLoader.Load(
+            Path.Combine("Definitions", "MedImpact", "type112.json"));
+
+        var expectedLength = type112.RecordLength ?? 0;
+        if (expectedLength == 0)
+        {
+            Console.WriteLine("Type 112 definition is missing RecordLength.");
+            return;
+        }
+
+       var mode = ChooseMode();
+
+        if (mode is "file" or "f")
+        {
+            Console.Write("Enter path to file: ");
+            var filePath = Console.ReadLine()!;
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File not found.");
+                return;
+            }
+
+            ProcessMedImpactFile(filePath, type112);
+            return;
+        }
+
+        Console.WriteLine("Paste a single full record here:");
+        var inputString = Console.ReadLine();
+        if (string.IsNullOrEmpty(inputString))
+        {
+            Console.WriteLine("No input provided.");
+            return;
+        }
+
+        var line = inputString.TrimEnd('\r', '\n').TrimStart('\uFEFF');
+
+        if (line.Length < 2)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Minimum 2 required to read record type.");
+            return;
+        }
+
+        var recordType = line.Substring(0, 2).Trim();
+        if (recordType != "112")
+        {
+            Console.WriteLine(
+                $"This flow supports Type 112 only. Found '{recordType}'.");
+            return;
+        }
+
+        if (line.Length < expectedLength)
+            line = line.PadRight(expectedLength, ' ');
+
+        if (line.Length != expectedLength)
+        {
+            Console.WriteLine(
+                $"Invalid length: {line.Length}. Expected: {expectedLength}");
+            return;
+        }
+
+        var fields = type112.Fields ?? new List<FieldDefinition>();
+        Console.WriteLine(
+            $"\nRecord Type {recordType}: {type112.Description ?? "Type 112 - MedImpact"}");
+        ProcessRecord(line, fields);
+
+        Console.Write("Would you like to save the results? (none/txt/csv): ");
+        var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        if (outputFormat is "txt" or "csv")
+            SaveSingleRecordOutput(line, recordType, fields, type112
+                , outputFormat);
+    }
 
     private static void ProcessMedImpactType24File(string filePath
         , MedImpactType24Definitions defs)
@@ -1076,6 +1139,122 @@ class FileIngestor
         {
             File.WriteAllText("output_medi_type24.csv", csvOutput.ToString());
             Console.WriteLine("Results saved to output_medi_type24.csv");
+        }
+    }
+    
+    private static void ProcessMedImpactType112File(string filePath
+        , MedImpactType112Definitions defs)
+
+
+    {
+        Console.Write("Would you like to save the results? (none/txt/csv): ");
+        var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
+
+        var txtOutput = new StringBuilder();
+        var csvOutput = new StringBuilder();
+        csvOutput.AppendLine(
+            "RecordNumber,RecordType,SegmentCode,RecordDescription,FieldName,Length,Required,Value,Valid");
+
+        var lines = File.ReadAllLines(filePath);
+        int recordCounter = 0;
+        int skippedTooShort = 0;
+        int skippedWrongType = 0;
+        int skippedUnknownSegment = 0;
+        int skippedWrongLength = 0;
+
+        foreach (var rawLine in lines)
+        {
+            var line = rawLine.TrimEnd('\r', '\n');
+            if (string.IsNullOrWhiteSpace(line)) continue;
+
+            if (line.Length < 4)
+            {
+                skippedTooShort++;
+                continue;
+            }
+
+            var recordType = line.Substring(0, 2);
+            if (recordType != "112")
+            {
+                skippedWrongType++;
+                continue;
+            }
+
+            var segmentCode = line.Substring(2, 2);
+
+            if (!defs.Segments.TryGetValue(segmentCode, out var segDef))
+            {
+                skippedUnknownSegment++;
+                continue;
+            }
+
+            var expectedLength = segDef.RecordLength ?? 0;
+            if (expectedLength == 0 || line.Length != expectedLength)
+            {
+                skippedWrongLength++;
+                continue;
+            }
+
+            var fields = segDef.Fields ?? new List<FieldDefinition>();
+            var description = defs.Description ??
+                              "Type 112 - Outbound Claims Detail Extract File";
+
+            Console.WriteLine(
+                $"\nRecord {++recordCounter} — Type: 112 — Segment: {segmentCode} — {description}");
+            txtOutput.AppendLine(
+                $"Record {recordCounter} — Type: 112 — Segment: {segmentCode} — {description}");
+
+            var sectionLengths = fields.Select(f => f.Length).ToList();
+            var sections =
+                StringDivider.DivideStringIntoVariableSections(line
+                    , sectionLengths);
+
+            for (int i = 0; i < fields.Count; i++)
+            {
+                var field = fields[i];
+                var label = string.IsNullOrWhiteSpace(field.DisplayName)
+                    ? field.Name
+                    : field.DisplayName;
+                var value = i < sections.Count ? sections[i] : "";
+                var valid = field.Valid ?? "";
+
+                var visibleValue = value.Replace(' ', '-');
+
+                var lineTxt =
+                    $"{label} ({field.Length}) {(field.IsRequired ? "REQUIRED" : "")}: {visibleValue}" +
+                    $"{(string.IsNullOrWhiteSpace(valid) ? "" : $" ({valid})")}";
+
+                Console.WriteLine(lineTxt);
+                txtOutput.AppendLine(lineTxt);
+
+                csvOutput.AppendLine(string.Join(",",
+                    recordCounter.ToString(),
+                    CsvEscape(recordType),
+                    CsvEscape(segmentCode),
+                    CsvEscape(description),
+                    CsvEscape(label),
+                    field.Length.ToString(),
+                    field.IsRequired.ToString(),
+                    CsvEscape(value),
+                    CsvEscape(valid)
+                ));
+            }
+
+            txtOutput.AppendLine();
+        }
+
+        Console.WriteLine(
+            $"\nSummary: parsed={recordCounter}, tooShort={skippedTooShort}, wrongType={skippedWrongType}, unknownSeg={skippedUnknownSegment}, wrongLen={skippedWrongLength}");
+
+        if (outputFormat == "txt")
+        {
+            File.WriteAllText("output_medi_type112.txt", txtOutput.ToString());
+            Console.WriteLine("Results saved to output_medi_type112.txt");
+        }
+        else if (outputFormat == "csv")
+        {
+            File.WriteAllText("output_medi_type112.csv", csvOutput.ToString());
+            Console.WriteLine("Results saved to output_medi_type112.csv");
         }
     }
 

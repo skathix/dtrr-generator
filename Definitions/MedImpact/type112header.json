@@ -1,0 +1,63 @@
+﻿{
+  "start_date": "2024-12-31",
+  "record_length": 180,
+  "description": "Type 112 Header- Outbound Claims Detail Extract File",
+  "fields": [
+    {
+      "name": "HDR01",
+      "display_name": "Identifier Code",
+      "length": 3,
+      "valid": "112",
+      "required": true
+    },
+    {
+      "name": "HDR02",
+      "display_name": "Control Number",
+      "length": 20,
+      "valid": "Assigned job ID",
+      "required": true
+    },
+    {
+      "name": "HDR03",
+      "display_name": "Reference Id",
+      "length": 80,
+      "valid": "ALL CLAIMS EXTRACT",
+      "required": true
+    },
+    {
+      "name": "HDR04",
+      "display_name": "Date",
+      "length": 8,
+      "valid": "Date generation started",
+      "required": true
+    },
+    {
+      "name": "HDR05",
+      "display_name": "Time",
+      "length": 6,
+      "valid": "Time generation started",
+      "required": true
+    },
+    {
+      "name": "HDR06",
+      "display_name": "Time Code",
+      "length": 2,
+      "valid": "Time Zone, default PT",
+      "required": true
+    },
+    {
+      "name": "HDR07",
+      "display_name": "Transmitting Org Name",
+      "length": 60,
+      "valid": "MEDIMPACT HEALTHCARE SYSTEMS",
+      "required": true
+    },
+    {
+      "name": "HDR08",
+      "display_name": "Element Separator",
+      "length": 1,
+      "valid": "0-2",
+      "required": true
+    }
+  ]
+}

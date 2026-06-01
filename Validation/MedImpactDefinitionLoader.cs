@@ -31,8 +31,7 @@ public static class MedImpactDefinitionLoader
             IsRequired = f.Required
         }).ToList();
 
-        // ✅ Return your EXISTING RecordDefinition type
-        return new RecordDefinition
+       return new RecordDefinition
         {
             Description = raw.Description ?? "MedImpact Record",
             RecordLength = raw.RecordLength,
