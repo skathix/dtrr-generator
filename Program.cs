@@ -7,18 +7,17 @@ using Tools.Tools;
 using Tools.Validation;
 
 namespace Tools;
+
 class FileIngestor
 {
-    
     private enum MbitViewMode
     {
-        FileVerification = 1,
-        DataEntry = 2
+        FileVerification = 1
+        , DataEntry = 2
     }
 
     private static void Main(string[] args)
     {
-        
         // Load file types
         FileTypes.Load(Path.Combine("FileTypes", "FileTypes.json"));
 
@@ -42,8 +41,8 @@ class FileIngestor
 
                 Console.WriteLine($" - {kvp.Key}: {kvp.Value}{supported}");
             }
-            
-            
+
+
             Console.Write("Select file type (key, e.g. MBIT): ");
 
             var input = Console.ReadLine()?.Trim();
@@ -53,7 +52,6 @@ class FileIngestor
                 Console.WriteLine("No selection provided.\n");
                 continue;
             }
-
 
 
             var selectedFileType = input.ToUpperInvariant();
@@ -71,6 +69,7 @@ class FileIngestor
                 Console.WriteLine($"\n[{selectedFileType}] Coming soon!\n");
                 continue;
             }
+
             //var viewMode = ChooseMbitViewMode();
             run();
 
@@ -90,10 +89,10 @@ class FileIngestor
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "19.1");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "19.3");
         var versionDef = allDefinitions.Versions[selectedVersion];
         var viewMode = ChooseMbitViewMode();
-        
+
         var mode = ChooseMode();
 
         if (mode is "file" or "f")
@@ -152,13 +151,13 @@ class FileIngestor
                 $"\nRecord Type {recordType}: {recordDef?.Description ?? $"Unknown record type ({recordType})"}");
 
             var fields = recordDef?.Fields ?? new List<FieldDefinition>();
-          
+
             Console.Write(
                 "Would you like to save the results? (none/txt/csv): ");
             var outputFormat = Console.ReadLine()?.Trim().ToLowerInvariant();
 
             // Always show field-by-field (your primary use case)
-            ProcessMbitRecord(line, fields,viewMode);
+            ProcessMbitRecord(line, fields, viewMode);
 
             if (outputFormat is "txt" or "csv")
                 SaveSingleRecordOutput(line, recordType, fields, recordDef
@@ -228,6 +227,7 @@ class FileIngestor
 
         return line.PadRight(target, ' ');
     }
+
     private static void ProcessRecord(string input
         , List<FieldDefinition> fields)
     {
@@ -258,72 +258,20 @@ class FileIngestor
                 $"{label}({field.Length}) {requiredMark}: {visibleValue}{validValue}");
         }
     }
-    private static void ProcessMbitRecord(string input, List<FieldDefinition> fields,
+
+    private static void ProcessMbitRecord(string input
+        , List<FieldDefinition> fields,
         MbitViewMode viewMode)
     {
         var sectionLengths = fields.Select(f => f.Length).ToList();
         var sections =
-            StringDivider.DivideStringIntoVariableSections(input, sectionLengths);
+            StringDivider.DivideStringIntoVariableSections(input
+                , sectionLengths);
 
         Console.WriteLine($"\nProcessed record Data ({viewMode}):");
         if (viewMode == MbitViewMode.DataEntry)
         {
-            Console.WriteLine("___Fixed Values___");
-            Console.WriteLine("RecordType (DB-only): T");
-            Console.WriteLine("OutOfAreaFlag (DB-only): N");
-            Console.WriteLine("CumulativeNoOfUncoveredMonths (DB-only): 0 Always");
-            Console.WriteLine("SubmittedNoOfCoveredMonths (DB-only): 0 Always");
-            Console.WriteLine("PtDLateEnrlPenaltyAmt: Always 0.00");
-            Console.WriteLine("PtDLateEnrlWaivedyAmt: Always 0.00");
-            Console.WriteLine("PtDLateEnrlSubsidyAmt: Always 0.00");
-            Console.WriteLine("DeMinimisDifferentialAmt: Always 0.00");
-            Console.WriteLine("MSPStatusFlg: Always Blank");
-            Console.WriteLine("EnrolleeTypeFlagPBPLevel: Blank");
-            Console.WriteLine("ApplicationDateIndicator: Blank");
-            Console.WriteLine("CleanupId: Blank");
-            Console.WriteLine("POSDrugEditUpdateDeleteFlag: Blank");
-            Console.WriteLine("POSDrugEditStatus: Blank");
-            Console.WriteLine("POSDrugEditClass: Blank");
-            Console.WriteLine("POSDrugEditCode : Blank");
-            Console.WriteLine("NotificationDate: Blank");
-            Console.WriteLine("ImplementationDate: Blank");
-            Console.WriteLine("TerminationDate: Blank");
-            Console.WriteLine("HospiceProviderNumber: Blank");
-            Console.WriteLine("ICModelTypeIndicator: Blank");
-            Console.WriteLine("ICModelEndDateReasonCode: Blank");
-            Console.WriteLine("ICModelbenefitStatus: Blank");
-            Console.WriteLine("UpdtMedicaidStatForCoummunityRAFBenef: Blank");
-            Console.WriteLine("SystemsAssignedTrackingNumber: 000000000mmddyy<last 4 of plan assigned tracking number>");
-            Console.WriteLine("Status: Unprocessed");
             
-            Console.Write("");
-            Console.WriteLine("___Referenced Information___");
-            Console.WriteLine("StateCode (DB-only): Reference StateCode");
-            Console.WriteLine("CountyCode (DB-only): Last 3 digits of CountyCode");
-            Console.WriteLine("EmployerSubsidyOverrideFlag: blank of first - may be overridden by CMS");
-            Console.WriteLine("PartDBeneficiaryPremium: reference PremiumPayment table");
-            Console.WriteLine("ProcessingTimeStamp (DB-only): Non Midnight hh.mm.ss.ssssss");
-            Console.WriteLine("PartDLowIncomePremiumSubsidyLvl: reference LIS");
-            Console.WriteLine("LowIncomeCopayCategory: reference LIS");
-            Console.WriteLine("LowIncomePtDPremiumSubsidyAmt: reference LIS");
-            Console.WriteLine("LowIncomePeriodEndDate: reference LIS");
-            Console.WriteLine("LowIncomeSubsidySourceCode: reference LIS");
-            Console.WriteLine("TRCShortName: reference PCUG");
-            Console.WriteLine("LoadDate: reference DTRR SQL");
-            Console.WriteLine("PreferredLanguageOtherThanEnglish: MEMBER_DEMOGRAPHIC table");
-            Console.WriteLine("AccessibleFormat: MEMBER_DEMOGRAPHIC table");
-            Console.WriteLine("___Reference Unknown___");
-            Console.WriteLine("InstitutionalNHCHCBSIndicator(DB-only): reference ?");
-            Console.WriteLine("TransactionReplyCode (DB-only): reference ?");
-            Console.WriteLine("EntitlementTypeCode (DB-only): reference ?");
-            Console.WriteLine("WorkingAgeIndicator (DB-only): reference ?");
-            Console.WriteLine("UIInitiatedChangeFlag (DB-only): reference ?");
-            Console.WriteLine("VariableData (DB-only): reference ?");
-            Console.WriteLine("DistrictOfficeCode (DB-only): reference ?");
-            Console.WriteLine("UIUserOrganizationDesignation (DB-only): reference ?");
-            
-            
-            Console.WriteLine("----------"); // visual separator
         }
 
         var displayFields = viewMode == MbitViewMode.FileVerification
@@ -350,7 +298,6 @@ class FileIngestor
 
             Console.WriteLine(
                 $"{label} ({field.Length}) {requiredMark}: {visibleValue}{validValue}");
-            
         }
     }
 
@@ -524,9 +471,10 @@ class FileIngestor
             Console.WriteLine("Results saved to output.csv");
         }
     }
-    
-    
-    private static List<FieldDefinition> GetFieldsForDataEntry(List<FieldDefinition> fields)
+
+
+    private static List<FieldDefinition> GetFieldsForDataEntry(
+        List<FieldDefinition> fields)
     {
         return fields
             .OrderBy(f => GetEntryPriority(f))
@@ -547,90 +495,120 @@ class FileIngestor
             ? MbitViewMode.DataEntry
             : MbitViewMode.FileVerification;
     }
+
+    private static readonly Dictionary<string, int>
+        EntryOrder =
+            new(StringComparer.OrdinalIgnoreCase)
+
+            {
+                ["beneficiary_id"] = 1, ["surname"] = 2, ["first_name"] = 3
+                , ["middle_initial"] = 4, ["gender"] = 5, ["birthdate"] = 6
+                , ["contract_number"] = 8, ["disability"] = 11
+                , ["esrd_override"] = 14, ["transaction_type_code"] = 16
+                , ["effective_date"] = 18, ["pbp_number"] = 20
+                , ["transactionDate"] = 21, ["rolled_contract"] = 25
+                , ["rolled_pbp"] = 27, ["application_date"] = 28
+                , ["segment_id"] = 31, ["part_c_premium"] = 32
+                , ["election_type_code"] = 34, ["enrollment_source"] = 35
+                , ["part_d_opt_out"] = 36, ["premium_withhold"] = 37
+                , ["credible_coverage_flag"] = 39, ["employer_override"] = 40
+                , ["uncovered_months"] = 25, ["secondary_insurance"] = 44
+                , ["secondary_rx_id"] = 45, ["secondary_rx_group"] = 46
+                , ["eghp_flag"] = 47, ["part_d_bin"] = 55, ["part_d_pcn"] = 56
+                , ["part_d_group"] = 57, ["part_d_id"] = 58
+                , ["secondary_bin"] = 59, ["secondary_pcn"] = 60
+                , ["disenrollment_reason"] = 68, ["mmp_opt_out"] = 69
+                , ["tracking_id"] = 84, ["relationshipagent"] = 87
+                , ["relationshipbroker"] = 88, ["relationshipship"] = 89
+                , ["relationshipar"] = 90, ["relationshipother"] = 91
+                , ["relationshipself"] = 92, ["relationshipblank"] = 93
+                , ["npnnumber"] = 94, ["oecflag"] = 95
+                , ["oecapplicationdate"] = 96, ["oecapplicationnumber"] = 97
+                , ["memberphonenumber"] = 98, ["memberemail"] = 99
+                , ["electiontype"] = 100, ["preferred_language"] = 101
+                , ["accessible_format"] = 102,
+            };
+
     private static int GetEntryPriority(FieldDefinition field)
     {
-        var name = field.Name.ToLowerInvariant();
+        foreach (var kvp in EntryOrder)
+        {
+            if (field.Name.Contains(kvp.Key,
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                return kvp.Value;
+            }
+        }
 
-        if (name.Contains("beneficiary_id")) return 1;
-        if (name.Contains("surname")) return 2;
-        if (name.Contains("first_name")) return 3;
-        if (name.Contains("middle_initial")) return 4;
-        if (name.Contains("gender")) return 5;
-        if (name.Contains("birthdate")) return 6;
-        
-        if (name.Contains("contract_number")) return 7;
-        if (name.Contains("disability")) return 8;
 
-        if (name.Contains("esrd_override")) return 9;
-        
-        if (name.Contains("transaction_type_code")) return 10;
-        if (name.Contains("effective_date")) return 11;
-        
-        if (name.Contains("pbp_number")) return 12;
-        if (name.Contains("TransactionDate")) return 13;
-        
-        if (name.Contains("rolled_contract")) return 14;
-        if (name.Contains("rolled_pbp")) return 15;
-        
-        
-        if (name.Contains("application_date")) return 16;
-        
-        if (name.Contains("segment_id")) return 17;
-        if (name.Contains("part_c_premium")) return 18;
-        
-        if (name.Contains("election_type_code")) return 19;
-        if (name.Contains("enrollment_source")) return 20;
-        if (name.Contains("part_d_opt_out")) return 21;
-        if (name.Contains("premium_withhold")) return 22;
-        
-        if (name.Contains("credible_coverage_flag")) return 23;
-        if (name.Contains("employer_override")) return 24;
-        
-        if (name.Contains("uncovered_months")) return 25;
-        
-        if (name.Contains("secondary_insurance")) return 26;
-        if (name.Contains("secondary_rx_id")) return 27;
-        if (name.Contains("secondary_rx_group")) return 28;
-        
-        if (name.Contains("eghp_flag")) return 29;
-        
-        if (name.Contains("part_d_bin")) return 30;
-        if (name.Contains("part_d_pcn")) return 31;
-        if (name.Contains("part_d_group")) return 32;
-        if (name.Contains("part_d_id")) return 33;
-        
-        if (name.Contains("secondary_bin")) return 34;
-        if (name.Contains("secondary_pcn")) return 35;
-        
-        if (name.Contains("disenrollment_reason")) return 36;
-        if (name.Contains("mmp_opt_out")) return 37;
-        
-        if (name.Contains("tracking_id")) return 38;
-        
-        if (name.Contains("relationshipAgent")) return 39;
-        if (name.Contains("relationshipBroker")) return 40;
-        if (name.Contains("relationshipShip")) return 41;
-        if (name.Contains("relationshipAr")) return 42;
-        if (name.Contains("relationshipOther")) return 43;
-        if (name.Contains("relationshipSelf")) return 44;
-        if (name.Contains("relationshipBlank")) return 45;
-        
-        if (name.Contains("npnNumber")) return 46;
-        
-        if (name.Contains("oecFlag")) return 47;
-        if (name.Contains("oecApplicationDate")) return 48;
-        if (name.Contains("oecApplicationNumber")) return 49;
-        
-        if (name.Contains("memberPhoneNumber")) return 50;
-        if (name.Contains("memberEmail")) return 51;
-        
-        if (name.Contains("election Type")) return 52;
-        if (name.Contains("preferred_language")) return 53;
-        if (name.Contains("accessible_format")) return 54;
-        
-       return 60;
+        Console.WriteLine(
+            $"No priority defined for: {field.Name}");
+
+        return 999;
     }
-    
+
+    private record FixedDisplayField(
+        int Priority
+        , string Label
+        , string Value);
+
+    private static readonly List<FixedDisplayField> FixedFields =
+        new List<FixedDisplayField>
+        {
+            new(7, "RecordType", "T")
+            , new(9, "StateCode", "Reference StateCode")
+            , new(10, "CountyCode", " Last 3 digits of CountyCode")
+            , new(12,"Hospice Indicator","blank")
+            , new(13, "InstitutionalNHCHCBSIndicator", "blank")
+            , new(14, "TransactionReplyCode", "From ticket")
+            , new(16, "EntitlementTypeCode", "Y")
+            , new(18, "WorkingAgeIndicator", "0")
+            , new(21, "UIInitiatedChangeFlag", "0")
+            , new(22, "VariableData", "from ticket for 51s")
+            , new(23, "DistrictOfficeCode", "blank")
+            , new(26, "Source ID", "Contract Number")
+            , new(29, "UIUserOrganizationDesignation", "blank")
+            , new(30, "OutOfAreaFlag", "N")
+            , new(33, "PartDBeneficiaryPremium", "PremiumPayment table")
+            , new(38, "CumulativeNoOfUncoveredMonths", "0")
+            , new(41, "ProcessingTimeStamp", " Non Midnight hh.mm.ss.ssssss")
+            , new(42,"End Date","blank")
+            , new(43, "Submitted Covered Months", "0")
+            , new(48, "PartDLowIncomePremiumSubsidyLvl", "reference LIS")
+            , new(49, "LowIncomeCopayCategory", "reference LIS")
+            , new(50, "Low Income Effective Date","From LIS")
+            , new(51,"PtD LateEnrlPenalty Amount","0.00")
+            , new(52, "PtDLateEnrlWaivedyAmt", "0.00")
+            , new(53, "PtDLateEnrlSubsidyAmt", "0.00")
+            , new(54, "LowIncomePtDPremiumSubsidyAmt", "reference LIS")
+            , new(61, "DeMinimisDifferentialAmt", "0.00")
+            , new(62, "MSPStatusFlg", "Blank")
+            , new(63, "LowIncomePeriodEndDate", "reference LIS")
+            , new(64, "LowIncomeSubsidySourceCode", "reference LIS")
+            , new(65, "EnrolleeTypeFlagPBPLevel", "Blank")
+            , new(66, "ApplicationDateIndicator", "Blank")
+            , new(67, "TRCShortName", "reference PCUG")
+            , new(70, "CleanupId", "Blank")
+            , new(71, "POSDrugEditUpdateDeleteFlag", "Blank")
+            , new(72, "POSDrugEditStatus", "Blank")
+            , new(73, "POSDrugEditClass", "Blank")
+            , new(74, "POSDrugEditCode", "Blank")
+            , new(75, "NotificationDate", "Blank")
+            , new(76, "ImplementationDate", "Blank")
+            , new(77, "TerminationDate", "Blank")
+            , new(78, "HospiceProviderNumber", "Blank")
+            , new(79, "ICModelTypeIndicator", "Blank")
+            , new(80, "ICModelEndDateReasonCode", "Blank")
+            , new(81, "ICModelbenefitStatus", "Blank")
+            , new(82, "UpdtMedicaidStatForCoummunityRAFBenef", "Blank")
+            , new(83, "SystemsAssignedTrackingNumber"
+                , "000000000mmddyy<last 4 of plan assigned tracking number>")
+            , new(85, "LoadDate", "reference DTRR SQL")
+            , new(86, "Status", "Unprocessed")
+            , new(103,"CARA Implementation End Date", "blank")
+            , new(104,"Prescriber Limitation", "blank")
+            , new(105,"Pharmacy Limitation", "blank")
+        };
 
 
     private static void RunMedImpactFlow()
@@ -639,9 +617,8 @@ class FileIngestor
         var mediHandlers =
             new Dictionary<string, Action>(StringComparer.OrdinalIgnoreCase)
             {
-                ["23"] = RunMedImpactType23,
-                ["24"] = RunMedImpactType24,
-                ["112"] = RunMedImpactType112,
+                ["23"] = RunMedImpactType23, ["24"] = RunMedImpactType24
+                , ["112"] = RunMedImpactType112,
                 // Later: ["25"] = RunMedImpactType25,
             };
 
@@ -683,7 +660,7 @@ class FileIngestor
     }
 
 
-   private static void ProcessMedImpactFile(string filePath
+    private static void ProcessMedImpactFile(string filePath
         , RecordDefinition type23)
     {
         Console.Write("Would you like to save the results? (none/txt/csv): ");
@@ -804,7 +781,7 @@ class FileIngestor
             return;
         }
 
-       var mode = ChooseMode();
+        var mode = ChooseMode();
 
         if (mode is "file" or "f")
         {
@@ -873,7 +850,7 @@ class FileIngestor
         var type24Defs = MedImpactType24DefinitionLoader.Load(
             Path.Combine("Definitions", "MedImpact", "Type24.json"));
 
-       var mode = ChooseMode();
+        var mode = ChooseMode();
 
         if (mode is "file" or "f")
         {
@@ -950,6 +927,7 @@ class FileIngestor
             SaveSingleRecordOutput(line, $"24-{segmentCode}", fields, segDef
                 , outputFormat);
     }
+
     private static void RunMedImpactType112()
     {
         var type112 = MedImpactDefinitionLoader.Load(
@@ -962,7 +940,7 @@ class FileIngestor
             return;
         }
 
-       var mode = ChooseMode();
+        var mode = ChooseMode();
 
         if (mode is "file" or "f")
         {
@@ -1141,7 +1119,7 @@ class FileIngestor
             Console.WriteLine("Results saved to output_medi_type24.csv");
         }
     }
-    
+
     private static void ProcessMedImpactType112File(string filePath
         , MedImpactType112Definitions defs)
 
