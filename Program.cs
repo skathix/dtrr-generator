@@ -89,7 +89,7 @@ class FileIngestor
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "19.3");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "19.4 Sept.");
         var versionDef = allDefinitions.Versions[selectedVersion];
         var viewMode = ChooseMbitViewMode();
 
@@ -486,7 +486,7 @@ class FileIngestor
     {
         Console.WriteLine("\nSelect output view:");
         Console.WriteLine("  1. File verification (PCUG order)");
-        Console.WriteLine("  2. Data entry order");
+        Console.WriteLine("  2. Data entry order - Coming Soon!");
 
         Console.Write("Choose 1 or 2 (Enter = 1): ");
         var input = Console.ReadLine()?.Trim();
