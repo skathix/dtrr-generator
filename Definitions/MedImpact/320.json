@@ -1,0 +1,644 @@
+﻿{
+  "start_date": "2024-10-15",
+  "record_length": 1119,
+  "description": "Type 320 - Elixir Fixed Length Eligibility File Layout",
+  "fields": [
+    {
+      "name": "group",
+      "display_name": "Group Number",
+      "length": 15,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+      "name": "carrier",
+      "display_name": "Carrier Code",
+      "length": 10,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+      "name": "memberID",
+      "display_name": "Member Number",
+      "length": 18,
+      "valid": "Alphanumeric, cannot change once assigned to group",
+      "required": true
+    },
+    {
+      "name": "personcd",
+      "display_name": "Person Code",
+      "length": 3,
+      "valid": "Numeric, Unique 001 - 999",
+      "required": true
+    },
+    {
+      "name": "relationcd",
+      "display_name": "Relationship Code",
+      "length": 1,
+      "valid": "1-5 ",
+      "required": true
+    },
+    {
+      "name": "lastName",
+      "display_name": "Member Last Name",
+      "length": 25,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+      "name": "firstName",
+      "display_name": "Member First Name",
+      "length": 15,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+      "name": "middleInit",
+      "display_name": "Middle Initial",
+      "length": 1,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "gender",
+      "display_name": "Sex",
+      "length": 1,
+      "valid": "F or M only",
+      "required": true
+    },
+    {
+      "name": "location",
+      "display_name": "Location Code",
+      "length": 8,
+      "valid": "Alphanumeric - reporting only",
+      "required": false
+    },
+    {
+      "name": "dateOfBirth",
+      "display_name": "Date of Birth",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "currEffecDate",
+      "display_name": "Effective Date of Member",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "currTermDate",
+      "display_name": "Termination date of Member",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "addr1",
+      "display_name": "Address Line 1",
+      "length": 50,
+      "valid": "Alphanumeric, strongly suggested",
+      "required": false
+    },
+    {
+      "name": "addr2",
+      "display_name": "Address Line 2",
+      "length": 50,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "city",
+      "display_name": "City",
+      "length": 20,
+      "valid": "Alphanumeric, strongly suggested",
+      "required": false
+    },
+    {
+      "name": "state",
+      "display_name": "State Abbr",
+      "length": 2,
+      "valid": "Alphanumeric, strongly suggested",
+      "required": false
+    },
+    {
+      "name": "zip",
+      "display_name": "ZIP Code",
+      "length": 9,
+      "valid": "ZIP +4 available, must use 5 if used",
+      "required": false
+    },
+    {
+      "name": "phone",
+      "display_name": "Phone #",
+      "length": 10,
+      "valid": "Numeric phone number with area code",
+      "required": false
+    },
+    {
+      "name": "broker1",
+      "display_name": "Broker 1 code",
+      "length": 10,
+      "valid": "Alphanumeric primary broker",
+      "required": false
+    },
+    {
+      "name": "broker2",
+      "display_name": "Broker 2 code",
+      "length": 10,
+      "valid": "Alphanumeric secondary broker",
+      "required": false
+    },
+    {
+      "name": "altInsCode",
+      "display_name": "Alt Ins Code",
+      "length": 1,
+      "valid": "0 to 4 NCPDP Standard",
+      "required": false
+    },
+    {
+      "name": "filler1",
+      "display_name": "Filler",
+      "length": 1,
+      "valid": "Blank",
+      "required": false
+    },
+    {
+      "name": "physician",
+      "display_name": "Physician",
+      "length": 12,
+      "valid": "DEA Number of physician",
+      "required": false
+    },
+    {
+      "name": "phyGroup",
+      "display_name": "Physician Group",
+      "length": 8,
+      "valid": "Client supplied for reporting",
+      "required": false
+    },
+    {
+      "name": "memberInfor",
+      "display_name": "Member Information",
+      "length": 20,
+      "valid": "Client supplied",
+      "required": false
+    },
+    {
+      "name": "cardReprint",
+      "display_name": "Card Reprint",
+      "length": 1,
+      "valid": "Y or N",
+      "required": false
+    },
+    {
+      "name": "primPharm",
+      "display_name": "Primary Pharmacy",
+      "length": 12,
+      "valid": "NABP#/CHAIN#/PPO",
+      "required": false
+    },
+    {
+      "name": "reserved1",
+      "display_name": "Reserved",
+      "length": 2,
+      "valid": "Internal use only",
+      "required": false
+    },
+    {
+      "name": "labelCode",
+      "display_name": "Label Code",
+      "length": 6,
+      "valid": "Client Supplied mailing label code",
+      "required": false
+    },
+    {
+      "name": "altMemberID",
+      "display_name": "Alt Member ID",
+      "length": 18,
+      "valid": "UNIQUE ID",
+      "required": false
+    },
+    {
+      "name": "fsaMoMax",
+      "display_name": "Flex Spend Mo Max Benefit",
+      "length": 8,
+      "valid": "FSA - Monthly flat dollar amount DECIMALS REQUIRED FSA data required",
+      "required": false
+    },
+    {
+      "name": "fsaType",
+      "display_name": "FSA Type",
+      "length": 1,
+      "valid": "Blank or 1 2 3",
+      "required": false
+    },
+    {
+      "name": "fsaEffecDate",
+      "display_name": "FSA Effective Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "hraMoMax",
+      "display_name": "Health Reimb Arrange",
+      "length": 8,
+      "valid": "HRA flat monthly dollar amount DECIMALS REQUIRED HRA data required",
+      "required": false
+    },
+    {
+      "name": "hraType",
+      "display_name": "HRA Type",
+      "length": 1,
+      "valid": "Blank or 1 2 3 4",
+      "required": false
+    },
+    {
+      "name": "hraEffecDate",
+      "display_name": "HRA Effective Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "filler2",
+      "display_name": "Filler",
+      "length": 9,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "ss#",
+      "display_name": "Social Security Number",
+      "length": 9,
+      "valid": "Member SSN",
+      "required": false
+    },
+    {
+      "name": "emailAddress",
+      "display_name": "Email Address",
+      "length": 40,
+      "valid": "Member Email for reminder",
+      "required": false
+    },
+    {
+      "name": "medReminder",
+      "display_name": "Medication Reminder",
+      "length": 1,
+      "valid": "Y or N",
+      "required": false
+    },
+    {
+      "name": "coverageCode",
+      "display_name": "Coverage Code",
+      "length": 1,
+      "valid": "I or F - use F if not used for reporting",
+      "required": true
+    },
+    {
+      "name": "filler3",
+      "display_name": "Filler",
+      "length": 3,
+      "valid": "Blanks",
+      "required": true
+    },
+    {
+      "name": "altInsEff",
+      "display_name": "Alt Ins Effective Date",
+      "length": 8,
+      "valid": "YYYYMMDD, must be filled in if used AltIns Code @ 243",
+      "required": false
+    },
+    {
+      "name": "prevCardID",
+      "display_name": "Previous Card ID",
+      "length": 45,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+      "name": "physicianNetwork",
+      "display_name": "Physician Network",
+      "length": 20,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str2_20",
+      "display_name": "STR 2_20",
+      "length": 20,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_04",
+      "display_name": "STR 1_04",
+      "length": 4,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_15",
+      "display_name": "STR 1_15",
+      "length": 15,
+      "valid": "Alphanumeric HICN/MBI Number",
+      "required": true
+    },
+    {
+      "name": "str2_04",
+      "display_name": "STR 2_04",
+      "length": 4,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str2_15",
+      "display_name": "STR 2_15",
+      "length": 15,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str3_20",
+      "display_name": "STR 3_20",
+      "length": 20,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_01",
+      "display_name": "STR 1_01",
+      "length": 1,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str2_01",
+      "display_name": "STR 2_01",
+      "length": 1,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_05",
+      "display_name": "Current Part D Contract ID",
+      "length": 5,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_10",
+      "display_name": "Outgoing Part D Contract ID",
+      "length": 10,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "str1_02",
+      "display_name": "STR 1_02 Language Indicator",
+      "length": 20,
+      "valid": "EN or SP",
+      "required": false
+    },
+    {
+      "name": "subgroup",
+      "display_name": "LIC Level Definition",
+      "length": 20,
+      "valid": "Level of LICS Levels = 1, 2, 3, 4 (MUST BE COMPLETED FOR LOW INCOME BENEFICIARIES",
+      "required": true
+    },
+    {
+      "name": "effectiveDateLics",
+      "display_name": "Date Beneficiary Eff for Low Income",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "termDateOfLics",
+      "display_name": "Date Beneficiary Termed for Low Income",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "pcp",
+      "display_name": "PCP",
+      "length": 20,
+      "valid": "Alphabetical",
+      "required": false
+    },
+    {
+      "name": "pcpPhone",
+      "display_name": "PCP Phone",
+      "length": 15,
+      "valid": "Primary phone number",
+      "required": false
+    },
+    {
+      "name": "pcpPhone",
+      "display_name": "PCP Phone",
+      "length": 15,
+      "valid": "Primary phone number",
+      "required": false
+    },
+    {
+      "name": "legalRepresentativeIndicator",
+      "display_name": "Workers Comp Legal Rep",
+      "length": 1,
+      "valid": "Shows POA Y or blank",
+      "required": false
+    },
+    {
+      "name": "employerName",
+      "display_name": "Info3 Employer Name",
+      "length": 40,
+      "valid": "POA Name",
+      "required": false
+    },
+    {
+      "name": "employerAddress",
+      "display_name": "Address1",
+      "length": 40,
+      "valid": "POA address",
+      "required": false
+    },
+    {
+      "name": "employerAddress2",
+      "display_name": "Address 2",
+      "length": 40,
+      "valid": "POA Address 2",
+      "required": false
+    },
+    {
+      "name": "employerCity",
+      "display_name": "POA City",
+      "length": 20,
+      "valid": "POA City",
+      "required": false
+    },
+    {
+      "name": "employerState",
+      "display_name": "POA State Abbreviation",
+      "length": 2,
+      "valid": "POA State",
+      "required": false
+    },
+    {
+      "name": "employerZip",
+      "display_name": "POA Zip (+4)",
+      "length": 10,
+      "valid": "Primary phone number",
+      "required": false
+    },
+    {
+      "name": "employerPhone",
+      "display_name": "POA Phone",
+      "length": 10,
+      "valid": "POA phone number",
+      "required": false
+    },
+    {
+      "name": "country",
+      "display_name": "POA Country",
+      "length": 75,
+      "valid": "POA country",
+      "required": false
+    },
+    {
+      "name": "cobIndicator",
+      "display_name": "COB Indicator",
+      "length": 1,
+      "valid": "Y or blank",
+      "required": false
+    },
+    {
+      "name": "cobStartDate",
+      "display_name": "COB Start Date",
+      "length": 8,
+      "valid": "YYYMMDD",
+      "required": false
+    },
+    {
+      "name": "cobEndDate",
+      "display_name": "COB End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "cobPrimaryId",
+      "display_name": "COB Primary ID",
+      "length": 20,
+      "valid": "COB Primary Cardholder ID",
+      "required": false
+    },
+    {
+      "name": "cobNote",
+      "display_name": "COB Note",
+      "length": 50,
+      "valid": "Alphanumeric",
+      "required": false
+    },
+    {
+      "name": "eligFlag1StartDate",
+      "display_name": "Eligibility Flag 1 Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag1EndDate",
+      "display_name": "Eligibility Flag 1 End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag2",
+      "display_name": "Eligibility Flag Hospice",
+      "length": 1,
+      "valid": "Y or N",
+      "required": false
+    },
+    {
+      "name": "eligFlag2StartDate",
+      "display_name": "Eligibility Flag Hospice Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag2EndtDate",
+      "display_name": "Eligibility Flag Hospice End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag3",
+      "display_name": "Eligibility Flag ESRD",
+      "length": 1,
+      "valid": "Y or blank",
+      "required": false
+    },
+    {
+      "name": "eligFlag3StartDate",
+      "display_name": "Eligibility Flag ESRD Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag3EndDate",
+      "display_name": "Eligibility Flag ESRD End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag4",
+      "display_name": "Eligibility Flag Kidney Transplant",
+      "length": 1,
+      "valid": "Y or blank",
+      "required": false
+    },
+    {
+      "name": "eligFlag4StartDate",
+      "display_name": "Eligibility Flag Kidney Transplant Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "eligFlag4EndDate",
+      "display_name": "Eligibility Flag Kidney Transplant End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "m3pFlag",
+      "display_name": "M3P Flg",
+      "length": 1,
+      "valid": "Y or blank",
+      "required": false
+    },
+    {
+      "name": "m3pFlag1StartDate",
+      "display_name": "M3P Flag Start Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    },
+    {
+      "name": "m3pFlagEndDate",
+      "display_name": "M3P Flag End Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": false
+    }
+  ]
+}
