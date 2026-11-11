@@ -1,0 +1,133 @@
+﻿{
+  "start_date": "2014-10-24",
+  "record_length": 212,
+  "description": "Standard Adjustment File Flat File Format v3.2",
+  "fields": [
+        {
+      "name": "carrier",
+      "display_name": "Carrier Code",
+      "length": 10,
+      "valid": "Alphanumeric",
+      "required": true
+    },
+    {
+    "name": "group",
+    "display_name": "Group Number",
+    "length": 15,
+    "valid": "Group or policy number",
+    "required": false
+    },
+    {
+      "name": "groupSuffix",
+      "display_name": "Group Number",
+      "length": 5,
+      "valid": "Navitus use only",
+      "required": false
+    },
+    {
+      "name": "account",
+      "display_name": "Account",
+      "length": 15,
+      "valid": "Acount owner of group and members",
+      "required": false
+    },
+    {
+      "name": "uniqueId",
+      "display_name": "Unique ID",
+      "length": 18,
+      "valid": "Id of individulas within a family",
+      "required": false
+    },
+    {
+      "name": "familyId",
+      "display_name": "Family ID",
+      "length": 18,
+      "valid": "ID for family",
+      "required": true
+    },
+    {
+      "name": "personCode",
+      "display_name": "Person Code",
+      "length": 2,
+      "valid": "code for specific person",
+      "required": false
+    },
+    {
+      "name": "adjustmentDate",
+      "display_name": "Adjustment Date",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "sdcId",
+      "display_name": "SDC ID",
+      "length": 3,
+      "valid": "Assigned by Navitus when multiple buckets to track",
+      "required": true
+    },
+    {
+      "name": "sdcAmount",
+      "display_name": "SDC Amount",
+      "length": 9,
+      "valid": "Needed when SDC ID is assigned 999999999 do not include decimal",
+      "required": true
+    },
+    {
+      "name": "amountSign",
+      "display_name": "Amount Sign",
+      "length": 1,
+      "valid": "Needed when Medical Update  use - if the amount is negative",
+      "required": true
+    },
+    {
+      "name": "adjustmentType",
+      "display_name": "Adjustment Type",
+      "length": 1,
+      "valid": "D O B - may be multiple lines!",
+      "required": true
+    },
+    {
+      "name": "memberLastName",
+      "display_name": "Member Last Name",
+      "length": 25,
+      "valid": "Member Last Name",
+      "required": true
+    },
+    {
+      "name": "memberFirstName",
+      "display_name": "Member First Name",
+      "length": 25,
+      "valid": "Member First Name",
+      "required": true
+    },
+    {
+      "name": "memberDateOfBirth",
+      "display_name": "Member Date of Birth",
+      "length": 8,
+      "valid": "YYYYMMDD",
+      "required": true
+    },
+    {
+      "name": "filler1",
+      "display_name": "Filler",
+      "length": 20,
+      "valid": "Blanks",
+      "required": false
+    },
+    {
+      "name": "networkIndicator",
+      "display_name": "Network Indicator",
+      "length": 3,
+      "valid": "Indicates In or OUT of network - typical for Medical Updates",
+      "required": false
+    },
+    {
+      "name": "medicalClaimId",
+      "display_name": "Medical Claim ID",
+      "length": 17,
+      "valid": "Alphanumeric",
+      "required": false
+    }
+  ]
+}
