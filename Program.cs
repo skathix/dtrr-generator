@@ -89,7 +89,7 @@ class FileIngestor
         var allDefinitions = MbitDefinitionLoader.LoadAll("Definitions");
 
         var selectedVersion =
-            ChooseMbitVersion(allDefinitions, preferredDefault: "19.4 Sept.");
+            ChooseMbitVersion(allDefinitions, preferredDefault: "19.4 Nov");
         var versionDef = allDefinitions.Versions[selectedVersion];
         var viewMode = ChooseMbitViewMode();
 
